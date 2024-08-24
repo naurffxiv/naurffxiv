@@ -25,6 +25,11 @@ To install, use the following command.
 npm install -g npm
 ```
 
+Install [Material UI](https://mui.com/)
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+```
+
 ### Running the development server
 Before running the server, make sure that you are in `/naurffxiv/naurffxiv/src/`, then run the following command.
 
