@@ -11,7 +11,7 @@ node -v
 npm -v
 ```
 
-You should get something like the below. If there is no version, then you need to install Node.js and npm.
+You should get something like the below. If there is no version, then you need to install Node.js and npm. If your version is lower than the ones below, follow the [Upgrading npm](#upgrade-npm) section.
 ```bash
 ❯ node -v
 v22.6.0
@@ -28,6 +28,19 @@ npm install -g npm
 Install [Material UI](https://mui.com/)
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
+```
+
+### <a name="upgrade-npm"></a>Upgrading npm
+
+Install the new package with curl.
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+```
+
+Restart ubuntu and run the following commands.
+```bash
+nvm install 22
+npm install next
 ```
 
 ### Running the development server
