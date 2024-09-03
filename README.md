@@ -44,10 +44,10 @@ npm install next
 ```
 
 ### Running the development server
-Before running the server, make sure that you are in `/naurffxiv/naurffxiv/src/`, then run the following command.
+Run the following command to start your dev environment.
 
 ```bash
-npm run dev
+make start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
