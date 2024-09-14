@@ -1,6 +1,6 @@
 import react from "react";
 import { Container } from "@mui/material";
-import DisplayUWU from "./uwu.js";
+import UWU from "./ultimates.js";
 
 
 export default function Home() {
@@ -10,3 +10,4 @@ export default function Home() {
 	</Container>
   );
 }
+
