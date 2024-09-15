@@ -15,7 +15,7 @@ H > M > R > T, alternate sides to drop puddles, starting with east
 ### [Trio 2: Brainsmort/Daylights/DRK relative Toolbox](https://ff14.toolboxgaming.space/?id=404791683683271&preview=1)
 ### [Trio 3 Meteors/Fire and Ice Toolbox](https://ff14.toolboxgaming.space/?id=226768720878561&preview=1#20)
 ## P3: Nidstinien
-### [Nidstinien Toolbox](https://ff14.toolboxgaming.space/?id=324694010528171&preview=1)
+### [Nidstinien Toolbox](https://ff14.toolboxgaming.space/?id=267799249146271&preview=1)
 - Westhogg (Arrows always face West)
 - Tanks and melees adjust enumerations
 ## P4: The Eyes
