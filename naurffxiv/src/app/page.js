@@ -1,7 +1,7 @@
 import react from "react";
 import { Container } from "@mui/material";
 import NavBar from "./navigation.js";
-import DisplayUWU from "./uwu.js";
+import UWU from "./ultimates.js";
 
 
 export default function Home() {
@@ -11,8 +11,9 @@ export default function Home() {
 		<NavBar />
 	</Container>
 	<Container sx={{ maxWidth: "10vh"}}>
-		<DisplayUWU />
+		<UWU />
 	</Container>
 	</>
   );
 }
+
