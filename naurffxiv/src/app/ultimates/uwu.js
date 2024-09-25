@@ -12,12 +12,12 @@ export function UWU() {
                 <h3>Phase 1: Garuda - Centeruda, tanks left</h3>
                 <p>Plase note that the caster goes east and the off-tank goes West to take Mesohigh tethers.</p>
                 <ul>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=359535529826261&preview=1">Garuda Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=359535529826261&preview=1" target="_blank">Garuda Toolbox</a></li>
                 </ul>
                 <h3>Phase 2: Ifrit</h3>
                 <p>Ifrit dashes can be skipped with sufficiently high DPS.</p>
                 <ul>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=562530446784261&preview=1">Ifrit Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=562530446784261&preview=1" target="_blank">Ifrit Toolbox</a></li>
                 </ul>
                 <h3>Phase 3: Titan</h3>
                 <p>
@@ -27,18 +27,18 @@ export function UWU() {
                     and more suitable in a static environment.
                 </p>
                 <ul>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=463534803605261&preview=1">Titan Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=463534803605261&preview=1" target="_blank">Titan Toolbox</a></li>
                 </ul>
                 <h3>Intermission</h3>
                 <ul>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=430631425646261&preview=1">Intermission Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=430631425646261&preview=1" target="_blank">Intermission Toolbox</a></li>
                 </ul>
                 <h4>Phase 4: Ultima</h4>
                 <ul>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=530635345646261&preview=1">Predation Toolbox</a></li>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=930637786646261&preview=1">Annihilation Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=530635345646261&preview=1" target="_blank">Predation Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=930637786646261&preview=1" target="_blank">Annihilation Toolbox</a></li>
                     <li>
-                        <a href="https://ff14.toolboxgaming.space/?id=830635036646261&preview=1">Suppression Toolbox</a>
+                        <a href="https://ff14.toolboxgaming.space/?id=830635036646261&preview=1" target="_blank">Suppression Toolbox</a>
                         <p>Tanks left, party right for Aetheric Booms.</p>
                     </li>
                 </ul>
@@ -48,12 +48,12 @@ export function UWU() {
                 <h2>General Resources</h2>
                 <h3>Mitigation</h3>
                 <ul>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1V-FXFOW8pj87DtqT4KpKSbu3AZYI4diSjH1F-FyNt_o/edit?usp=sharing">General Mitigation Sheet</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/13dpeUEBHFpLxX38gjC8oh1xEB4F7xBECI9BvycJEsfk/edit#gid=831820397">Tank Mitigation Sheet</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1V-FXFOW8pj87DtqT4KpKSbu3AZYI4diSjH1F-FyNt_o/edit?usp=sharing" target="_blank">General Mitigation Sheet</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/13dpeUEBHFpLxX38gjC8oh1xEB4F7xBECI9BvycJEsfk/edit#gid=831820397" target="_blank">Tank Mitigation Sheet</a></li>
                 </ul>
                 <h3>Cheat Sheets and Images</h3>
                 <ul>
-                    <li><a href="https://docs.google.com/spreadsheets/d/13dpeUEBHFpLxX38gjC8oh1xEB4F7xBECI9BvycJEsfk/edit#gid=831820397">Titan Gaols Cheat Sheet</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/13dpeUEBHFpLxX38gjC8oh1xEB4F7xBECI9BvycJEsfk/edit#gid=831820397" target="_blank">Titan Gaols Cheat Sheet</a></li>
                 </ul>
                 <h3>Markers</h3>
                 <ul>
@@ -69,7 +69,7 @@ export function UWU() {
                 <h3>Tank</h3>
                 <ul>
                     <li>
-                        <a href="https://www.youtube.com/watch?v=tbBEUF3ffeI">DRK as MT</a>
+                        <a href="https://www.youtube.com/watch?v=tbBEUF3ffeI" target="_blank">DRK as MT</a>
                     </li>
                 </ul>
 
@@ -77,19 +77,19 @@ export function UWU() {
                 <h4>Regen</h4>
                 <ul>
                     <li>
-                        <a href="https://www.twitch.tv/videos/2153617369">WHM - no Searing Wind</a>
+                        <a href="https://www.twitch.tv/videos/2153617369" target="_blank">WHM - no Searing Wind</a>
                     </li>
                     <li>
-                        <a href="https://www.twitch.tv/videos/2153690827">AST - no Searing Wind</a>
+                        <a href="https://www.twitch.tv/videos/2153690827" target="_blank">AST - no Searing Wind</a>
                     </li>
                 </ul>
                 <h4>Shield</h4>
                 <ul>
                     <li>
-                        <a href="https://www.twitch.tv/videos/2153686831">SGE - Searing Wind on Ifrit and Ultima</a>
+                        <a href="https://www.twitch.tv/videos/2153686831" target="_blank">SGE - Searing Wind on Ifrit and Ultima</a>
                     </li>
                     <li>
-                        <a href="https://www.twitch.tv/videos/2153692504">SCH - Searing Wind on Ifrit and Ultima</a>
+                        <a href="https://www.twitch.tv/videos/2153692504" target="_blank">SCH - Searing Wind on Ifrit and Ultima</a>
                     </li>
                 </ul>
 
@@ -97,41 +97,41 @@ export function UWU() {
                 <h4>Melee</h4>
                 <ul>
                     <li>
-                        <a href="https://www.youtube.com/watch?v=XtDHObmvBy4">NIN as First Cleanse and SE Nail</a>
+                        <a href="https://www.youtube.com/watch?v=XtDHObmvBy4" target="_blank">NIN as First Cleanse and SE Nail</a>
                     </li>
                 </ul>
                 <h4>Physical Ranged</h4>
                 <ul>
                     <li>
-                        <a href="https://www.youtube.com/watch?v=CEUv-iv57H8">DNC as West Baits</a>
+                        <a href="https://www.youtube.com/watch?v=CEUv-iv57H8" target="_blank">DNC as West Baits</a>
                     </li>
                 </ul>
                 <h4>Caster</h4>
                 <ul>
                     <li>
-                        <a href="https://www.youtube.com/watch?v=CEUv-iv57H8">SMN as East Baits</a>
+                        <a href="https://www.youtube.com/watch?v=CEUv-iv57H8" target="_blank">SMN as East Baits</a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/watch?v=D1sciQSLxZY">RDM as West Baits</a>
+                        <a href="https://www.youtube.com/watch?v=D1sciQSLxZY" target="_blank">RDM as West Baits</a>
                     </li>
                 </ul>
 
             <h3>Mechanic POVs</h3>
             <ul>
                 <li>
-                    <a href="https://www.youtube.com/watch?v=pZ6FPoVkbRY">Quick guide to Ifrit Dashes (Z-Nails)</a>
+                    <a href="https://www.youtube.com/watch?v=pZ6FPoVkbRY" target="_blank">Quick guide to Ifrit Dashes (Z-Nails)</a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/watch?v=vKtc2LnhOkw">Titan Gaols 2nd POV</a>
+                    <a href="https://www.youtube.com/watch?v=vKtc2LnhOkw" target="_blank">Titan Gaols 2nd POV</a>
                 </li>
                 <li>
-                    <a href="https://youtu.be/d08-CA5zS1c">Predation Quick Guide</a>
+                    <a href="https://youtu.be/d08-CA5zS1c" target="_blank">Predation Quick Guide</a>
                 </li>
                 <li>
-                    <a href="https://youtu.be/PSrbDnFtIJ0">Ultimate Suppression Visual Guide</a>
+                    <a href="https://youtu.be/PSrbDnFtIJ0" target="_blank">Ultimate Suppression Visual Guide</a>
                 </li>
                 <li>
-                    <a href="https://youtu.be/CHbzuXPIi-4">Quick Guide to Primal Roulette</a>
+                    <a href="https://youtu.be/CHbzuXPIi-4" target="_blank">Quick Guide to Primal Roulette</a>
                 </li>
             </ul>
             </div>
