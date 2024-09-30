@@ -1,6 +1,6 @@
 import react from "react";
 
-export function TEA() {
+export default function TEA() {
 
     return (
         <>

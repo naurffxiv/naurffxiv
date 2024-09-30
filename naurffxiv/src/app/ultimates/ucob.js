@@ -1,6 +1,6 @@
 import react from "react";
 
-export function UCOB() {
+export default function UCOB() {
 
     return (
         <>
@@ -75,26 +75,28 @@ export function UCOB() {
                 <h2>Pre-pull Setup</h2>
                 <p>Two light parties in a line, designated as left or right.</p>
                 <table>
-                    <tr>
-                        <td>L1</td>
-                        <td>R1</td>
-                        <td>Tanks</td>
-                    </tr>
-                    <tr>
-                        <td>L2</td>
-                        <td>R2</td>
-                        <td>Healers</td>
-                    </tr>
-                    <tr>
-                        <td>L3</td>
-                        <td>R3</td>
-                        <td>Melee</td>
-                    </tr>
-                    <tr>
-                        <td>L4</td>
-                        <td>R4</td>
-                        <td>Ranged</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>L1</td>
+                            <td>R1</td>
+                            <td>Tanks</td>
+                        </tr>
+                        <tr>
+                            <td>L2</td>
+                            <td>R2</td>
+                            <td>Healers</td>
+                        </tr>
+                        <tr>
+                            <td>L3</td>
+                            <td>R3</td>
+                            <td>Melee</td>
+                        </tr>
+                        <tr>
+                            <td>L4</td>
+                            <td>R4</td>
+                            <td>Ranged</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 

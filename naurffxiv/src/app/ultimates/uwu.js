@@ -1,6 +1,6 @@
 import react from "react";
 
-export function UWU() {
+export default function UWU() {
 
     return(
         <>

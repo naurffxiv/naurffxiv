@@ -1,6 +1,6 @@
 import react from "react";
 
-export function DSR() {
+export default function DSR() {
 
     return (
         <>
@@ -146,20 +146,20 @@ D □   H X   H △`}</code></pre>
                         </code></pre>
                         <p>Stack: Click this if you receive a stack to indicate you need to be stacked with. Aim for the Ignore
                             marker with the same number as you (1 with 1, 2 with 2).
-                            <pre><code>
-                                    {`/mk bind <me> <wait.25>
+                        </p>
+                        <pre><code>
+                                {`/mk bind <me> <wait.25>
 /mk clear <me>
 /micon bind enemysign`}
-                            </code></pre>
-                            <p>No Debuff: Click this if you receive no debuff. You should stand on the same number bind as you have.
-                                (1 with 1, 2 with 2)
-                                <pre><code>
-                                    {`/mk ignore <me> <wait.25>
+                        </code></pre>
+                        <p>No Debuff: Click this if you receive no debuff. You should stand on the same number bind as you have.
+                            (1 with 1, 2 with 2)
+                        </p>
+                        <pre><code>
+                                {`/mk ignore <me> <wait.25>
 /mk clear <me>
 /micon ignore enemysign`}
-                                </code></pre>
-                            </p>
-                        </p>
+                        </code></pre>
                     </li>
                     <li><a href="https://pastebin.com/2dHaS4dh" target="blank">6-1-1 Mitigation Plan Macros</a></li>
                     <li><a href="https://pastebin.com/Dq01vvZ4" target="blank">3-3-2 Mitigation Plan Macros</a></li>
