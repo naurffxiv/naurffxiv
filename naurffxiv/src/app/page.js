@@ -13,6 +13,9 @@ export default function Home() {
 
   return (
 	<Container sx={{ height: "100vh"}}>
+		{
+			// todo: replace with actual homepage content
+		}
 		<div>
 			<button onClick={() => setFight('UWU')}>UWU</button>
 			<button onClick={() => setFight('UCOB')}>UCOB</button>
