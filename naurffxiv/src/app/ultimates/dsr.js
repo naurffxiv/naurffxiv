@@ -61,7 +61,7 @@ D □   H X   H △`}</code></pre>
                 </ul>
                 <h3>Phase 6: Double Dragons</h3>
                 <ul>
-                    <li><a href="https://ff14.toolboxgaming.space/?id=426762112878561&preview=1" target="blank">Toolbox</a></li>
+                    <li><a href="https://ff14.toolboxgaming.space/?id=688796578228271&preview=1#1" target="blank">Toolbox</a></li>
                     <li><a href="https://raw.githubusercontent.com/naurffxiv/assets/refs/heads/main/Toolbox%20Resources/DSR/StaticWB2Positions.png" target="blank">Static WB2 Positions</a></li>
                     <li>G1 N/Nidhogg, G2 S/Hraesvelgr</li>
                     <li>Rot Passes: Random DPS - T1 - T2 - Melee - Caster</li>
