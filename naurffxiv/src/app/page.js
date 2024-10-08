@@ -1,6 +1,7 @@
 "use client";
 import react, { useState } from "react";
 import { Container } from "@mui/material";
+import NavBar from "./navigation.js";
 import UWU from "./ultimates/uwu.js";
 import UCOB from "./ultimates/ucob.js";
 import TEA from "./ultimates/tea.js";
@@ -8,10 +9,14 @@ import DSR from "./ultimates/dsr.js";
 import TOP from "./ultimates/top.js";
 
 
+
+
 export default function Home() {
 	const [fight, setFight] = useState('');
 
   return (
+    <>
+    <NavBar />
 	<Container sx={{ height: "100vh"}}>
 		{
 			// todo: replace with actual homepage content
@@ -31,6 +36,6 @@ export default function Home() {
 			{fight == "TOP" && <TOP/> }
 		</div>
 	</Container>
+  </>
   );
 }
-
