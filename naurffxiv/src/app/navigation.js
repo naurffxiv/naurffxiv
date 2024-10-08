@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { Container } from "@mui/material";
 import { Grid } from '@mui/material';
-import discordlogo from './img/discordlogo.png';
 // import MenuIcon from '@mui/icons-material/Menu';
 
 export default function NavBar() {
@@ -48,11 +47,10 @@ export default function NavBar() {
             </Grid>
           </Grid>
           <a href = "https://discord.gg/naurffxiv" target = "_blank" rel="noopener noreferrer">
-        <img src={discordlogo} alt="Discord Logo" ></img>
+        <img src="/images/discordlogo.png" alt="Discord Logo" width="45" height="45" />
         </a>
       </Toolbar>
     </AppBar>
     </Container>
   );
 }
-	
