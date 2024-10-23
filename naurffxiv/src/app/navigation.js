@@ -24,31 +24,42 @@ export default function NavBar() {
           <Grid container >
             <Grid item xs={6} style={{ textAlign: 'left' }} sx={{ display: 'inline-flex' }}>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-                badussy
-                <a href = "https://www.w3schools.com/tags/tag_a.asp" >
+                NAUR
+              </Typography>
+              <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
+                <a href="https://www.w3schools.com/tags/tag_a.asp" >
                   Dawntrail
                 </a>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-              <a href = "https://www.w3schools.com/tags/tag_a.asp">
+                <a href="https://www.w3schools.com/tags/tag_a.asp">
                   Endwalker
                 </a>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-              <a href = "https://www.w3schools.com/tags/tag_a.asp">
+                <a href="https://www.w3schools.com/tags/tag_a.asp">
                   Shadowbringers
                 </a>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-              <a href = "https://www.w3schools.com/tags/tag_a.asp">
+                <a href="https://www.w3schools.com/tags/tag_a.asp">
                   Stormblood
                 </a>
               </Typography>
             </Grid>
           </Grid>
-          <a href = "https://discord.gg/naurffxiv" target = "_blank" rel="noopener noreferrer">
-        <img src="/images/discordlogo.png" alt="Discord Logo" width="45" height="45" />
-        </a>
+          <Grid container justifyContent="flex-end">
+            <Grid item xs={0.5} style={{ textAlign: 'right' }} sx={{ display: 'inline-flex' }}>
+              <a href="https://github.com/naurffxiv" target="_blank" rel="noopener noreferrer">
+                <img src="/images/githublogo.png" alt="GitHub Logo" width="18" height="18" />
+              </a>
+            </Grid>
+            <Grid item xs={0.5} style={{ textAlign: 'right' }} sx={{ display: 'inline-flex' }}>
+              <a href="https://discord.gg/naurffxiv" target="_blank" rel="noopener noreferrer">
+                <img src="/images/discordlogo.png" alt="Discord Logo" width="20" height="20" />
+              </a>
+            </Grid>
+          </Grid>
       </Toolbar>
     </AppBar>
     </Container>
