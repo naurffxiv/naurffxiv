@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { Container } from "@mui/material";
 import { Grid } from '@mui/material';
+import Link from 'next/link';
 // import MenuIcon from '@mui/icons-material/Menu';
 
 export default function NavBar() {
@@ -24,27 +25,29 @@ export default function NavBar() {
           <Grid container >
             <Grid item xs={6} style={{ textAlign: 'left' }} sx={{ display: 'inline-flex' }}>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-                NAUR
+                <Link href="/">
+                  NAUR
+                </Link>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-                <a href="https://www.w3schools.com/tags/tag_a.asp" >
+                <Link href="/ultimates/top">
                   Dawntrail
-                </a>
+                </Link>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-                <a href="https://www.w3schools.com/tags/tag_a.asp">
+                <Link href="/ultimates/dsr">
                   Endwalker
-                </a>
+                </Link>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-                <a href="https://www.w3schools.com/tags/tag_a.asp">
+                <Link href="/ultimates/ucob">
                   Shadowbringers
-                </a>
+                </Link>
               </Typography>
               <Typography justify-content="" variant="h8" component="div" sx={{ flexGrow: 1 }}>
-                <a href="https://www.w3schools.com/tags/tag_a.asp">
+                <Link href="/ultimates/uwu">
                   Stormblood
-                </a>
+                </Link>
               </Typography>
             </Grid>
           </Grid>
