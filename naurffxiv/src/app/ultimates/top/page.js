@@ -1,6 +1,6 @@
 import react from "react";
 
-export default function TOP(props) {
+export default function TOP() {
 
     return(
         <>
@@ -28,7 +28,7 @@ export default function TOP(props) {
 □ | □
 O | O
 △ | △`}</pre></li>
-                    <li>Far Glitch Positions: <pre>{`X | △ 
+                    <li>Far Glitch Positions: <pre>{`X | △
 □ | □
 O | O
 △ | X`}</pre></li>
