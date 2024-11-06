@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Container, Grid, AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import Link from 'next/link';
 import DropDown from "./dropdown.js";
-import { DawntrailList, EndwalkerList, ShadowbringersList, StormbloodList, DawntrailLinks, EndwalkerLinks, ShadowbringersLinks, StormbloodLinks} from "./constants.js";
+import { ultimateList } from "./constants.js";
 
 // import MenuIcon from '@mui/icons-material/Menu';
 // adding dropdown functionality to links in nav bar & moving href links to respective menu
 // replace NAUR with correct favicon
-// create placeholder for EW ultimate raid 
+// create placeholder for EW ultimate raid
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -41,7 +41,7 @@ export default function NavBar() {
               <DropDown expansion="Dawntrail" fightName="Futures Rewritten" fightLink="/ultimates/dsr"/>
 
               <DropDown expansion="Endwalker" fightName="Dragonsong's Reprise" fightLink="/ultimates/dsr"/>
-              
+
               <DropDown expansion="Shadowbringers" fightName="The Epic of Alexander" fightLink="/ultimates/tea"/>
               <DropDown expansion="Stormblood" fightName="The Unending Coil of Bahamut" fightLink="/ultimates/ucob"/>
             </Grid>

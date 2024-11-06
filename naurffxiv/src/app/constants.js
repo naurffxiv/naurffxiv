@@ -1,9 +1,34 @@
-const DawntrailList = ['Futures Rewritten'];
-const EndwalkerList = ['The Omega Protocal', 'Dragonsong\'s Reprise'];
-const ShadowbringersList = ['The Epic of Alexander'];
-const StormbloodList = ['The Unending Coil of Bahamut', 'The Weapon\'s Refrain'];
-
-const DawntrailLinks = ["/ultimates/fru"];
-const EndwalkerLinks = ["/ultimates/top", "/ultimates/dsr"];
-const ShadowbringersLinks = ["/ultimates/tea"];
-const StormbloodLinks = ["/ultimates/ucob", "/ultimates/uwu"];
+const ultimateList = {
+  "Dawntrail": [
+    {
+      "name": "Futures Rewritten",
+      "link": "/ultimates/fru",
+    },
+  ],
+  "Endwalker": [
+    {
+      "name": "The Omega Protocol",
+      "link": "/ultimates/top",
+    }
+    {
+      "name": "Dragonsong's Reprise",
+      "link": "/ultimates/dsr",
+    },
+  ],
+  "Shadowbringers": [
+    {
+      "name": "The Epic of Alexander",
+      "link": "/ultimates/tea",
+    },
+  ],
+  "Stormblood": [
+    {
+      "name": "The Weapon's Refrain",
+      "link": "/ultimates/uwu",
+    },
+    {
+      "name": "The Unending Coil of Bahamut",
+      "link": "/ultimates/ucob",
+    },
+  ],
+}
