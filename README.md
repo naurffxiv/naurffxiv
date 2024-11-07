@@ -30,6 +30,11 @@ Install [Material UI](https://mui.com/)
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
+Install React Router
+```bash
+npm install react-router-dom
+```
+
 ### <a name="upgrade-npm"></a>Upgrading npm
 
 Install the new package with curl.
