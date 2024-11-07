@@ -12,11 +12,15 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.7",
-    "next": "^14.2.6",
+    "next": "^15.0.2",
+    "next-auth": "^4.24.10",
+    "nextra": "^3.2.3",
+    "nextra-theme-docs": "^3.2.3",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/node": "22.9.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "postcss": "^8",
