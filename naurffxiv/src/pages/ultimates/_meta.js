@@ -1,14 +1,14 @@
 export default {
-    ucob: {
-    },
-    uwu: {
-    },
-    tea: {
-    },
-    dsr: {
-    },
-    top: {
-    },
-    fru: {
-    }
-  }
+  top: {
+  },
+  dsr: {
+  },
+  tea: {
+  },
+  uwu: {
+  },
+  ucob: {
+  },
+  fru: {
+  },
+}

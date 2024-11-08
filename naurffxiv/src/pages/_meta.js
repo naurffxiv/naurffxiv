@@ -8,24 +8,24 @@ export default {
     title: 'Ultimates',
     type: 'menu',
     items: {
-      ucob: {
-        title: 'UCoB',
-      },
-      uwu: {
-        title: 'UWU',
-      },
-      tea: {
-        title: 'TEA',
+      top: {
+        title: 'TOP',
       },
       dsr: {
         title: 'DSR',
       },
-      top: {
-        title: 'TOP',
+      tea: {
+        title: 'TEA',
+      },
+      uwu: {
+        title: 'UWU',
+      },
+      ucob: {
+        title: 'UCoB',
       },
       fru: {
         title: 'FRU (Coming soon)'
-      }
+      },
 
     }
   }
