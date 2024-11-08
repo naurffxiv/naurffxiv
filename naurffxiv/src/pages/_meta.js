@@ -22,13 +22,11 @@ export default {
       },
       top: {
         title: 'TOP',
+      },
+      fru: {
+        title: 'FRU (Coming soon)'
       }
 
     }
-  },
-  dashboard: {
-    title: 'Dashboard',
-    type: 'page',
-    href: '/dashboard'
   }
 }

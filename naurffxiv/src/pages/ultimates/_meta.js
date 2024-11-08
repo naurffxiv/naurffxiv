@@ -8,5 +8,7 @@ export default {
     dsr: {
     },
     top: {
+    },
+    fru: {
     }
   }
