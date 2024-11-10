@@ -8,6 +8,9 @@ export default {
     title: 'Ultimates',
     type: 'menu',
     items: {
+      fru: {
+        title: 'FRU (Coming soon)'
+      },
       top: {
         title: 'TOP',
       },
@@ -23,10 +26,6 @@ export default {
       ucob: {
         title: 'UCoB',
       },
-      fru: {
-        title: 'FRU (Coming soon)'
-      },
-
     }
   }
 }

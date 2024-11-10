@@ -1,4 +1,6 @@
 export default {
+  fru: {
+  },
   top: {
   },
   dsr: {
@@ -8,7 +10,5 @@ export default {
   uwu: {
   },
   ucob: {
-  },
-  fru: {
   },
 }
