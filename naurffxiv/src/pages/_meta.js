@@ -9,7 +9,8 @@ export default {
     type: 'menu',
     items: {
       fru: {
-        title: 'FRU (Coming soon)'
+        title: 'FRU (Coming soon)',
+        href: "#"
       },
       top: {
         title: 'TOP',
