@@ -1,5 +1,6 @@
 export default {
   fru: {
+    display: 'hidden'
   },
   top: {
   },
