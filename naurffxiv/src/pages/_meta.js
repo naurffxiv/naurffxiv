@@ -8,9 +8,6 @@ export default {
     title: 'Ultimates',
     type: 'menu',
     items: {
-      fru: {
-        title: 'FRU (Coming soon)'
-      },
       top: {
         title: 'TOP',
       },

@@ -7,7 +7,7 @@ All strats found here are often referred to as APD strats.
 APD (Aether PUG Discord) was the server before NAUR.
 ### P1: Adelphel, Grinnaux and Charibert
 - [Vault Knights Toolbox](https://ff14.toolboxgaming.space/?id=802461081524561&preview=1#1)
-
+Interrupt order: Adel tank > phys range > Adel tank  
 Knockback lineup:
 ```
 D △   T X   T □
@@ -15,15 +15,17 @@ D O         D O
 D □   H X   H △
 ```
 Charibert Protean Baits:
-- H > M > R > T, alternate sides to drop puddles, starting with east
+- H > M > R > T, alternate sides to drop puddles, starting with CW of Charibert
 ### P2: King Thordan
 - [Start + Strength of the Ward Raidplan](https://raidplan.io/plan/NDX-6bF2djrDMB-v) 
 - [Sanctity of the Ward pt. 1 - Drk Relative Dodges Raidplan](https://raidplan.io/plan/2CYKJu6IHzBdolZu)
 - [Sanctity of the Ward pt. 2 - Meteors Raidplan](https://raidplan.io/plan/Src8CpFxCAUUuZEM)
+Sanctity: Meteor role always takes outer towers
 ### P3: Nidhogg
 - [P3: Nidhogg Toolbox](https://ff14.toolboxgaming.space/?id=267799249146271&preview=1)
 - Westhogg (Arrows always face West)
 - Tanks and melees adjust enumerations
+- Enumeration adjust priority: CW > CCW > Diagonal
 ### P4: The Eyes / Intermission: Rewind!
 **The Eyes**
 - [The Eyes Toolbox](https://ff14.toolboxgaming.space/?id=613699253336171&preview=1)
@@ -38,22 +40,22 @@ Charibert Protean Baits:
 **Wrath of the Heavens**
 - [Wrath of the Heavens Toolbox](https://ff14.toolboxgaming.space/?id=514795714993271&preview=1)
 - The two knights on the outside of the arena are relative North.
-- Blue defamation player stand 4 notches from relative NW.
-- Divebomb marker goes opposite of the WAR.
-- Lightnings behind the WAR, party in front of the WAR
+- Blue defamation player stand 4 notches from relative NW or the line below the marker.
+- Divebomb marker goes opposite of the WAR (behind mage).
+- Lightnings behind the WAR (closer to wall), party in front of the WAR (closer to middle)
 
 **Death of the Heavens**
 - [Death of the Heavens Toolbox](https://ff14.toolboxgaming.space/?id=414790163993271&preview=1)
 - WAR is relative North
 - Inner Dooms NW/NE, outer dooms E/W
-- Outer dooms stay out to bait 'Circle' after dodging quakes.
-- NW/NE dooms anchor SE/SW.
+- Outer Dooms stay out to bait 'Circle' after dodging quakes, move into KB spots after baiting
+- NW/NE Dooms anchor SE/SW.
 - 'Square' and 'Triangle' non-dooms adjust to their partner. 'Cross' adjust on the fly.
-- Caster LB true north
+- Caster LB true north (A)
 
 **DOTH Quake Dodge Image**
 
-![DOTH Quake Dodge Image](https://github.com/naurffxiv/assets/blob/main/Toolbox%20Resources/DSR/DOTHQuakeDodges.png?raw=true)
+![DOTH Quake Dodge Image](/images/ultimates/dsr/doth-quake.png)
 ### P6: Nidhogg and Hraesvelgr
 - [Double Dragon Toolbox](https://ff14.toolboxgaming.space/?id=426762112878561&preview=1)
 - G1 North/Nid, G2 South/Hrae
@@ -65,7 +67,7 @@ Charibert Protean Baits:
 
 **Static WB2 Positions Image**
 
-![Static WB2 Positions Image](https://github.com/naurffxiv/assets/blob/main/Toolbox%20Resources/DSR/StaticWB2Positions2.0.png?raw=true)
+![Static WB2 Positions Image](/images/ultimates/dsr/static-wb2.png)
 ### P7: The Dragon King
 - [Dragon-King Thordan Toolbox](https://ff14.toolboxgaming.space/?id=448767858029561&preview=1)
 - MRH trinities, G1 (Numbers) then G2 (Letters)
@@ -132,33 +134,8 @@ You can use this macro to limit break without facing your target; as a phys rang
 /ac "Limit Break"
 /autofacetarget on
 ```
-- P6 Wroth Flames Macros
 
-The following spread/stack/no debuff macros are for use in Wroth Flames. These macros are not compatible with automarker, and rely on each player pressing the correct one when debuffs go out.
-
-*Spread*
-Click this if you receive a spread to indicate your spread order.
-```text copy showLineNumbers
-/mk attack <me> <wait.25>
-/mk clear <me>
-/micon attack enemysign
-```
-
-*Stack*
-Click this if you receive a stack to indicate you need to be stacked with. Aim for the ignore marker with the same number as you (1 with 1, 2 with 2).
-```text copy showLineNumbers
-/mk bind <me> <wait.25>
-/mk clear <me>
-/micon bind enemysign
-```
-
-*No Debuff*
-Click this if you receive no debuff. You should stand on the same number bind as you have (1 with 1, 2 with 2).
-```text copy showLineNumbers
-/mk ignore <me> <wait.25>
-/mk clear <me>
-/micon ignore enemysign
-```
+### P7 Mit Macro
 - [6-1-1 Mit Plan Macros](https://pastebin.com/2dHaS4dh)
 
 **Transition, every Akh Morn, and every Gigaflare require Kerachole/Sacred Soil.** The correct timing for an Akh Morn kera/SS is immediately after the second trinity in exaflares; this will ensure it catches all of akh morn and will be up for the subsequent giggleflare.
