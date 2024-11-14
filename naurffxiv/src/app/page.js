@@ -7,6 +7,6 @@ import NavBar from "./navigation.js";
 export default function Home() {
 
   return (
-	<NavBar />
+    <NavBar />
   );
 }
