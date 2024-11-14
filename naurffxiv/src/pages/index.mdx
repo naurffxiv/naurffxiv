@@ -2,7 +2,7 @@
 title: "NAUR Homepage"
 ---
 
-import { Cards } from 'nextra/components'
+import { HomeCard } from '../app/components/HomeCard'
 
 <a href="https://discord.com/invite/naurffxiv">
     <img className="h-52 w-full object-cover rounded-sm" src="/images/naurbanner.png" />
@@ -24,29 +24,33 @@ If you are interested in Ultimate Raiding on NA Data Centers and what we have to
 
 --- 
 
-# Ultimate Resource Pages
+# Resource Pages
  
-<Cards>
-  <Cards.Card
-    title="The Omega Protocol"
-    href="/ultimates/top"
-  />
-  <Cards.Card
-    title="Dragonsong’s Reprise"
-    href="/ultimates/dsr"
-  />
-  <Cards.Card
-    title="The Epic of Alexander"
-    href="/ultimates/tea"
-  />
-    <Cards.Card
-    title="The Weapon’s Refrain"
-    href="/ultimates/uwu"
-  />
-    <Cards.Card
-    title="The Unending Coil of Bahamut"
-    href="/ultimates/ucob"
-  />
-</Cards>
-
+<HomeCard num="2">
+    <HomeCard.Card
+        title="The Omega Protocol"
+        href="/ultimates/top"
+        img="/images/top.png"
+    />
+    <HomeCard.Card
+        title="Dragonsong’s Reprise"
+        href="/ultimates/dsr"
+        img="/images/dsr.png"
+    />
+    <HomeCard.Card
+        title="The Epic of Alexander"
+        href="/ultimates/tea"
+        img="/images/tea.png"
+    />
+    <HomeCard.Card
+        title="The Weapon’s Refrain"
+        href="/ultimates/uwu"
+        img="/images/uwu.png"
+    />
+    <HomeCard.Card
+        title="The Unending Coil of Bahamut"
+        href="/ultimates/ucob"
+        img="/images/ucob.png"
+    />
+</HomeCard>
 *Futures Rewritten resources coming soon...*
