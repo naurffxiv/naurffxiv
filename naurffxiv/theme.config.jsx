@@ -34,7 +34,7 @@ export default {
       content: (
         <span>
           <center>
-          naurffxiv is a non-profit community-owned website.
+          NAURFFXIV is a non-profit community-owned website.
           </center>
           FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd. | 
           © SQUARE ENIX CO., LTD. All Rights Reserved | 
