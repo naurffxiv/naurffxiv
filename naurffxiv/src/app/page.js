@@ -1,12 +1,16 @@
 "use client";
 import react from "react";
-import { Container } from "@mui/material";
+import { Container, ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme";
 import NavBar from "./navigation.js";
 
 
 export default function Home() {
 
   return (
-	<NavBar />
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <NavBar />
+    </ThemeProvider>
   );
 }
