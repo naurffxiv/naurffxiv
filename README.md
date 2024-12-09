@@ -27,12 +27,18 @@ npm install -g npm
 
 Install [Material UI](https://mui.com/)
 ```bash
-npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
 ```
+If the command fails, add `--force` to the end of the command.
 
 Install React Router
 ```bash
 npm install react-router-dom
+```
+
+Install React Slick
+```bash
+npm install react-slick --save
 ```
 
 ### <a name="upgrade-npm"></a>Upgrading npm
