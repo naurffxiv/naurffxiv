@@ -5,11 +5,6 @@ export const pages = [
     "login_required": false,
   },
   {
-    "name": "Contact Us",
-    "link": "/contact-us",
-    "login_required": false,
-  },
-  {
     "name": "Staff",
     "link": "/staff",
     "login_required": true,
