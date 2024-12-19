@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import Slider from 'react-slick';
 import Image from 'next/image';
 import { Box, Button, Stepper, Step, StepLabel, Typography } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
