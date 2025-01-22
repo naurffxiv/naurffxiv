@@ -122,18 +122,29 @@ export default function Home() {
         </Typography>
 
         <Box sx={{ display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', gap: { xs: 1, md: 3 } }}>
-          <Typography>Active staff<br />and discussion channels</Typography>
-          <Typography>Party Finder-friendly strats<br />and resources</Typography>
-          <Typography>Recruitment forums for<br />statics and Party Finder</Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mb: 1 }}>
+            <Image src="/icons/Chat.png" width={70} height={70} alt="Chat icon"/>
+            <Typography>Active staff<br />and discussion channels</Typography>
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
+            <Image src="/icons/Lightbulb.png" width={40} height={40} alt="Bulb icon"/>
+            <Typography>Party Finder-friendly strats<br />and resources</Typography>
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, mb: 1 }}>
+            <Image src="/icons/Contact.png" width={80} height={80} alt="Contact icon"/>
+            <Typography>Recruitment forums for<br />statics and Party Finder</Typography>
+          </Box>
         </Box>
 
         <Box sx={{ width: '70%', display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', margin: '0 auto' }}>
-          <Typography>
-            Discord bots to display Party Finder listings<br />and analyze your raiding<br />achievements
-          </Typography>
-          <Typography>
-            Server events to help players<br />prog and clear Ultimate Duties
-          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, mb: 1 }}>
+            <Image src="/icons/Discord.png" width={50} height={50} alt="Discord icon"/>
+            <Typography>Discord bots to display Party Finder listings<br />and analyze your raiding<br />achievements</Typography>
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
+            <Image src="/icons/Calendar.png" width={45} height={45} alt="Calendar icon"/>
+            <Typography>Server events to help players<br />prog and clear Ultimate Duties</Typography>
+          </Box>
         </Box>
 
         <Typography>
