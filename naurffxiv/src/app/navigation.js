@@ -26,7 +26,7 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" sx={{ bgcolor: "#28506e", "& .MuiTypography-root": {color: "#ffffff"} }}>
         <Toolbar sx={{ px: 2 }} disableGutters>
           <Typography sx={{ flexGrow: 1}}>
             <IconButton size="small">

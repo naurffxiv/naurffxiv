@@ -16,18 +16,6 @@ const darkTheme = createTheme({
     }
   },
 
-  components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#28506e",
-          "& .MuiTypography-root": {
-            color: "#ffffff"
-          }
-        }
-      }
-    }
-  }
 });
 
 const lightTheme = createTheme({
@@ -45,19 +33,6 @@ const lightTheme = createTheme({
       secondary: '#424242'
     },
   },
-
-  components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#28506e",
-          "& .MuiTypography-root": {
-            color: "#ffffff"
-          }
-        }
-      },
-    }
-  }
 });
 
 export { darkTheme, lightTheme };
