@@ -21,7 +21,6 @@ export function ThemeContextProvider({ children }) {
 	const theme = isDarkMode ? darkTheme : lightTheme;
   
 	const toggleTheme = () => {
-		console.log("Theme toggled, isDarkMode:", !isDarkMode);
 		setIsDarkMode(!isDarkMode);
 	};
   

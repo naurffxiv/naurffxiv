@@ -26,7 +26,7 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" elevation={0} sx={{ bgcolor: "#28506e", "& .MuiTypography-root": {color: "#ffffff"} }}>
+      <AppBar position="fixed" elevation={0}>
         <Toolbar sx={{ px: 2 }} disableGutters>
           <Typography sx={{ flexGrow: 1}}>
             <IconButton size="small">
@@ -89,7 +89,7 @@ export default function NavBar() {
             </IconButton>
           </Box>
           <Box sx={{ px: 1 }}>
-          <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
+            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
           </Box>
         </Toolbar>
       </AppBar>

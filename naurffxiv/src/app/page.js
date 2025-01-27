@@ -6,18 +6,12 @@ import Image from 'next/image';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useThemeMode } from './themeContext';
+import {getIcons} from './constants.js'
 
 export default function Home() {
 
   const { isDarkMode } = useThemeMode();
-
-  const icons = {
-    chat: isDarkMode ? "/icons/Chat.png" : "/icons/Chat-Dark.png",
-    lightbulb: isDarkMode ? "/icons/Lightbulb.png" : "/icons/Lightbulb-Dark.png",
-    contact: isDarkMode ? "/icons/Contact.png" : "/icons/Contact-Dark.png",
-    discord: isDarkMode ? "/icons/Discord.png" : "/icons/Discord-Dark.png",
-    calendar: isDarkMode ? "/icons/Calendar.png" : "/icons/Calendar-Dark.png",
-  };
+  const icons = getIcons(isDarkMode);
   const [activeSlide, setActiveSlide] = useState(0);
 
   const slides = [
