@@ -17,12 +17,16 @@ import Image from 'next/image';
 import { pages } from './constants.js';
 import UltimateDropdown from './dropdown.js';
 import { ThemeSwitch } from './adaptive-theme.js';
+import { useThemeMode } from './themeContext';
 
 
 export default function NavBar() {
+
+  const { isDarkMode, toggleTheme } = useThemeMode();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" elevation={0}>
         <Toolbar sx={{ px: 2 }} disableGutters>
           <Typography sx={{ flexGrow: 1}}>
             <IconButton size="small">
@@ -83,6 +87,9 @@ export default function NavBar() {
                 />
               </Link>
             </IconButton>
+          </Box>
+          <Box sx={{ px: 1 }}>
+            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
           </Box>
         </Toolbar>
       </AppBar>
