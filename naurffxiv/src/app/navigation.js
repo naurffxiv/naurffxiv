@@ -33,7 +33,7 @@ export default function NavBar() {
   const { isDarkMode, toggleTheme } = useThemeMode();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" color="primary" elevation={0}>
         <Toolbar sx={{ px: 2, width: '100%', maxWidth: '100vw' }} disableGutters>
           <Typography sx={{ flexGrow: 1}}>
             <IconButton size="small">
