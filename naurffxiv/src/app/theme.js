@@ -1,8 +1,38 @@
 import { createTheme } from "@mui/material/styles";
 
+// Shared components styling that won't change with theme
+const sharedComponents = {
+  MuiAppBar: {
+    styleOverrides: {
+      root: {
+        backgroundColor: '#28506e',
+        '& .MuiTypography-root': {
+          color: '#ffffff'
+        }
+      }
+    }
+  },
+  MuiMenu: {
+    styleOverrides: {
+      paper: {
+        backgroundColor: '#ffffff',
+        color: '#000000' 
+      }
+    }
+  },
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        '& .MuiSvgIcon-root': {
+          color: '#ffffff'
+        }
+      }
+    }
+  }
+};
 const darkTheme = createTheme({
   palette: {
-    mode:"dark",
+    mode: "dark",
     background: {
       default: "#00171F",
       paper: "#1e1e1e"
@@ -16,23 +46,13 @@ const darkTheme = createTheme({
     }
   },
   components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: '#28506e',
-          '& .MuiTypography-root': {
-            color: '#ffffff'
-          }
-        }
-      }
-    }
+    ...sharedComponents
   }
-
 });
 
 const lightTheme = createTheme({
   palette: {
-    mode:"light",
+    mode: "light",
     primary: {
       main: '#f5f5f5',
     },
@@ -46,16 +66,7 @@ const lightTheme = createTheme({
     },
   },
   components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: '#28506e',
-          '& .MuiTypography-root': {
-            color: '#ffffff'
-          }
-        }
-      }
-    }
+    ...sharedComponents
   }
 });
 
