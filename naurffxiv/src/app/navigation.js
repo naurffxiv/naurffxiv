@@ -17,6 +17,7 @@ import Image from 'next/image';
 import { pages } from './constants.js';
 import UltimateDropdown from './dropdown.js';
 import { ThemeSwitch } from './adaptive-theme.js';
+import { useThemeMode } from './themeContext';
 
 
 export default function NavBar() {
@@ -29,7 +30,7 @@ export default function NavBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  const { isDarkMode, toggleTheme } = useThemeMode();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" color="primary">
@@ -110,6 +111,9 @@ export default function NavBar() {
                 />
               </Link>
             </IconButton>
+          </Box>
+          <Box sx={{ px: 1 }}>
+            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
           </Box>
           {/* Mobile menu */}
           <Menu

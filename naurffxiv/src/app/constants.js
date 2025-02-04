@@ -37,3 +37,11 @@ export const ultimateList = [
     "link": "/ultimates/ucob",
   },
 ]
+
+export const getIcons = (isDarkMode) => ({
+  chat: isDarkMode ? "/icons/Chat.png" : "/icons/Chat-Dark.png",
+  lightbulb: isDarkMode ? "/icons/Lightbulb.png" : "/icons/Lightbulb-Dark.png",
+  contact: isDarkMode ? "/icons/Contact.png" : "/icons/Contact-Dark.png",
+  discord: isDarkMode ? "/icons/Discord.png" : "/icons/Discord-Dark.png",
+  calendar: isDarkMode ? "/icons/Calendar.png" : "/icons/Calendar-Dark.png",
+});
