@@ -5,7 +5,7 @@ export default function DSR() {
     return (
         <>
             <div className="ultimate-header">
-                <h1>Dragonsong's Reprise (Ultimate)</h1>
+                <h1>Dragonsong&apos;s Reprise (Ultimate)</h1>
             </div>
 
             <div className="table-of-contents">

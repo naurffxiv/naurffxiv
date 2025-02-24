@@ -32,11 +32,11 @@ export default function UCOB() {
                     <li><a href="https://raidplan.io/plan/BJPnHRQMEsmOyapB" target="_blank">Blackfire Raidplan</a> - DPS CCW, Support CW</li>
                     <li><a href="https://raidplan.io/plan/-83d6AilbZGqba3j" target="_blank">Fellruin Raidplan</a> - Party neuro opposite Bahamut</li>
                     <li><a href="https://raidplan.io/plan/NGpZ9S-3kiLsDzAY" target="_blank">Heavensfall Raidplan</a> - R1 tower under Nael</li>
-                    <li><a href="https://raidplan.io/plan/2wu2LOy8wKhG29Tr" target="_blank">Tenstrike Raidplan</a> - Jump to indicate you're covering hatch, 1 always safe for earthshakers</li>
-                    <li><a href="https://raidplan.io/plan/iunTUxGNwjAGF_7K" target="_blank">Grand Octent Raidplan</a> - Tank LB3, if no tank LB3 bait Twin CCW (left) and stack CW of Twin (Right)</li>
+                    <li><a href="https://raidplan.io/plan/2wu2LOy8wKhG29Tr" target="_blank">Tenstrike Raidplan</a> - Jump to indicate you&apos;re covering hatch, 1 always safe for earthshakers</li>
+                    <li><a href="https://raidplan.io/plan/iunTUxGNwjAGF_7K" target="_blank">Grand Octet Raidplan</a> - Tank LB3, if no tank LB3 bait Twin CCW (left) and stack CW of Twin (Right)</li>
                     <li><a href="https://raidplan.io/plan/AMEhnLbUmlTb7ij3" target="_blank">Adds Raidplan</a></li>
                 </ul>
-                <p>Discuss which boss you're taking (Default: MT Twin, OT Nael)</p>
+                <p>Discuss which boss you&apos;re taking (Default: MT Twin, OT Nael)</p>
                 <p>Bosses between 1/3 markers, somewhat NE</p>
                 <p>All stacks done in the center of the arena</p>
                 <h3>Golden Bahamut</h3>
