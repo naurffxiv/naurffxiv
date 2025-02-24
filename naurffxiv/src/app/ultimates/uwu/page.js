@@ -5,7 +5,7 @@ export default function UWU() {
     return(
         <>
             <div className="ultimate-header">
-                <h1>The Weapon's Refrain (Ultimate)</h1>
+                <h1>The Weapon&apos;s Refrain (Ultimate)</h1>
             </div>
             <div className="table-of-contents">
                 <h2>Strats by Phase</h2>
@@ -21,7 +21,7 @@ export default function UWU() {
                 </ul>
                 <h3>Phase 3: Titan</h3>
                 <p>
-                    Party Finder groups in North America and Europe expect the use of an "automarker" ("AM", "Allagan Melon")
+                    Party Finder groups in North America and Europe expect the use of an &quot;automarker&quot; (&quot;AM&quot;, &quot;Allagan Melon&quot;)
                     third-party tool to simplify the Titan Gaols mechanic. There are Terms-of-Service-friendly ways to
                     resolve this mechanic (e.g., self-marking macros), although such use is extremely rare in Party Finder
                     and more suitable in a static environment.

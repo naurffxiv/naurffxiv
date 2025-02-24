@@ -12,7 +12,7 @@ export default function TEA() {
             <h2>Strats by Phase</h2>
             <p>
                 All strats found here are often referred to as Oldbin (1256 NSFW) strats. The raidplans
-                showcased here are a part of <a href="https://pastebin.com/uxVnJm7R">Elina Chan's Pastebin</a>,
+                showcased here are a part of <a href="https://pastebin.com/uxVnJm7R">Elina Chan&apos;s Pastebin</a>,
                 which follow Oldbun with more detail.
             </p>
 
