@@ -123,42 +123,43 @@ export default function Home() {
             </Button>
           </Box>
 
+          {/* TODO: Move this info above the carousel */}
           <Typography color="text.primary">
             NA Ultimate Raiding (NAUR) is a Final Fantasy XIV Discord community centered around
-            Ultimate Duties in North American Data Centers. Our goal is to provide a community that
+            Ultimate Duties in North American Data Centers. 
+            <br></br><br></br>
+            Our goal is to provide a community that
             makes the experience of Ultimate Raiding the best it can be. Whether you&apos;re completely
-            new or have a lot of experience in Ultimate raiding, we have something for everyone!
+            new or have a lot of experience in Ultimate raiding, we have something for everyone.
+            <br></br><br></br>
+            If you are interested in Ultimate Raiding on NA Data Centers and what we have to offer, come be a part of our community.
           </Typography>
 
           <Box sx={{ display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', gap: { xs: 1, md: 3 } }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mb: 1 }}>
               <Image src={icons.chat} width={70} height={70} alt="Chat icon"/>
-              <Typography color="text.primary">Active staff<br />and discussion channels</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
-              <Image src={icons.lightbulb} width={40} height={40} alt="Bulb icon"/>
-              <Typography color="text.primary">Party Finder-friendly strats<br />and resources</Typography>
+              <Typography color="text.primary">Active Staff & Discussion Channels</Typography>
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, mb: 1 }}>
               <Image src={icons.contact} width={80} height={80} alt="Contact icon"/>
-              <Typography color="text.primary">Recruitment forums for<br />statics and Party Finder</Typography>
+              <Typography color="text.primary">Recruitment Channels</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
+              <Image src={icons.lightbulb} width={40} height={40} alt="Bulb icon"/>
+              <Typography color="text.primary">NA PF Strats & Resources</Typography>
             </Box>
           </Box>
 
           <Box sx={{ width: '70%', display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', margin: '0 auto' }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, mb: 1 }}>
               <Image src={icons.discord} width={50} height={50} alt="Discord icon"/>
-              <Typography color="text.primary">Discord bots to display Party Finder listings<br />and analyze your raiding<br />achievements</Typography>
+              <Typography color="text.primary">Findingway Discord Bot</Typography>
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
               <Image src={icons.calendar} width={45} height={45} alt="Calendar icon"/>
-              <Typography color="text.primary">Server events to help players<br />prog and clear Ultimate Duties</Typography>
+              <Typography color="text.primary">Server Events</Typography>
             </Box>
           </Box>
-
-          <Typography color="text.primary">
-            If you are interested in Ultimate Raiding on NA Data Centers and what we have to offer, come be a part of our community!
-          </Typography>
         </Box>
       </Box>
     </Box>
