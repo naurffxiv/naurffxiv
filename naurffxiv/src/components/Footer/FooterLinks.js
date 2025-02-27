@@ -8,7 +8,7 @@ export default function FooterLinks ({title, links, className}) {
             </Typography>
             <ul>
                 {links.map((item) => (
-                    <li>
+                    <li key={item.id}>
                         <a href={item.url}>
                             {item.name}
                         </a>
