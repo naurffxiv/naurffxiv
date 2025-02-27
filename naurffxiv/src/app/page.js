@@ -22,6 +22,7 @@ export default function Home() {
         <Carousel />
         <HomepageContent/>
       </Box>
+      <Footer />
     </Box>
   );
 }
