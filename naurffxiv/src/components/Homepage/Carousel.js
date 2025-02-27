@@ -61,7 +61,7 @@ export default function Carousel({className}) {
                     zIndex: 1,
                     padding: '2em',
                     borderRadius: '3em',
-                    display: {sm: 'none', lg: 'block'},
+                    display: {xs: 'none', lg: 'block'},
                 }}
                 >
                 <ArrowBackIosNewIcon sx={{ color: (theme) => theme.palette.text.primary }}/>
@@ -106,7 +106,7 @@ export default function Carousel({className}) {
                     zIndex: 1,
                     padding: '2em',
                     borderRadius: '3em',
-                    display: {sm: 'none', lg: 'block'},
+                    display: {xs: 'none', lg: 'block'},
                 }}
                 >
                 <ArrowForwardIosIcon sx={{ color: (theme) => theme.palette.text.primary }} />
@@ -118,7 +118,7 @@ export default function Carousel({className}) {
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                columnGap: {sm:'0.5em', lg:'0.25em'},
+                columnGap: {xs:'0.5em', lg:'0.25em'},
                 marginTop: '2em',
             }}>
                 {
