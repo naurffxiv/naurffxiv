@@ -9,7 +9,7 @@ export default function FooterLinks ({title, links, className}) {
             <ul>
                 {links.map((item) => (
                     <li key={item.id}>
-                        <a href={item.url}>
+                        <a href={item.url} className="hover:underline">
                             {item.name}
                         </a>
                     </li>
