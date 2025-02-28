@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 export default function FooterSocialLinks() {
     return (
-        <Box className="sm:mt-5 lg:mt-0">
+        <Box className="mt-5 xl:mt-0">
             <Typography className="text-xl text-[#007EA7] font-bold">
                 Keep in touch
             </Typography>
-            <Typography className="sm:text-base lg:text-4xl mt-1 font-bold">
+            <Typography className="xs:text-base xl:text-4xl mt-1 font-bold">
                 Join our community today!
             </Typography>
             <Box className="whitespace-nowrap">
