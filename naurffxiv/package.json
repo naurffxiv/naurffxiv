@@ -20,7 +20,8 @@
     "@next/mdx": "^14.0.0",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
-    "remark-frontmatter": "^5.0.0"
+    "remark-frontmatter": "^5.0.0",
+    "rehype-img-size": "^1.0.0"  // version may vary
   },
   "devDependencies": {
     "eslint": "^8",
