@@ -154,7 +154,7 @@ export default function Carousel({className}) {
                         onClick={() => setActiveSlide(index)}
                     >
                         <span
-                        className={`${activeSlide === index ? 'bg-[#007EA7] hover:bg-cyan-900' : 'bg-slate-50 hover:bg-slate-300'} rounded-full px-2.5 transition-colors`}
+                        className={`${activeSlide === index ? 'bg-[#007EA7] hover:bg-cyan-900' : 'bg-[#D9D9D9] hover:bg-slate-500'} rounded-full px-2.5 transition-colors`}
                         > </span>
                     </button>
                 ))
