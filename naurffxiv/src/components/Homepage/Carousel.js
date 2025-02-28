@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import Image from 'next/image';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Link from 'next/link';
 
 const slides = [
-    { id: 1, src: '/images/Ultima.png', alt: 'Ultima' },
-    { id: 2, src: '/images/Bahamut.png', alt: 'Bahamut' },
-    { id: 3, src: '/images/Alexander.png', alt: 'Alexander' },
-    { id: 4, src: '/images/Thordan.png', alt: 'Thordan' },
-    { id: 5, src: '/images/Omega.png', alt: 'Omega' },
-    { id: 6, src: '/images/Pandora.png', alt: 'Pandora' },
+    { id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+    { id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+    { id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
+    { id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+    { id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
+    { id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
   ];
 
 
@@ -32,12 +33,6 @@ export default function Carousel({className}) {
         } else {
             setActiveSlide(activeSlide - 1)
         }
-    }
-
-    const handleActive = (pageNumber) => {
-        setActiveSlide(pageNumber)
-        const pageButton = document.GetElementByName(`carousel-${pageNumber}`)
-        pageButton.focus();
     }
 
     return (
@@ -87,17 +82,46 @@ export default function Carousel({className}) {
 
                 {/* gray transparent box */}
                 <Box
-                    sx={{
+                sx={{
                     position: 'absolute',
                     top: 0,
                     right: 0,
                     width: '40%',
                     height: '100%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.63)',
-                    }}
-                />
+                    backgroundColor: 'rgba(255, 255, 255, 0.67)',
+                    textAlign: 'center',
+                    flexWrap: 'wrap',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: '#00171F',
+                    padding: '5em',
+                }}>
+                <Typography variant="h2" sx={{fontWeight: 700}}>
+                    {slides[activeSlide].title}
+                </Typography>
+                
+                <Link href={`${slides[activeSlide].url}`}>
+                    <Button
+                        color='inherit'
+                        sx={{
+                        backgroundColor: '#007EA7',
+                        borderRadius: '10em',
+                        maxWidth: 'fit-content',
+                        color: '#FFFFFF',
+                        textTransform: 'none',
+                        fontSize: '1.4em',
+                        paddingY: '0.5em',
+                        paddingX: '4em',
+                        marginTop: '1em',
+                        }}
+                        >
+                        Fight Guide
+                    </Button>
+                </Link>
                 </Box>
-
+                </Box>
                 {/* right arrow */}
                 <Button
                 color='inherit'
