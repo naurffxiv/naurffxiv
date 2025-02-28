@@ -8,8 +8,8 @@ export default function FooterLinks ({title, links, className}) {
             </Typography>
             <ul>
                 {links.map((item) => (
-                    <li key={item.id}>
-                        <a href={item.url} className="hover:underline">
+                    <li key={item.id} className="inline-block xl:block">
+                        <a href={item.url} className="hover:underline text-nowrap pr-6 xl:px-0">
                             {item.name}
                         </a>
                     </li>
