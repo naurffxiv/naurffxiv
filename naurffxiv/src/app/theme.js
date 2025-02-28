@@ -19,7 +19,7 @@ const darkTheme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#28506e',
+          backgroundImage: 'linear-gradient(to bottom, #28506E, #061A33)',
           '& .MuiTypography-root': {
             color: '#ffffff'
           }
@@ -49,7 +49,7 @@ const lightTheme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#28506e',
+          backgroundImage: 'linear-gradient(to bottom, #28506E, #061A33)',
           '& .MuiTypography-root': {
             color: '#ffffff'
           }
