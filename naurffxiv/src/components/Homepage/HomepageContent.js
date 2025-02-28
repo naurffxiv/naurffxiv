@@ -38,7 +38,7 @@ export default function HomepageContent({className}) {
             </Box>
   
             <Box sx={{
-                width: {sm: '100%', lg:  '70%'},
+                width: {sm: '100%', lg:  '60%'},
                 alignSelf: 'center',
                 marginTop: '2em',
                 }}>
@@ -58,7 +58,7 @@ export default function HomepageContent({className}) {
                     </Box>
                 </Box>
     
-                <Box sx={{ width: '70%', display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', margin: '0 auto' }}>
+                <Box sx={{ width: '70%', display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', margin: '0 auto' }} className="mt-20">
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, mb: 1 }}>
                         <Image src={icons.discord} width={50} height={50} alt="Discord icon"/>
                         <Typography color="text.primary">Discord bots to display Party Finder listings<br />and analyze your raiding<br />achievements</Typography>
@@ -70,7 +70,7 @@ export default function HomepageContent({className}) {
                 </Box>
   
             </Box>
-            <Typography color="text.primary">
+            <Typography color="text.primary" className="font-medium text-lg">
               If you are interested in Ultimate Raiding on NA Data Centers and what we have to offer, come be a part of our community!
             </Typography>
           </Box>
