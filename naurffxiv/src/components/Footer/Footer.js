@@ -4,7 +4,7 @@ import Link from 'next/link';
 import FooterSocialLinks from './FooterSocialLinks';
 import FooterLinks from './FooterLinks';
 
-const linksUltis = [
+const linksResources = [
     {name: "Futures Rewritten", url: "/"},
     {name: "The Omega Protocol", url: "/"},
     {name: "Dragonsong's Reprise", url: "/"},
@@ -13,20 +13,26 @@ const linksUltis = [
     {name: "The Unending Coil of Bahamut", url: "/"},
 ]
 
+const linksGuides = [
+    {name: "Futures Rewritten", url: "/"},
+    {name: "Dragonsong's Reprise", url: "/"},
+]
+
 const linksExplore = [
     {name: "About Us", url: "/"},
     {name: "Events", url: "/"},
+    {name: "Staff", url: "/"},
 ]
 
 export default function Footer() {
     return (
         <footer>
             <Box className="bg-gradient-to-b from-[#28506E] to-[#061A33] mt-20 pt-20 pb-10">
-                <Box className="w-fit px-10 md:px-40 xl:px-80">
+                <Box className="w-fit px-10 md:px-20 xl:px-40">
                     <Box className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5">
-                        <FooterLinks title="Ultimates" links={linksUltis} className=""/>
+                        <FooterLinks title="Ultimate Resources" links={linksResources} className=""/>
+                        <FooterLinks title="Ultimate Guides" links={linksGuides} className="mt-5 xl:mt-0" />
                         <FooterLinks title="Explore" links={linksExplore} className="mt-5 xl:mt-0"/>
-                        <Box />
                         <FooterSocialLinks />
                     </Box>
                     <Box className="mt-14 grid justify-items-center xl:justify-items-start">
