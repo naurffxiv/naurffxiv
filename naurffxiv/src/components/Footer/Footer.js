@@ -3,26 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FooterSocialLinks from './FooterSocialLinks';
 import FooterLinks from './FooterLinks';
-
-const linksResources = [
-    {name: "Futures Rewritten", url: "/"},
-    {name: "The Omega Protocol", url: "/"},
-    {name: "Dragonsong's Reprise", url: "/"},
-    {name: "The Epic of Alexander", url: "/"},
-    {name: "The Weapon's Refrain", url: "/"},
-    {name: "The Unending Coil of Bahamut", url: "/"},
-]
-
-const linksGuides = [
-    {name: "Futures Rewritten", url: "/"},
-    {name: "Dragonsong's Reprise", url: "/"},
-]
-
-const linksExplore = [
-    {name: "About Us", url: "/"},
-    {name: "Events", url: "/"},
-    {name: "Staff", url: "/"},
-]
+import {linksResources, linksGuides, linksExplore} from "@/app/constants";
 
 export default function Footer() {
     return (
