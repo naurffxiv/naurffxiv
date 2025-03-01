@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 
 import Link from 'next/link';
-import { ultimateList } from './constants.js';
+import { ultimateList } from '@/app/constants.js';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function UltimateDropdown(props) {

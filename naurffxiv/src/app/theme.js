@@ -1,6 +1,28 @@
 import { createTheme } from "@mui/material/styles";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: ['300','400','500','700'],
+  style: ['normal','italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const darkTheme = createTheme({
+  typography: {
+    fontFamily: [
+      roboto.style.fontFamily,
+      '"Segoe UI"',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   palette: {
     mode:"dark",
     background: {
@@ -19,7 +41,7 @@ const darkTheme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#28506e',
+          backgroundImage: 'linear-gradient(to bottom, #28506E, #061A33)',
           '& .MuiTypography-root': {
             color: '#ffffff'
           }
@@ -31,6 +53,20 @@ const darkTheme = createTheme({
 });
 
 const lightTheme = createTheme({
+  typography: {
+    fontFamily: [
+      roboto.style.fontFamily,
+      '"Segoe UI"',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   palette: {
     mode:"light",
     primary: {
@@ -49,7 +85,7 @@ const lightTheme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#28506e',
+          backgroundImage: 'linear-gradient(to bottom, #28506E, #061A33)',
           '& .MuiTypography-root': {
             color: '#ffffff'
           }
