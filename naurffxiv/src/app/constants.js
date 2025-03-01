@@ -45,3 +45,12 @@ export const getIcons = (isDarkMode) => ({
   discord: isDarkMode ? "/icons/Discord.png" : "/icons/Discord-Dark.png",
   calendar: isDarkMode ? "/icons/Calendar.png" : "/icons/Calendar-Dark.png",
 });
+
+export const slides = [
+    { id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+    { id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+    { id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
+    { id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+    { id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
+    { id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
+];
