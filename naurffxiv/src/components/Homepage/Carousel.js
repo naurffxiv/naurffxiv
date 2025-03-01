@@ -65,58 +65,44 @@ export default function Carousel() {
                     alt={`carousel-img-${activeSlide}`}
                     width={1500}
                     height={700}
-                    style={{
-                    maxWidth: {xs: '170%', md: '100%'},
-                    backgroundPosition: '',
-                    height: 'auto',
-                    }}
+                    className='max-w-[170%] md:max-w-full h-auto'
                     priority
                 />
 
                 {/* gray transparent box */}
+                <Link href={`${slides[activeSlide].url}`}>
                 <Box
                 sx={{
-                    position: {xs:'relative', md:'absolute'},
                     top: 0,
                     right: 0,
-                    width: {xs:'100%', md:'40%'},
+                    width: '100%',
                     height: '100%',
-                    backgroundColor: {xs: '#233445', md:'rgba(255, 255, 255, 0.67)'},
+                    backgroundColor: 'rgba(0, 0, 0, 0.67)',
                     textAlign: 'center',
                     flexWrap: 'nowrap',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    color: {xs: '#FFFFFF', md:'#00171F'},
+                    color: '#FFFFFF',
                     padding: {xs: '1em', md:'5em'},
-                }}>
+                }}
+                className="absolute opacity-0 hover:opacity-100 transition-opacity"
+                >
                 <Typography sx={{
                     fontWeight: 700,
                     typography: {xs: 'h5', md:'h4', xl:'h3'},
                     }}>
-                    {slides[activeSlide].title}
+                        <p>
+                            {slides[activeSlide].title} 
+                        </p>
+                        <p>
+                        Fight Guide
+                        </p>
                 </Typography>
                 
-                <Link href={`${slides[activeSlide].url}`}>
-                    <Button
-                        color='inherit'
-                        sx={{
-                        backgroundColor: '#007EA7',
-                        borderRadius: '10em',
-                        maxWidth: 'fit-content',
-                        color: '#FFFFFF',
-                        textTransform: 'none',
-                        fontSize: {xs: '1em', md: '1.4em'},
-                        paddingY: '0.5em',
-                        paddingX: '4em',
-                        marginTop: '1em',
-                        }}
-                        >
-                        Fight Guide
-                    </Button>
-                </Link>
                 </Box>
+                </Link>
                 </Box>
                 {/* right arrow */}
                 <Button
