@@ -34,7 +34,7 @@ export default function Carousel({className}) {
                 alignItems: 'center',
                 width: '100%',
                 columnGap: '3em',
-                paddingX: '3em',
+                paddingX: {md:'3em'},
             }}
             className={`${className}`}
             >
@@ -57,7 +57,8 @@ export default function Carousel({className}) {
                     display: 'inline-block',
                     borderRadius: '20px',
                     overflow: 'hidden',
-                    aspectRatio: '32/10',
+                    aspectRatio: {md:'32/10'},
+                    marginX: {xs:'3%', md:'0%'}
                     }}>
                 <Image
                     src={slides[activeSlide].src}
@@ -65,30 +66,35 @@ export default function Carousel({className}) {
                     width={1500}
                     height={700}
                     style={{
-                    maxWidth: '100%',
+                    maxWidth: {xs: '170%', md: '100%'},
+                    backgroundPosition: '',
                     height: 'auto',
                     }}
+                    priority
                 />
 
                 {/* gray transparent box */}
                 <Box
                 sx={{
-                    position: 'absolute',
+                    position: {xs:'relative', md:'absolute'},
                     top: 0,
                     right: 0,
-                    width: '40%',
+                    width: {xs:'100%', md:'40%'},
                     height: '100%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.67)',
+                    backgroundColor: {xs: '#233445', md:'rgba(255, 255, 255, 0.67)'},
                     textAlign: 'center',
-                    flexWrap: 'wrap',
+                    flexWrap: 'nowrap',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    color: '#00171F',
-                    padding: '5em',
+                    color: {xs: '#FFFFFF', md:'#00171F'},
+                    padding: {xs: '1em', md:'5em'},
                 }}>
-                <Typography variant="h2" sx={{fontWeight: 700}}>
+                <Typography sx={{
+                    fontWeight: 700,
+                    typography: {xs: 'h5', md:'h4', xl:'h3'},
+                    }}>
                     {slides[activeSlide].title}
                 </Typography>
                 
@@ -101,7 +107,7 @@ export default function Carousel({className}) {
                         maxWidth: 'fit-content',
                         color: '#FFFFFF',
                         textTransform: 'none',
-                        fontSize: '1.4em',
+                        fontSize: {xs: '1em', md: '1.4em'},
                         paddingY: '0.5em',
                         paddingX: '4em',
                         marginTop: '1em',
