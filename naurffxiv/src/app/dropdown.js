@@ -12,7 +12,7 @@ import {
   Box
 } from "@mui/material";
 import Link from 'next/link';
-import { ultimateList } from './constants.js';
+import { ultimateList, getMenuProps } from './constants.js';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function UltimateDropdown(props) {
@@ -28,42 +28,7 @@ export default function UltimateDropdown(props) {
     setAnchorEl(null);
   };
 
-  // Menu props based on mobile/desktop mode
-  const menuProps = {
-    id: "basic-menu",
-    anchorEl: anchorEl,
-    open: open,
-    onClose: handleClose,
-    MenuListProps: {'aria-labelledby': 'basic-button'},
-    ...(isMobile && {
-      anchorOrigin: {
-        vertical: 'bottom',
-        horizontal: 'right',
-      },
-      transformOrigin: {
-        vertical: 'top',
-        horizontal: 'right',
-      },
-      sx: {
-        '& .MuiMenu-paper': {
-          width: 200,
-        },
-        '& .MuiMenuItem-root': {
-          justifyContent: 'flex-end',
-          padding: '8px 16px',
-          '& a': {
-            width: '100%',
-            textAlign: 'right',
-            whiteSpace: 'normal',
-            wordBreak: 'break-word',
-            lineHeight: '1.4',
-            display: 'block',
-            paddingLeft: '8px' 
-          }
-        }
-      }
-    })
-  };
+  const menuProps = getMenuProps(anchorEl, open, handleClose, isMobile);
 
   return (
     <>      
