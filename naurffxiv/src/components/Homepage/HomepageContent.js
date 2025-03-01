@@ -3,7 +3,7 @@ import { getIcons } from '@/app/constants.js'
 import { useThemeMode } from '@/app/themeContext';
 import Image from 'next/image';
 
-export default function HomepageContent({className}) {
+export default function HomepageContent() {
     const { isDarkMode } = useThemeMode();
     const icons = getIcons(isDarkMode);
 
@@ -15,10 +15,9 @@ export default function HomepageContent({className}) {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: '0 auto',
+            margin: '2.5rem auto auto auto',
             gap: { xs: 2, md: 6 },
-          }}
-          className={`${className}`}>
+          }}>
             
             <Box sx={{
                 display: 'flex',

@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Link from 'next/link';
 import { slides } from '@/app/constants.js'
   
-export default function Carousel({className}) {
+export default function Carousel() {
     const [activeSlide, setActiveSlide] = useState(0);
 
     const handleNext = () => {
@@ -35,8 +35,8 @@ export default function Carousel({className}) {
                 width: '100%',
                 columnGap: '3em',
                 paddingX: {md:'3em'},
+                marginTop: '4rem',
             }}
-            className={`${className}`}
             >
                 {/* left arrow */}
                 <Button

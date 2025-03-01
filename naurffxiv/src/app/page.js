@@ -19,8 +19,8 @@ export default function Home() {
       }}>
         <NavBar />
         <Header />
-        <Carousel className="mt-16" />
-        <HomepageContent className="mt-10" />
+        <Carousel />
+        <HomepageContent/>
       </Box>
     </Box>
   );
