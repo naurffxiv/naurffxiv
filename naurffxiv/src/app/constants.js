@@ -100,11 +100,6 @@ export const linksResources = [
   {name: "The Unending Coil of Bahamut", url: "/"},
 ]
 
-export const linksGuides = [
-  {name: "Futures Rewritten", url: "/"},
-  {name: "Dragonsong's Reprise", url: "/"},
-]
-
 export const linksExplore = [
   {name: "About Us", url: "/"},
   {name: "Events", url: "/"},

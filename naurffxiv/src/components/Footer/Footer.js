@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FooterSocialLinks from './FooterSocialLinks';
 import FooterLinks from './FooterLinks';
-import {linksResources, linksGuides, linksExplore} from "@/app/constants";
+import {linksResources, linksExplore} from "@/app/constants";
 
 export default function Footer() {
     return (
@@ -12,8 +12,8 @@ export default function Footer() {
                 <Box className="w-fit px-10 md:px-20 xl:px-40">
                     <Box className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5">
                         <FooterLinks title="Ultimate Resources" links={linksResources} className=""/>
-                        <FooterLinks title="Ultimate Guides" links={linksGuides} className="mt-5 xl:mt-0" />
                         <FooterLinks title="Explore" links={linksExplore} className="mt-5 xl:mt-0"/>
+                        <Box />
                         <FooterSocialLinks />
                     </Box>
                     <Box className="mt-14 grid justify-items-center xl:justify-items-start">
