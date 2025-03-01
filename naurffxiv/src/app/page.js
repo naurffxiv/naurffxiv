@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Button, CssBaseline} from '@mui/material';
 import NavBar from './navigation.js';
 import Image from 'next/image';
+import Footer from '../components/Footer/Footer.js';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useThemeMode } from './themeContext';
@@ -161,6 +162,7 @@ export default function Home() {
           </Typography>
         </Box>
       </Box>
+      <Footer />
     </Box>
   );
 }

@@ -45,3 +45,23 @@ export const getIcons = (isDarkMode) => ({
   discord: isDarkMode ? "/icons/Discord.png" : "/icons/Discord-Dark.png",
   calendar: isDarkMode ? "/icons/Calendar.png" : "/icons/Calendar-Dark.png",
 });
+
+export const linksResources = [
+  {name: "Futures Rewritten", url: "/"},
+  {name: "The Omega Protocol", url: "/"},
+  {name: "Dragonsong's Reprise", url: "/"},
+  {name: "The Epic of Alexander", url: "/"},
+  {name: "The Weapon's Refrain", url: "/"},
+  {name: "The Unending Coil of Bahamut", url: "/"},
+]
+
+export const linksGuides = [
+  {name: "Futures Rewritten", url: "/"},
+  {name: "Dragonsong's Reprise", url: "/"},
+]
+
+export const linksExplore = [
+  {name: "About Us", url: "/"},
+  {name: "Events", url: "/"},
+  {name: "Staff", url: "/"},
+]
