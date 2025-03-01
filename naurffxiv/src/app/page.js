@@ -126,7 +126,7 @@ export default function Home() {
           <Typography color="text.primary">
             NA Ultimate Raiding (NAUR) is a Final Fantasy XIV Discord community centered around
             Ultimate Duties in North American Data Centers. Our goal is to provide a community that
-            makes the experience of Ultimate Raiding the best it can be. Whether you're completely
+            makes the experience of Ultimate Raiding the best it can be. Whether you&apos;re completely
             new or have a lot of experience in Ultimate raiding, we have something for everyone!
           </Typography>
 
