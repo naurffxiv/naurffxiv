@@ -1,5 +1,3 @@
-
-
 import { Box, Typography} from '@mui/material';
 import { getIcons } from '@/app/constants.js'
 import { useThemeMode } from '@/app/themeContext';
