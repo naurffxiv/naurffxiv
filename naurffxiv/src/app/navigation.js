@@ -11,7 +11,7 @@ import {
   IconButton,
   TextField,
 } from '@mui/material';
-
+import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import Image from 'next/image';
 import { pages } from './constants.js';
@@ -22,12 +22,20 @@ import { useThemeMode } from './themeContext.js';
 
 export default function NavBar() {
 
-  const { isDarkMode, toggleTheme } = useThemeMode();
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const { isDarkMode, toggleTheme } = useThemeMode();  // TODO: Move this to footer when implemented
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" elevation={0}>
-        <Toolbar sx={{ px: 2 }} disableGutters>
+      <AppBar position="fixed" color="primary" elevation={0}>
+        <Toolbar sx={{ px: 2, width: '100%', maxWidth: '100vw' }} disableGutters>
           <Typography sx={{ flexGrow: 1}}>
             <IconButton size="small">
               <Link href="/">
@@ -40,30 +48,47 @@ export default function NavBar() {
               </Link>
             </IconButton>
           </Typography>
-          <MenuItem>
-            <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-              <Link href="/">
-                  Home
-              </Link>
+
+          {/* Desktop menu */}
+          <Box sx={{display: { xs: 'none', md: 'flex' } }}>
+            <MenuItem>
+              <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
+                <Link href="/">
+                    Home
+                </Link>
+              </Typography>
+            </MenuItem>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ display: { xs: 'flex', md: 'flex' }} }
+            >
+              <UltimateDropdown name="Resources" />
+              <UltimateDropdown name="Guides" />
+              {pages.map((page) => (
+                  <MenuItem key={page.name}>
+                    <Link href={page.link}>
+                      <Typography sx={{ textAlign: 'center' }}>
+                        {page.name}
+                      </Typography>
+                    </Link>
+                  </MenuItem>
+              ))}
             </Typography>
-          </MenuItem>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ display: { xs: 'flex', md: 'flex' }} }
-          >
-            <UltimateDropdown name="Resources" />
-            <UltimateDropdown name="Guides" />
-            {pages.map((page) => (
-                <MenuItem key={page.name}>
-                  <Link href={page.link}>
-                    <Typography sx={{ textAlign: 'center' }}>
-                      {page.name}
-                    </Typography>
-                  </Link>
-                </MenuItem>
-            ))}
-          </Typography>
+          </Box>
+          {/* Hamburger menu*/}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="icon-button"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
               <Link href="/">
@@ -91,6 +116,54 @@ export default function NavBar() {
           <Box sx={{ px: 1 }}>
             <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
           </Box>
+          {/* Mobile menu */}
+          <Menu
+              disableScrollLock
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ 
+                display: { xs: 'block', md: 'none' },
+                '& .MuiMenuItem-root': {
+                  justifyContent: 'flex-end', // Right aligns the menu items
+                }
+              }}
+            >
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography sx={{ width: '100%', textAlign: 'right'  }}>
+                  <Link href="/">Home</Link>
+                </Typography>
+              </MenuItem>
+
+              <MenuItem>
+              <Box sx={{ width: '100%', textAlign: 'right' }}>
+                <UltimateDropdown name="Resources" isMobile={true} />
+              </Box>
+            </MenuItem>
+            <MenuItem>
+              <Box sx={{ width: '100%', textAlign: 'right' }}>
+                <UltimateDropdown name="Guides" isMobile={true}/>
+              </Box>
+            </MenuItem>
+
+              {pages.map((page) => (
+              <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                <Typography sx={{ width: '100%', textAlign: 'right' }}>
+                  <Link href={page.link}>{page.name}</Link>
+                </Typography>
+              </MenuItem>
+              ))}
+            </Menu>
         </Toolbar>
       </AppBar>
     </Box>
