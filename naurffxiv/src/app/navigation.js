@@ -17,7 +17,7 @@ import Image from 'next/image';
 import { pages } from './constants.js';
 import UltimateDropdown from './dropdown.js';
 import { ThemeSwitch } from './adaptive-theme.js';
-import { useThemeMode } from './themeContext';
+import { useThemeMode } from './themeContext.js';
 
 
 export default function NavBar() {
