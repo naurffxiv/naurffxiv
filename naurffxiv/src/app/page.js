@@ -5,7 +5,7 @@ import NavBar from './navigation.js';
 import Image from 'next/image';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useThemeMode } from './themeContext';
+import { useThemeMode } from './themeContext.js';
 import {getIcons} from './constants.js'
 
 export default function Home() {

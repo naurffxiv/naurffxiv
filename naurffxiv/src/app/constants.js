@@ -14,27 +14,27 @@ export const pages = [
 export const ultimateList = [
   {
     "name": "Futures Rewritten",
-    "link": "/ultimates/fru",
+    "link": "/resources/fru",
   },
   {
     "name": "The Omega Protocol",
-    "link": "/ultimates/top",
+    "link": "/resources/top",
   },
   {
     "name": "Dragonsong's Reprise",
-    "link": "/ultimates/dsr",
+    "link": "/resources/dsr",
   },
   {
     "name": "The Epic of Alexander",
-    "link": "/ultimates/tea",
+    "link": "/resources/tea",
   },
   {
     "name": "The Weapon's Refrain",
-    "link": "/ultimates/uwu",
+    "link": "/resources/uwu",
   },
   {
     "name": "The Unending Coil of Bahamut",
-    "link": "/ultimates/ucob",
+    "link": "/resources/ucob",
   },
 ]
 
