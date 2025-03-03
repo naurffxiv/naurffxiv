@@ -46,39 +46,48 @@ export const getIcons = (isDarkMode) => ({
   calendar: isDarkMode ? "/icons/Calendar.png" : "/icons/Calendar-Dark.png",
 });
 
-  // Menu props based on mobile/desktop mode
-  export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
-    id: "basic-menu",
-    anchorEl: anchorEl,
-    open: open,
-    onClose: handleClose,
-    MenuListProps: {'aria-labelledby': 'basic-button'},
-    ...(isMobile && {
-      anchorOrigin: {
-        vertical: 'bottom',
-        horizontal: 'right',
+// Menu props based on mobile/desktop mode
+export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
+  id: "basic-menu",
+  anchorEl: anchorEl,
+  open: open,
+  onClose: handleClose,
+  MenuListProps: {'aria-labelledby': 'basic-button'},
+  ...(isMobile && {
+    anchorOrigin: {
+      vertical: 'bottom',
+      horizontal: 'right',
+    },
+    transformOrigin: {
+      vertical: 'top',
+      horizontal: 'right',
+    },
+    sx: {
+      '& .MuiMenu-paper': {
+        width: 200,
       },
-      transformOrigin: {
-        vertical: 'top',
-        horizontal: 'right',
-      },
-      sx: {
-        '& .MuiMenu-paper': {
-          width: 200,
-        },
-        '& .MuiMenuItem-root': {
-          justifyContent: 'flex-end',
-          padding: '8px 16px',
-          '& a': {
-            width: '100%',
-            textAlign: 'right',
-            whiteSpace: 'normal',
-            wordBreak: 'break-word',
-            lineHeight: '1.4',
-            display: 'block',
-            paddingLeft: '8px' 
-          }
+      '& .MuiMenuItem-root': {
+        justifyContent: 'flex-end',
+        padding: '8px 16px',
+        '& a': {
+          width: '100%',
+          textAlign: 'right',
+          whiteSpace: 'normal',
+          wordBreak: 'break-word',
+          lineHeight: '1.4',
+          display: 'block',
+          paddingLeft: '8px' 
         }
       }
-    })
-  });
+    }
+  })
+});
+
+export const slides = [
+    { id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+    { id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+    { id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
+    { id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+    { id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
+    { id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
+];

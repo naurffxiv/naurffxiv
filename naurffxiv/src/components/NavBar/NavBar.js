@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import {
   AppBar,
   Box,
@@ -11,13 +10,15 @@ import {
   IconButton,
   TextField,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import Image from 'next/image';
-import { pages } from './constants.js';
-import UltimateDropdown from './dropdown.js';
-import { ThemeSwitch } from './adaptive-theme.js';
-import { useThemeMode } from './themeContext.js';
+
+import { pages } from '@/app/constants.js';
+import { ThemeSwitch } from '@/app/adaptive-theme.js';
+import { useThemeMode } from '@/app/themeContext';
+
+import MenuIcon from '@mui/icons-material/Menu';
+import UltimateDropdown from './UltimateDropdown.js';
 
 
 export default function NavBar() {
