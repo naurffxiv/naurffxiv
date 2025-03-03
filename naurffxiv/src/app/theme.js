@@ -8,12 +8,27 @@ const roboto = Roboto({
   display: 'swap',
 })
 
+const sharedFont = {
+  fontFamily: [
+    roboto.style.fontFamily,
+    '"Segoe UI"',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(','),
+}
+
 // Shared components styling that won't change with theme
 const sharedComponents = {
   MuiAppBar: {
     styleOverrides: {
       root: {
-        backgroundColor: '#28506e',
+        backgroundImage: 'linear-gradient(to bottom, #28506E, #061A33)',
         '& .MuiTypography-root': {
           color: '#ffffff'
         }
@@ -38,20 +53,10 @@ const sharedComponents = {
     }
   }
 };
+
 const darkTheme = createTheme({
   typography: {
-    fontFamily: [
-      roboto.style.fontFamily,
-      '"Segoe UI"',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
+    ...sharedFont
   },
   palette: {
     mode: "dark",
@@ -74,18 +79,7 @@ const darkTheme = createTheme({
 
 const lightTheme = createTheme({
   typography: {
-    fontFamily: [
-      roboto.style.fontFamily,
-      '"Segoe UI"',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
+    ...sharedFont
   },
   palette: {
     mode: "light",

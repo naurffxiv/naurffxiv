@@ -93,12 +93,11 @@ export default function Carousel() {
                     fontWeight: 700,
                     typography: {xs: 'h5', md:'h4', xl:'h3'},
                     }}>
-                        <p>
+                        <span>
                             {slides[activeSlide].title} 
-                        </p>
-                        <p>
-                        Fight Guide
-                        </p>
+                            <br />
+                            Fight Guide
+                        </span>
                 </Typography>
                 
                 </Box>

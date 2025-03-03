@@ -7,7 +7,7 @@ export default function Header() {
         <Box>
           <Box
           sx={{
-            backgroundImage: 'url(/images/fru-server-header.png)',
+            backgroundImage: 'url(/images/ultimates/fru/FRUheader.png)',  // temporary fru header
             backgroundSize: "cover",
             backgroundAttachment: "auto",
             boxShadow: '0 6px 6px -1px rgb(0 0 0 / 0.3)',

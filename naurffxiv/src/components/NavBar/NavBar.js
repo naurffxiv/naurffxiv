@@ -17,6 +17,7 @@ import { pages } from '@/app/constants.js';
 import { ThemeSwitch } from '@/app/adaptive-theme.js';
 import { useThemeMode } from '@/app/themeContext';
 
+import MenuIcon from '@mui/icons-material/Menu';
 import UltimateDropdown from './UltimateDropdown.js';
 
 
