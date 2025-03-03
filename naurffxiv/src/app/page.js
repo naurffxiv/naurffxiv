@@ -5,6 +5,7 @@ import NavBar from '@/components/NavBar/NavBar';
 import Carousel from '@/components/Homepage/Carousel';
 import HomepageContent from '@/components/Homepage/HomepageContent';
 import Header from '@/components/Homepage/Header'
+import Footer from '@/components/Footer/Footer'
 
 export default function Home() {
 
