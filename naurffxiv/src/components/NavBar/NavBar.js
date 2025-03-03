@@ -76,19 +76,6 @@ export default function NavBar() {
               ))}
             </Typography>
           </Box>
-          {/* Hamburger menu*/}
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="icon-button"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
               <Link href="/">
@@ -113,9 +100,22 @@ export default function NavBar() {
               </Link>
             </IconButton>
           </Box>
-          <Box sx={{ px: 1 }}>
-            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
+            {/* Hamburger menu*/}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="icon-button"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
           </Box>
+          {/* <Box sx={{ px: 1 }}>
+            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
+          </Box> */}
           {/* Mobile menu */}
           <Menu
               disableScrollLock
