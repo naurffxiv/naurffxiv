@@ -14,7 +14,7 @@ export default function Header() {
             backgroundPosition: 'right 50% top',
             backgroundRepeat: 'no-repeat'
             }}
-            className='relative h-[25em] mt-16 grid justify-center content-center'
+            className='relative h-[25em] grid justify-center content-center'
             >
               <Image src={TitleImage} style={{width: 'auto', height: 'auto', maxHeight: '10em'}} alt='banner' className="object-contain"/>
           </Box>
