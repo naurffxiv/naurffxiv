@@ -16,7 +16,8 @@ export default function Home() {
       <Box sx={{ 
         bgcolor: 'background.default', 
         minHeight: '100vh',
-        width: '100%'
+        width: '100%',
+        paddingBottom: '5rem',
       }}>
         <NavBar />
         <Header />
