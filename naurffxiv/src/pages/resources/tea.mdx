@@ -1,6 +1,9 @@
 ---
 sidebarTitle: The Epic of Alexander
 ---
+
+import MdxLayout from '@/components/Mdx/MdxContent'
+
 # The Epic of Alexander (Ultimate)
 ## Strats by Phase
 ### P1: Living Liquid
@@ -33,3 +36,8 @@ sidebarTitle: The Epic of Alexander
 "Three":{"X":100.0,"Y":0.0,"Z":108.0,"ID":6,"Active":true},
 "Four":{"X":108.0,"Y":0.0,"Z":108.0,"ID":7,"Active":true}}
 ```
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>
+ 
+}

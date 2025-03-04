@@ -1,6 +1,9 @@
 ---
 sidebarTitle: Futures Rewritten
 ---
+
+import MdxLayout from '@/components/Mdx/MdxContent'
+
 # Futures Rewritten (Ultimate)
 ## Strats by Phase
 ### P1: Fatebreaker
@@ -52,3 +55,8 @@ All mitigations sheets listed are personal preference and have their own pros an
 "Three":{"X":106.851,"Y":0.0,"Z":106.872,"ID":6,"Active":true},
 "Four":{"X":93.289,"Y":0.0,"Z":107.097,"ID":7,"Active":true}}
 ```
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>
+ 
+}
