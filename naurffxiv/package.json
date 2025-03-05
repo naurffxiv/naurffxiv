@@ -11,19 +11,20 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
     "@mui/icons-material": "^6.1.7",
     "@mui/material": "^5.16.7",
+    "@next/mdx": "^14.0.0",
     "next": "^14.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-slick": "^0.30.2",
-    "@next/mdx": "^14.0.0",
-    "@mdx-js/loader": "^3.0.0",
-    "@mdx-js/react": "^3.0.0",
-    "remark-frontmatter": "^5.0.0",
-    "rehype-img-size": "^1.0.0"
+    "rehype-img-size": "^1.0.0",
+    "remark-frontmatter": "^5.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "postcss": "^8",
