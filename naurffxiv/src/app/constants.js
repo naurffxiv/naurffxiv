@@ -91,7 +91,7 @@ export const slides = [
     { id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
     { id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
 ];
-export const linksResources = [
+export const linksUltimates = [
   {name: "Futures Rewritten", url: "/"},
   {name: "The Omega Protocol", url: "/"},
   {name: "Dragonsong's Reprise", url: "/"},
