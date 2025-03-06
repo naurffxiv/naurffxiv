@@ -100,7 +100,7 @@ export default function NavBar() {
               </Link>
             </IconButton>
           </Box>
-            {/* Hamburger menu*/}
+          {/* Hamburger menu*/}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -113,6 +113,9 @@ export default function NavBar() {
               <MenuIcon />
             </IconButton>
           </Box>
+          {/* Button for dark/light theme is commented out for now as design decisions,
+          needs to be completely removed along with the code supporting the functionality
+          when the decision to remove the button is final */}
           {/* <Box sx={{ px: 1 }}>
             <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
           </Box> */}
