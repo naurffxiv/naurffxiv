@@ -84,24 +84,25 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
 });
 
 export const slides = [
-    { id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
-    { id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
-    { id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
-    { id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
-    { id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
-    { id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
+    {id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+    {id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+    {id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
+    {id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+    {id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
+    {id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
 ];
+
 export const linksUltimates = [
-  {name: "Futures Rewritten", url: "/"},
-  {name: "The Omega Protocol", url: "/"},
-  {name: "Dragonsong's Reprise", url: "/"},
-  {name: "The Epic of Alexander", url: "/"},
-  {name: "The Weapon's Refrain", url: "/"},
-  {name: "The Unending Coil of Bahamut", url: "/"},
+  {id: 1, name: "Futures Rewritten", url: "/"},
+  {id: 2, name: "The Omega Protocol", url: "/"},
+  {id: 3, name: "Dragonsong's Reprise", url: "/"},
+  {id: 4, name: "The Epic of Alexander", url: "/"},
+  {id: 5, name: "The Weapon's Refrain", url: "/"},
+  {id: 6, name: "The Unending Coil of Bahamut", url: "/"},
 ]
 
 export const linksExplore = [
-  {name: "About Us", url: "/"},
-  {name: "Events", url: "/"},
-  {name: "Staff", url: "/"},
+  {id: 1, name: "About Us", url: "/"},
+  {id: 2, name: "Events", url: "/"},
+  {id: 3, name: "Staff", url: "/"},
 ]
