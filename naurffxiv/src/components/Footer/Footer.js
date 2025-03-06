@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FooterSocialLinks from './FooterSocialLinks';
 import FooterLinks from './FooterLinks';
-import {linksResources, linksExplore, linksUltimates} from "@/app/constants";
+import {linksExplore, linksUltimates} from "@/app/constants";
 
 export default function Footer() {
     return (
