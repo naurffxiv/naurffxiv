@@ -43,26 +43,26 @@ export default function HomepageContent() {
                 <Box sx={{ display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', gap: { xs: 1, md: 3 } }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mb: 1 }}>
                         <Image src={icons.chat} width={70} height={70} alt="Chat icon"/>
-                        <Typography color="text.primary">Active staff<br />and discussion channels</Typography>
+                        <Typography color="text.primary">Active Staff</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
                         <Image src={icons.lightbulb} width={40} height={40} alt="Bulb icon"/>
-                        <Typography color="text.primary">Party Finder-friendly strats<br />and resources</Typography>
+                        <Typography color="text.primary">Strats & Resources</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, mb: 1 }}>
                         <Image src={icons.contact} width={80} height={80} alt="Contact icon"/>
-                        <Typography color="text.primary">Recruitment forums for<br />statics and Party Finder</Typography>
+                        <Typography color="text.primary">Recruitment Forums</Typography>
                     </Box>
                 </Box>
     
                 <Box sx={{ width: '70%', display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', margin: '0 auto' }} className="mt-20">
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, mb: 1 }}>
                         <Image src={icons.discord} width={50} height={50} alt="Discord icon"/>
-                        <Typography color="text.primary">Discord bots to display Party Finder listings<br />and analyze your raiding<br />achievements</Typography>
+                        <Typography color="text.primary">Discord Bots</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
                         <Image src={icons.calendar} width={45} height={45} alt="Calendar icon"/>
-                        <Typography color="text.primary">Server events to help players<br />prog and clear Ultimate Duties</Typography>
+                        <Typography color="text.primary">Server Events</Typography>
                     </Box>
                 </Box>
   
