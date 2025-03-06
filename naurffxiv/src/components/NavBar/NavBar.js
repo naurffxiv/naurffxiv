@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fragment } from 'react';
 import {
   AppBar,
   Box,
@@ -34,7 +35,7 @@ export default function NavBar() {
 
   const { isDarkMode, toggleTheme } = useThemeMode();  // TODO: Move this to footer when implemented
   return (
-    <React.Fragment>
+    <Fragment>
       <AppBar position="sticky" color="primary" elevation={0}>
         <Toolbar sx={{ px: 2, width: '100%', maxWidth: '100vw' }} disableGutters>
           <Typography sx={{ flexGrow: 1}}>
@@ -167,6 +168,6 @@ export default function NavBar() {
             </Menu>
         </Toolbar>
       </AppBar>
-    </React.Fragment>
+    </Fragment>
   );
 }
