@@ -150,7 +150,7 @@ export default function NavBar() {
 
               <MenuItem>
               <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Resources" isMobile={true} />
+                <UltimateDropdown name="Ultimates" isMobile={true} />
               </Box>
             </MenuItem>
             <MenuItem>
