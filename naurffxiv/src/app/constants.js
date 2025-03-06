@@ -14,27 +14,27 @@ export const pages = [
 export const ultimateList = [
   {
     "name": "Futures Rewritten",
-    "link": "/resources/fru",
+    "link": "/ultimates/fru",
   },
   {
     "name": "The Omega Protocol",
-    "link": "/resources/top",
+    "link": "/ultimates/top",
   },
   {
     "name": "Dragonsong's Reprise",
-    "link": "/resources/dsr",
+    "link": "/ultimates/dsr",
   },
   {
     "name": "The Epic of Alexander",
-    "link": "/resources/tea",
+    "link": "/ultimates/tea",
   },
   {
     "name": "The Weapon's Refrain",
-    "link": "/resources/uwu",
+    "link": "/ultimates/uwu",
   },
   {
     "name": "The Unending Coil of Bahamut",
-    "link": "/resources/ucob",
+    "link": "/ultimates/ucob",
   },
 ]
 
@@ -91,7 +91,7 @@ export const slides = [
     { id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
     { id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
 ];
-export const linksResources = [
+export const linksUltimates = [
   {name: "Futures Rewritten", url: "/"},
   {name: "The Omega Protocol", url: "/"},
   {name: "Dragonsong's Reprise", url: "/"},
