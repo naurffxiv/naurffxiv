@@ -64,7 +64,7 @@ export default function NavBar() {
               component="div"
               sx={{ display: { xs: 'flex', md: 'flex' }} }
             >
-              <UltimateDropdown name="Ultimate Strats" />
+              <UltimateDropdown name="Ultimates" />
               {pages.map((page) => (
                   <MenuItem key={page.name}>
                     <Link href={page.link}>
@@ -150,7 +150,7 @@ export default function NavBar() {
 
               <MenuItem>
               <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Resources" isMobile={true} />
+                <UltimateDropdown name="Ultimates" isMobile={true} />
               </Box>
             </MenuItem>
             <MenuItem>
