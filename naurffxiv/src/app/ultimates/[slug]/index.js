@@ -35,7 +35,7 @@ const MDXPage = ({params: content, toc}) => {
 
                 <div>
                 </div>
-                <script type="text/javascript" src="/scroll.js" />
+                <script type="text/javascript" src="/scroll.js" defer/>
             </div>
         </MdxLayout>
     )
