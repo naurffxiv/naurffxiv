@@ -24,3 +24,21 @@ body {
     text-wrap: balance;
   }
 }
+
+span.icon-link::before {
+  content: '#';
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-left: 0.5rem;
+}
+
+.toc-links {
+  transition: color 0.2s ease;
+}
+
+h1:hover span.icon-link::before,
+h2:hover span.icon-link::before,
+h3:hover span.icon-link::before {
+  opacity: 1;
+}

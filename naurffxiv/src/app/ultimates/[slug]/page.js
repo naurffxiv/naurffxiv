@@ -3,7 +3,6 @@ import { compile } from '@mdx-js/mdx'
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import {useMDXComponents} from '@/mdx-components'
 import remarkFrontmatter from 'remark-frontmatter';
 import rehypeImgSize from 'rehype-img-size';
 import rehypeSlug from "rehype-slug";
@@ -15,8 +14,29 @@ import MDXPage from '.';
 
 const components = { 
     h1: (props) => <h1 className="scroll-mt-20" {...props} />,
-    h2: (props) => <h2 className="scroll-mt-20" {...props} />,
-    h3: (props) => <h3 className="scroll-mt-20" {...props} />,
+    h2: (props) => <section><h2 className="scroll-mt-20" {...props} /></section>,
+    h3: (props) => <section><h3 className="scroll-mt-20" {...props} /></section>,
+}
+
+const mdxOptions = {
+    remarkPlugins: [
+        remarkFrontmatter,
+    ],
+    rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'append',
+            properties: {
+              ariaHidden: false,
+              tabIndex: -1,
+              className: 'hash-link',
+            },
+          },
+        ],
+        [rehypeImgSize, { dir: 'public' }],
+    ],
 }
 
 export default async function UltimateMdx({ params }) {
@@ -26,29 +46,9 @@ export default async function UltimateMdx({ params }) {
         components: components,
         options: { 
             parseFrontmatter: true, 
-            mdxOptions: {
-                remarkPlugins: [
-                    remarkFrontmatter,
-                ],
-                rehypePlugins: [
-                    rehypeSlug,
-                    [rehypeImgSize, { dir: 'public' }],
-                    [
-                      rehypeAutolinkHeadings,
-                      {
-                        behaviour: 'append',
-                        properties: {
-                          ariaHidden: true,
-                          tabIndex: -1,
-                          className: 'hash-link',
-                        },
-                      },
-                    ],
-                ],
-            }
+            mdxOptions: mdxOptions
         },
     })
-
     
     const toc = await compile(rawmdx, {
         remarkPlugins: [
@@ -65,6 +65,7 @@ export default async function UltimateMdx({ params }) {
         <MDXPage params={content} toc={toc.data.toc}/>
     )
 }
+
 
 export function generateStaticParams() {
     return [

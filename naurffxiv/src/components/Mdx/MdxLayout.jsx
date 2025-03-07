@@ -8,7 +8,7 @@ export default function MdxLayout({ children }) {
   return (
       <ThemeContextProvider>
         <NavBar />
-        <Box className="p-20">
+        <Box>
           {children}
         </Box>
         <Footer />
