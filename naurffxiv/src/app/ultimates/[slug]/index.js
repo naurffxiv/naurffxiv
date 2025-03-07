@@ -1,43 +1,27 @@
 "use client";
-import MdxContent from "@/components/Mdx/MdxContent"
+import MdxLayout from "@/components/Mdx/MdxLayout"
 import React from "react";
-
-function recursiveToc(toc) {
-    if (!toc) {
-        return
-    }
-    const currLevel = toc.map((li) => (
-          <li key={li.id}>
-            <a href={`#${li.id}`}>
-                {li.value}
-            </a>
-            {recursiveToc(li.children)}
-          </li>
-    ))
-    return (
-        <ul className="list-none">
-            {currLevel}
-        </ul>
-    )
-}
+import TableOfContents from "@/components/Mdx/TableOfContents";
+import ScrollScript from "@/components/Scripts/ScrollScript";
 
 const MDXPage = ({params: content, toc}) => {
     return (
-        <MdxContent>
-            <div className="grid grid-cols-[1fr_2fr_1fr] max-w-[100rem] m-auto">
-                    
-                <div className="sticky prose prose-invert top-[36rem] self-start">
-                {recursiveToc(toc)}
+        <MdxLayout>
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] max-w-[100rem] mx-auto py-6">
+                <div className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky">
+                    <TableOfContents toc={toc} />
                 </div>
 
-                <div className="max-w-[100ch] prose prose-invert m-auto">
+                <article className="max-w-[100ch] prose prose-invert m-auto mx-6">
                     {content}
-                </div>
+                </article>
 
                 <div>
                 </div>
+                <script type="text/javascript" src="/scroll.js" defer/>
+                <ScrollScript />
             </div>
-        </MdxContent>
+        </MdxLayout>
     )
 }
 

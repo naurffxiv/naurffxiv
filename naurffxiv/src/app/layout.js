@@ -4,10 +4,6 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 import { ThemeContextProvider } from './themeContext';
 
-export const metadata = {
-  title: "NAUR",
-  description: "NA Ultimate Raiding - FFXIV",
-};
 
 export default function RootLayout({ children }) {
   return (
