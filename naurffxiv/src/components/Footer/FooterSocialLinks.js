@@ -1,5 +1,4 @@
-
-import { Box, Typography, IconButton, } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,10 +29,10 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="/">
                                 <Image
-                                src="/images/githublogo.png"
-                                alt="GitHub Logo"
-                                height="30"
-                                width="30"
+                                    src="/images/githublogo.png"
+                                    alt="GitHub Logo"
+                                    height="30"
+                                    width="30"
                                 />
                             </Link>
                         </IconButton>
@@ -42,10 +41,10 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="/">
                                 <Image
-                                src="/images/patreonlogo.png"
-                                alt="Patreon Logo"
-                                height="30"
-                                width="30"
+                                    src="/images/patreonlogo.png"
+                                    alt="Patreon Logo"
+                                    height="30"
+                                    width="30"
                                 />
                             </Link>
                         </IconButton>
@@ -53,5 +52,5 @@ export default function FooterSocialLinks() {
                 </ul>
             </Box>
         </Box>
-    )
+    );
 }
