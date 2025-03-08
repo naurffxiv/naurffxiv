@@ -66,7 +66,22 @@ export default async function UltimateMdx({ params }) {
     )
 }
 
+// get the titles for each page
+export async function generateMetadata({params}) {
+    const { slug } = await params;
+    const rawmdx = await fs.readFile(path.join(process.cwd(), 'src/markdown/ultimates', `${slug}.mdx`), 'utf-8');
+    
+    const { frontmatter } = await compileMDX({source: rawmdx,
+        options: { 
+            parseFrontmatter: true, 
+        },
+    });
+    return {
+        title: frontmatter.title + " | NAUR",
+    }
+}
 
+// valid slugs
 export function generateStaticParams() {
     return [
         { slug: 'ucob' },
