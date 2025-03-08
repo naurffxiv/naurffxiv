@@ -2,6 +2,7 @@
 import MdxLayout from "@/components/Mdx/MdxLayout"
 import React from "react";
 import TableOfContents from "@/components/Mdx/TableOfContents";
+import ScrollScript from "@/components/Scripts/ScrollScript";
 
 const MDXPage = ({params: content, toc}) => {
     return (
@@ -18,6 +19,7 @@ const MDXPage = ({params: content, toc}) => {
                 <div>
                 </div>
                 <script type="text/javascript" src="/scroll.js" defer/>
+                <ScrollScript />
             </div>
         </MdxLayout>
     )
