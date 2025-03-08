@@ -154,11 +154,6 @@ export default function NavBar() {
                 <UltimateDropdown name="Ultimates" isMobile={true} />
               </Box>
             </MenuItem>
-            <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Guides" isMobile={true}/>
-              </Box>
-            </MenuItem>
 
               {pages.map((page) => (
               <MenuItem key={page.name} onClick={handleCloseNavMenu}>
