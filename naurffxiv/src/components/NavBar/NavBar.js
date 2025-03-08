@@ -144,25 +144,20 @@ export default function NavBar() {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'right'  }}>
+                <Typography sx={{ width: '100%', textAlign: 'left'  }}>
                   <Link href="/">Home</Link>
                 </Typography>
               </MenuItem>
 
               <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
+              <Box sx={{ width: '100%', textAlign: 'left' }}>
                 <UltimateDropdown name="Ultimates" isMobile={true} />
-              </Box>
-            </MenuItem>
-            <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Guides" isMobile={true}/>
               </Box>
             </MenuItem>
 
               {pages.map((page) => (
               <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'right' }}>
+                <Typography sx={{ width: '100%', textAlign: 'left' }}>
                   <Link href={page.link}>{page.name}</Link>
                 </Typography>
               </MenuItem>
