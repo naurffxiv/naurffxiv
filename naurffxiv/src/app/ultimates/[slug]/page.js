@@ -1,6 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { compile } from '@mdx-js/mdx'
-import { promises as fs } from 'fs';
+import { promises as fs, readdirSync, readFileSync } from 'fs';
 import path from 'path';
 
 import remarkFrontmatter from 'remark-frontmatter';
@@ -41,7 +41,7 @@ const mdxOptions = {
 
 export default async function UltimateMdx({ params }) {
     const rawmdx = await fs.readFile(path.join(process.cwd(), 'src/markdown/ultimates', `${params.slug}.mdx`), 'utf-8');
-    const { content, frontmatter } = await compileMDX({
+    const { content } = await compileMDX({
         source: rawmdx,
         components: components,
         options: { 
@@ -61,9 +61,46 @@ export default async function UltimateMdx({ params }) {
         ]
     })
     
+    let metadata = await getUltimatePages()
+
     return (
-        <MDXPage params={content} toc={toc.data.toc}/>
+        <MDXPage params={content} toc={toc.data.toc} metadata={metadata} slug={params.slug}/>
     )
+}
+
+function parseFrontmatter(fileContent) {
+    let frontmatterRegex = /---\s*([\s\S]*?)\s*---/
+    let match = frontmatterRegex.exec(fileContent)
+    let frontMatterBlock = match[1]
+    let content = fileContent.replace(frontmatterRegex, '').trim()
+    let frontMatterLines = frontMatterBlock.trim().split('\n')
+    let metadata = {}
+  
+    frontMatterLines.forEach((line) => {
+      let [key, ...valueArr] = line.split(': ')
+      let value = valueArr.join(': ').trim()
+      value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
+      metadata[key.trim()] = value
+    })
+
+    return { metadata: metadata, content }
+}
+
+export function getUltimatePages() {
+    let mdxDir = path.join(process.cwd(), 'src', 'markdown', 'ultimates')
+    let mdxFiles = readdirSync(mdxDir).filter((file) => path.extname(file) === '.mdx')
+
+    return mdxFiles.map((file) => {
+        let mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
+        let {metadata, content} = parseFrontmatter(mdxFile)
+        let slug = path.basename(file, path.extname(file))
+
+        return {
+            metadata,
+            slug,
+            content
+        }
+    })
 }
 
 // get the titles for each page
@@ -92,6 +129,5 @@ export function generateStaticParams() {
         { slug: 'fru' },
     ]
 }
-
 
 export const dynamicParams = false
