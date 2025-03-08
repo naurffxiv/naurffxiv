@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { Box, CssBaseline} from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import NavBar from '@/components/NavBar/NavBar';
 import Carousel from '@/components/Homepage/Carousel';
 import HomepageContent from '@/components/Homepage/HomepageContent';
