@@ -57,9 +57,11 @@ export default function UltimateDropdown(props) {
       <Menu {...menuProps}>
         {ultimateList.map((fight, i) => (
           <li key={i}>
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }}>
               <Link href={fight.link}>
-                {fight.name}
+                <Typography sx={{ textAlign: 'left' }}>
+                  {fight.name}
+                </Typography>
               </Link>
             </MenuItem>
           </li>
