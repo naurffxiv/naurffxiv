@@ -55,6 +55,7 @@ export default function UltimateDropdown(props) {
         </Button>
       )}
       <Menu {...menuProps}>
+        <ul>
         {ultimateList.map((fight, i) => (
           <li key={i}>
             <MenuItem onClick={handleClose}>
@@ -64,6 +65,7 @@ export default function UltimateDropdown(props) {
             </MenuItem>
           </li>
         ))}
+        </ul>
       </Menu>
     </>
   );
