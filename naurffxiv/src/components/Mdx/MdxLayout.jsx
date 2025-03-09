@@ -14,7 +14,7 @@ export default function MdxLayout({ children }) {
   return (
     <div className={roboto.className}>
         <NavBar />
-        {children}
+          {children}
         <Footer />
     </div>
   );
