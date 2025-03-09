@@ -75,7 +75,6 @@ export default function NavBar() {
                 <Image
                   src="/images/discordlogo.png"
                   alt="Discord logo"
-                  style={{ width: '100%', height: 'auto' }}
                   height="30"
                   width="30"
                 />
