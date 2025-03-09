@@ -29,10 +29,10 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="/">
                                 <Image
-                                    src="/images/githublogo.png"
-                                    alt="GitHub Logo"
-                                    height="30"
-                                    width="30"
+                                src="/images/githublogo.png"
+                                alt="GitHub Logo"
+                                height="30"
+                                width="30"
                                 />
                             </Link>
                         </IconButton>
