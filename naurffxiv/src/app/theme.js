@@ -1,27 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  weight: ['300','400','500','700'],
-  style: ['normal','italic'],
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-const sharedFont = {
-  fontFamily: [
-    roboto.style.fontFamily,
-    '"Segoe UI"',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
-  ].join(','),
-};
 
 // Shared components styling that won't change with theme
 const sharedComponents = {
@@ -55,9 +32,6 @@ const sharedComponents = {
 };
 
 const darkTheme = createTheme({
-  typography: {
-    ...sharedFont,
-  },
   palette: {
     mode: 'dark',
     background: {
@@ -70,6 +44,26 @@ const darkTheme = createTheme({
     },
     primary: {
       main: '#121212',
+    }
+  },
+  components: {
+    ...sharedComponents
+  }
+});
+
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: '#f5f5f5',
+    },
+    background: {
+      default: "#ffffff",
+      paper: "#f5f5f5"
+    },
+    text: {
+      primary: '#000000',
+      secondary: '#424242'
     },
   },
   components: {

@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
   MenuItem,
+  MenuList,
   Menu,
   IconButton,
   TextField,
@@ -46,30 +47,26 @@ export default function NavBar() {
           </Typography>
 
           {/* Desktop menu */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <MenuItem>
-              <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-                <Link href="/">
-                  Home
-                </Link>
-              </Typography>
-            </MenuItem>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ display: { xs: 'flex', md: 'flex' } }}
-            >
-              <UltimateDropdown name="Ultimates" />
-              {pages.map((page) => (
-                <MenuItem key={page.name}>
-                  <Link href={page.link}>
-                    <Typography sx={{ textAlign: 'center' }}>
-                      {page.name}
-                    </Typography>
+          <Box sx={{display: { xs: 'none', md: 'flex' } }}>
+            <MenuList sx={{display: 'flex'}}>
+              <MenuItem>
+                <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
+                  <Link href="/">
+                      Home
                   </Link>
-                </MenuItem>
-              ))}
-            </Typography>
+                </Typography>
+              </MenuItem>
+                <UltimateDropdown name="Ultimates" />
+                {pages.map((page) => (
+                    <MenuItem key={page.name}>
+                      <Link href={page.link}>
+                        <Typography sx={{ textAlign: 'center' }}>
+                          {page.name}
+                        </Typography>
+                      </Link>
+                    </MenuItem>
+                ))}
+            </MenuList>
           </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
@@ -110,51 +107,44 @@ export default function NavBar() {
           </Box>
           {/* Mobile menu */}
           <Menu
-            disableScrollLock
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: 'block', md: 'none' },
-              '& .MuiMenuItem-root': {
-                justifyContent: 'flex-end', // Right aligns the menu items
-              }
-            }}
-          >
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Typography sx={{ width: '100%', textAlign: 'right' }}>
-                <Link href="/">Home</Link>
-              </Typography>
-            </MenuItem>
-
-            <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Ultimates" isMobile={true} />
-              </Box>
-            </MenuItem>
-            <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Guides" isMobile={true} />
-              </Box>
-            </MenuItem>
-
-            {pages.map((page) => (
-              <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'right' }}>
-                  <Link href={page.link}>{page.name}</Link>
+              disableScrollLock
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ 
+                display: { xs: 'block', md: 'none' },
+                '& .MuiMenuItem-root': {
+                  justifyContent: 'flex-end', // Right aligns the menu items
+                }
+              }}
+            >
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography sx={{ width: '100%', textAlign: 'left'  }}>
+                  <Link href="/">Home</Link>
                 </Typography>
               </MenuItem>
-            ))}
+              <MenuItem>
+                <Box sx={{ width: '100%', textAlign: 'left' }}>
+                  <UltimateDropdown name="Ultimates" isMobile={true} />
+                </Box>
+              </MenuItem>
+              {pages.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography sx={{ width: '100%', textAlign: 'left' }}>
+                    <Link href={page.link}>{page.name}</Link>
+                  </Typography>
+                </MenuItem>
+                ))}
           </Menu>
         </Toolbar>
       </AppBar>
