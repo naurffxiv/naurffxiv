@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --foreground-hex: #000000;
-  --background-hex: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-hex: #ffffff;
-    --background-hex: #00171f;
-  }
+  --foreground-hex: #ffffff;
+  --background-hex: #00171f;
 }
 
 body {

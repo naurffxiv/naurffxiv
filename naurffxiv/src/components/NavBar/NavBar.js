@@ -1,3 +1,4 @@
+import "@/app/globals.css";
 import React from 'react';
 import { Fragment } from 'react';
 import {
@@ -16,15 +17,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { pages } from '@/app/constants.js';
-import { ThemeSwitch } from '@/app/adaptive-theme.js';
-import { useThemeMode } from '@/app/themeContext';
-
 import MenuIcon from '@mui/icons-material/Menu';
 import UltimateDropdown from './UltimateDropdown.js';
 
-
 export default function NavBar() {
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -34,12 +30,11 @@ export default function NavBar() {
     setAnchorElNav(null);
   };
 
-  const { isDarkMode, toggleTheme } = useThemeMode();  // TODO: Move this to footer when implemented
   return (
     <Fragment>
-      <AppBar position="sticky" color="primary" elevation={0}>
+      <AppBar position="sticky" sx={{ background: 'linear-gradient(to bottom, #28506E, #061A33)'}} elevation={0}>
         <Toolbar sx={{ px: 2, width: '100%', maxWidth: '100vw' }} disableGutters>
-          <Typography sx={{ flexGrow: 1}}>
+          <Typography sx={{ flexGrow: 1 }}>
             <IconButton size="small">
               <Link href="/">
                 <Image
@@ -98,7 +93,7 @@ export default function NavBar() {
               </Link>
             </IconButton>
           </Box>
-          {/* Hamburger menu*/}
+          {/* Hamburger menu */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -111,12 +106,6 @@ export default function NavBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          {/* Button for dark/light theme is commented out for now as design decisions,
-          needs to be completely removed along with the code supporting the functionality
-          when the decision to remove the button is final */}
-          {/* <Box sx={{ px: 1 }}>
-            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
-          </Box> */}
           {/* Mobile menu */}
           <Menu
               disableScrollLock

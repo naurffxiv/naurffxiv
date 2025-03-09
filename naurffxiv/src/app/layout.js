@@ -4,11 +4,7 @@ import "./globals.css";
 const roboto = Roboto({
   weight: ['300','400','500','700'],
   style: ['normal','italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-import { ThemeContextProvider } from './themeContext';
+  subsets: ["latin"] });
 
 export const metadata = {
   title: "NAUR",
@@ -19,9 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-      <ThemeContextProvider>
-        {children}
-      </ThemeContextProvider>
+          {children}
       </body>
     </html>
   );

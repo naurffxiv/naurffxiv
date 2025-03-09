@@ -1,5 +1,4 @@
-
-import { Box, Typography, IconButton, } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,10 +17,10 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="/">
                                 <Image
-                                    src="/images/discordlogo.png"
-                                    alt="Discord logo"
-                                    height="30"
-                                    width="30"
+                                src="/images/discordlogo.png"
+                                alt="Discord logo"
+                                height="30"
+                                width="30"
                                 />
                             </Link>
                         </IconButton>
@@ -53,5 +52,5 @@ export default function FooterSocialLinks() {
                 </ul>
             </Box>
         </Box>
-    )
+    );
 }
