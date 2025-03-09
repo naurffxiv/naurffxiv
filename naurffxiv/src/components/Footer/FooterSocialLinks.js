@@ -17,10 +17,10 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="/">
                                 <Image
-                                    src="/images/discordlogo.png"
-                                    alt="Discord logo"
-                                    height="30"
-                                    width="30"
+                                src="/images/discordlogo.png"
+                                alt="Discord logo"
+                                height="30"
+                                width="30"
                                 />
                             </Link>
                         </IconButton>
@@ -41,10 +41,10 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="/">
                                 <Image
-                                    src="/images/patreonlogo.png"
-                                    alt="Patreon Logo"
-                                    height="30"
-                                    width="30"
+                                src="/images/patreonlogo.png"
+                                alt="Patreon Logo"
+                                height="30"
+                                width="30"
                                 />
                             </Link>
                         </IconButton>
