@@ -12,7 +12,7 @@ export default function Home() {
     <Box>
       <CssBaseline />
       <Box sx={{ 
-        bgcolor: 'background.default', 
+        backgroundColor: 'background.default', 
         minHeight: '100vh',
         width: '100%',
         paddingBottom: '5rem',
