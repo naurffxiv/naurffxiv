@@ -1,7 +1,13 @@
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ['300','400','500','700'],
+  style: ['normal','italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 import { ThemeContextProvider } from './themeContext';
 
 export const metadata = {
@@ -12,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
       <ThemeContextProvider>
         {children}
       </ThemeContextProvider>
