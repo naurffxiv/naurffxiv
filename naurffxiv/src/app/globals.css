@@ -16,7 +16,7 @@
 
 body {
   color: var(--foreground-hex);
-  background: var(--background-hex)
+  background: var(--background-hex);
 }
 
 @layer utilities {
