@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
   MenuItem,
+  MenuList,
   Menu,
   IconButton,
   TextField,
@@ -53,29 +54,25 @@ export default function NavBar() {
 
           {/* Desktop menu */}
           <Box sx={{display: { xs: 'none', md: 'flex' } }}>
-            <MenuItem>
-              <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-                <Link href="/">
-                    Home
-                </Link>
-              </Typography>
-            </MenuItem>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ display: { xs: 'flex', md: 'flex' }} }
-            >
-              <UltimateDropdown name="Ultimates" />
-              {pages.map((page) => (
-                  <MenuItem key={page.name}>
-                    <Link href={page.link}>
-                      <Typography sx={{ textAlign: 'center' }}>
-                        {page.name}
-                      </Typography>
-                    </Link>
-                  </MenuItem>
-              ))}
-            </Typography>
+            <MenuList sx={{display: 'flex'}}>
+              <MenuItem>
+                <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
+                  <Link href="/">
+                      Home
+                  </Link>
+                </Typography>
+              </MenuItem>
+                <UltimateDropdown name="Ultimates" />
+                {pages.map((page) => (
+                    <MenuItem key={page.name}>
+                      <Link href={page.link}>
+                        <Typography sx={{ textAlign: 'center' }}>
+                          {page.name}
+                        </Typography>
+                      </Link>
+                    </MenuItem>
+                ))}
+            </MenuList>
           </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
@@ -148,21 +145,19 @@ export default function NavBar() {
                   <Link href="/">Home</Link>
                 </Typography>
               </MenuItem>
-
               <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'left' }}>
-                <UltimateDropdown name="Ultimates" isMobile={true} />
-              </Box>
-            </MenuItem>
-
-              {pages.map((page) => (
-              <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'left' }}>
-                  <Link href={page.link}>{page.name}</Link>
-                </Typography>
+                <Box sx={{ width: '100%', textAlign: 'left' }}>
+                  <UltimateDropdown name="Ultimates" isMobile={true} />
+                </Box>
               </MenuItem>
-              ))}
-            </Menu>
+              {pages.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography sx={{ width: '100%', textAlign: 'left' }}>
+                    <Link href={page.link}>{page.name}</Link>
+                  </Typography>
+                </MenuItem>
+                ))}
+          </Menu>
         </Toolbar>
       </AppBar>
     </Fragment>
