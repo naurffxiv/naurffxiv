@@ -22,7 +22,7 @@ export default function HomepageContent() {
                 alignContent: 'center',
                 alignItems: 'center',
             }}>
-                <Typography color="text.primary" className="font-medium text-lg max-w-screen-xl">
+                <Typography className="font-medium text-lg max-w-screen-xl">
                     NA Ultimate Raiding (NAUR) is a Final Fantasy XIV Discord community centered around
                     Ultimate Duties in North American Data Centers. Our goal is to provide a community that
                     makes the experience of Ultimate Raiding the best it can be. Whether you&apos;re completely
@@ -38,30 +38,30 @@ export default function HomepageContent() {
                 <Box sx={{ display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', gap: { xs: 1, md: 3 } }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mb: 1 }}>
                         <Image src={icons.chat} width={70} height={70} alt="Chat icon" />
-                        <Typography color="text.primary">Active Staff</Typography>
+                        <Typography >Active Staff</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
                         <Image src={icons.lightbulb} width={40} height={40} alt="Bulb icon" />
-                        <Typography color="text.primary">Strats & Resources</Typography>
+                        <Typography >Strats & Resources</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, mb: 1 }}>
                         <Image src={icons.contact} width={80} height={80} alt="Contact icon" />
-                        <Typography color="text.primary">Recruitment Forums</Typography>
+                        <Typography >Recruitment Forums</Typography>
                     </Box>
                 </Box>
 
                 <Box sx={{ width: '70%', display: { xs: 'flex', md: 'flex' }, justifyContent: 'space-between', margin: '0 auto' }} className="mt-20">
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, mb: 1 }}>
                         <Image src={icons.discord} width={50} height={50} alt="Discord icon" />
-                        <Typography color="text.primary">Discord Bots</Typography>
+                        <Typography >Discord Bots</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, mb: 1 }}>
                         <Image src={icons.calendar} width={45} height={45} alt="Calendar icon" />
-                        <Typography color="text.primary">Server Events</Typography>
+                        <Typography >Server Events</Typography>
                     </Box>
                 </Box>
             </Box>
-            <Typography color="text.primary" className="font-medium text-lg">
+            <Typography className="font-medium text-lg">
                 If you are interested in Ultimate Raiding on NA Data Centers and what we have to offer, come be a part of our community!
             </Typography>
         </Box>
