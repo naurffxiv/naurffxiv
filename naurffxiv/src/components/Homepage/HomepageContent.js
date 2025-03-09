@@ -1,10 +1,9 @@
+import "@/app/globals.css";
 import { Box, Typography } from '@mui/material';
-import { getIcons } from '@/app/constants.js';
+import { icons } from '@/app/constants.js';
 import Image from 'next/image';
 
 export default function HomepageContent() {
-    const icons = getIcons();
-
     return (
         <Box sx={{
             maxWidth: { xs: '90%', md: '60%' },

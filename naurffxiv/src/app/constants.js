@@ -38,13 +38,13 @@ export const ultimateList = [
   },
 ];
 
-export const getIcons = () => ({
+export const icons = {
   chat: "/icons/Chat.png",
   lightbulb: "/icons/Lightbulb.png",
   contact: "/icons/Contact.png",
   discord: "/icons/Discord.png",
   calendar: "/icons/Calendar.png",
-});
+};
 
 // Menu props based on mobile/desktop mode
 export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
