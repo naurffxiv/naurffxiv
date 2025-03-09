@@ -32,7 +32,7 @@ export default function NavBar() {
 
   return (
     <Fragment>
-      <AppBar position="sticky" sx={{ background: 'linear-gradient(to bottom, #28506E, #061A33)', pt: 1, pb: 1 }} elevation={0}>
+      <AppBar position="sticky" sx={{ background: 'linear-gradient(to bottom, #28506E, #061A33)'}} elevation={0}>
         <Toolbar sx={{ px: 2, width: '100%', maxWidth: '100vw' }} disableGutters>
           <Typography sx={{ flexGrow: 1 }}>
             <IconButton size="small">
