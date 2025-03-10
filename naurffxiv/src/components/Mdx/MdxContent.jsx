@@ -1,4 +1,3 @@
-import "@/app/globals.css";
 import MdxLayout from "./MdxLayout"
 export default function MdxContent({ children }) {
   return (
