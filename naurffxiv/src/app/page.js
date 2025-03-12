@@ -2,7 +2,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-import Carousel from '@/components/Homepage/Carousel';
 import HomepageContent from '@/components/Homepage/HomepageContent';
 import Hero from '@/components/Homepage/Hero';
 
@@ -14,7 +13,6 @@ export default function Home() {
         width: '100%',
       }}>
         <Hero />
-        <Carousel />
         <HomepageContent />
       </Box>
     </Box>
