@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 
 import Carousel from '@/components/Homepage/Carousel';
 import HomepageContent from '@/components/Homepage/HomepageContent';
-import Header from '@/components/Homepage/Header';
+import Hero from '@/components/Homepage/Hero';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         minHeight: '100vh',
         width: '100%',
       }}>
-        <Header />
+        <Hero />
         <Carousel />
         <HomepageContent />
       </Box>
