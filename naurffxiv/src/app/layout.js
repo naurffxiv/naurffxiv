@@ -1,10 +1,14 @@
 import { Roboto } from "next/font/google";
+import MUITheme from "./theme";
 import "./globals.css";
 
 const roboto = Roboto({
   weight: ['300','400','500','700'],
   style: ['normal','italic'],
-  subsets: ["latin"] });
+  subsets: ["latin"],
+  fallback: ['system-ui', 'arial'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: "NAUR",
@@ -15,7 +19,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-          {children}
+          <MUITheme>
+            {children}
+          </MUITheme>
       </body>
     </html>
   );
