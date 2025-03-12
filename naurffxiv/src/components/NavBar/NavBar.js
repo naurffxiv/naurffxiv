@@ -1,3 +1,4 @@
+import "@/app/globals.css";
 import React from 'react';
 import { Fragment } from 'react';
 import {
@@ -7,6 +8,7 @@ import {
   Typography,
   Button,
   MenuItem,
+  MenuList,
   Menu,
   IconButton,
   TextField,
@@ -15,15 +17,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { pages } from '@/app/constants.js';
-import { ThemeSwitch } from '@/app/adaptive-theme.js';
-import { useThemeMode } from '@/app/themeContext';
-
 import MenuIcon from '@mui/icons-material/Menu';
 import UltimateDropdown from './UltimateDropdown.js';
 
-
 export default function NavBar() {
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -33,12 +30,11 @@ export default function NavBar() {
     setAnchorElNav(null);
   };
 
-  const { isDarkMode, toggleTheme } = useThemeMode();  // TODO: Move this to footer when implemented
   return (
     <Fragment>
-      <AppBar position="sticky" color="primary" elevation={0}>
+      <AppBar position="sticky" sx={{ background: 'linear-gradient(to bottom, #28506E, #061A33)'}} elevation={0}>
         <Toolbar sx={{ px: 2, width: '100%', maxWidth: '100vw' }} disableGutters>
-          <Typography sx={{ flexGrow: 1}}>
+          <Typography sx={{ flexGrow: 1 }}>
             <IconButton size="small">
               <Link href="/">
                 <Image
@@ -53,29 +49,25 @@ export default function NavBar() {
 
           {/* Desktop menu */}
           <Box sx={{display: { xs: 'none', md: 'flex' } }}>
-            <MenuItem>
-              <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-                <Link href="/">
-                    Home
-                </Link>
-              </Typography>
-            </MenuItem>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ display: { xs: 'flex', md: 'flex' }} }
-            >
-              <UltimateDropdown name="Ultimates" />
-              {pages.map((page) => (
-                  <MenuItem key={page.name}>
-                    <Link href={page.link}>
-                      <Typography sx={{ textAlign: 'center' }}>
-                        {page.name}
-                      </Typography>
-                    </Link>
-                  </MenuItem>
-              ))}
-            </Typography>
+            <MenuList sx={{display: 'flex'}}>
+              <MenuItem>
+                <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
+                  <Link href="/">
+                      Home
+                  </Link>
+                </Typography>
+              </MenuItem>
+                <UltimateDropdown name="Ultimates" />
+                {pages.map((page) => (
+                    <MenuItem key={page.name}>
+                      <Link href={page.link}>
+                        <Typography sx={{ textAlign: 'center' }}>
+                          {page.name}
+                        </Typography>
+                      </Link>
+                    </MenuItem>
+                ))}
+            </MenuList>
           </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
@@ -101,7 +93,7 @@ export default function NavBar() {
               </Link>
             </IconButton>
           </Box>
-          {/* Hamburger menu*/}
+          {/* Hamburger menu */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -114,12 +106,6 @@ export default function NavBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          {/* Button for dark/light theme is commented out for now as design decisions,
-          needs to be completely removed along with the code supporting the functionality
-          when the decision to remove the button is final */}
-          {/* <Box sx={{ px: 1 }}>
-            <ThemeSwitch checked={isDarkMode} onChange={toggleTheme} />
-          </Box> */}
           {/* Mobile menu */}
           <Menu
               disableScrollLock
@@ -144,30 +130,23 @@ export default function NavBar() {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'right'  }}>
+                <Typography sx={{ width: '100%', textAlign: 'left'  }}>
                   <Link href="/">Home</Link>
                 </Typography>
               </MenuItem>
-
               <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Ultimates" isMobile={true} />
-              </Box>
-            </MenuItem>
-            <MenuItem>
-              <Box sx={{ width: '100%', textAlign: 'right' }}>
-                <UltimateDropdown name="Guides" isMobile={true}/>
-              </Box>
-            </MenuItem>
-
-              {pages.map((page) => (
-              <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'right' }}>
-                  <Link href={page.link}>{page.name}</Link>
-                </Typography>
+                <Box sx={{ width: '100%', textAlign: 'left' }}>
+                  <UltimateDropdown name="Ultimates" isMobile={true} />
+                </Box>
               </MenuItem>
-              ))}
-            </Menu>
+              {pages.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography sx={{ width: '100%', textAlign: 'left' }}>
+                    <Link href={page.link}>{page.name}</Link>
+                  </Typography>
+                </MenuItem>
+                ))}
+          </Menu>
         </Toolbar>
       </AppBar>
     </Fragment>

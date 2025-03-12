@@ -9,7 +9,7 @@ export const pages = [
     "link": "/staff",
     "login_required": true,
   },
-]
+];
 
 export const ultimateList = [
   {
@@ -36,15 +36,15 @@ export const ultimateList = [
     "name": "The Unending Coil of Bahamut",
     "link": "/ultimates/ucob",
   },
-]
+];
 
-export const getIcons = (isDarkMode) => ({
-  chat: isDarkMode ? "/icons/Chat.png" : "/icons/Chat-Dark.png",
-  lightbulb: isDarkMode ? "/icons/Lightbulb.png" : "/icons/Lightbulb-Dark.png",
-  contact: isDarkMode ? "/icons/Contact.png" : "/icons/Contact-Dark.png",
-  discord: isDarkMode ? "/icons/Discord.png" : "/icons/Discord-Dark.png",
-  calendar: isDarkMode ? "/icons/Calendar.png" : "/icons/Calendar-Dark.png",
-});
+export const icons = {
+  chat: "/icons/Chat.png",
+  lightbulb: "/icons/Lightbulb.png",
+  contact: "/icons/Contact.png",
+  discord: "/icons/Discord.png",
+  calendar: "/icons/Calendar.png",
+};
 
 // Menu props based on mobile/desktop mode
 export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
@@ -76,20 +76,20 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
           wordBreak: 'break-word',
           lineHeight: '1.4',
           display: 'block',
-          paddingLeft: '8px' 
-        }
-      }
-    }
-  })
+          paddingLeft: '8px',
+        },
+      },
+    },
+  }),
 });
 
 export const slides = [
-    {id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
-    {id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
-    {id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
-    {id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
-    {id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
-    {id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
+  {id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+  {id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+  {id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
+  {id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+  {id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
+  {id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
 ];
 
 export const linksUltimates = [
@@ -99,10 +99,10 @@ export const linksUltimates = [
   {id: 4, name: "The Epic of Alexander", url: "/"},
   {id: 5, name: "The Weapon's Refrain", url: "/"},
   {id: 6, name: "The Unending Coil of Bahamut", url: "/"},
-]
+];
 
 export const linksExplore = [
   {id: 1, name: "About Us", url: "/"},
   {id: 2, name: "Events", url: "/"},
   {id: 3, name: "Staff", url: "/"},
-]
+];
