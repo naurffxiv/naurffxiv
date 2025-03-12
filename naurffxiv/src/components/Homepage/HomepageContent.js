@@ -3,28 +3,8 @@ import Image from 'next/image';
 
 export default function HomepageContent() {
     return (
-        <div 
-        // sx={{
-        //     maxWidth: { xs: '90%', md: '60%' },
-        //     textAlign: 'center',
-        //     flexWrap: 'wrap',
-        //     display: 'flex',
-        //     flexDirection: 'column',
-        //     justifyContent: 'center',
-        //     margin: '2.5rem auto auto auto',
-        //     gap: { xs: 2, md: 6 },
-        // }} 
-        className="max-w-[90%] md:max-w-[60%] text-center wrap flex flex-col justify-center m-auto mt-10 gap-2 md:gap-6">
-            <div 
-            // sx={{
-            //     display: 'flex',
-            //     flexWrap: 'wrap',
-            //     flexDirection: 'column',
-            //     alignContent: 'center',
-            //     alignItems: 'center',
-            // }}
-            className="flex wrap flex-col items-center"
-            >
+        <div className="max-w-[90%] md:max-w-[60%] text-center wrap flex flex-col justify-center m-auto mt-10 gap-2 md:gap-6">
+            <div className="flex wrap flex-col items-center">
                 <p className="font-medium text-lg max-w-screen-xl">
                     NA Ultimate Raiding (NAUR) is a Final Fantasy XIV Discord community centered around
                     Ultimate Duties in North American Data Centers. Our goal is to provide a community that
