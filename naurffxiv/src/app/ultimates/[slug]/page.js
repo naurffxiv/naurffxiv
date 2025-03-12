@@ -12,7 +12,7 @@ import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
 
 import MDXPage from '.';
 
-const components = { 
+const MDXComponents = { 
     h1: (props) => <h1 className="scroll-mt-20" {...props} />,
     h2: (props) => <section><h2 className="scroll-mt-20" {...props} /></section>,
     h3: (props) => <section><h3 className="scroll-mt-20" {...props} /></section>,
@@ -43,7 +43,7 @@ export default async function UltimateMdx({ params }) {
     const rawmdx = await fs.readFile(path.join(process.cwd(), 'src/markdown/ultimates', `${params.slug}.mdx`), 'utf-8');
     const { content } = await compileMDX({
         source: rawmdx,
-        components: components,
+        components: MDXComponents,
         options: { 
             parseFrontmatter: true, 
             mdxOptions: mdxOptions

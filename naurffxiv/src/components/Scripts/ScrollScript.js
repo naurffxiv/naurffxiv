@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+// This component's purpose is to highlight whichever heading is currently scrolled to/visible in MDX pages
 
 export default function Scroll() {
     var allHTags;
