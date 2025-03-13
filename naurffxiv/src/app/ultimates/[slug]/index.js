@@ -8,12 +8,12 @@ import QuickLinks from "@/components/Mdx/QuickLinks";
 const MDXPage = ({params: content, toc, metadata, slug}) => {
     return (
         <MdxLayout>
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] max-w-[100rem] mx-auto py-6">
-                <div className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky">
+            <div className="grid grid-cols-1 lg:grid-cols-[90ch_1fr] xl:grid-cols-[1fr_90ch_1fr] max-w-screen-2xl mx-auto py-6">
+                <div className="prose prose-invert top-[5.5rem] self-start hidden xl:block sticky">
                     <TableOfContents toc={toc} />
                 </div>
 
-                <article className="max-w-[100ch] prose prose-invert m-auto mx-6">
+                <article className="max-w-[90ch] prose prose-invert m-auto mx-6">
                     {content}
                 </article>
 

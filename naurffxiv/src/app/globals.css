@@ -35,7 +35,7 @@ span.icon-link::before {
 }
 
 .toc a:hover {
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   color: white;
   background-color: rgba(71, 85, 105, 0.1);
 }
@@ -51,7 +51,7 @@ span.icon-link::before {
 .toc-current {
   transition: color 0.2s ease;
   color: rgb(108, 177, 255);
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
 }
 
 .toc-current:hover {
