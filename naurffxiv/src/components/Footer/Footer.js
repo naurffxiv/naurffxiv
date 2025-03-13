@@ -14,11 +14,11 @@ export default function Footer() {
                         <FooterSocialLinks />
                     </div>
                     <div className="mt-14 grid justify-items-center xl:justify-items-start">
-                        <div className="">
-                            <p variant="subtitle2">
+                        <div className="prose prose-slate prose-invert prose-sm">
+                            <p>
                                 NAUR FFXIV is a non-profit community-owned website.
                             </p>
-                            <p variant="subtitle2">
+                            <p>
                                 FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd. © SQUARE ENIX CO., LTD. All Rights Reserved | All content © their respective authors
                             </p>
                         </div>
