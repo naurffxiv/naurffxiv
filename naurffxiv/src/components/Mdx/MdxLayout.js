@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { Box } from "@mui/material";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { Roboto } from "next/font/google";
@@ -14,7 +15,9 @@ export default function MdxLayout({ children }) {
   return (
     <div className={roboto.className}>
         <NavBar />
+        <Box>
           {children}
+        </Box>
         <Footer />
     </div>
   );
