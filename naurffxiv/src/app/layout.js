@@ -1,5 +1,6 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const roboto = Roboto({
   weight: ['300','400','500','700'],
@@ -15,7 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-          {children}
+        {children}
+        <Script
+          src="https://gc.zgo.at/count.js"
+          strategy="afterInteractive"
+          data-goatcounter="https://naur.goatcounter.com/count"
+        />
       </body>
     </html>
   );
