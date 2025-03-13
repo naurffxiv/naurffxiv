@@ -49,22 +49,22 @@ export default function NavBar() {
           {/* Desktop menu */}
           <Box sx={{display: { xs: 'none', md: 'flex' } }}>
             <MenuList sx={{display: 'flex'}}>
-              <MenuItem>
-                <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-                  <Link href="/">
+              <li>
+                <MenuItem component="a" href="/">
+                  <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
                       Home
-                  </Link>
-                </Typography>
-              </MenuItem>
+                  </Typography>
+                </MenuItem>
+              </li>
                 <UltimateDropdown name="Ultimates" />
                 {pages.map((page) => (
-                    <MenuItem key={page.name}>
-                      <Link href={page.link}>
+                    <li key={page.name}>
+                      <MenuItem component="a" href={page.link}>
                         <Typography sx={{ textAlign: 'center' }}>
                           {page.name}
                         </Typography>
-                      </Link>
-                    </MenuItem>
+                      </MenuItem>
+                    </li>
                 ))}
             </MenuList>
           </Box>
@@ -128,22 +128,26 @@ export default function NavBar() {
                 }
               }}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ width: '100%', textAlign: 'left'  }}>
-                  <Link href="/">Home</Link>
-                </Typography>
-              </MenuItem>
+              <li>
+                <MenuItem onClick={handleCloseNavMenu} component="a" href="/">
+                  <Typography sx={{ width: '100%', textAlign: 'left'  }}>
+                    Home
+                  </Typography>
+                </MenuItem>
+              </li>
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
                   <UltimateDropdown name="Ultimates" isMobile={true} />
                 </Box>
               </MenuItem>
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ width: '100%', textAlign: 'left' }}>
-                    <Link href={page.link}>{page.name}</Link>
-                  </Typography>
-                </MenuItem>
+                <li key={page.name}>
+                  <MenuItem onClick={handleCloseNavMenu} component="a" href={page.link}>
+                    <Typography sx={{ width: '100%', textAlign: 'left' }}>
+                      {page.name}
+                    </Typography>
+                  </MenuItem>
+                </li>
                 ))}
           </Menu>
         </Toolbar>
