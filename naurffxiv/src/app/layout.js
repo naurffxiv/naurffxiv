@@ -25,14 +25,14 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <MUITheme>
           <NavBar />
-            <main>
-              {children}
-              <Script
-                src="https://gc.zgo.at/count.js"
-                strategy="afterInteractive"
-                data-goatcounter="https://naur.goatcounter.com/count"
-              />
-            </main>
+          <main>
+            {children}
+            <Script
+              src="https://gc.zgo.at/count.js"
+              strategy="afterInteractive"
+              data-goatcounter="https://naur.goatcounter.com/count"
+            />
+          </main>
           <Footer />
         </MUITheme>
       </body>
