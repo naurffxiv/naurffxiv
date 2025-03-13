@@ -12,7 +12,7 @@ const divs = [
 export default function Offerings() {
     return (
         <div>
-            <h3 className="text-xl">What we offer</h3>
+            <h3 className="text-xl">What NAUR has to offer</h3>
             <div className="mt-3 flex gap-x-3 sm:gap-x-10 gap-y-3 md:gap-y-6 justify-center text-center mx-auto flex-row flex-wrap">
                 {
                     divs.map(div => {
