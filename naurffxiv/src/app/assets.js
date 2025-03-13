@@ -6,7 +6,8 @@ import Discord from '@/assets/Icons/Discord.png'
 import Calendar from '@/assets/Icons/Calendar.png'
 import Github from '@/assets/Icons/githublogo.png'
 import Naur from '@/assets/Icons/naur_icon.png'
-export const icons = {Chat, Lightbulb, Contact, Discord, Calendar, Github, Naur}
+import Patreon from '@/assets/Icons/Patreon.png'
+export const icons = {Chat, Lightbulb, Contact, Discord, Calendar, Github, Naur, Patreon}
 
 // images
 import Bahamut from '@/assets/Images/Bahamut.png'

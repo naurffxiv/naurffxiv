@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Discord from "../Icons/Discord.png"
+import { icons } from "@/app/assets"
 
 export default function Header() {
     return (
@@ -16,7 +16,7 @@ export default function Header() {
             className="transition-colors bg-[#007EA7] rounded-full max-w-fit py-4 px-8 hover:bg-[#007196]"
             >
             <span className="flex gap-5 font-medium">
-              <Image src={Discord} alt="Discord" width="32" height="24" />
+              <Image src={icons.Discord} alt="Discord" width="32" height="24" />
               Join our Discord!
             </span>
             </a>
