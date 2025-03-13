@@ -1,11 +1,9 @@
-import { Box, Typography } from '@mui/material';
-
 export default function FooterLinks ({title, links, className}) {
     return (
-        <Box className={`list-none ${className}`}>
-            <Typography className="text-xl text-[#007EA7] font-bold">
+        <div className={`list-none ${className}`}>
+            <p className="text-xl text-[#007EA7] font-bold">
                 {title}
-            </Typography>
+            </p>
             <ul className="columns-3xs">
                 {links.map((item) => (
                     <li key={item.id} className="">
@@ -15,6 +13,6 @@ export default function FooterLinks ({title, links, className}) {
                     </li>
                 ))}
             </ul>
-        </Box>
+        </div>
     )
 }
