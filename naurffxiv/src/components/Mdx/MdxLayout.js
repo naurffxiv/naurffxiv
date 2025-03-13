@@ -14,11 +14,9 @@ const roboto = Roboto({
 export default function MdxLayout({ children }) {
   return (
     <div className={roboto.className}>
-        <NavBar />
         <Box>
           {children}
         </Box>
-        <Footer />
     </div>
   );
 }

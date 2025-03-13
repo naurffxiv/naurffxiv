@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Fragment } from 'react';
 import {
@@ -5,12 +6,10 @@ import {
   Box,
   Toolbar,
   Typography,
-  Button,
   MenuItem,
   MenuList,
   Menu,
   IconButton,
-  TextField,
 } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,6 +17,7 @@ import Image from 'next/image';
 import { pages } from '@/app/constants.js';
 import MenuIcon from '@mui/icons-material/Menu';
 import UltimateDropdown from './UltimateDropdown.js';
+import { icons } from '@/app/assets.js';
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,7 +37,7 @@ export default function NavBar() {
             <IconButton size="small">
               <Link href="/">
                 <Image
-                  src="/images/naur_icon.png"
+                  src={icons.Naur}
                   alt="NAUR icon"
                   height="40"
                   width="40"
@@ -72,7 +72,7 @@ export default function NavBar() {
             <IconButton size="small">
               <Link href="https://discord.com/invite/naurffxiv">
                 <Image
-                  src="/images/discordlogo.png"
+                  src={icons.Discord}
                   alt="Discord logo"
                   height="30"
                   width="30"
@@ -84,7 +84,7 @@ export default function NavBar() {
             <IconButton size="small">
               <Link href="https://github.com/naurffxiv/naurffxiv">
                 <Image
-                  src="/images/githublogo.png"
+                  src={icons.Github}
                   alt="GitHub Logo"
                   height="30"
                   width="30"

@@ -1,3 +1,5 @@
+import { images } from './assets'
+
 export const pages = [
   {
     "name": "Findingway",
@@ -45,14 +47,6 @@ export const ultimateList = [
   },
 ];
 
-export const icons = {
-  chat: "/icons/Chat.png",
-  lightbulb: "/icons/Lightbulb.png",
-  contact: "/icons/Contact.png",
-  discord: "/icons/Discord.png",
-  calendar: "/icons/Calendar.png",
-};
-
 // Menu props based on mobile/desktop mode
 export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
   id: "basic-menu",
@@ -91,12 +85,12 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
 });
 
 export const slides = [
-  {id: 1, url: '/', src: '/images/Bahamut.png', alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
-  {id: 2, url: '/', src: '/images/Ultima.png', alt: 'Ultima', title: 'The Weapon\'s Refrain' },
-  {id: 3, url: '/', src: '/images/Alexander.png', alt: 'Alexander', title: 'The Epic of Alexander' },
-  {id: 4, url: '/', src: '/images/Thordan.png', alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
-  {id: 5, url: '/', src: '/images/Omega.png', alt: 'Omega', title: 'The Omega Protocol' },
-  {id: 6, url: '/', src: '/images/Pandora.png', alt: 'Pandora', title: 'Futures Rewritten' },
+  {id: 1, url: '/', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+  {id: 2, url: '/', src: images.Ultima, alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+  {id: 3, url: '/', src: images.Alexander, alt: 'Alexander', title: 'The Epic of Alexander' },
+  {id: 4, url: '/', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+  {id: 5, url: '/', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
+  {id: 6, url: '/', src: images.Pandora, alt: 'Pandora', title: 'Futures Rewritten' },
 ];
 
 export const linksUltimates = [

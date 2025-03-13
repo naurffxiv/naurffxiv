@@ -2,6 +2,9 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
+import NavBar from '@/components/NavBar/NavBar';
+import Footer from '@/components/Footer/Footer';
+
 const roboto = Roboto({
   weight: ['300','400','500','700'],
   style: ['normal','italic'],
@@ -16,12 +19,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        {children}
-        <Script
-          src="https://gc.zgo.at/count.js"
-          strategy="afterInteractive"
-          data-goatcounter="https://naur.goatcounter.com/count"
-        />
+          <NavBar />
+            <main>
+              {children}
+              <Script
+                src="https://gc.zgo.at/count.js"
+                strategy="afterInteractive"
+                data-goatcounter="https://naur.goatcounter.com/count"
+              />
+            </main>
+          <Footer />
       </body>
     </html>
   );

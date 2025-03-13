@@ -1,6 +1,7 @@
 import { IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import {icons} from '@/app/assets'
 
 export default function FooterSocialLinks() {
     return (
@@ -17,7 +18,7 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="https://discord.com/invite/naurffxiv">
                                 <Image
-                                src="/images/discordlogo.png"
+                                src={icons.Discord}
                                 alt="Discord logo"
                                 height="30"
                                 width="30"
@@ -29,7 +30,7 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="https://github.com/naurffxiv/naurffxiv">
                                 <Image
-                                src="/images/githublogo.png"
+                                src={icons.Github}
                                 alt="GitHub Logo"
                                 height="30"
                                 width="30"
@@ -41,7 +42,7 @@ export default function FooterSocialLinks() {
                         <IconButton size="small">
                             <Link href="https://patreon.com/naurffxiv">
                                 <Image
-                                src="/images/patreonlogo.png"
+                                src={icons.Patreon}
                                 alt="Patreon Logo"
                                 height="30"
                                 width="30"
