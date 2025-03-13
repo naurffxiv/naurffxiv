@@ -1,5 +1,11 @@
 export const pages = [
   {
+    "name": "Findingway",
+    "link": "https://findingway.io",
+    "login_required": false,
+  }
+  /* Commented out for now, as these pages are not yet implemented
+  {
     "name": "Events",
     "link": "/events",
     "login_required": false,
@@ -9,6 +15,7 @@ export const pages = [
     "link": "/staff",
     "login_required": true,
   },
+  */
 ];
 
 export const ultimateList = [
@@ -93,16 +100,18 @@ export const slides = [
 ];
 
 export const linksUltimates = [
-  {id: 1, name: "Futures Rewritten", url: "/"},
-  {id: 2, name: "The Omega Protocol", url: "/"},
-  {id: 3, name: "Dragonsong's Reprise", url: "/"},
-  {id: 4, name: "The Epic of Alexander", url: "/"},
-  {id: 5, name: "The Weapon's Refrain", url: "/"},
-  {id: 6, name: "The Unending Coil of Bahamut", url: "/"},
+  {id: 1, name: "Futures Rewritten", url: "/ultimates/fru"},
+  {id: 2, name: "The Omega Protocol", url: "/ultimates/top"},
+  {id: 3, name: "Dragonsong's Reprise", url: "/ultimates/dsr"},
+  {id: 4, name: "The Epic of Alexander", url: "/ultimates/tea"},
+  {id: 5, name: "The Weapon's Refrain", url: "/ultimates/uwu"},
+  {id: 6, name: "The Unending Coil of Bahamut", url: "/ultimates/ucob"},
 ];
 
 export const linksExplore = [
-  {id: 1, name: "About Us", url: "/"},
+  {id: 1, name: "Findingway", url: "https://findingway.io"},
+  /* Commented out for now, as these pages are not yet implemented
   {id: 2, name: "Events", url: "/"},
   {id: 3, name: "Staff", url: "/"},
+  */
 ];

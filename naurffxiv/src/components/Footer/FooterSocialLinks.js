@@ -15,7 +15,7 @@ export default function FooterSocialLinks() {
                 <ul className="flex flex-wrap gap-x-5 items-center mt-5">
                     <li>
                         <IconButton size="small">
-                            <Link href="/">
+                            <Link href="https://discord.com/invite/naurffxiv">
                                 <Image
                                 src="/images/discordlogo.png"
                                 alt="Discord logo"
@@ -27,7 +27,7 @@ export default function FooterSocialLinks() {
                     </li>
                     <li>
                         <IconButton size="small">
-                            <Link href="/">
+                            <Link href="https://github.com/naurffxiv/naurffxiv">
                                 <Image
                                 src="/images/githublogo.png"
                                 alt="GitHub Logo"
@@ -39,7 +39,7 @@ export default function FooterSocialLinks() {
                     </li>
                     <li>
                         <IconButton size="small">
-                            <Link href="/">
+                            <Link href="https://patreon.com/naurffxiv">
                                 <Image
                                 src="/images/patreonlogo.png"
                                 alt="Patreon Logo"
