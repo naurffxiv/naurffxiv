@@ -2,7 +2,6 @@
 import MdxLayout from "@/components/Mdx/MdxLayout"
 import React from "react";
 import TableOfContents from "@/components/Mdx/TableOfContents";
-import ScrollScript from "@/components/Scripts/ScrollScript";
 import QuickLinks from "@/components/Mdx/QuickLinks";
 
 const MDXPage = ({params: content, toc, metadata, slug}) => {
@@ -20,7 +19,6 @@ const MDXPage = ({params: content, toc, metadata, slug}) => {
                 <div className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky">
                     <QuickLinks metadata={metadata} slug={slug}/>
                 </div>
-                <ScrollScript />
             </div>
         </MdxLayout>
     )
