@@ -70,7 +70,7 @@ export default function NavBar() {
           </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
-              <Link href="/">
+              <Link href="https://discord.com/invite/naurffxiv">
                 <Image
                   src={icons.Discord}
                   alt="Discord logo"
@@ -82,7 +82,7 @@ export default function NavBar() {
           </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
-              <Link href="/">
+              <Link href="https://github.com/naurffxiv/naurffxiv">
                 <Image
                   src={icons.Github}
                   alt="GitHub Logo"

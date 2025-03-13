@@ -1,5 +1,6 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 import NavBar from '@/components/NavBar/NavBar';
 import Footer from '@/components/Footer/Footer';
@@ -19,9 +20,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={roboto.className}>
           <NavBar />
-          <main>
-            {children}
-          </main>
+            <main>
+              {children}
+              <Script
+                src="https://gc.zgo.at/count.js"
+                strategy="afterInteractive"
+                data-goatcounter="https://naur.goatcounter.com/count"
+              />
+            </main>
           <Footer />
       </body>
     </html>
