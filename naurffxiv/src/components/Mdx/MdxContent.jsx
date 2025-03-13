@@ -3,11 +3,9 @@ import MdxLayout from "./MdxLayout"
 export default function MdxContent({ children }) {
   return (
     <MdxLayout>
-        <div className="mt-10">
-            <div className="max-w-[100ch] m-auto prose prose-invert">
-                {children}
-            </div>
-        </div>
+      <div className="max-w-[100ch] m-auto prose prose-invert">
+          {children}
+      </div>
     </MdxLayout>
   );
 }

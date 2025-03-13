@@ -6,8 +6,8 @@ import { linksExplore, linksUltimates } from "@/app/constants";
 export default function Footer() {
     return (
         <footer>
-            <Box className="bg-gradient-to-b from-[#28506E] to-[#061A33] pt-20 pb-10">
-                <Box className="w-fit px-10 md:px-20 xl:px-40">
+            <Box className="bg-gradient-to-b from-[#28506E] to-[#061A33] pt-10 pb-10">
+                <Box className="w-fit px-20 md:px-40 xl:px-60">
                     <Box className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5">
                         <FooterLinks title="Ultimates" links={linksUltimates} className="" />
                         <FooterLinks title="Explore" links={linksExplore} className="mt-5 xl:mt-0" />
