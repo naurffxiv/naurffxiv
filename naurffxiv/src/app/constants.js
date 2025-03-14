@@ -85,12 +85,12 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
 });
 
 export const slides = [
-  {id: 1, url: '/', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
-  {id: 2, url: '/', src: images.Ultima, alt: 'Ultima', title: 'The Weapon\'s Refrain' },
-  {id: 3, url: '/', src: images.Alexander, alt: 'Alexander', title: 'The Epic of Alexander' },
-  {id: 4, url: '/', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
-  {id: 5, url: '/', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
-  {id: 6, url: '/', src: images.Pandora, alt: 'Pandora', title: 'Futures Rewritten' },
+  {id: 1, url: '/ultimates/ucob', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
+  {id: 2, url: '/ultimates/uwu', src: images.Ultima, alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+  {id: 3, url: '/ultimates/tea', src: images.Alexander, alt: 'Alexander', title: 'The Epic of Alexander' },
+  {id: 4, url: '/ultimates/dsr', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+  {id: 5, url: '/ultimates/top', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
+  {id: 6, url: '/ultimates/fru', src: images.Pandora, alt: 'Pandora', title: 'Futures Rewritten' },
 ];
 
 export const linksUltimates = [
