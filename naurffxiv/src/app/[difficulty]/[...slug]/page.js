@@ -84,16 +84,17 @@ export function getPages(params) {
         let mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
         let {metadata, content} = parseFrontmatter(mdxFile)
         let slug = path.basename(file, path.extname(file))
-
+        let fight = slug
         // if it's within a subfolder, form slug in the format like "../guides/fight"
         if (params.slug.length > 1) {
-            slug = path.join("..", slug, params.slug[1])
+            slug = ["..", slug, params.slug[1]].join('/')
         }
         
         return {
             metadata,
             slug,
-            content
+            content,
+            fight,
         }
     })
 }
