@@ -2,11 +2,11 @@ import Image from 'next/image';
 import { icons } from '@/app/assets'
 
 const divs = [
-    { icon: icons.Chat, width: 70, height: 70, alt: "Chat icon", text: "Active Staff", desc: "Active staff and discussion channels" },
-    { icon: icons.Lightbulb, width: 40, height: 40, alt: "Bulb icon", text: "Strats & Resources", desc: "Party Finder-friendly strats and resources" },
-    { icon: icons.Contact, width: 70, height: 70, alt: "Contact icon", text: "Recruitment Forums", desc: "Recruitment forums for statics and Party Finder" },
-    { icon: icons.Discord, width: 50, height: 50, alt: "Discord icon", text: "Discord Bots", desc: "Display Party Finder listings and raiding achievements" },
-    { icon: icons.Calendar, width: 45, height: 45, alt: "Calendar icon", text: "Server Events", desc: "Server events to help players prog and clear" }
+    { icon: icons.Chat, width: 70, height: 70, alt: "Chat icon", text: "Active Discord", desc: "Active Staff & Discussion Channels" },
+    { icon: icons.Lightbulb, width: 40, height: 40, alt: "Bulb icon", text: "Strats & Resources", desc: "NA Party Finder Strats & Resources For Ultimates" },
+    { icon: icons.Contact, width: 70, height: 70, alt: "Contact icon", text: "Recruitment Tools", desc: "Recruitment Tools For Statics and Party Finder" },
+    { icon: icons.Discord, width: 50, height: 50, alt: "Discord icon", text: "Discord Bots", desc: "Custom Discord Bots Made By NAUR Members" },
+    { icon: icons.Calendar, width: 45, height: 45, alt: "Calendar icon", text: "Server Events", desc: "Server Events To Help Our Community Clear and Prog Ulimates" }
 ];
 
 export default function Offerings() {
