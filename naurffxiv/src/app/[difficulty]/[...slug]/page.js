@@ -102,7 +102,7 @@ export function getPages(params) {
 // set the title for each page based on title set on frontmatter
 export async function generateMetadata({params}) {
     const { slug } = await params;
-    let rawmdx = fs.readFile(path.join(getPath(params), `${slug[0]}.mdx`), 'utf-8');
+    let rawmdx = await fs.readFile(path.join(getPath(params), `${slug[0]}.mdx`), 'utf-8');
     
     const { frontmatter } = await compileMDX({source: rawmdx,
         options: { 
