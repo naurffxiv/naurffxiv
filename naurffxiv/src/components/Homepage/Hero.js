@@ -4,7 +4,7 @@ import { icons } from "@/app/assets"
 export default function Header() {
     return (
       <div className="grid min-w-full md:grid-cols-[40%_60%] xl:grid-cols-[45%_55%]">
-        <div className="px-5 xl:pr-0 bg-center bg-header-default md:bg-header-gradient">
+        <div className="px-5 xl:pr-0 bg-center bg-header-default md:bg-header-gradient md:bg-left">
           <div className="grid mx-auto py-16 gap-y-3 max-w-prose md:gap-y-6 xl:float-right">
             <h1 className="text-4xl xl:text-6xl font-bold">NAUR</h1>
             <h3 className="text-lg/8 xl:text-2xl/10">
@@ -22,7 +22,10 @@ export default function Header() {
             </a>
           </div>
         </div>
-        <div className="hidden md:block bg-header-wide bg-cover bg-center h-60 md:h-auto"/>
+        <div className="hidden md:block bg-header-wide bg-cover bg-center h-60 md:h-auto">
+          <div className="min-h-full bg-header-wide-gradient">
+          </div>
+        </div>
       </div>
     )
 }
