@@ -80,18 +80,6 @@ export default function NavBar() {
               </Link>
             </IconButton>
           </Box>
-          <Box sx={{ px: 1 }}>
-            <IconButton size="small">
-              <Link href="https://github.com/naurffxiv/naurffxiv">
-                <Image
-                  src={icons.Github}
-                  alt="GitHub Logo"
-                  height="30"
-                  width="30"
-                />
-              </Link>
-            </IconButton>
-          </Box>
           {/* Hamburger menu */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
