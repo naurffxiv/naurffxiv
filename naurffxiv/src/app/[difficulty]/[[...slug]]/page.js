@@ -2,7 +2,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import { compile } from '@mdx-js/mdx'
 import { promises as fs, readdirSync, readFileSync } from 'fs';
 import path from 'path';
-import { getPath, parseFrontmatter } from './helpers';
+import { getPath, parseFrontmatter, findMdxFilepath, getMdxDir } from './helpers';
 
 import remarkFrontmatter from 'remark-frontmatter';
 import rehypeImgSize from 'rehype-img-size';
@@ -11,8 +11,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
 
-import { markdownFolders, markdownSubfolders } from '@/app/constants';
+import { markdownFolders } from '@/app/constants';
 import MDXPage from '.';
+import { notFound } from 'next/navigation';
 
 const MDXComponents = { 
     h1: (props) => <h1 className="scroll-mt-20" {...props} />,
@@ -42,11 +43,19 @@ const mdxOptions = {
     ],
 }
 
+// Called when a page is accessed (only once on build with static site generation)
+// Finds mdx file to render based on slug then processes the page accordingly
 export default async function MdxPage({ params }) {
-    const { slug } = await params;
-    let rawmdx = await fs.readFile(path.join(getPath(params), `${slug[0]}.mdx`), 'utf-8')
+    const {difficulty, slug} = params
+    const mdxDir = path.join(getMdxDir(), difficulty) 
 
+    // TODO: implement logic for base page e.g "/ultimates/"
+
+    const filepath = await findMdxFilepath(params)
+    if (filepath === "") return notFound()
+    
     // convert mdx to html
+    let rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8')
     const { content } = await compileMDX({
         source: rawmdx,
         components: MDXComponents,
@@ -166,6 +175,7 @@ export async function generateStaticParams() {
         return ret
     }
 
+    return [{difficulty: "ultimates", slug: ["dsr", "guide"]}]
     // form final slug format for return
     return meta.flatMap(folder => 
         folder.subtrees.flatMap(subtree => 
