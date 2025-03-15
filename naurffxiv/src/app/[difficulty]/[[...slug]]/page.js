@@ -115,38 +115,66 @@ export async function generateMetadata({params}) {
     return {title: title}
 }
 
-// generate valid slugs based on files in markdown folder
-export function generateStaticParams() {
-    let mdxDir = path.join(process.cwd(), 'src/markdown')
+// generate valid slugs based on _meta.json files in markdown folder
+export async function generateStaticParams() {
+    let mdxDir = path.join(process.cwd(), 'src', 'markdown')
 
-    // filters files that:
-    // 1. aren't mdx files
-    // 2. aren't within folders in `markdownFolders` from constants.js
-    // 3. aren't within folders in `markdownSubfolders` (if in a subfolder)
-    let mdxFiles = readdirSync(mdxDir, { recursive: true })
-        .filter((file) => path.extname(file) === ".mdx")
-        .filter((file) => markdownFolders.includes(file.split(path.sep)[0]))
-        .filter((file) => {
-            let splitPath = file.split(path.sep)
-            return !(splitPath.length > 2) || markdownSubfolders.includes(splitPath[1])
-        })
+    // get all paths specified in `markdownFolders`
+    const dirsToSearch = markdownFolders.map(folder => {
+        return path.join(mdxDir, folder)
+    })
 
-    // returns an array in the following format based on files present
-    // [
-    //  { difficulty: 'ultimates', slug: ['ucob'] },
-    //  { difficulty: 'ultimates', slug: ['ucob', 'guides'] },
-    // ]
-    return mdxFiles.map((file) => {
-        let pathToFile = file.split(path.sep)
-        let difficulty = pathToFile[0]
-        let slug = path.basename(file, path.extname(file))
-        
-        if (pathToFile.length > 2) {
-            return {difficulty: `${difficulty}`, slug: [`${slug}`, `${pathToFile[1]}`]}
-        } else {
-            return {difficulty: `${difficulty}`, slug: [`${slug}`]}
+    // find files named "_meta.json"
+    const dirs = dirsToSearch.map(dir => {
+        return {
+            subtreesToRead: readdirSync(dir, { recursive: true })
+                    .filter((file) => path.basename(file) === "_meta.json"),
+            folder: path.basename(dir),
         }
     })
+
+    // read and deserialize each json file
+    const meta = await Promise.all(dirs.map(async dir => {
+        return {
+            subtrees: await Promise.all(dir.subtreesToRead.map(async file => {
+                return {
+                    subfolder: path.dirname(file),
+                    tree: JSON.parse(await fs.readFile(path.join(mdxDir, dir.folder, file), {encoding: 'utf-8'}))
+                }})),
+            folder: dir.folder,
+        }
+    }))
+
+    // recursively get slugs from each tree
+    function getSlugsFromTree(tree, isFirst = false) {
+        if (!tree) return [];
+
+        const ret =  Object.keys(tree)
+            .filter(keyString => keyString !== "index")
+            .flatMap(keyString => {
+                const key = tree[keyString];
+                const currentSlugs = key["index"] ? [keyString] : null;
+                const childSlugs = getSlugsFromTree(key).map(childSlug => [keyString].concat(childSlug));
+                
+                return currentSlugs ? [currentSlugs, ...childSlugs] : childSlugs;
+            });
+        
+        // check if we want to define a base index page e.g /ultimates
+        if (isFirst && tree["index"]) {
+            ret.push(undefined)
+        }
+        return ret
+    }
+
+    // form final slug format for return
+    return meta.flatMap(folder => 
+        folder.subtrees.flatMap(subtree => 
+            getSlugsFromTree(subtree.tree, true).map(slug => ({
+                difficulty: folder.folder,
+                slug: subtree.subfolder === "." ? slug : subtree.subfolder.split("/").concat(slug)
+            }))
+        )
+    )
 }
 
 export const dynamicParams = false
