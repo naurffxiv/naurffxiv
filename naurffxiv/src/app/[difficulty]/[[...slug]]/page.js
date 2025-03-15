@@ -87,21 +87,27 @@ export async function getPages(params) {
     let mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
-    return mdxFiles.map((file) => {
+    return await Promise.all(mdxFiles.map(async (file) => {
         let mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
-        let {metadata, content} = parseFrontmatter(mdxFile)
+        const { frontmatter , content } = await compileMDX({
+            source: mdxFile,
+            options: { 
+                parseFrontmatter: true,
+            },
+        })
+        //let {metadata, content} = parseFrontmatter(mdxFile)
         let slug = path.basename(file, path.extname(file))
         // nb: makes "index.mdx" reserved, can be improved if needed
         if (slug === "index") slug = path.basename(path.dirname(file))
         let fight = slug
         
         return {
-            metadata,
+            metadata: frontmatter,
             slug,
             content,
             fight,
         }
-    })
+    }))
 }
 
 // set the title for each page based on title set on frontmatter
