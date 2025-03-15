@@ -2,7 +2,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import { compile } from '@mdx-js/mdx'
 import { promises as fs, readdirSync, readFileSync } from 'fs';
 import path from 'path';
-import { getPath, parseFrontmatter, findMdxFilepath, getMdxDir } from './helpers';
+import { getPath, parseFrontmatter, findMdxFilepath, getMdxDir, findSiblingMdxFilepath } from './helpers';
 
 import remarkFrontmatter from 'remark-frontmatter';
 import rehypeImgSize from 'rehype-img-size';
@@ -52,7 +52,7 @@ export default async function MdxPage({ params }) {
     // TODO: implement logic for base page e.g "/ultimates/"
 
     const filepath = await findMdxFilepath(params)
-    if (filepath === "") return notFound()
+    if (!filepath) return notFound()
     
     // convert mdx to html
     let rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8')
@@ -85,19 +85,15 @@ export default async function MdxPage({ params }) {
 }
 
 // get metadata of pages in the same folder as page for quick links
-export function getPages(params) {
-    let mdxDir = getPath(params)
-    let mdxFiles = readdirSync(mdxDir).filter((file) => path.extname(file) === '.mdx')
-    
+export async function getPages(params) {
+    let mdxDir = getMdxDir([params.difficulty])
+    const mdxFiles = await findSiblingMdxFilepath(params)
+
     return mdxFiles.map((file) => {
         let mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
         let {metadata, content} = parseFrontmatter(mdxFile)
         let slug = path.basename(file, path.extname(file))
         let fight = slug
-        // if it's within a subfolder, form slug in the format like "../guides/fight"
-        if (params.slug.length > 1) {
-            slug = ["..", slug, params.slug[1]].join('/')
-        }
         
         return {
             metadata,
@@ -110,8 +106,15 @@ export function getPages(params) {
 
 // set the title for each page based on title set on frontmatter
 export async function generateMetadata({params}) {
-    const { slug } = await params;
-    let rawmdx = await fs.readFile(path.join(getPath(params), `${slug[0]}.mdx`), 'utf-8');
+    const {difficulty, slug} = params
+    const mdxDir = path.join(getMdxDir(), difficulty) 
+
+    // TODO: implement logic for base page e.g "/ultimates/"
+
+    const filepath = await findMdxFilepath(params)
+    if (!filepath) return notFound()
+
+    let rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8');
     
     const { frontmatter } = await compileMDX({source: rawmdx,
         options: { 
@@ -175,7 +178,6 @@ export async function generateStaticParams() {
         return ret
     }
 
-    return [{difficulty: "ultimates", slug: ["dsr", "guide"]}]
     // form final slug format for return
     return meta.flatMap(folder => 
         folder.subtrees.flatMap(subtree => 
