@@ -2,7 +2,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import { compile } from '@mdx-js/mdx'
 import { promises as fs, readdirSync, readFileSync } from 'fs';
 import path from 'path';
-import { getPath, parseFrontmatter, findMdxFilepath, getMdxDir, findSiblingMdxFilepath } from './helpers';
+import { parseFrontmatter, findMdxFilepath, getMdxDir, findSiblingMdxFilepath } from './helpers';
 
 import remarkFrontmatter from 'remark-frontmatter';
 import rehypeImgSize from 'rehype-img-size';
@@ -49,8 +49,6 @@ export default async function MdxPage({ params }) {
     const {difficulty, slug} = params
     const mdxDir = path.join(getMdxDir(), difficulty) 
 
-    // TODO: implement logic for base page e.g "/ultimates/"
-
     const filepath = await findMdxFilepath(params)
     if (!filepath) return notFound()
     
@@ -93,6 +91,8 @@ export async function getPages(params) {
         let mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
         let {metadata, content} = parseFrontmatter(mdxFile)
         let slug = path.basename(file, path.extname(file))
+        // nb: makes "index.mdx" reserved, can be improved if needed
+        if (slug === "index") slug = path.basename(path.dirname(file))
         let fight = slug
         
         return {
@@ -108,8 +108,6 @@ export async function getPages(params) {
 export async function generateMetadata({params}) {
     const {difficulty, slug} = params
     const mdxDir = path.join(getMdxDir(), difficulty) 
-
-    // TODO: implement logic for base page e.g "/ultimates/"
 
     const filepath = await findMdxFilepath(params)
     if (!filepath) return notFound()
@@ -158,7 +156,7 @@ export async function generateStaticParams() {
     }))
 
     // recursively get slugs from each tree
-    function getSlugsFromTree(tree, isFirst = false) {
+    function getSlugsFromTree(tree, subfolder, isFirst = false) {
         if (!tree) return [];
 
         const ret =  Object.keys(tree)
@@ -170,23 +168,24 @@ export async function generateStaticParams() {
                 
                 return currentSlugs ? [currentSlugs, ...childSlugs] : childSlugs;
             });
-        
+
         // check if we want to define a base index page e.g /ultimates
         if (isFirst && tree["index"]) {
-            ret.push(undefined)
+            if (subfolder === ".") ret.push(undefined)
+            else ret.push([])
         }
         return ret
     }
-
+    
     // form final slug format for return
-    return meta.flatMap(folder => 
+    return (meta.flatMap(folder => 
         folder.subtrees.flatMap(subtree => 
-            getSlugsFromTree(subtree.tree, true).map(slug => ({
+            getSlugsFromTree(subtree.tree, subtree.subfolder, true).map(slug => ({
                 difficulty: folder.folder,
                 slug: subtree.subfolder === "." ? slug : subtree.subfolder.split("/").concat(slug)
             }))
         )
-    )
+    ))
 }
 
 export const dynamicParams = false

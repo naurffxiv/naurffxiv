@@ -1,16 +1,6 @@
 import path from 'path';
 import { promises as fs, readdirSync } from 'fs';
 
-// get path based on slug
-export function getPath(params) {
-    const { difficulty, slug } = params;
-    if (slug.length == 1) {
-        return path.join(process.cwd(), 'src/markdown', `${difficulty}`)
-    } else if (slug.length > 1) {
-        return path.join(process.cwd(), 'src/markdown', `${difficulty}`, `${slug[1]}`)
-    }
-}
-
 export function parseFrontmatter(fileContent) {
     let frontmatterRegex = /---\s*([\s\S]*?)\s*---/
     let match = frontmatterRegex.exec(fileContent)
@@ -57,7 +47,7 @@ function findMatchingMeta(mdxDir, goalPath){
 async function findMdxShared(params, subfunc) {
     const {difficulty, slug} = params
     const mdxDir = path.join(getMdxDir(), difficulty) 
-    const goalPath = path.join(...slug)
+    const goalPath = slug ? path.join(...slug) : '.'
 
     const metaFiles = findMatchingMeta(mdxDir, goalPath)
 
@@ -68,9 +58,11 @@ async function findMdxShared(params, subfunc) {
 
         // strip matching path, then prepare to traverse through nested dictionary
         let diff = dirname === "." ? goalPath : goalPath.substring(dirname.length + 1)
-        const pathArray = diff.split('\\')
+        if (diff.length == 0) diff = "."
+        const pathArray = diff === "." ? [] : diff.split('\\')
         const meta = JSON.parse(await fs.readFile(path.join(mdxDir, metaFile), {encoding: 'utf-8'}))
-        return subfunc(meta, pathArray, dirname)
+        const ret = subfunc(meta, pathArray, dirname)
+        if (ret) return ret
     }
     return 
 }
@@ -80,9 +72,9 @@ export async function findMdxFilepath(params) {
     return findMdxShared(params, findMdxFilepathHelper)
 }
 
-function findMdxFilepathHelper(meta, pathArray) {
+function findMdxFilepathHelper(meta, pathArray, dirname) {
     const result = getNestedValue(meta, pathArray)
-    if (result && result.index) return path.normalize(result.index)
+    if (result && result.index) return path.join(dirname, path.normalize(result.index))
     return
 }
 
@@ -92,10 +84,15 @@ export async function findSiblingMdxFilepath(params) {
 }
 
 function findSiblingHelper(meta, pathArray, dirname) {
+    if (pathArray.length == 0) return [path.join(dirname, meta["index"])]
+
     const parent = getNestedValue(meta, pathArray.slice(0, -1))
     if (!parent) return
+
     let ret = Object.keys(parent).filter(key => key !== "index").map(key => {
         return parent[key]["index"] ? parent[key]["index"] : null
     })
-    return ret.map(filepath => path.join(dirname, filepath))
+
+    // filter null values then create the full filename
+    return ret.filter(filepath => filepath).map(filepath => path.join(dirname, filepath))
 }
