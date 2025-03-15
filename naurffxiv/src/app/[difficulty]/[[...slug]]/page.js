@@ -53,7 +53,7 @@ export default async function MdxPage({ params }) {
     if (!filepath) return notFound()
     
     // convert mdx to html
-    let rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8')
+    const rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8')
     const { content } = await compileMDX({
         source: rawmdx,
         components: MDXComponents,
@@ -75,7 +75,7 @@ export default async function MdxPage({ params }) {
         ]
     })
     
-    let metadata = await getPages(params)
+    const metadata = await getPages(params)
 
     return (
         <MDXPage params={content} toc={toc.data.toc} metadata={metadata} slug={slug}/>
@@ -84,28 +84,26 @@ export default async function MdxPage({ params }) {
 
 // get metadata of pages in the same folder as page for quick links
 export async function getPages(params) {
-    let mdxDir = getMdxDir([params.difficulty])
+    const mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
     return await Promise.all(mdxFiles.map(async (file) => {
-        let mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
+        const mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
         const { frontmatter , content } = await compileMDX({
             source: mdxFile,
             options: { 
                 parseFrontmatter: true,
             },
         })
-        //let {metadata, content} = parseFrontmatter(mdxFile)
+        
         let slug = path.basename(file, path.extname(file))
         // nb: makes "index.mdx" reserved, can be improved if needed
         if (slug === "index") slug = path.basename(path.dirname(file))
-        let fight = slug
         
         return {
             metadata: frontmatter,
             slug,
             content,
-            fight,
         }
     }))
 }
@@ -118,7 +116,7 @@ export async function generateMetadata({params}) {
     const filepath = await findMdxFilepath(params)
     if (!filepath) return notFound()
 
-    let rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8');
+        const rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8');
     
     const { frontmatter } = await compileMDX({source: rawmdx,
         options: { 
@@ -126,14 +124,12 @@ export async function generateMetadata({params}) {
         },
     });
 
-    let title = frontmatter.title ? frontmatter.title + " | NAUR" : "NAUR" 
-
-    return {title: title}
+    return {title: frontmatter.title ? frontmatter.title + " | NAUR" : "NAUR" }
 }
 
 // generate valid slugs based on _meta.json files in markdown folder
 export async function generateStaticParams() {
-    let mdxDir = path.join(process.cwd(), 'src', 'markdown')
+    const mdxDir = path.join(process.cwd(), 'src', 'markdown')
 
     // get all paths specified in `markdownFolders`
     const dirsToSearch = markdownFolders.map(folder => {
