@@ -15,10 +15,13 @@ import { markdownFolders } from '@/app/constants';
 import MDXPage from '.';
 import { notFound } from 'next/navigation';
 
+import { CopyToClipboard } from '@/components/Mdx/CopyToClipboard';
+
 const MDXComponents = { 
     h1: (props) => <h1 className="scroll-mt-20" {...props} />,
     h2: (props) => <section><h2 className="scroll-mt-20" {...props} /></section>,
     h3: (props) => <section><h3 className="scroll-mt-20" {...props} /></section>,
+    pre: (props) => <CopyToClipboard><pre {...props}></pre></CopyToClipboard>,
 }
 
 // mdx to html options
@@ -95,7 +98,7 @@ export async function getPages(params) {
                 parseFrontmatter: true,
             },
         })
-        
+
         let slug = path.basename(file, path.extname(file))
         // nb: makes "index.mdx" reserved, can be improved if needed
         if (slug === "index") slug = path.basename(path.dirname(file))
