@@ -1,5 +1,7 @@
 import { images } from './assets'
 
+export const markdownFolders = ['ultimates']
+
 export const pages = [
   {
     "name": "Findingway",
