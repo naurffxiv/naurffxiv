@@ -41,7 +41,7 @@ async function findMdxShared(params, subfunc) {
         // strip matching path, then prepare to traverse through nested dictionary
         let diff = dirname === "." ? goalPath : goalPath.substring(dirname.length + 1)
         if (diff.length == 0) diff = "."
-        const pathArray = diff === "." ? [] : diff.split('\\')
+        const pathArray = diff === "." ? [] : diff.split(path.sep)
         const meta = JSON.parse(await fs.readFile(path.join(mdxDir, metaFile), {encoding: 'utf-8'}))
         const ret = subfunc(meta, pathArray, dirname)
         if (ret) return ret
