@@ -8,7 +8,7 @@ export default function QuickLinks({metadata, slug}) {
             <ul className="list-none quick-links-div w-fit">
                 {arr.map((ultimate) => {
                     return (
-                    ultimate.slug == slug ? 
+                    !slug || ultimate.slug == slug[slug.length-1] ? 
                     <li key={ultimate.slug} className="transition-colors rounded-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300 py-2 px-4">
                         <a href={ultimate.slug} className="block no-underline text-blue-400 hover:text-blue-500 transition-colors">
                             {ultimate.metadata.title}

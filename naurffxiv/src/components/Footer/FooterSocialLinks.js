@@ -20,8 +20,8 @@ export default function FooterSocialLinks() {
                                 <Image
                                 src={icons.Discord}
                                 alt="Discord logo"
-                                height="30"
-                                width="30"
+                                height="37"
+                                width="37"
                                 />
                             </Link>
                         </IconButton>
@@ -32,8 +32,8 @@ export default function FooterSocialLinks() {
                                 <Image
                                 src={icons.Github}
                                 alt="GitHub Logo"
-                                height="30"
-                                width="30"
+                                height="32"
+                                width="32"
                                 />
                             </Link>
                         </IconButton>
