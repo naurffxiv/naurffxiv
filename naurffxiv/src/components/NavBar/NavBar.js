@@ -125,7 +125,7 @@ export default function NavBar() {
               </li>
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <UltimateDropdown name="Ultimates" isMobile={true} />
+                  <UltimateDropdown name="Ultimates" isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
               {pages.map((page) => (
