@@ -1,7 +1,6 @@
 import { images } from './assets'
 
 export const markdownFolders = ['ultimates']
-export const markdownSubfolders = ['guide']
 
 export const pages = [
   {
