@@ -1,5 +1,61 @@
 import path from 'path';
 import { promises as fs, readdirSync } from 'fs';
+import * as runtime from "react/jsx-runtime";
+import { evaluate } from '@mdx-js/mdx'
+import { cache } from 'react';
+
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import rehypeImgSize from 'rehype-img-size';
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
+import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
+
+// process each mdx file and cache it
+export const processMdx = cache(async (filepath) => {
+    const rawmdx = await fs.readFile(filepath, 'utf-8')
+
+    // process mdx
+    const processedMdx = await evaluate(rawmdx, {
+        ...runtime,
+        baseUrl: import.meta.url,
+        remarkPlugins: [
+            remarkFrontmatter,
+            remarkMdxFrontmatter
+        ],
+        rehypePlugins: [
+            rehypeSlug,
+            [
+                rehypeAutolinkHeadings,
+                {
+                behavior: 'append',
+                properties: {
+                    ariaHidden: false,
+                    tabIndex: -1,
+                    className: 'hash-link',
+                },
+                },
+            ],
+            [rehypeImgSize, { dir: 'public' }],
+            rehypeExtractToc,
+            [rehypeExtractTocExport, {name: "toc"}]
+        ]
+    })
+    
+    return processedMdx
+})
+
+// resolves mdx filepath from slug and returns the processed file
+export async function getProcessedMdxFromParams(params) {
+    const {difficulty} = params
+    const mdxDir = path.join(getMdxDir(), difficulty) 
+
+    const filepath = await findMdxFilepath(params)
+    if (!filepath) return {error: `file at ${filepath} not found`}
+
+    return await processMdx(path.join(mdxDir, filepath))
+}
 
 export function getMdxDir(subfolders = []) {
     return path.join(process.cwd(), 'src', 'markdown', ...subfolders)
