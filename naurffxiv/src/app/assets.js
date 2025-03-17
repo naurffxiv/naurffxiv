@@ -7,7 +7,8 @@ import Calendar from '@/assets/Icons/Calendar.png'
 import Github from '@/assets/Icons/githublogo.png'
 import Naur from '@/assets/Icons/naur_icon.png'
 import Patreon from '@/assets/Icons/Patreon.png'
-export const icons = {Chat, Lightbulb, Contact, Discord, Calendar, Github, Naur, Patreon}
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+export const icons = {Chat, Lightbulb, Contact, Discord, Calendar, Github, Naur, Patreon, PersonSearchIcon}
 
 // images
 import Bahamut from '@/assets/Images/Bahamut.png'
