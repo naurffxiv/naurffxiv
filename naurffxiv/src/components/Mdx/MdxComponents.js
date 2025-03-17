@@ -1,3 +1,4 @@
+import YouTube from "../Video/YouTube";
 import { CopyToClipboard } from '@/components/Mdx/CopyToClipboard';
 
 export const MDXComponents = { 
@@ -5,4 +6,5 @@ export const MDXComponents = {
     h2: (props) => <section><h2 className="scroll-mt-20" {...props} /></section>,
     h3: (props) => <section><h3 className="scroll-mt-20" {...props} /></section>,
     pre: (props) => <CopyToClipboard><pre {...props}></pre></CopyToClipboard>,
+    YouTube,
 }
