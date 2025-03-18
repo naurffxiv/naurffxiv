@@ -86,13 +86,13 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
   }),
 });
 
-export const slides = [
-  {id: 1, url: '/ultimates/ucob', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
-  {id: 2, url: '/ultimates/uwu', src: images.Ultima, alt: 'Ultima', title: 'The Weapon\'s Refrain' },
-  {id: 3, url: '/ultimates/tea', src: images.Alexander, alt: 'Alexander', title: 'The Epic of Alexander' },
-  {id: 4, url: '/ultimates/dsr', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
-  {id: 5, url: '/ultimates/top', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
+export const ultimateImages = [
   {id: 6, url: '/ultimates/fru', src: images.Pandora, alt: 'Pandora', title: 'Futures Rewritten' },
+  {id: 5, url: '/ultimates/top', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
+  {id: 4, url: '/ultimates/dsr', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
+  {id: 3, url: '/ultimates/tea', src: images.Alexander, alt: 'Alexander', title: 'The Epic of Alexander' },
+  {id: 2, url: '/ultimates/uwu', src: images.Ultima, alt: 'Ultima', title: 'The Weapon\'s Refrain' },
+  {id: 1, url: '/ultimates/ucob', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
 ];
 
 export const linksUltimates = [
