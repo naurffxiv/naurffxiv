@@ -18,3 +18,7 @@ import Omega from '@/assets/Images/Omega.png'
 import Pandora from '@/assets/Images/Pandora.png'
 
 export const images = {Bahamut, Ultima, Alexander, Thordan, Omega, Pandora}
+
+// MUI icons
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+export const iconsMui = {PersonSearchIcon}

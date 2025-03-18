@@ -8,7 +8,7 @@ export default function Header() {
           <div className="grid mx-auto py-16 gap-y-3 max-w-prose md:gap-y-6 xl:float-right">
             <h1 className="text-4xl xl:text-6xl font-bold">NAUR</h1>
             <h3 className="text-lg/8 xl:text-2xl/10">
-              NA Ultimate Raiding (NAUR) is an FFXIV Discord community for Ultimate Duties in NA Data Centers. Join us for the best Ultimate raiding experience, whether you're new or a veteran!
+              NA Ultimate Raiding (NAUR) is an FFXIV Discord community focused on High-End raiding on NA Data Centers. If you're looking to raid on NA Data Centers, come join our community!
             </h3>
             <a
             href="https://discord.com/invite/naurffxiv"
