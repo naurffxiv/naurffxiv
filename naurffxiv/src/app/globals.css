@@ -12,7 +12,13 @@ body {
   background-color: var(--background-hex);
 }
 
-@media (width >= 96rem) {
+@media (width >= 120rem) {
+  body {
+    background-image: linear-gradient(to right, #000d12, var(--background-hex) 10%, var(--background-hex) 90%, #000d12);
+  }
+}
+
+@media (width >= 150rem) {
   body {
     background-image: linear-gradient(to right, #000d12, var(--background-hex) 20%, var(--background-hex) 80%, #000d12);
   }
