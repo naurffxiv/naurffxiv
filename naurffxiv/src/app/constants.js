@@ -86,7 +86,7 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
   }),
 });
 
-export const slides = [
+export const ultimateImages = [
   {id: 6, url: '/ultimates/fru', src: images.Pandora, alt: 'Pandora', title: 'Futures Rewritten' },
   {id: 5, url: '/ultimates/top', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
   {id: 4, url: '/ultimates/dsr', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },

@@ -1,5 +1,5 @@
 import FightGuideList from './FightGuideList';
-import Offerings from './Offerings';
+import Offerings from './OfferingCards';
 
 export default function HomepageContent() {
     return (
