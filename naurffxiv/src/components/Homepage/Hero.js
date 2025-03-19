@@ -6,18 +6,19 @@ export default function Header() {
     return (
       <div className="grid max-w-prose gap-y-3 md:gap-y-6">
         <h1 className="text-4xl xl:text-6xl font-bold">NAUR</h1>
-                <h3 className="text-lg/8 xl:text-2xl/10">
-                  NA Ultimate Raiding (NAUR) is an FFXIV Discord community focused on High-End raiding on NA Data Centers. If you're looking to raid on NA Data Centers, come join our community!
-                </h3>
-                <a
-                href="https://discord.com/invite/naurffxiv"
-                target="_blank"
-                className="transition-colors bg-[#7289da] rounded-full max-w-fit py-4 px-6 hover:bg-[#007196]"
-                >
-                <span className="flex gap-5 font-medium">
-                  <Image src={icons.Discord} alt="Discord" width="32" height="24" />
-                  Join our Discord!
-                </span>
+          <h3 className="text-lg/7 xl:text-2xl/9">
+              NAUR (NA Ultimate Raiding) is a community of high-end raiders on North American Data Centers for Final Fantasy XIV: Online.
+              Come connect with other high-end raiders, find statics, and share the enjoyment of FFXIV's toughest content.
+          </h3>
+          <a
+          href="https://discord.com/invite/naurffxiv"
+          target="_blank"
+          className="transition-colors bg-[#7289da] rounded-full max-w-fit py-4 px-6 hover:bg-[#007196]"
+          >
+            <span className="flex gap-5 font-medium">
+              <Image src={icons.Discord} alt="Discord" width="32" height="24" />
+              Join our Discord!
+            </span>
         </a>
       </div>
     )

@@ -38,14 +38,14 @@ export default function Offerings() {
     return (
         <div className="flex justify-center items-center flex-col">
             <h3 className="text-2xl">What NAUR has to offer</h3>
-            <div className="mt-3 grid grid-cols-1 lg:grid-cols-3 gap-x-3 sm:gap-x-10 gap-y-3 justify-center text-center mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-3 sm:gap-x-10 gap-y-3 justify-center text-center mx-auto">
                 {
                     divs.map(div => {
                         return (
-                            <div key={div.alt} className="grid grid-rows-[1fr_2fr] rounded-xl px-1 py-3 sm:pb-6 sm:px-3 flex-1">
+                            <div key={div.alt} className="grid grid-rows-[1fr_2fr] rounded-xl px-1 sm:pb-6 sm:px-3 flex-1">
                                 <Image src={div.icon} width={div.width} height={div.height} alt={div.alt} className="m-auto mb-0"/>
                                 <div>
-                                    <h4 className="text-center sm:mt-2">{div.title}</h4>
+                                    <h4 className="text-lg font-semibold text-center sm:mt-2">{div.title}</h4>
                                     <p className="max-w-prose prose prose-invert">{div.desc}</p>
                                 </div>
                             </div>
