@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { icons, iconsMui } from '@/app/assets'
+import { icons } from '@/app/assets'
 
 const divs = [
     {
@@ -15,8 +15,8 @@ const divs = [
     {
         title: "FFXIV Resources for NA Players",
         desc: `Our website and Discord provide tailored resources for High-End content which include up-to-date
-        raid-plans/toolboxes, written guides, and other learning tools and resources.
-        Whether you're tackling Savage or Ultimate raids, we’ve got the tools you need to progress and clear them.`,
+                raid-plans/toolboxes, written guides, and other learning tools and resources.
+                Whether you're tackling Savage or Ultimate raids, we’ve got the tools you need to progress and clear them.`,
         icon: icons.Lightbulb,
         width: 40,
         height: 40,
@@ -25,8 +25,8 @@ const divs = [
     {
         title: "Raiding Server Events",
         desc: `NAUR hosts a variety of events throughout the year for NA data centers,
-        designed to help players prog and clear high-end content.
-        Join us for fun parties that bring the community together to achieve your raiding goals.`,
+                designed to help players prog and clear high-end content.
+                Join us for fun parties that bring the community together to achieve your raiding goals.`,
         icon: icons.Calendar,
         width: 45,
         height: 45,
@@ -37,8 +37,8 @@ const divs = [
 export default function Offerings() {
     return (
         <div className="flex justify-center items-center flex-col">
-            <h3 className="text-xl">What NAUR has to offer</h3>
-            <div className="mt-3 grid grid-cols-1 lg:grid-cols-3 gap-x-3 sm:gap-x-10 gap-y-3 md:gap-y-6 justify-center text-center mx-auto">
+            <h3 className="text-2xl">What NAUR has to offer</h3>
+            <div className="mt-3 grid grid-cols-1 lg:grid-cols-3 gap-x-3 sm:gap-x-10 gap-y-3 justify-center text-center mx-auto">
                 {
                     divs.map(div => {
                         return (

@@ -24,10 +24,10 @@ export default function Header() {
   }
 
   return (
-      <div className="max-w-screen-2xl grid md:grid-cols-2 bg-[#1A192B] 2xl:bg-transparent 2xl:bg-header-gradient mx-auto 2xl:px-6">
+      <div className="max-w-screen-2xl grid md:grid-cols-2 mx-auto 2xl:px-6">
         <div className="bg-center bg-header-default px-5 md:bg-none md:bg-left py-16">
           <div className="max-w-3xl mx-auto mr-0">
-            <div className="max-w-fit mx-auto lg:mr-2">
+            <div className="max-w-fit">
               <Text />
             </div>
           </div>
