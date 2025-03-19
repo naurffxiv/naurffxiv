@@ -1,6 +1,6 @@
 import { readdirSync } from 'fs';
 import path from 'path';
-import { processMdx, getProcessedMdxFromParams, readAndParseJson, getMdxDir, findSiblingMdxFilepath } from './helpers';
+import { processMdx, getProcessedMdxFromParams, readAndDeserializeJson, getMdxDir, findSiblingMdxFilepath } from './helpers';
 import { markdownFolders } from '@/app/constants';
 import MDXPage from '.';
 import { notFound } from 'next/navigation';
@@ -74,7 +74,7 @@ export async function generateStaticParams() {
             subtrees: await Promise.all(dir.subtreesToRead.map(async file => {
                 return {
                     subfolder: path.dirname(file),
-                    tree: await readAndParseJson(path.join(mdxDir, dir.folder, file))
+                    tree: await readAndDeserializeJson(path.join(mdxDir, dir.folder, file))
                 }})),
             folder: dir.folder,
         }
