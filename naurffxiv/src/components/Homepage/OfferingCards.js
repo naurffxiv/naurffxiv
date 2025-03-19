@@ -14,7 +14,7 @@ const divs = [
     },
     {
         title: "FFXIV Resources for NA Players",
-        desc: `Our website and Discord provide tailored resources for High-End content which include up-to-date
+        desc: `Our website and Discord provide tailored resources for high-end content which include up-to-date
                 raid-plans/toolboxes, written guides, and other learning tools and resources.
                 Whether you're tackling Savage or Ultimate raids, we’ve got the tools you need to progress and clear them.`,
         icon: icons.Lightbulb,

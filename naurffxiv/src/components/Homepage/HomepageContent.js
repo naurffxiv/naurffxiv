@@ -7,7 +7,7 @@ export default function HomepageContent() {
             <FightGuideList />
             <Offerings />
             <p className="text-center text-xl">
-                If you are interested in Ultimate Raiding on NA Data Centers and what we have to offer, come be a part of our community!
+                If you are interested in high-end content on NA Data Centers and what we have to offer, come be a part of our community!
             </p>
         </div>
     );
