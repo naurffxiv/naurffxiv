@@ -1,87 +1,25 @@
-import { compileMDX } from 'next-mdx-remote/rsc'
-import { compile } from '@mdx-js/mdx'
-import { promises as fs, readdirSync, readFileSync } from 'fs';
+import { readdirSync } from 'fs';
 import path from 'path';
-import { parseFrontmatter, findMdxFilepath, getMdxDir, findSiblingMdxFilepath } from './helpers';
-
-import remarkFrontmatter from 'remark-frontmatter';
-import rehypeImgSize from 'rehype-img-size';
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
-import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
-
+import { processMdx, getProcessedMdxFromParams, readAndDeserializeJson, getMdxDir, findSiblingMdxFilepath } from './helpers';
 import { markdownFolders } from '@/app/constants';
 import MDXPage from '.';
 import { notFound } from 'next/navigation';
 
-import { CopyToClipboard } from '@/components/Mdx/CopyToClipboard';
-
-const MDXComponents = { 
-    h1: (props) => <h1 className="scroll-mt-20" {...props} />,
-    h2: (props) => <section><h2 className="scroll-mt-20" {...props} /></section>,
-    h3: (props) => <section><h3 className="scroll-mt-20" {...props} /></section>,
-    pre: (props) => <CopyToClipboard><pre {...props}></pre></CopyToClipboard>,
-}
-
-// mdx to html options
-const mdxOptions = {
-    remarkPlugins: [
-        remarkFrontmatter,
-    ],
-    rehypePlugins: [
-        rehypeSlug,
-        [
-          rehypeAutolinkHeadings,
-          {
-            behavior: 'append',
-            properties: {
-              ariaHidden: false,
-              tabIndex: -1,
-              className: 'hash-link',
-            },
-          },
-        ],
-        [rehypeImgSize, { dir: 'public' }],
-    ],
-}
+import { MDXComponents } from '@/components/Mdx/MdxComponents';
 
 // Called when a page is accessed (only once on build with static site generation)
 // Finds mdx file to render based on slug then processes the page accordingly
 export default async function MdxPage({ params }) {
-    const {difficulty, slug} = params
-    const mdxDir = path.join(getMdxDir(), difficulty) 
+    const {slug} = params
+    const {default: Content, toc, error} = await getProcessedMdxFromParams(params)
+    if (error) return notFound()
 
-    const filepath = await findMdxFilepath(params)
-    if (!filepath) return notFound()
-    
-    // convert mdx to html
-    const rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8')
-    const { content } = await compileMDX({
-        source: rawmdx,
-        components: MDXComponents,
-        options: { 
-            parseFrontmatter: true, 
-            mdxOptions: mdxOptions
-        },
-    })
-    
-    // get toc tree
-    const toc = await compile(rawmdx, {
-        remarkPlugins: [
-            remarkFrontmatter,
-        ],
-        rehypePlugins: [
-            rehypeSlug,
-            rehypeExtractToc,
-            rehypeExtractTocExport,
-        ]
-    })
-    
     const metadata = await getPages(params)
 
     return (
-        <MDXPage params={content} toc={toc.data.toc} metadata={metadata} slug={slug}/>
+        <MDXPage toc={toc} metadata={metadata} slug={slug}>
+            <Content components={MDXComponents}/>
+        </MDXPage>
     )
 }
 
@@ -91,13 +29,7 @@ export async function getPages(params) {
     const mdxFiles = await findSiblingMdxFilepath(params)
 
     return await Promise.all(mdxFiles.map(async (file) => {
-        const mdxFile = readFileSync(path.join(mdxDir, file), 'utf-8')
-        const { frontmatter , content } = await compileMDX({
-            source: mdxFile,
-            options: { 
-                parseFrontmatter: true,
-            },
-        })
+        const { frontmatter } = await processMdx(path.join(mdxDir, file))
 
         let slug = path.basename(file, path.extname(file))
         // nb: makes "index.mdx" reserved, can be improved if needed
@@ -106,26 +38,14 @@ export async function getPages(params) {
         return {
             metadata: frontmatter,
             slug,
-            content,
         }
     }))
 }
 
 // set the title for each page based on title set on frontmatter
 export async function generateMetadata({params}) {
-    const {difficulty, slug} = params
-    const mdxDir = path.join(getMdxDir(), difficulty) 
-
-    const filepath = await findMdxFilepath(params)
-    if (!filepath) return notFound()
-
-        const rawmdx = await fs.readFile(path.join(mdxDir, filepath), 'utf-8');
-    
-    const { frontmatter } = await compileMDX({source: rawmdx,
-        options: { 
-            parseFrontmatter: true, 
-        },
-    });
+    const {frontmatter, error} = await getProcessedMdxFromParams(params)
+    if (error) return notFound()
 
     return {title: frontmatter.title ? frontmatter.title + " | NAUR" : "NAUR" }
 }
@@ -154,7 +74,7 @@ export async function generateStaticParams() {
             subtrees: await Promise.all(dir.subtreesToRead.map(async file => {
                 return {
                     subfolder: path.dirname(file),
-                    tree: JSON.parse(await fs.readFile(path.join(mdxDir, dir.folder, file), {encoding: 'utf-8'}))
+                    tree: await readAndDeserializeJson(path.join(mdxDir, dir.folder, file))
                 }})),
             folder: dir.folder,
         }

@@ -50,7 +50,9 @@ export default function NavBar() {
           <Box sx={{display: { xs: 'none', md: 'flex' } }}>
             <MenuList sx={{display: 'flex'}}>
               <li>
-                <MenuItem component="a" href="/">
+                <MenuItem component="a" href="/" style={{borderRadius: "4px"}} 
+                  sx={{':hover': {bgcolor: 'rgba(25, 118, 210, 0.04)'}}}
+                >
                   <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
                       Home
                   </Typography>
@@ -59,7 +61,9 @@ export default function NavBar() {
                 <UltimateDropdown name="Ultimates" />
                 {pages.map((page) => (
                     <li key={page.name}>
-                      <MenuItem component="a" href={page.link}>
+                      <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
+                        sx={{':hover': {bgcolor: 'rgba(25, 118, 210, 0.04)'}}}
+                      >
                         <Typography sx={{ textAlign: 'center' }}>
                           {page.name}
                         </Typography>
