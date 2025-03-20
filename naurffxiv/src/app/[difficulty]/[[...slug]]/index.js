@@ -4,7 +4,7 @@ import React from "react";
 import TableOfContents from "@/components/Mdx/TableOfContents";
 import QuickLinks from "@/components/Mdx/QuickLinks";
 
-const MDXPage = ({params: content, toc, metadata, slug}) => {
+const MDXPage = ({children, toc, metadata, slug}) => {
     return (
         <MdxLayout>
             <div className="grid grid-cols-1 lg:grid-cols-[90ch_1fr] xl:grid-cols-[1fr_90ch_1fr] max-w-screen-2xl mx-auto py-6">
@@ -13,7 +13,7 @@ const MDXPage = ({params: content, toc, metadata, slug}) => {
                 </div>
 
                 <article className="max-w-[90ch] prose prose-invert m-auto mx-6">
-                    {content}
+                    {children}
                 </article>
 
                 <div className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky">
