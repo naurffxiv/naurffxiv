@@ -98,15 +98,15 @@ async function findMdxShared(params, subfunc) {
         let diff = dirname === "." ? goalPath : goalPath.substring(dirname.length + 1)
         if (diff.length == 0) diff = "."
         const pathArray = diff === "." ? [] : diff.split(path.sep)
-        const meta = await readAndParseJson(path.join(mdxDir, metaFile), {encoding: 'utf-8'})
+        const meta = await readAndDeserializeJson(path.join(mdxDir, metaFile), {encoding: 'utf-8'})
         const ret = subfunc(meta, pathArray, dirname)
         if (ret) return ret
     }
     return 
 }
 
-// read, parse, and cache a processed json file
-export const readAndParseJson = cache(async (filepath) => {
+// read, deserialize, and cache a json file (_meta.json)
+export const readAndDeserializeJson = cache(async (filepath) => {
     const file = await fs.readFile(filepath)
     return JSON.parse(file, {encoding: 'utf-8'})
 })
