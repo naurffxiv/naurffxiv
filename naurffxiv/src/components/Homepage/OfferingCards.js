@@ -23,7 +23,7 @@ const divs = [
         alt: "Bulb icon",
     },
     {
-        title: "Raiding Server Events",
+        title: "Raid Events",
         desc: `NAUR hosts a variety of events throughout the year for NA data centers,
                 designed to help players prog and clear high-end content.
                 Join us for fun parties that bring the community together to achieve your raiding goals.`,
