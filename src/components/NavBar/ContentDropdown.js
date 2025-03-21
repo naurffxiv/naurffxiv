@@ -9,14 +9,13 @@ import {
   List,
   ListItem
 } from "@mui/material";
-import Link from 'next/link';
-import { savageExtremeList, getMenuProps } from '@/app/constants.js';
+import { getMenuProps } from '@/app/constants.js';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-export default function SavageExtremeDropdown(props) {
-  const { name, isMobile, insideMobileMenu } = props;
+export default function ContentDropdown(props) {
+  const { name, isMobile, insideMobileMenu, data } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const open = Boolean(anchorEl);
@@ -55,7 +54,7 @@ export default function SavageExtremeDropdown(props) {
         </Box>
         <Collapse in={mobileOpen} timeout="auto">
           <List sx={{ pl: 2, my: 0 }}>
-            {savageExtremeList.map((fight, i) => (
+            {data.map((fight, i) => (
               <ListItem 
                 key={i} 
                 disablePadding
@@ -93,6 +92,7 @@ export default function SavageExtremeDropdown(props) {
     );
   }
 
+
   // For mobile dropdown outside hamburger menu
   if (isMobile) {
     return (
@@ -102,7 +102,7 @@ export default function SavageExtremeDropdown(props) {
           <ArrowDropDownIcon />
         </Typography>
         <Menu {...menuProps}>
-          {savageExtremeList.map((fight, i) => (
+          {data.map((fight, i) => (
             <li key={i}>
               <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
                 <Typography sx={{ textAlign: 'left' }}>
@@ -135,7 +135,7 @@ export default function SavageExtremeDropdown(props) {
         </Typography>
       </Button>
       <Menu {...menuProps}>
-        {savageExtremeList.map((fight, i) => (
+        {data.map((fight, i) => (
           <li key={i}>
             <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
               <Typography sx={{ textAlign: 'left' }}>
