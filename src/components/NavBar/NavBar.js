@@ -58,7 +58,7 @@ export default function NavBar() {
                 </MenuItem>
               </li>
                 <ContentDropdown name="Ultimates" data={ultimateList} />
-                <ContentDropdown name="Savage/Extreme" data={savageExtremeList} />
+                <ContentDropdown name="Savage & Extreme" data={savageExtremeList} />
                 {pages.map((page) => (
                     <li key={page.name}>
                       <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
@@ -134,7 +134,7 @@ export default function NavBar() {
               </MenuItem>
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <ContentDropdown name="Savage/Extreme" data={savageExtremeList} isMobile={true} insideMobileMenu={true} />
+                  <ContentDropdown name="Savage & Extreme" data={savageExtremeList} isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
               {pages.map((page) => (
