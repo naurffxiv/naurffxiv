@@ -13,11 +13,10 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
-
-import { pages } from '@/app/constants.js';
+import { pages, savageExtremeList, ultimateList } from '@/app/constants.js';
 import MenuIcon from '@mui/icons-material/Menu';
-import UltimateDropdown from './UltimateDropdown.js';
 import { icons } from '@/app/assets.js';
+import ContentDropdown from './ContentDropdown.js';
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -58,7 +57,8 @@ export default function NavBar() {
                   </Typography>
                 </MenuItem>
               </li>
-                <UltimateDropdown name="Ultimates" />
+                <ContentDropdown name="Ultimates" data={ultimateList} />
+                <ContentDropdown name="Savage & Extreme" data={savageExtremeList} />
                 {pages.map((page) => (
                     <li key={page.name}>
                       <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
@@ -129,7 +129,12 @@ export default function NavBar() {
               </li>
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <UltimateDropdown name="Ultimates" isMobile={true} insideMobileMenu={true} />
+                  <ContentDropdown name="Ultimates" data={ultimateList} isMobile={true} insideMobileMenu={true} />
+                </Box>
+              </MenuItem>
+              <MenuItem>
+                <Box sx={{ width: '100%', textAlign: 'left' }}>
+                  <ContentDropdown name="Savage & Extreme" data={savageExtremeList} isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
               {pages.map((page) => (

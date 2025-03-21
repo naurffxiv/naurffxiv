@@ -9,14 +9,13 @@ import {
   List,
   ListItem
 } from "@mui/material";
-import Link from 'next/link';
-import { ultimateList, getMenuProps } from '@/app/constants.js';
+import { getMenuProps } from '@/app/constants.js';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-export default function UltimateDropdown(props) {
-  const { name, isMobile, insideMobileMenu } = props;
+export default function ContentDropdown(props) {
+  const { name, isMobile, insideMobileMenu, data } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const open = Boolean(anchorEl);
@@ -55,7 +54,7 @@ export default function UltimateDropdown(props) {
         </Box>
         <Collapse in={mobileOpen} timeout="auto">
           <List sx={{ pl: 2, my: 0 }}>
-            {ultimateList.map((fight, i) => (
+            {data.map((fight, i) => (
               <ListItem 
                 key={i} 
                 disablePadding
@@ -103,7 +102,7 @@ export default function UltimateDropdown(props) {
           <ArrowDropDownIcon />
         </Typography>
         <Menu {...menuProps}>
-          {ultimateList.map((fight, i) => (
+          {data.map((fight, i) => (
             <li key={i}>
               <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
                 <Typography sx={{ textAlign: 'left' }}>
@@ -132,11 +131,11 @@ export default function UltimateDropdown(props) {
           <Typography sx={{ textAlign: 'center' }}>
             {name}
           </Typography>
-          <ArrowDropDownIcon />
+          <ArrowDropDownIcon viewBox='2 4 15 15' sx={{marginY: 'auto', fontSize: "15px"}}/>
         </Typography>
       </Button>
       <Menu {...menuProps}>
-        {ultimateList.map((fight, i) => (
+        {data.map((fight, i) => (
           <li key={i}>
             <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
               <Typography sx={{ textAlign: 'left' }}>
