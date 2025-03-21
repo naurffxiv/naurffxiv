@@ -6,11 +6,13 @@ import { cache } from 'react';
 
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import remarkSectionize from 'remark-sectionize'
 import rehypeImgSize from 'rehype-img-size';
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
+import rehypeHeaderSections from '@/rehype/rehypeHeaderSections';
 
 // process each mdx file and cache it
 export const processMdx = cache(async (filepath) => {
@@ -22,7 +24,8 @@ export const processMdx = cache(async (filepath) => {
         baseUrl: import.meta.url,
         remarkPlugins: [
             remarkFrontmatter,
-            remarkMdxFrontmatter
+            remarkMdxFrontmatter,
+            remarkSectionize
         ],
         rehypePlugins: [
             rehypeSlug,
@@ -39,7 +42,8 @@ export const processMdx = cache(async (filepath) => {
             ],
             [rehypeImgSize, { dir: 'public' }],
             rehypeExtractToc,
-            [rehypeExtractTocExport, {name: "toc"}]
+            [rehypeExtractTocExport, {name: "toc"}],
+            rehypeHeaderSections,
         ]
     })
 
