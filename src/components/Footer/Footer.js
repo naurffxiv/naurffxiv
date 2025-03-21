@@ -11,7 +11,6 @@ export default function Footer() {
                         <FooterLinks title="Ultimates" links={linksUltimates} className="" />
                         <FooterLinks title="Savage & Extreme" links={savageExtremeList} className="" />
                         <FooterLinks title="Other Links" links={linksOther} className="mt-5 xl:mt-0" />
-                        <div />
                         <FooterSocialLinks />
                     </div>
                     <div className="mt-14 grid justify-items-center xl:justify-items-start">
