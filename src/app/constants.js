@@ -131,7 +131,7 @@ export const linksUltimates = [
   {id: 6, name: "The Unending Coil of Bahamut", url: "/ultimates/ucob"},
 ];
 
-export const linksExplore = [
+export const linksOther = [
   {id: 1, name: "Findingway", url: "https://findingway.io"},
   /* Commented out for now, as these pages are not yet implemented
   {id: 2, name: "Events", url: "/"},
