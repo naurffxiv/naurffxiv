@@ -42,6 +42,7 @@
   nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) {
     color: rgb(161, 199, 255);
   }
+
   
   /* show currently active section */
   nav.toc-collapse li div:has(.toc-current) > ul {
@@ -58,6 +59,19 @@
   nav.toc-collapse div > ul:not(.toc-current) {
     margin-bottom: -100%;
     transition: all 0.2s ease-in-out;
+  }
+  
+  /* collapsible toc dropdown arrow */
+  /* parent of active section */
+  nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) svg {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(0) !important;
+  }
+
+  /* currently active section */
+  nav.toc-collapse div:has(.toc-current) a.toc-current svg {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(0) !important;
   }
   
   
