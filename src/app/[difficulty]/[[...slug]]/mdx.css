@@ -32,6 +32,35 @@
   }
   
   
+  /* table of contents collapisbles */
+  /* hide anything outside the div */
+  nav.toc-collapse > div > ul > li div {
+    overflow: hidden;
+  }
+  
+  /* highlight parents of active section */
+  nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) {
+    color: rgb(161, 199, 255);
+  }
+  
+  /* show currently active section */
+  nav.toc-collapse li div:has(.toc-current) > ul {
+    margin-bottom: 0 !important;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* show children of currently active section */
+  nav.toc-collapse li:has(> a.toc-current) > div > ul {
+    margin-bottom: 0 !important;
+  }
+  
+  /* hide inactive sections */
+  nav.toc-collapse div > ul:not(.toc-current) {
+    margin-bottom: -100%;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  
   /* hyperlink to sections */
   span.icon-link::before {
     content: '#';

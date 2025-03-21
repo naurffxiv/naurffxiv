@@ -9,7 +9,7 @@ function recursiveToc(toc, level = 0) {
             <a href={`#${li.id}`} className="toc-links">
                 {li.value}
             </a>
-            {li.children ? recursiveToc(li.children, level + 1) : <></>}
+            <div>{li.children ? recursiveToc(li.children, level + 1) : <></>}</div>
           </li>
     )) : toc.map((li) => (
         <div key={li.id}>
