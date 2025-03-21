@@ -24,10 +24,11 @@ function recursiveToc(toc, level = 0) {
     )
 }
 
-export default function TableOfContents({toc}) {
+export default function TableOfContents({toc, frontmatter}) {
+
     return (
         <ScrollSpy activeClass="toc-current" offsetTop="80">      
-            <nav className="toc">
+            <nav className={`toc${frontmatter.collapseToc ? " toc-collapse" : ""}`}>
                 {recursiveToc(toc)}
             </nav>
         </ScrollSpy>
