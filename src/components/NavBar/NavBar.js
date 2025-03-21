@@ -18,6 +18,7 @@ import { pages } from '@/app/constants.js';
 import MenuIcon from '@mui/icons-material/Menu';
 import UltimateDropdown from './UltimateDropdown.js';
 import { icons } from '@/app/assets.js';
+import SavageExtremeDropdown from './SavageExtremeDropdown.js';
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -59,6 +60,7 @@ export default function NavBar() {
                 </MenuItem>
               </li>
                 <UltimateDropdown name="Ultimates" />
+                <SavageExtremeDropdown name="Savage/Extreme" />
                 {pages.map((page) => (
                     <li key={page.name}>
                       <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
@@ -130,6 +132,11 @@ export default function NavBar() {
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
                   <UltimateDropdown name="Ultimates" isMobile={true} insideMobileMenu={true} />
+                </Box>
+              </MenuItem>
+              <MenuItem>
+                <Box sx={{ width: '100%', textAlign: 'left' }}>
+                  <SavageExtremeDropdown name="Savage/Extreme" isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
               {pages.map((page) => (

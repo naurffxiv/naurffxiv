@@ -10,12 +10,12 @@ import {
   ListItem
 } from "@mui/material";
 import Link from 'next/link';
-import { ultimateList, getMenuProps } from '@/app/constants.js';
+import { savageExtremeList, getMenuProps } from '@/app/constants.js';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-export default function UltimateDropdown(props) {
+export default function SavageExtremeDropdown(props) {
   const { name, isMobile, insideMobileMenu } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -55,7 +55,7 @@ export default function UltimateDropdown(props) {
         </Box>
         <Collapse in={mobileOpen} timeout="auto">
           <List sx={{ pl: 2, my: 0 }}>
-            {ultimateList.map((fight, i) => (
+            {savageExtremeList.map((fight, i) => (
               <ListItem 
                 key={i} 
                 disablePadding
@@ -93,7 +93,6 @@ export default function UltimateDropdown(props) {
     );
   }
 
-
   // For mobile dropdown outside hamburger menu
   if (isMobile) {
     return (
@@ -103,7 +102,7 @@ export default function UltimateDropdown(props) {
           <ArrowDropDownIcon />
         </Typography>
         <Menu {...menuProps}>
-          {ultimateList.map((fight, i) => (
+          {savageExtremeList.map((fight, i) => (
             <li key={i}>
               <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
                 <Typography sx={{ textAlign: 'left' }}>
@@ -136,7 +135,7 @@ export default function UltimateDropdown(props) {
         </Typography>
       </Button>
       <Menu {...menuProps}>
-        {ultimateList.map((fight, i) => (
+        {savageExtremeList.map((fight, i) => (
           <li key={i}>
             <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
               <Typography sx={{ textAlign: 'left' }}>

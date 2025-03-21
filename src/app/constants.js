@@ -49,6 +49,33 @@ export const ultimateList = [
   },
 ];
 
+export const savageExtremeList = [
+  {
+    "name": "M8S Boss name",
+    "link": "/savage/m8s",
+  },
+  {
+    "name": "M7S Boss name",
+    "link": "/savage/m7s",
+  },
+  {
+    "name": "M6S Boss name",
+    "link": "/savage/m6s",
+  },
+  {
+    "name": "M5S Boss name",
+    "link": "/savage/m5s",
+  },
+  {
+    "name": "Extreme Boss name",
+    "link": "/extremes/dt-ex4",
+  },
+  {
+    "name": "Archived Content",
+    "link": "/archive",
+  },
+];
+
 // Menu props based on mobile/desktop mode
 export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
   id: "basic-menu",
