@@ -137,10 +137,6 @@ export default function NavBar() {
                   <ContentDropdown name="Savage/Extreme" data={savageExtremeList} isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
-              <MenuItem>
-                <Box sx={{ width: '100%', textAlign: 'left' }}>
-                </Box>
-              </MenuItem>
               {pages.map((page) => (
                 <li key={page.name}>
                   <MenuItem onClick={handleCloseNavMenu} component="a" href={page.link}>
