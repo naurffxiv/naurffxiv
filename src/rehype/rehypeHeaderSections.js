@@ -1,12 +1,11 @@
 import {visit} from 'unist-util-visit'
 
 /*
-    this rehype plugin searches for <section> tags and then checks
-    whether its first child is a header tag from h2-h6
-    if it is, transfer the header's id to the section instead
-    this makes it so that fragments target the section
-    it also improves IntersectionObserver since it is now
-    tracking an entire section instead of a single header
+    This rehype plugin searches for <section> tags and then checks whether its first child 
+    is a header tag from h2-h6. If it is, transfer the header's id to the section instead.
+
+    This makes it so that fragments target the section. It also improves IntersectionObserver
+    since it is now tracking an entire section instead of a single header.
 */
 export default function rehypeHeaderSections() {
     return function (tree) {
