@@ -27,6 +27,13 @@ export default function RootLayout({ children }) {
           <NavBar />
           <main>
             {children}
+            <Script id="disable-preview-tracking">
+            {/* Only load on production environment.*/}
+            {`
+              if (window.location.host !== 'naurffxiv.com')
+                  window.goatcounter = {no_onload: true}
+            `}
+            </Script>
             <Script
               src="https://gc.zgo.at/count.js"
               strategy="afterInteractive"
