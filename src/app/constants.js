@@ -51,23 +51,23 @@ export const ultimateList = [
 
 export const savageExtremeList = [
   {
-    "name": "M8S Boss name",
-    "link": "/savage/m8s",
-  },
-  {
-    "name": "M7S Boss name",
-    "link": "/savage/m7s",
-  },
-  {
-    "name": "M6S Boss name",
-    "link": "/savage/m6s",
-  },
-  {
-    "name": "M5S Boss name",
+    "name": "M5S - Boss name",
     "link": "/savage/m5s",
   },
   {
-    "name": "Extreme Boss name",
+    "name": "M6S - Boss name",
+    "link": "/savage/m6s",
+  },
+  {
+    "name": "M7S - Boss name",
+    "link": "/savage/m7s",
+  },
+  {
+    "name": "M8S - Boss name",
+    "link": "/savage/m8s",
+  },
+  {
+    "name": "Dawntrail Ex 4 - Recollection",
     "link": "/extremes/dt-ex4",
   },
   {
