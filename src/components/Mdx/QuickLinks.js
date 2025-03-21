@@ -1,6 +1,6 @@
-export default function QuickLinks({metadata, slug}) {
-    const arr = Array(metadata.length).fill(0)
-    metadata.forEach(element => {
+export default function QuickLinks({siblingData, slug}) {
+    const arr = Array(siblingData.length).fill(0)
+    siblingData.forEach(element => {
         arr[element.metadata.order] = element
     });
     return (

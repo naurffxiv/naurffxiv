@@ -14,10 +14,10 @@ export default async function MdxPage({ params }) {
     const {default: Content, toc, error} = await getProcessedMdxFromParams(params)
     if (error) return notFound()
 
-    const metadata = await getPages(params)
+    const siblingData = await getPages(params)
 
     return (
-        <MDXPage toc={toc} metadata={metadata} slug={slug}>
+        <MDXPage toc={toc} siblingData={siblingData} slug={slug}>
             <Content components={MDXComponents}/>
         </MDXPage>
     )
