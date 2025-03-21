@@ -78,5 +78,3 @@ npm run dev
 ```
 
 ---
-
-This version improves readability, adds structure, and ensures users follow the right steps. Let me know if you need any adjustments! 🚀
