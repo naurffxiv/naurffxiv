@@ -1,6 +1,6 @@
 import FooterSocialLinks from './FooterSocialLinks';
 import FooterLinks from './FooterLinks';
-import { linksOther, linksUltimates, savageExtremeList } from "@/app/constants";
+import { linksOther, linksUltimates, linksSavageExtreme } from "@/app/constants";
 
 export default function Footer() {
     return (
@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="w-fit px-20 md:px-40 mx-auto">
                     <div className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5">
                         <FooterLinks title="Ultimates" links={linksUltimates} className="mt-5 xl:mt-0" />
-                        <FooterLinks title="Savage & Extreme" links={savageExtremeList} className="mt-5 xl:mt-0" />
+                        <FooterLinks title="Savage & Extreme" links={linksSavageExtreme} className="mt-5 xl:mt-0" />
                         <FooterLinks title="Other Links" links={linksOther} className="mt-5 xl:mt-0" />
                         <FooterSocialLinks />
                     </div>

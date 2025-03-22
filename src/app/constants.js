@@ -1,6 +1,6 @@
 import { images } from './assets'
 
-export const markdownFolders = ['ultimates']
+export const markdownFolders = ['ultimates', 'savage', 'extremes', 'archive'];
 
 export const pages = [
   {
@@ -130,6 +130,15 @@ export const linksUltimates = [
   {id: 5, name: "The Weapon's Refrain", url: "/ultimates/uwu"},
   {id: 6, name: "The Unending Coil of Bahamut", url: "/ultimates/ucob"},
 ];
+
+export const linksSavageExtreme =[
+  {id: 1, name: "M5S - Boss name", url: "/savage/m5s"},
+  {id: 2, name: "M6S - Boss name", url: "/savage/m6s"},
+  {id: 3, name: "M7S - Boss name", url: "/savage/m7s"},
+  {id: 4, name: "M8S - Boss name", url: "/savage/m8s"},
+  {id: 5, name: "Dawntrail Ex 4 - Recollection", url: "/extremes/dt-ex4"},
+  {id: 6, name: "Archived Content", url: "/archive"},
+]
 
 export const linksOther = [
   {id: 1, name: "Findingway", url: "https://findingway.io"},
