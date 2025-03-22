@@ -10,12 +10,12 @@ import Patreon from '@/assets/Icons/Patreon.png'
 export const icons = {Chat, Lightbulb, Contact, Discord, Calendar, Github, Naur, Patreon}
 
 // images
-import Bahamut from '@/assets/Images/Bahamut.png'
-import Ultima from '@/assets/Images/Ultima.png'
-import Alexander from '@/assets/Images/Alexander.png'
-import Thordan from '@/assets/Images/Thordan.png'
-import Omega from '@/assets/Images/Omega.png'
-import Pandora from '@/assets/Images/Pandora.png'
+import Bahamut from '@/assets/Images/Bahamut.avif'
+import Ultima from '@/assets/Images/Ultima.avif'
+import Alexander from '@/assets/Images/Alexander.avif'
+import Thordan from '@/assets/Images/Thordan.avif'
+import Omega from '@/assets/Images/Omega.avif'
+import Pandora from '@/assets/Images/Pandora.avif'
 
 export const images = {Bahamut, Ultima, Alexander, Thordan, Omega, Pandora}
 
