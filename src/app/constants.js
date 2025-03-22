@@ -70,20 +70,20 @@ export const savageList = [
 
 export const extremeList = [
   {
-    "name": "Worqor Lar Dor",
-    "link": "/extreme/dt-ex1",
-  },
-  {
-    "name": "Everkeep",
-    "link": "/savage/dt-ex2",
+    "name": "Recollection",
+    "link": "/savage/dt-ex4",
   },
   {
     "name": "Sphene's Burden",
     "link": "/savage/dt-ex3",
   },
   {
-    "name": "Recollection",
-    "link": "/savage/dt-ex4",
+    "name": "Everkeep",
+    "link": "/savage/dt-ex2",
+  },
+  {
+    "name": "Worqor Lar Dor",
+    "link": "/extreme/dt-ex1",
   },
 ];
 
@@ -150,10 +150,10 @@ export const linksSavage = [
 ];
 
 export const linksExtreme = [
-  {id: 1, name: "Worqor Lar Dor", url: "/extreme/dt-ex1"},
-  {id: 2, name: "Everkeep", url: "/extreme/dt-ex2"},
-  {id: 3, name: "Sphene's Burden", url: "/extreme/dt-ex3"},
   {id: 4, name: "Recollection", url: "/extreme/dt-ex4"},
+  {id: 3, name: "Sphene's Burden", url: "/extreme/dt-ex3"},
+  {id: 2, name: "Everkeep", url: "/extreme/dt-ex2"},
+  {id: 1, name: "Worqor Lar Dor", url: "/extreme/dt-ex1"},
 ];
 
 export const linksOther = [
