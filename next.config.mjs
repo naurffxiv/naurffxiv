@@ -31,6 +31,16 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  
+  async redirects() {
+    return [
+      {
+        source: '/ultimates/:slug',
+        destination: '/ultimate/:slug',
+        permanent: true,
+      }
+    ]
+  }
 };
 
 export default withMDX(nextConfig);
