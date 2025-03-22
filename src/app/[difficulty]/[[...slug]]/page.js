@@ -11,13 +11,13 @@ import { MDXComponents } from '@/components/Mdx/MdxComponents';
 // Finds mdx file to render based on slug then processes the page accordingly
 export default async function MdxPage({ params }) {
     const {slug} = params
-    const {default: Content, toc, error} = await getProcessedMdxFromParams(params)
+    const {default: Content, toc, frontmatter, error} = await getProcessedMdxFromParams(params)
     if (error) return notFound()
 
-    const metadata = await getPages(params)
+    const siblingData = await getPages(params)
 
     return (
-        <MDXPage toc={toc} metadata={metadata} slug={slug}>
+        <MDXPage toc={toc} siblingData={siblingData} slug={slug} frontmatter={frontmatter}>
             <Content components={MDXComponents}/>
         </MDXPage>
     )
@@ -94,7 +94,7 @@ export async function generateStaticParams() {
                 return currentSlugs ? [currentSlugs, ...childSlugs] : childSlugs;
             });
 
-        // check if we want to define a base index page e.g /ultimates
+        // check if we want to define a base index page e.g /ultimate
         if (isFirst && tree["index"]) {
             if (subfolder === ".") ret.push(undefined)
             else ret.push([])
