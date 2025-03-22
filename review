@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+    python3 review.py
+elif [ "$#" -eq 1 ]; then
+    if [ "$1" == "config" ]; then
+        python3 review.py $1
+    fi
+elif [ "$#" -eq 3 ]; then
+    if [ "$1" == "new" ]; then
+        python3 review.py $1 $2 $3
+    fi
+fi
