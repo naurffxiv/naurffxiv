@@ -59,6 +59,7 @@ export default function NavBar() {
               </li>
                 <ContentDropdown name="Ultimates" data={ultimateList} />
                 <ContentDropdown name="Savage & Extreme" data={savageExtremeList} />
+                {/* To add when internal pages are created
                 {pages.map((page) => (
                     <li key={page.name}>
                       <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
@@ -70,11 +71,21 @@ export default function NavBar() {
                       </MenuItem>
                     </li>
                 ))}
+                */}
+              <li>
+              <MenuItem component="a" href="https://findingway.io" target="_blank" rel="noopener noreferrer" style={{borderRadius: "4px"}} 
+                sx={{':hover': {bgcolor: 'rgba(25, 118, 210, 0.04)'}}}
+              >
+                <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
+                    Findingway
+                </Typography>
+              </MenuItem>
+            </li>
             </MenuList>
           </Box>
           <Box sx={{ px: 1 }}>
             <IconButton size="small">
-              <Link href="https://discord.com/invite/naurffxiv">
+              <Link href="https://discord.com/invite/naurffxiv" target="_blank" rel="noopener noreferrer">
                 <Image
                   src={icons.Discord}
                   alt="Discord logo"
@@ -137,6 +148,7 @@ export default function NavBar() {
                   <ContentDropdown name="Savage & Extreme" data={savageExtremeList} isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
+              {/* To add when internal pages are created
               {pages.map((page) => (
                 <li key={page.name}>
                   <MenuItem onClick={handleCloseNavMenu} component="a" href={page.link}>
@@ -146,6 +158,14 @@ export default function NavBar() {
                   </MenuItem>
                 </li>
                 ))}
+              */}
+              <li>
+                <MenuItem onClick={handleCloseNavMenu} component="a" href="https://findingway.io" target="_blank" rel="noopener noreferrer">
+                  <Typography sx={{ width: '100%', textAlign: 'left'  }}>
+                    Findingway
+                  </Typography>
+                </MenuItem>
+              </li>
           </Menu>
         </Toolbar>
       </AppBar>
