@@ -3,20 +3,17 @@ import { images } from './assets'
 export const markdownFolders = ['ultimates']
 
 export const pages = [
-  {
-    "name": "Findingway",
-    "link": "https://findingway.io",
-    "login_required": false,
-  }
   /* Commented out for now, as these pages are not yet implemented
   {
     "name": "Events",
     "link": "/events",
     "login_required": false,
+    "login_required": false,
   },
   {
     "name": "Staff",
     "link": "/staff",
+    "external": false,
     "login_required": true,
   },
   */
