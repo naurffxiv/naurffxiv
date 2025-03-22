@@ -3,11 +3,6 @@ import { images } from './assets'
 export const markdownFolders = ['ultimate']
 
 export const pages = [
-  {
-    "name": "Findingway",
-    "link": "https://findingway.io",
-    "login_required": false,
-  }
   /* Commented out for now, as these pages are not yet implemented
   {
     "name": "Events",
