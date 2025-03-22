@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
-import { pages, savageExtremeList, ultimateList } from '@/app/constants.js';
+import { pages, ultimateList, savageList, extremeList } from '@/app/constants.js';
 import MenuIcon from '@mui/icons-material/Menu';
 import { icons } from '@/app/assets.js';
 import ContentDropdown from './ContentDropdown.js';
@@ -57,9 +57,10 @@ export default function NavBar() {
                   </Typography>
                 </MenuItem>
               </li>
-                <ContentDropdown name="Ultimates" data={ultimateList} />
-                <ContentDropdown name="Savage & Extreme" data={savageExtremeList} />
-                {/* To add when internal pages are created
+                <ContentDropdown name="Ultimate" data={ultimateList} />
+                <ContentDropdown name="Savage" data={savageList} />
+                <ContentDropdown name="Extreme" data={extremeList} />
+              {/* To add when internal pages are created
                 {pages.map((page) => (
                     <li key={page.name}>
                       <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
@@ -140,12 +141,17 @@ export default function NavBar() {
               </li>
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <ContentDropdown name="Ultimates" data={ultimateList} isMobile={true} insideMobileMenu={true} />
+                  <ContentDropdown name="Ultimate" data={ultimateList} isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
               <MenuItem>
                 <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <ContentDropdown name="Savage & Extreme" data={savageExtremeList} isMobile={true} insideMobileMenu={true} />
+                  <ContentDropdown name="Savage" data={savageList} isMobile={true} insideMobileMenu={true} />
+                </Box>
+              </MenuItem>
+              <MenuItem>
+                <Box sx={{ width: '100%', textAlign: 'left' }}>
+                  <ContentDropdown name="Extreme" data={extremeList} isMobile={true} insideMobileMenu={true} />
                 </Box>
               </MenuItem>
               {/* To add when internal pages are created

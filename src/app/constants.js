@@ -44,7 +44,7 @@ export const ultimateList = [
   },
 ];
 
-export const savageExtremeList = [
+export const savageList = [
   {
     "name": "M5S - Boss name",
     "link": "/savage/m5s",
@@ -61,13 +61,24 @@ export const savageExtremeList = [
     "name": "M8S - Boss name",
     "link": "/savage/m8s",
   },
+];
+
+export const extremeList = [
   {
-    "name": "Dawntrail Ex 4 - Recollection",
-    "link": "/extremes/dt-ex4",
+    "name": "Recollection",
+    "link": "/savage/dt-ex4",
   },
   {
-    "name": "Archived Content",
-    "link": "/archive",
+    "name": "Sphene's Burden",
+    "link": "/savage/dt-ex3",
+  },
+  {
+    "name": "Everkeep",
+    "link": "/savage/dt-ex2",
+  },
+  {
+    "name": "Worqor Lar Dor",
+    "link": "/extreme/dt-ex1",
   },
 ];
 
@@ -117,7 +128,7 @@ export const ultimateImages = [
   {id: 1, url: '/ultimate/ucob', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
 ];
 
-export const linksUltimates = [
+export const linksUltimate = [
   {id: 1, name: "Futures Rewritten", url: "/ultimate/fru"},
   {id: 2, name: "The Omega Protocol", url: "/ultimate/top"},
   {id: 3, name: "Dragonsong's Reprise", url: "/ultimate/dsr"},
@@ -126,8 +137,25 @@ export const linksUltimates = [
   {id: 6, name: "The Unending Coil of Bahamut", url: "/ultimate/ucob"},
 ];
 
+export const linksSavage = [
+  {id: 1, name: "M5S - Boss name", url: "/savage/m5s"},
+  {id: 2, name: "M6S - Boss name", url: "/savage/m6s"},
+  {id: 3, name: "M7S - Boss name", url: "/savage/m7s"},
+  {id: 4, name: "M8S - Boss name", url: "/savage/m8s"},
+];
+
+export const linksExtreme = [
+  {id: 4, name: "Recollection", url: "/extreme/dt-ex4"},
+  {id: 3, name: "Sphene's Burden", url: "/extreme/dt-ex3"},
+  {id: 2, name: "Everkeep", url: "/extreme/dt-ex2"},
+  {id: 1, name: "Worqor Lar Dor", url: "/extreme/dt-ex1"},
+];
+
 export const linksOther = [
-  {id: 1, name: "Findingway", url: "https://findingway.io"},
+  {id: 1, name: "Join our Discord", url: "https://discord.gg/naurffxiv"},
+  {id: 2, name: "Support us on Patreon", url: "https://patreon.com/naurffxiv"},
+  {id: 3, name: "GitHub Repository", url: "https://github.com/naurffxiv/naurffxiv"},
+  {id: 4, name: "Findingway.io", url: "https://findingway.io"},
   /* Commented out for now, as these pages are not yet implemented
   {id: 2, name: "Events", url: "/"},
   {id: 3, name: "Staff", url: "/"},
