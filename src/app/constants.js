@@ -154,6 +154,7 @@ export const linksExtreme = [
   {id: 2, name: "Everkeep", url: "/extreme/dt-ex2"},
   {id: 3, name: "Sphene's Burden", url: "/extreme/dt-ex3"},
   {id: 4, name: "Recollection", url: "/extreme/dt-ex4"},
+]
 
 export const linksOther = [
   {id: 1, name: "Findingway", url: "https://findingway.io"},
