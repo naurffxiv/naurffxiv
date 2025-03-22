@@ -94,7 +94,7 @@ export async function generateStaticParams() {
                 return currentSlugs ? [currentSlugs, ...childSlugs] : childSlugs;
             });
 
-        // check if we want to define a base index page e.g /ultimates
+        // check if we want to define a base index page e.g /ultimate
         if (isFirst && tree["index"]) {
             if (subfolder === ".") ret.push(undefined)
             else ret.push([])
