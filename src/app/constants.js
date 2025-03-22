@@ -8,12 +8,10 @@ export const pages = [
     "name": "Events",
     "link": "/events",
     "login_required": false,
-    "login_required": false,
   },
   {
     "name": "Staff",
     "link": "/staff",
-    "external": false,
     "login_required": true,
   },
   */
