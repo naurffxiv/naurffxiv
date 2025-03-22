@@ -152,7 +152,10 @@ export const linksExtreme = [
 ];
 
 export const linksOther = [
-  {id: 1, name: "Findingway", url: "https://findingway.io"},
+  {id: 1, name: "Join our Discord", url: "https://discord.gg/naurffxiv"},
+  {id: 2, name: "Support us on Patreon", url: "https://patreon.com/naurffxiv"},
+  {id: 3, name: "GitHub Repository", url: "https://github.com/naurffxiv/naurffxiv"},
+  {id: 4, name: "Findingway.io", url: "https://findingway.io"},
   /* Commented out for now, as these pages are not yet implemented
   {id: 2, name: "Events", url: "/"},
   {id: 3, name: "Staff", url: "/"},
