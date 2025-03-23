@@ -2,6 +2,7 @@ import { parse } from 'toml'
 import path from 'path';
 import fs from 'fs'
 import { Tooltip } from '@mui/material';
+import Image from 'next/image';
 
 // buff component, ported from spectria's original shortcode implementation
 // https://github.com/spectria-limina/dynamis-gg/blob/main/templates/shortcodes/buff.html
@@ -79,7 +80,7 @@ export default async function Buff({b, datapath, description, dur, explanation, 
             <Tooltip title={tooltip({name: buff.name, description, dur, explanation, short, stacks})}>
                 <span className="buff-icon">
                     {buff.cleansable && <span className="buff-cleansable"/>}
-                    <img src={`https://xivapi.com/i/${iconseries}/${icon}.png`} loading="lazy" />
+                    <Image height={24} width={18} src={`https://xivapi.com/i/${iconseries}/${icon}.png`} alt={description} loading="lazy" />
                     {(buff.duration || dur) && <span className="buff-duration">{dur || safe}</span>}
                 </span>
             </Tooltip>
