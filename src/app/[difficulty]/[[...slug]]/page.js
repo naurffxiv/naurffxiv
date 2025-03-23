@@ -7,8 +7,9 @@ import { notFound } from 'next/navigation';
 
 import { MDXComponents } from '@/components/Mdx/MdxComponents';
 
-// Called when a page is accessed (only once on build with static site generation)
-// Finds mdx file to render based on slug then processes the page accordingly
+// Called when a page is accessed (only once on build with static site
+// generation) Finds mdx file to render based on slug then processes the page
+// accordingly
 export default async function MdxPage({ params }) {
     const {slug} = params
     const {default: Content, toc, frontmatter, error} = await getProcessedMdxFromParams(params)
