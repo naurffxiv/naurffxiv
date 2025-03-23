@@ -93,3 +93,7 @@
     opacity: 1;
   }
   
+.scrollbar {
+  scrollbar-color: #b9bfc7 #0000;
+  overflow-y: auto;
+}
