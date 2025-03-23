@@ -101,3 +101,7 @@ h6:hover span.icon-link::before {
   box-shadow: 24;
   padding: 4;
 }
+.scrollbar {
+  scrollbar-color: #b9bfc7 #0000;
+  overflow-y: auto;
+}

@@ -103,14 +103,16 @@ export async function generateStaticParams() {
     }
     
     // form final slug format for return
-    return (meta.flatMap(folder => 
+    return [
+        process.env.NEXT_PROD !== "true" ? {difficulty: "testing", slug: ["page"]} : {},  // test page
+        ...(meta.flatMap(folder => 
         folder.subtrees.flatMap(subtree => 
             getSlugsFromTree(subtree.tree, subtree.subfolder, true).map(slug => ({
                 difficulty: folder.folder,
                 slug: subtree.subfolder === "." ? slug : subtree.subfolder.split("/").concat(slug)
             }))
         )
-    ))
+    ))]
 }
 
 export const dynamicParams = false
