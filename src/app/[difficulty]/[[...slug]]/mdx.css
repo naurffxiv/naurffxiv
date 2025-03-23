@@ -3,93 +3,101 @@
     margin-top: 1rem;
   }
   
-  .toc a {
-    padding: 0.75rem;
-  }
-  
-  .toc a:hover {
-    border-radius: 0.375rem;
-    color: white;
-    background-color: rgba(71, 85, 105, 0.1);
-  }
-  
-  .toc-links {
-    transition: color 0.1s ease;
-    transition: background-color 0.1s ease;
-    color: rgb(226 232 240);
-    padding: 0.5rem;
-    text-decoration: none;
-  }
-  
-  .toc-current {
-    transition: color 0.2s ease;
-    color: rgb(87, 165, 255);
-    border-radius: 0.375rem;
-  }
-  
-  .toc-current:hover {
-    color: rgb(96 165 250) !important;
-  }
-  
-  
-  /* table of contents collapisbles */
-  /* hide anything outside the div */
-  nav.toc-collapse > div > ul > li div {
-    overflow: hidden;
-  }
-  
-  /* highlight parents of active section */
-  nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) {
-    color: rgb(161, 199, 255);
-  }
+.toc a {
+  padding: 0.75rem;
+}
 
-  
-  /* show currently active section */
-  nav.toc-collapse li div:has(.toc-current) > ul {
-    margin-bottom: 0 !important;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  /* show children of currently active section */
-  nav.toc-collapse li:has(> a.toc-current) > div > ul {
-    margin-bottom: 0 !important;
-  }
-  
-  /* hide inactive sections */
-  nav.toc-collapse div > ul:not(.toc-current) {
-    margin-bottom: -100%;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  /* collapsible toc dropdown arrow */
-  /* parent of active section */
-  nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) svg {
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: rotate(0) !important;
-  }
+.toc a:hover {
+  border-radius: 0.375rem;
+  color: white;
+  background-color: rgba(71, 85, 105, 0.1);
+}
 
-  /* currently active section */
-  nav.toc-collapse div:has(.toc-current) a.toc-current svg {
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: rotate(0) !important;
-  }
+.toc-links {
+  transition: color 0.1s ease;
+  transition: background-color 0.1s ease;
+  color: rgb(226 232 240);
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.toc-current {
+  transition: color 0.2s ease;
+  color: rgb(87, 165, 255);
+  border-radius: 0.375rem;
+}
+
+.toc-current:hover {
+  color: rgb(96 165 250) !important;
+}
+
+
+/* table of contents collapisbles */
+/* hide anything outside the div */
+nav.toc-collapse > div > ul > li div {
+  overflow: hidden;
+}
+
+/* highlight parents of active section */
+nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) {
+  color: rgb(161, 199, 255);
+}
+
+
+/* show currently active section */
+nav.toc-collapse li div:has(.toc-current) > ul {
+  margin-bottom: 0 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* show children of currently active section */
+nav.toc-collapse li:has(> a.toc-current) > div > ul {
+  margin-bottom: 0 !important;
+}
+
+/* hide inactive sections */
+nav.toc-collapse div > ul:not(.toc-current) {
+  margin-bottom: -100%;
+  transition: all 0.2s ease-in-out;
+}
+
+/* collapsible toc dropdown arrow */
+/* parent of active section */
+nav.toc-collapse li:has(.toc-current) > a:not(.toc-current) svg {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0) !important;
+}
+
+/* currently active section */
+nav.toc-collapse div:has(.toc-current) a.toc-current svg {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0) !important;
+}
+
+
+/* hyperlink to sections */
+span.icon-link::before {
+  content: '#';
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  margin-left: 0.5rem;
+}
+
+h1:hover span.icon-link::before,
+h2:hover span.icon-link::before,
+h3:hover span.icon-link::before,
+h4:hover span.icon-link::before,
+h5:hover span.icon-link::before,
+h6:hover span.icon-link::before {
+  opacity: 1;
+}
   
-  
-  /* hyperlink to sections */
-  span.icon-link::before {
-    content: '#';
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.1s ease;
-    margin-left: 0.5rem;
-  }
-  
-  h1:hover span.icon-link::before,
-  h2:hover span.icon-link::before,
-  h3:hover span.icon-link::before,
-  h4:hover span.icon-link::before,
-  h5:hover span.icon-link::before,
-  h6:hover span.icon-link::before {
-    opacity: 1;
-  }
-  
+.image-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 24;
+  padding: 4;
+}
