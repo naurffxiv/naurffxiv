@@ -1,17 +1,17 @@
 {
-    "Recollection": {
+    "recollection": {
         "index": "recollection.mdx"
     },
-    "Sphene's Burden": {
+    "sphenes-burden": {
         "index": "sphenes-burden.mdx",
         "guide": {
             "index": "guides/sphenes-burden_guide.mdx"
         }
     },
-    "Everkeep": {
+    "everkeep": {
         "index": "everkeep.mdx"
     },
-    "Worqor Lar Dor": {
+    "worqor-lar-dor": {
         "index": "worqor-lar-dor.mdx"
     }
 }
