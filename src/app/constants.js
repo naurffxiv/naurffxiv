@@ -1,6 +1,6 @@
 import { images } from './assets'
 
-export const markdownFolders = ['ultimate']
+export const markdownFolders = ['ultimate', 'savage'];
 
 export const pages = [
   /* Commented out for now, as these pages are not yet implemented
