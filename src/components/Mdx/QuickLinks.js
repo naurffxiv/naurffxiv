@@ -1,12 +1,10 @@
 export default function QuickLinks({siblingData, slug}) {
-    const arr = Array(siblingData.length).fill(0)
-    siblingData.forEach(element => {
-        arr[element.metadata.order] = element
-    });
+    siblingData.sort((a, b) => a.metadata.order - b.metadata.order)
+
     return (
         <div>
             <ul className="list-none quick-links-div w-fit">
-                {arr.map((ultimate) => {
+                {siblingData.map((ultimate) => {
                     return (
                     !slug || ultimate.slug == slug[slug.length-1] ? 
                     <li key={ultimate.slug}>
