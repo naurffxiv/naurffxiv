@@ -79,7 +79,7 @@ export default async function Buff({b, datapath, description, dur, explanation, 
             <Tooltip title={tooltip({name: buff.name, description, dur, explanation, short, stacks})}>
                 <span className="buff-icon">
                     {buff.cleansable && <span className="buff-cleansable"/>}
-                    <img src={`https://xivapi.com/i/${iconseries}/${icon}_hr1.png`} loading="lazy" />
+                    <img src={`https://xivapi.com/i/${iconseries}/${icon}.png`} loading="lazy" />
                     {(buff.duration || dur) && <span className="buff-duration">{dur || safe}</span>}
                 </span>
             </Tooltip>
