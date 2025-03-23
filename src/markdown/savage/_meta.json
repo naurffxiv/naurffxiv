@@ -1,0 +1,38 @@
+{
+    "m8s": {
+        "index": "m8s.mdx"
+    },
+    "m7s": {
+        "index": "m7s.mdx"
+    },
+    "m6s": {
+        "index": "m6s.mdx"
+    },
+    "m5s": {
+        "index": "m5s.mdx"
+    },
+    "m4s": {
+        "index": "m4s.mdx",
+        "guide": {
+            "index": "guides/m4s_guide.mdx"
+        }
+    },
+    "m3s": {
+        "index": "m3s.mdx",
+        "guide": {
+            "index": "guides/m3s_guide.mdx"
+        }
+    },
+    "m2s": {
+        "index": "m2s.mdx",
+        "guide": {
+            "index": "guides/m2s_guide.mdx"
+        }
+    },
+    "m1s": {
+        "index": "m1s.mdx",
+        "guide": {
+            "index": "guides/m1s_guide.mdx"
+        }
+    }
+}
