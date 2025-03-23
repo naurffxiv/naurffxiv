@@ -85,7 +85,7 @@ export async function generateStaticParams() {
         if (!tree) return [];
 
         const ret =  Object.keys(tree)
-            .filter(keyString => keyString !== "index")
+            .filter(keyString => keyString !== "index" && keyString !== "groups")
             .flatMap(keyString => {
                 const key = tree[keyString];
                 const currentSlugs = key["index"] ? [keyString] : null;
