@@ -69,6 +69,13 @@ If you need to install or update **Node.js**, use [nvm (Node Version Manager)](h
 
 ---
 
+### Install all necessary libraries
+If you don't have all the necessary libraries used in this project, run:
+
+```bash
+npm install
+```
+
 ## Running the Development Server
 
 To start the development server, run:
@@ -78,6 +85,12 @@ npm run dev
 ```
 
 ---
+
+To build and test what the website will be like in production, run:
+```bash
+npm run build
+npm run start
+```
 
 # Contributing
 ## Images on this website
