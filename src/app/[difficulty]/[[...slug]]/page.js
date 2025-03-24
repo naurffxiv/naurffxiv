@@ -15,7 +15,7 @@ export default async function MdxPage({ params }) {
     if (error) return notFound()
 
     const siblingData = await getPages(params)
-    
+
     return (
         <MDXPage toc={toc} siblingData={siblingData} slug={slug} frontmatter={frontmatter}>
             <Content components={MDXComponents(path.dirname(filepath))}/>
