@@ -132,8 +132,7 @@ export async function findSiblingMdxFilepath(params) {
 }
 
 function findSiblingHelper(meta, pathArray, dirname) {
-    if (pathArray.length == 0) return [path.join(dirname, meta["index"])]
-
+    if (pathArray.length == 0) return [{filepath: path.join(dirname, meta["index"])}]
     const finalSlug = pathArray[pathArray.length - 1]
     const parent = getNestedValue(meta, pathArray.slice(0, -1))
     if (!parent) return
@@ -162,13 +161,15 @@ function findSiblingHelper(meta, pathArray, dirname) {
             let siblingGroups = getNestedValue(parent, [key, "groups"])
             return {
                 filepath: parent[key]["index"] ? parent[key]["index"] : null,
-                groups: siblingGroups
+                groups: siblingGroups,
+                slug: [...pathArray.slice(0, -1), key]
             }
         }
     )
 
     // filter null values then create the full filename
-    ret.filter(page => page.filepath).forEach(page => {
+    ret = ret.filter(page => page.filepath)
+    ret.forEach(page => {
         page.filepath = path.join(dirname, page.filepath)
     })
     return ret

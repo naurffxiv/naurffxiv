@@ -21,17 +21,21 @@ function buildTree(siblingData) {
 // returns a single quick link component
 // highlighted if the page matches the slug
 function quickLinkEntry(entry, currentSlug) {
-    if (entry.slug === currentSlug[0]) {
+    if (entry.slug === currentSlug) {
         return (
-                <a key={entry.slug} href={entry.slug} className="block border-r-2 border-blue-400 no-underline text-blue-400 hover:text-blue-500 transition-colors rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300 py-2 px-4">
-                    {entry.title}
-                </a>
+                <li key={entry.slug} className="ps-0">
+                    <a href={entry.slug} className="block border-r-2 border-blue-400 no-underline text-blue-400 hover:text-blue-500 transition-colors rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300 py-2 px-4">
+                        {entry.title}
+                    </a>
+                </li>
         )
     } else {
         return (
-            <a key={entry.slug} href={entry.slug} className="block border-r-2 border-transparent no-underline text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white transition-colors rounded-l-md hover:bg-opacity-10 hover:bg-slate-600 py-2 px-4">
-                {entry.title}
-            </a>
+            <li key={entry.slug} className="ps-0">
+                <a href={entry.slug} className="block border-r-2 border-transparent no-underline text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white transition-colors rounded-l-md hover:bg-opacity-10 hover:bg-slate-600 py-2 px-4">
+                    {entry.title}
+                </a>
+            </li>
         )
     }
 }

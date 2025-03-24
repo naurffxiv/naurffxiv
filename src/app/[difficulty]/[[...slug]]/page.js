@@ -15,9 +15,10 @@ export default async function MdxPage({ params }) {
     if (error) return notFound()
 
     const siblingData = await getPages(params)
-
+    const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
+    const formedSlug = "/" + slugArr.join('/')
     return (
-        <MDXPage toc={toc} siblingData={siblingData} slug={slug} frontmatter={frontmatter}>
+        <MDXPage toc={toc} siblingData={siblingData} slug={formedSlug} frontmatter={frontmatter}>
             <Content components={MDXComponents}/>
         </MDXPage>
     )
@@ -28,17 +29,16 @@ export async function getPages(params) {
     const mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
-    return await Promise.all(mdxFiles.map(async ({groups, filepath}) => {
+    return await Promise.all(mdxFiles.map(async ({groups, filepath, slug}) => {
         const { frontmatter } = await processMdx(path.join(mdxDir, filepath))
-
-        let slug = path.basename(filepath, path.extname(filepath))
-        // nb: makes "index.mdx" reserved, can be improved if needed
-        if (slug === "index") slug = path.basename(path.dirname(filepath))
         
+        const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
+        const formedSlug = "/" + slugArr.join('/')
+
         return {
             groups,
             metadata: frontmatter,
-            slug,
+            slug: formedSlug,
         }
     }))
 }
