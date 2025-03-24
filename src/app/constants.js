@@ -1,6 +1,6 @@
 import { images } from './assets'
 
-export const markdownFolders = ['ultimate', 'savage'];
+export const markdownFolders = ['ultimate', 'savage', 'extreme'];
 
 export const pages = [
   /* Commented out for now, as these pages are not yet implemented
@@ -66,19 +66,19 @@ export const savageList = [
 export const extremeList = [
   {
     "name": "Recollection",
-    "link": "/savage/dt-ex4",
+    "link": "/extreme/recollection",
   },
   {
     "name": "Sphene's Burden",
-    "link": "/savage/dt-ex3",
+    "link": "/extreme/sphenes-burden",
   },
   {
     "name": "Everkeep",
-    "link": "/savage/dt-ex2",
+    "link": "/extreme/everkeep",
   },
   {
     "name": "Worqor Lar Dor",
-    "link": "/extreme/dt-ex1",
+    "link": "/extreme/worqor-lar-dor",
   },
 ];
 
@@ -145,10 +145,10 @@ export const linksSavage = [
 ];
 
 export const linksExtreme = [
-  {id: 4, name: "Recollection", url: "/extreme/dt-ex4"},
-  {id: 3, name: "Sphene's Burden", url: "/extreme/dt-ex3"},
-  {id: 2, name: "Everkeep", url: "/extreme/dt-ex2"},
-  {id: 1, name: "Worqor Lar Dor", url: "/extreme/dt-ex1"},
+  {id: 1, name: "Recollection", url: "/extreme/recollection"},
+  {id: 2, name: "Sphene's Burden", url: "/extreme/sphenes-burden"},
+  {id: 3, name: "Everkeep", url: "/extreme/everkeep"},
+  {id: 4, name: "Worqor Lar Dor", url: "/extreme/worqor-lar-dor"},
 ];
 
 export const linksOther = [
