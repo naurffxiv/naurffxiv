@@ -28,14 +28,15 @@ export async function getPages(params) {
     const mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
-    return await Promise.all(mdxFiles.map(async (file) => {
-        const { frontmatter } = await processMdx(path.join(mdxDir, file))
+    return await Promise.all(mdxFiles.map(async ({groups, filepath}) => {
+        const { frontmatter } = await processMdx(path.join(mdxDir, filepath))
 
-        let slug = path.basename(file, path.extname(file))
+        let slug = path.basename(filepath, path.extname(filepath))
         // nb: makes "index.mdx" reserved, can be improved if needed
-        if (slug === "index") slug = path.basename(path.dirname(file))
+        if (slug === "index") slug = path.basename(path.dirname(filepath))
         
         return {
+            groups,
             metadata: frontmatter,
             slug,
         }

@@ -152,17 +152,24 @@ function findSiblingHelper(meta, pathArray, dirname) {
             if (
                 groups &&
                 siblingGroups &&
-                siblingGroups.filter(g => groups.includes(g)).length
+                siblingGroups.filter(group => groups.includes(group)).length
             ) return true
 
             if (!groups.length && !siblingGroups) return true
             return false
         })
         .map(key => {
-            return parent[key]["index"] ? parent[key]["index"] : null
+            let siblingGroups = getNestedValue(parent, [key, "groups"])
+            return {
+                filepath: parent[key]["index"] ? parent[key]["index"] : null,
+                groups: siblingGroups
+            }
         }
     )
 
     // filter null values then create the full filename
-    return ret.filter(filepath => filepath).map(filepath => path.join(dirname, filepath))
+    ret.filter(page => page.filepath).forEach(page => {
+        page.filepath = path.join(dirname, page.filepath)
+    })
+    return ret
 }
