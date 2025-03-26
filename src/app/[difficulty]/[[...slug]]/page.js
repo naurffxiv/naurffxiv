@@ -5,20 +5,21 @@ import { markdownFolders } from '@/app/constants';
 import MDXPage from '.';
 import { notFound } from 'next/navigation';
 
-import { MDXComponents } from '@/components/Mdx/MdxComponents';
+import MDXComponents from '@/components/Mdx/MdxComponents';
 
 // Called when a page is accessed (only once on build with static site generation)
 // Finds mdx file to render based on slug then processes the page accordingly
 export default async function MdxPage({ params }) {
     const {slug} = params
-    const {default: Content, toc, frontmatter, error} = await getProcessedMdxFromParams(params)
+    const {default: Content, toc, frontmatter, filepath, error} = await getProcessedMdxFromParams(params)
     if (error) return notFound()
 
     const siblingData = await getPages(params)
-
+    const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
+    const formedSlug = "/" + slugArr.join('/')
     return (
-        <MDXPage toc={toc} siblingData={siblingData} slug={slug} frontmatter={frontmatter}>
-            <Content components={MDXComponents}/>
+        <MDXPage toc={toc} siblingData={siblingData} slug={formedSlug} frontmatter={frontmatter}>
+            <Content components={MDXComponents(path.dirname(filepath))}/>
         </MDXPage>
     )
 }
@@ -28,16 +29,16 @@ export async function getPages(params) {
     const mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
-    return await Promise.all(mdxFiles.map(async (file) => {
-        const { frontmatter } = await processMdx(path.join(mdxDir, file))
-
-        let slug = path.basename(file, path.extname(file))
-        // nb: makes "index.mdx" reserved, can be improved if needed
-        if (slug === "index") slug = path.basename(path.dirname(file))
+    return await Promise.all(mdxFiles.map(async ({groups, filepath, slug}) => {
+        const { frontmatter } = await processMdx(path.join(mdxDir, filepath))
         
+        const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
+        const formedSlug = "/" + slugArr.join('/')
+
         return {
+            groups,
             metadata: frontmatter,
-            slug,
+            slug: formedSlug,
         }
     }))
 }
@@ -85,7 +86,7 @@ export async function generateStaticParams() {
         if (!tree) return [];
 
         const ret =  Object.keys(tree)
-            .filter(keyString => keyString !== "index")
+            .filter(keyString => keyString !== "index" && keyString !== "groups")
             .flatMap(keyString => {
                 const key = tree[keyString];
                 const currentSlugs = key["index"] ? [keyString] : null;

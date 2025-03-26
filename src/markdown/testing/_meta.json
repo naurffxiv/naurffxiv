@@ -1,5 +1,49 @@
 {
     "page": {
-        "index": "page.mdx"
-    }
+        "index": "page.mdx",
+        "groups": [
+            "testing",
+            "Main group"
+        ],
+        "page": {
+            "index": "page.mdx"
+        }
+    },
+    "a": {
+        "index": "group-a.mdx",
+        "groups": [
+            "testing",
+            "Group A"
+        ]
+    },
+    "a1": {
+        "index": "group-a-1.mdx",
+        "groups": [
+            "testing",
+            "Group A"
+        ]
+    },
+    "aa1": {
+        "index": "group-aa.mdx",
+        "groups": [
+            "testing",
+            "Group A",
+            "Subgroup A"
+        ]
+    },
+    "b": {
+        "index": "group-b.mdx",
+        "groups": [
+            "testing",
+            "Group B"
+        ]
+    },
+    "c": {
+        "index": "group-c.mdx",
+        "groups": [
+            "testing",
+            "Group C"
+        ]
+    },
+    "index": "page.mdx"
 }
