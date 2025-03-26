@@ -8,6 +8,10 @@ import Buff from "./Buff";
 
 export default function MDXComponents(mdxDir) { 
     return {
+        a: (props) => {
+            if (props.href.startsWith("http")) return <a target="_blank" {...props}/>
+            return <a {...props}/>
+        },
         h1: (props) => <h1 className="scroll-mt-20" {...props} />,
         img: (props) => <ImageModal {...props}/>,
         pre: (props) => <CopyToClipboard><pre {...props}></pre></CopyToClipboard>,
