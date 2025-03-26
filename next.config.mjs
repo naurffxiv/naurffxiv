@@ -31,6 +31,17 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'xivapi.com',
+        port: '',
+        pathname: '/i/**',
+        search: '',
+      }
+    ]
+  },
   
   async redirects() {
     return [
