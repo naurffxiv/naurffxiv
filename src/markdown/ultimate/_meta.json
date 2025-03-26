@@ -1,23 +1,47 @@
 {
     "fru": {
-        "index": "fru.mdx"
+        "index": "fru.mdx",
+        "groups": [
+            "ultimate",
+            "Dawntrail Ultimates"
+        ]
     },
     "top": {
-        "index": "top.mdx"
+        "index": "top.mdx",
+        "groups": [
+            "ultimate",
+            "Endwalker Ultimates"
+        ]
     },
     "dsr": {
         "index": "dsr.mdx",
-        "guide": {
-            "index": "guides/dsr_guide.mdx"
-        }
+        "groups": [
+            "ultimate",
+            "Endwalker Ultimates"
+        ]
+    },
+    "guide": {
+        "index": "guides/dsr_guide.mdx"
     },
     "tea": {
-        "index": "tea.mdx"
+        "index": "tea.mdx",
+        "groups": [
+            "ultimate",
+            "Shadbowbringers Ultimates"
+        ]
     },
     "uwu": {
-        "index": "uwu.mdx"
+        "index": "uwu.mdx",
+        "groups": [
+            "ultimate",
+            "Stormblood Ultimates"
+        ]
     },
     "ucob": {
-        "index": "ucob.mdx"
+        "index": "ucob.mdx",
+        "groups": [
+            "ultimate",
+            "Stormblood Ultimates"
+        ]
     }
 }

@@ -1,38 +1,70 @@
 {
-    "m8s": {
-        "index": "m8s.mdx"
-    },
-    "m7s": {
-        "index": "m7s.mdx"
+    "m5s": {
+        "index": "m5s.mdx",
+        "groups": [
+            "savage",
+            "AAC Cruiserweight"
+        ]
     },
     "m6s": {
-        "index": "m6s.mdx"
+        "index": "m6s.mdx",
+        "groups": [
+            "savage",
+            "AAC Cruiserweight"
+        ]
     },
-    "m5s": {
-        "index": "m5s.mdx"
+    "m7s": {
+        "index": "m7s.mdx",
+        "groups": [
+            "savage",
+            "AAC Cruiserweight"
+        ]
     },
-    "m4s": {
-        "index": "m4s.mdx",
+    "m8s": {
+        "index": "m8s.mdx",
+        "groups": [
+            "savage",
+            "AAC Cruiserweight"
+        ]
+    },
+    "m1s": {
+        "index": "m1s.mdx",
+        "groups": [
+            "savage",
+            "AAC Light-heavyweight"
+        ],
         "guide": {
-            "index": "guides/m4s_guide.mdx"
-        }
-    },
-    "m3s": {
-        "index": "m3s.mdx",
-        "guide": {
-            "index": "guides/m3s_guide.mdx"
+            "index": "guides/m1s_guide.mdx"
         }
     },
     "m2s": {
         "index": "m2s.mdx",
+        "groups": [
+            "savage",
+            "AAC Light-heavyweight"
+        ],
         "guide": {
             "index": "guides/m2s_guide.mdx"
         }
     },
-    "m1s": {
-        "index": "m1s.mdx",
+    "m3s": {
+        "index": "m3s.mdx",
+        "groups": [
+            "savage",
+            "AAC Light-heavyweight"
+        ],
         "guide": {
-            "index": "guides/m1s_guide.mdx"
+            "index": "guides/m3s_guide.mdx"
+        }
+    },
+    "m4s": {
+        "index": "m4s.mdx",
+        "groups": [
+            "savage",
+            "AAC Light-heavyweight"
+        ],
+        "guide": {
+            "index": "guides/m4s_guide.mdx"
         }
     }
 }
