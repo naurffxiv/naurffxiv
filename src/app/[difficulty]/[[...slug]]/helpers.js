@@ -58,7 +58,10 @@ export async function getProcessedMdxFromParams(params) {
     const filepath = await findMdxFilepath(params)
     if (!filepath) return {error: `file at ${filepath} not found`}
 
-    return await processMdx(path.join(mdxDir, filepath))
+    return {
+        filepath: path.join(mdxDir, filepath),
+        ...(await processMdx(path.join(mdxDir, filepath)))
+    }
 }
 
 export function getMdxDir(subfolders = []) {

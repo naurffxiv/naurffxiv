@@ -1,6 +1,6 @@
 import { images } from './assets'
 
-export const markdownFolders = ['ultimate', 'savage'];
+export const markdownFolders = ['ultimate', 'savage', 'extreme'];
 
 export const pages = [
   /* Commented out for now, as these pages are not yet implemented
@@ -46,19 +46,19 @@ export const ultimateList = [
 
 export const savageList = [
   {
-    "name": "M5S - Boss name",
+    "name": "M5S - Dancing Green",
     "link": "/savage/m5s",
   },
   {
-    "name": "M6S - Boss name",
+    "name": "M6S - Sugar Riot",
     "link": "/savage/m6s",
   },
   {
-    "name": "M7S - Boss name",
+    "name": "M7S - Brute Abombinator",
     "link": "/savage/m7s",
   },
   {
-    "name": "M8S - Boss name",
+    "name": "M8S - Howling Blade",
     "link": "/savage/m8s",
   },
 ];
@@ -66,19 +66,19 @@ export const savageList = [
 export const extremeList = [
   {
     "name": "Recollection",
-    "link": "/savage/dt-ex4",
+    "link": "/extreme/recollection",
   },
   {
     "name": "Sphene's Burden",
-    "link": "/savage/dt-ex3",
+    "link": "/extreme/sphenes-burden",
   },
   {
     "name": "Everkeep",
-    "link": "/savage/dt-ex2",
+    "link": "/extreme/everkeep",
   },
   {
     "name": "Worqor Lar Dor",
-    "link": "/extreme/dt-ex1",
+    "link": "/extreme/worqor-lar-dor",
   },
 ];
 
@@ -138,17 +138,17 @@ export const linksUltimate = [
 ];
 
 export const linksSavage = [
-  {id: 1, name: "M5S - Boss name", url: "/savage/m5s"},
-  {id: 2, name: "M6S - Boss name", url: "/savage/m6s"},
-  {id: 3, name: "M7S - Boss name", url: "/savage/m7s"},
-  {id: 4, name: "M8S - Boss name", url: "/savage/m8s"},
+  {id: 1, name: "M5S - Dancing Green", url: "/savage/m5s"},
+  {id: 2, name: "M6S - Sugar Riot", url: "/savage/m6s"},
+  {id: 3, name: "M7S - Brute Abombinator", url: "/savage/m7s"},
+  {id: 4, name: "M8S - Howling Blade", url: "/savage/m8s"},
 ];
 
 export const linksExtreme = [
-  {id: 4, name: "Recollection", url: "/extreme/dt-ex4"},
-  {id: 3, name: "Sphene's Burden", url: "/extreme/dt-ex3"},
-  {id: 2, name: "Everkeep", url: "/extreme/dt-ex2"},
-  {id: 1, name: "Worqor Lar Dor", url: "/extreme/dt-ex1"},
+  {id: 1, name: "Recollection", url: "/extreme/recollection"},
+  {id: 2, name: "Sphene's Burden", url: "/extreme/sphenes-burden"},
+  {id: 3, name: "Everkeep", url: "/extreme/everkeep"},
+  {id: 4, name: "Worqor Lar Dor", url: "/extreme/worqor-lar-dor"},
 ];
 
 export const linksOther = [

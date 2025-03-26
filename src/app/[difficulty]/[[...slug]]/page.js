@@ -5,13 +5,13 @@ import { markdownFolders } from '@/app/constants';
 import MDXPage from '.';
 import { notFound } from 'next/navigation';
 
-import { MDXComponents } from '@/components/Mdx/MdxComponents';
+import MDXComponents from '@/components/Mdx/MdxComponents';
 
 // Called when a page is accessed (only once on build with static site generation)
 // Finds mdx file to render based on slug then processes the page accordingly
 export default async function MdxPage({ params }) {
     const {slug} = params
-    const {default: Content, toc, frontmatter, error} = await getProcessedMdxFromParams(params)
+    const {default: Content, toc, frontmatter, filepath, error} = await getProcessedMdxFromParams(params)
     if (error) return notFound()
 
     const siblingData = await getPages(params)
@@ -19,7 +19,7 @@ export default async function MdxPage({ params }) {
     const formedSlug = "/" + slugArr.join('/')
     return (
         <MDXPage toc={toc} siblingData={siblingData} slug={formedSlug} frontmatter={frontmatter}>
-            <Content components={MDXComponents}/>
+            <Content components={MDXComponents(path.dirname(filepath))}/>
         </MDXPage>
     )
 }
