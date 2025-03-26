@@ -46,19 +46,19 @@ export const ultimateList = [
 
 export const savageList = [
   {
-    "name": "M5S - Boss name",
+    "name": "M5S - Dancing Green",
     "link": "/savage/m5s",
   },
   {
-    "name": "M6S - Boss name",
+    "name": "M6S - Sugar Riot",
     "link": "/savage/m6s",
   },
   {
-    "name": "M7S - Boss name",
+    "name": "M7S - Brute Abombinator",
     "link": "/savage/m7s",
   },
   {
-    "name": "M8S - Boss name",
+    "name": "M8S - Howling Blade",
     "link": "/savage/m8s",
   },
 ];
@@ -138,10 +138,10 @@ export const linksUltimate = [
 ];
 
 export const linksSavage = [
-  {id: 1, name: "M5S - Boss name", url: "/savage/m5s"},
-  {id: 2, name: "M6S - Boss name", url: "/savage/m6s"},
-  {id: 3, name: "M7S - Boss name", url: "/savage/m7s"},
-  {id: 4, name: "M8S - Boss name", url: "/savage/m8s"},
+  {id: 1, name: "M5S - Dancing Green", url: "/savage/m5s"},
+  {id: 2, name: "M6S - Sugar Riot", url: "/savage/m6s"},
+  {id: 3, name: "M7S - Brute Abombinator", url: "/savage/m7s"},
+  {id: 4, name: "M8S - Howling Blade", url: "/savage/m8s"},
 ];
 
 export const linksExtreme = [
