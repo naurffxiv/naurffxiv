@@ -18,10 +18,10 @@
         "groups": [
             "ultimate",
             "Endwalker Ultimates"
-        ]
-    },
-    "guide": {
-        "index": "guides/dsr_guide.mdx"
+        ],
+        "guide": {
+            "index": "guides/dsr_guide.mdx"
+        }
     },
     "tea": {
         "index": "tea.mdx",
