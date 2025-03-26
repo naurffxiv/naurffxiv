@@ -135,15 +135,45 @@ export async function findSiblingMdxFilepath(params) {
 }
 
 function findSiblingHelper(meta, pathArray, dirname) {
-    if (pathArray.length == 0) return [path.join(dirname, meta["index"])]
-
+    if (pathArray.length == 0) return [{filepath: path.join(dirname, meta["index"])}]
+    const finalSlug = pathArray[pathArray.length - 1]
     const parent = getNestedValue(meta, pathArray.slice(0, -1))
     if (!parent) return
 
-    let ret = Object.keys(parent).filter(key => key !== "index").map(key => {
-        return parent[key]["index"] ? parent[key]["index"] : null
-    })
+    // get groups
+    let groups = []
+    const page = parent[finalSlug]
+    if ("groups" in page) {
+        groups = page.groups
+    }
+
+    let ret = Object.keys(parent)
+        .filter(key => key !== "index")
+        .filter(key => {
+            let siblingGroups = getNestedValue(parent, [key, "groups"])
+            if (
+                groups &&
+                siblingGroups &&
+                siblingGroups.filter(group => groups.includes(group)).length
+            ) return true
+
+            if (!groups.length && !siblingGroups) return true
+            return false
+        })
+        .map(key => {
+            let siblingGroups = getNestedValue(parent, [key, "groups"])
+            return {
+                filepath: parent[key]["index"] ? parent[key]["index"] : null,
+                groups: siblingGroups,
+                slug: [...pathArray.slice(0, -1), key]
+            }
+        }
+    )
 
     // filter null values then create the full filename
-    return ret.filter(filepath => filepath).map(filepath => path.join(dirname, filepath))
+    ret = ret.filter(page => page.filepath)
+    ret.forEach(page => {
+        page.filepath = path.join(dirname, page.filepath)
+    })
+    return ret
 }
