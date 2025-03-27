@@ -1,4 +1,4 @@
-import { parse } from 'toml'
+import { parse } from 'smol-toml'
 import path from 'path';
 import fs from 'fs'
 import { Tooltip } from '@mui/material';
