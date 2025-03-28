@@ -69,7 +69,7 @@ export const extremeList = [
     "link": "/extreme/recollection",
   },
   {
-    "name": "SSphene'sBurden",
+    "name": "Sphene's Burden",
     "link": "/extreme/sphenes-burden",
   },
   {
