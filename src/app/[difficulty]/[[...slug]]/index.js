@@ -14,7 +14,7 @@ const MDXPage = ({children, toc, siblingData, slug, frontmatter}) => {
                     <TableOfContents toc={toc} frontmatter={frontmatter}/>
                 </div>
 
-                <article className="max-w-[90ch] prose prose-invert m-auto mx-6">
+                <article className="max-w-[90ch] min-h-screen prose prose-invert m-auto mx-6">
                     {children}
                 </article>
 
