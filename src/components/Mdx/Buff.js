@@ -1,4 +1,4 @@
-import { parse } from 'toml'
+import { parse } from 'smol-toml'
 import path from 'path';
 import fs from 'fs'
 import { Tooltip } from '@mui/material';
@@ -54,11 +54,23 @@ function tooltip({name, description, dur, explanation, short, stacks}) {
     description: optional string. Override the buff description text in the tooltip (never used, I think).
     explanation: optional string. Override the buff explanation text in the tooltip (never used, I think).
 */
-export default async function Buff({b, datapath, description, dur, explanation,  mdxDir, short, stacks}) {
-    datapath = datapath || "buffs.toml"
+export default async function Buff({b, datapath, description, dur, explanation, mdxDir, short, stacks, type = "toml"}) {
+    let filename = ""
+    let buffsData = {}
+    switch (type) {
+        case "json":
+            datapath = datapath || `buffs.json`
+            filename = String(fs.readFileSync(path.join(mdxDir, datapath)))
+            buffsData = JSON.parse(filename)
+            break
+        default:
+            datapath = datapath || "buffs.toml"
+            filename = String(fs.readFileSync(path.join(mdxDir, datapath)))
+            buffsData = parse(filename)
+            break
+    }
 
-    let toml = parse(String(fs.readFileSync(path.join(mdxDir, datapath))))
-    let buff = toml[b]
+    let buff = buffsData[b]
 
     let icon = String(buff.icon)
     let fill = 6 - icon.length
