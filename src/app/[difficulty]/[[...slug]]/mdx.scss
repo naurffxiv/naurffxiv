@@ -105,3 +105,25 @@ h6:hover span.icon-link::before {
   scrollbar-color: #b9bfc7 #0000;
   overflow-y: auto;
 }
+
+/* callout */
+.callout p{
+  margin: 0;
+}
+
+/* deatils */
+details {
+  padding-left: 0.5rem;
+}
+
+details[open] {
+  background-color:rgba(177, 239, 239, 0.1);
+  border-radius: 10px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  p {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+}

@@ -6,6 +6,7 @@ import TwitchVoD from "../Video/TwitchVoD";
 import Streamable from "../Video/Streamable";
 import Buff from "./Buff";
 import UnderConstruction from "./UnderConstruction.js";
+import Callout from "./Callout";
 
 export default function MDXComponents(mdxDir) { 
     return {
@@ -23,5 +24,6 @@ export default function MDXComponents(mdxDir) {
         Streamable,
         Buff: (props) => <Buff mdxDir={mdxDir} {...props}/>,
         UnderConstruction,
+        Callout,
     }
 }
