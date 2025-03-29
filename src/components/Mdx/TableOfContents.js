@@ -6,10 +6,14 @@ function recursiveToc(toc, collapse, level = 0) {
     // ignore first level headers, head straight to h2
     const currLevel = level ? toc.map((li) => (
           <li key={li.id}>
-            <a href={`#${li.id}`} className="toc-links">
-                {li.value}
-                {collapse && li.children ? <span className="ml-1"><ArrowDropDownIcon className="-rotate-90 transition-all"/></span> : <></>}
-            </a>
+            <div className="w-fit">
+                <a href={`#${li.id}`} className="toc-links">
+                    <div className="toc-url-container">
+                        {li.value}
+                        {collapse && li.children ? <span className="ml-1"><ArrowDropDownIcon className="transition-all -rotate-90"/></span> : <></>}
+                    </div>
+                </a>
+            </div>
             <div>{li.children ? recursiveToc(li.children, collapse, level + 1) : <></>}</div>
           </li>
     )) : toc.map((li) => (
@@ -19,7 +23,7 @@ function recursiveToc(toc, collapse, level = 0) {
     ))
 
     return ( level ? 
-        <ul className="list-none ps-1 toc">
+        <ul className="list-none ps-4 toc">
             {currLevel}
         </ul> : <>{currLevel}</>
     )
