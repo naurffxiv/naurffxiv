@@ -126,21 +126,25 @@ summary {
 
 summary::after {
   content: '';
-  border-top: 10px solid #fff;
-  border-inline: 7px solid transparent;
+  border-top: 6px solid #fff;
+  border-inline: 6px solid transparent;
+  transform: rotate(-90deg);
   transition: 0.2s;
 }
 
 details[open] > summary::after {
-  transform: rotate(-180deg);
+  transform: rotate(0);
 }
 
 summary::-webkit-details-marker {
   display: none;
 }
 
-details {
+details[open] {
+  background-color: rgb(16 36 43);
   border-radius: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+}
+
+details[open] :last-child {
+  margin-bottom: 0;
 }
