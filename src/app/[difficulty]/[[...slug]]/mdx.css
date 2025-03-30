@@ -149,7 +149,7 @@ summary::-webkit-details-marker {
 }
 
 details[open] {
-  background-color: rgb(16 36 43);
+  background-color: #28506e;
   border-radius: 5px;
 }
 
