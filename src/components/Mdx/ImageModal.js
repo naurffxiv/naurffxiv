@@ -11,10 +11,10 @@ export default function ImageModal({src, compressedExt = "avif", ...props}) {
     let compressed = src.substr(0, src.lastIndexOf(".")) + `.${compressedExt}`
     return (
         <>
-            <button onClick={handleOpen}>
+            <button onClick={handleOpen} className="not-prose">
                 <Image src={compressed} {...props}/>
             </button>
-            <Modal open={open} onClose={handleClose} aria-labelledby={props.alt}>
+            <Modal open={open} onClose={handleClose} aria-labelledby={props.alt} className="not-prose">
                 <div className="image-modal">
                     <Image src={src} {...props}/>
                 </div>
