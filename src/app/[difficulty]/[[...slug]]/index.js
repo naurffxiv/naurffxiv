@@ -2,7 +2,7 @@
 import MdxLayout from "@/components/Mdx/MdxLayout"
 import React from "react";
 import TableOfContents from "@/components/Mdx/TableOfContents";
-import QuickLinks from "@/components/Mdx/QuickLinks";
+import QuickLinks from "@/components/Mdx/QuickLinks/QuickLinks";
 import "./mdx.css";
 import "./buffs.scss"
 
