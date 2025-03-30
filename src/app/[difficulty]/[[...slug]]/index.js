@@ -13,11 +13,9 @@ const MDXPage = ({children, toc, siblingData, slug, frontmatter}) => {
                 <div className="top-[5.5rem] self-start hidden xl:block sticky h-[calc(100vh-100px)] scrollbar">
                     <TableOfContents toc={toc} frontmatter={frontmatter}/>
                 </div>
-
-                <article className="max-w-[90ch] prose prose-invert m-auto mx-6 py-6">
+                <article className="max-w-[90ch] min-h-screen prose prose-invert m-auto mx-6">
                     {children}
                 </article>
-
                 <div className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky">
                     <QuickLinks siblingData={siblingData} slug={slug}/>
                 </div>

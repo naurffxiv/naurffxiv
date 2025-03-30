@@ -1,0 +1,406 @@
+---
+title: Phase 6 - Nidhogg and Hraesvelgr
+order: 5
+collapseToc: true
+---
+
+# [P6: Nidhogg and Hraesvelgr](https://ff14.toolboxgaming.space/?id=426762112878561&preview=1)
+
+{/* todo: Images */}
+
+This phase features a simultaneous fight against **Nidhogg** (West) and **Hraesvelgr** (East), who remain fixed in place with omnidirectional hitboxes. Each dragon has its own tank and must be handled carefully.
+
+> Tanks must establish aggro quickly—both dragons will auto-attack and continue doing so throughout the phase.
+
+## Phase Wide Mechanics
+
+**Solemn Vow** – If any player is killed by **Hraesvelgr**, his **Solemn Vow** is broken. This grants him a permanent damage up and damage taken down buff, effectively a soft enrage. He will begin one-shotting anyone he hits.
+
+**Wyrmsclaw** – High-damage auto-attacks used by both dragons. Tanks should be ready to mitigate and be topped between mechanics.
+
+**HP Sync Requirement** – Both dragons must have their HP within **3% of each other** at specific moments (especially during **Akh Afah**). If the difference is too large, one stack becomes lethal and triggers a soft enrage (similar to TEA's Hand of Pain).
+
+**Mortal Vow** – A debuff that will be passed between players throughout the fight. It reduces the
+  affected player's healing output (not healing received) and explodes in an AoE when it expires. If
+  another player is in this AoE, they receive the debuff. If not passed, **Nidhogg** will soft enrage
+  similar to **Hraesvelgr**.
+
+###  Mortal Vow
+
+**Mortal Vow** is a debuff applied to a random DPS shortly after the phase begins. It must be **passed four times** throughout the phase.  
+- When **Mortal Vow** expires, it deals AoE damage and attempts to pass to the nearest player.  
+- If **no one is in range**, or if the player dies while holding it, **Nidhogg enrages**.  
+- If **multiple players** are hit, only one receives the debuff. The others are afflicted with **Suppuration**, reducing their max HP by 50% and increasing damage taken.
+
+> Mortal Vow applies a DoT and **reduces healing output**, making it dangerous for support jobs to hold.  
+> The original carrier also gains **Mortal Atonement**, preventing them from receiving the debuff again.
+
+**Standard passing order** (XTTMC):
+- Random DPS → G1 Tank → G2 Tank → G1 Melee → Caster  
+- If G1 Melee receives the first Vow, G2 Melee takes their spot later
+
+### Light Parties
+
+Assign your light parties for the entire phase:
+
+- **Group 1 (Left):** Focus **Nidhogg**
+- **Group 2 (Right):** Focus **Hraesvelgr**
+
+Keeping party splits consistent ensures clean **Akh Afah** stack resolutions and helps balance **damage output** between the two dragons.
+
+## Wyrmsbreath 1
+
+Shortly after the phase begins, both dragons will cast **Wyrmsbreath**, the first major mechanic.
+{/* todo: Image */}
+- The **outer arena** is covered by a donut AoE (**Swirling Blizzard** from Hraesvelgr).
+- Both bosses tether to **three random non-tank players** each with elemental breath tethers:
+  - **Nidhogg** → **Dread Wyrmsbreath** (Fire Breath)
+  - **Hraesvelgr** → **Great Wyrmsbreath** (Ice Breath)
+- Each tether resolves as a **conal AoE** that applies debuffs based on the element:
+  - **Boiling** → becomes **Pyretic** (moves = damage)
+  - **Freezing** → becomes **Deep Freeze** (immobilized)
+- To avoid these effects, **each non-tank must be hit by both breath types**, canceling the elemental debuffs.
+
+---
+
+### Tether Resolution
+
+Tethers are **proximity-based** and must be stretched to avoid lethal damage. A colored indicator shows whether you're close (bad) or far (safe). Position carefully to bait opposite elements within your pair.
+
+Players will form **three pairs** across the southern part of the arena:
+- **Melees**: Near the **1 marker**, close to both dragons' breath angles
+- **Group 1 Ranged/Healer**: Southwest
+- **Group 2 Ranged/Healer**: Southeast
+
+Within each pair:
+- One player anchors in a known position
+- The other adjusts (flexes) based on which dragon tethers them
+{/* todo: Explain flexes better idk */}
+> Positioning is tight. Use the donut telegraph and the **brick lines** across the center of the arena to help space your pair without overlapping others.
+
+### Tank Busters (Simultaneous)
+{/* todo: Images */}
+While the party handles tethers, each dragon will also cast a **tank buster**. There are two variants depending on whether one or both dragons’ mouths are glowing:
+
+1. **Both mouths glowing** → **Dark Orb & Holy Orb** (Split Tankbusters)
+   - Each tank is targeted with a small AoE
+   - Tanks **must stack together** in the middle to soak both orbs
+   - Standing alone results in massive **Sustained DoTs** that will kill you
+
+2. **One mouth glowing** → **Staggering Breath**
+   - The glowing-mouth dragon casts a **conal AoE** down the **center** (Dark or Holy Breath)
+   - The other dragon casts a **circular buster** on its target
+   - Both tanks move to the **northern corner** of their respective dragon’s side, staying inside the donut AoE but avoiding the center
+
+> If done correctly, no one will clip with AoEs, and tanks won’t overlap.
+
+### Summary of Responsibilities
+
+- **Tanks**: Mitigate autos, grab aggro, watch for glowing mouths, move appropriately
+- **Non-tanks**: Stretch tethers, match with opposite element partner, avoid overlapping others
+- **Everyone**: Watch for donut AoE boundaries and use the brick lines for alignment
+
+### Mortal Vow Assignment
+
+Once **Wyrmsbreath 1** resolves, a random **DPS** will be afflicted with **Mortal Vow**—a debuff that must be passed later in the phase.
+
+To prepare:
+- **DPS** should **spread** to avoid accidentally splashing the Vow AoE.
+- **Supports (healers/tank)** can group near the middle to prepare for healing and avoid **Mortal Vow**.
+{/* todo: Images */}
+> Passing order typically follows: DPS → G1 Tank → G2 Tank → G1 Melee → Caster  
+> (Swap to G2 Melee if G1 received the first Vow.)
+
+## Akh Afah 1
+
+Immediately after Mortal Vow is applied, both dragons begin casting **Akh Afah**—massive stack mechanics that must be handled in **light parties**.
+
+- Each dragon will target one **healer** with a stack marker
+- These hits deal **heavy magic damage** and inflict **Magic Vulnerability Up**
+- If both groups overlap, the result is instant death
+
+The dragons also tether to one another at the beginning of the cast if their HP difference exceeds 3%:
+- **White tether** = **Hraesvelgr** has more HP
+- **Purple tether** = **Nidhogg** has more HP
+
+> If the tether **persists until the end of the cast**, the **higher-HP dragon’s stack** will become **lethal**, wiping the party.
+
+- **Group 1**: North (Nidhogg side)
+- **Group 2**: South (Hraesvelgr side)
+
+> This split mirrors your damage assignment and keeps tethers and stacks clean.
+
+## Hallowed Wings 1
+{/* todo: Images */}
+After **Akh Afah**, **Nidhogg** will fly to the **North or South**, on either the **East or West** side of the arena. From this position, he will prepare **Cauterize**, cleaving **half the arena** in a straight line.
+
+Simultaneously, **Hraesvelgr** will cast **Hallowed Wings**:
+- One of his wings will glow, indicating which **half of the arena** will be **covered by a lethal AoE**
+- The **non-glowing side** is safe
+
+Together, these mechanics leave only a **single quadrant of the arena safe**.
+
+> The party should start **near the center** to react quickly.
+
+### Hallowed Plume: Tankbusters
+{/* todo: Images */}
+Hraesvelgr will also cast **Hallowed Plume**, a tankbuster targeting **two players** based on his **head position**:
+
+- **Head up**: Targets the **two furthest** players → **Tanks go far**, **party stays close**
+- **Head down**: Targets the **two closest** players → **Tanks stay close**, **party spreads far**
+
+Each buster is a large circular AoE that **must be taken solo**.
+
+Tanks should:
+- Maintain distance between each other to avoid overlapping AoEs
+- Avoid clipping the party
+- Stay within their assigned dragon’s hitbox if possible
+- Use mitigation
+
+> The party should react based on the **head position**:  
+> - Head up = **Tanks far**, **Party stays close**  
+> - Head down = **Tanks close**, **Party spreads out**
+
+### Mortal Vow 1st Pass
+
+After all cleaves and tankbusters resolve, the **first Mortal Vow pass** will occur.
+
+- The **DPS with the debuff** should move to **center**
+- The assigned **G1 tank** steps in to take the AoE and receive the Vow
+- All other players must avoid the center to prevent **Suppuration**
+
+> Passing requires precise positioning—only one player should be within the explosion radius.
+
+##  Wroth Flames
+{/* todo: Images */}
+**Hraesvelgr** jumps to one of three positions: **Far West**, **Middle**, or **Far East**, and either **North or South**.  
+He then casts **Cauterize**, cleaving the area in front of him.
+
+- If he’s Far East/West: He cleaves **half the arena**
+- If he’s Middle: He cleaves the **center third**, leaving safe zones along the **East and West walls**
+
+At the same time, **three orbs** spawn in sequence and will **explode in a cross pattern** (Flame Burst):
+
+1. Center
+2. One corner
+3. Opposite corner
+
+Each orb explodes in a large **plus-shaped AoE** across the arena. Getting hit inflicts **moderate damage** and **Damage Down**.
+
+### Debuff Assignments
+{/* todo: Images */}
+Players will receive one of three debuffs:
+
+- **4 players**: 🔴 **Spreading Flames** – Small AoE spread on expiration (lethal if overlapped)
+- **2 players**: ⚪ **Entangled Flames** – 2-player stack required on expiration
+- **2 players**: No debuff – Must **pair with a White** debuffed player for stack
+
+All debuffs resolve after the final Flame Burst.
+
+### Akh Morn
+
+While dodging AoEs, **Nidhogg** casts **Akh Morn** on a random player:
+- Requires an **8-player stack**
+- Hits **4 times**
+- Leaves **persistent puddles** that apply a **Lethal Bleed** if stepped in
+
+### Strategy Summary
+{/* todo: Images */}
+1. **Start near a corner** of the safe zone (based on Hraesvelgr’s position and first orb)
+2. **Dodge to center** after first Flame Burst
+3. **Stack for Akh Morn** and move as a group after each hit:
+   - Use a **“J-path”** to curve around puddles and finish on the third hit
+4. **After the fourth hit**, **players spread** for their debuffs:
+   - 🔴 Red (Spreading Flames) → Spread out toward **Nidhogg**
+   - ⚪ White (Entangled Flames) + No Debuff pairs → Stack together **toward Hraesvelgr**
+
+### NA Marker Strat (Optional)
+{/* todo: Images */}
+NA Party Finder often uses Target Markers to assign spread positions:
+
+- 🔴 Spreads = “Target to Attack” 1–4 (West to East)
+- ⚪ White + No Debuff Pair 1 = “Target to Ignore”
+- ⚪ White + No Debuff Pair 2 = “Target to Bind”
+
+> The markers form a lineup from West to East:
+> **Attack 1, 2, 3, 4**, then **Ignore**, then **Bind**
+
+### Mortal Vow – 2nd Pass 
+
+After **Wroth Flames** and all debuffs resolve, the second **Mortal Vow** pass takes place.
+
+- The **current holder** (G1 Tank) moves to center
+- The **next recipient** (G2 Tank) steps in to take the pass
+- All other players should stay away from center to avoid **Suppuration**
+
+> Make sure no party members drift into center during this pass—losing a tank to Suppuration is nearly unrecoverable.
+
+## Akh Afah 2
+
+Once the second pass resolves, the dragons will cast another **Akh Afah**, identical in structure to the first.
+
+- Each healer is targeted by a **stack marker**
+- Players must group into **light parties** to split the damage
+- The dragons’ HP must be kept within **3%** of each other
+
+If they’re unbalanced:
+- **Purple tether** = Nidhogg has more HP
+- **White tether** = Hraesvelgr has more HP
+{/* todo: Image tether */}
+If the tether **persists** when the cast finishes, the **higher-HP dragon’s** stack becomes **lethal**, wiping the group.
+
+### Positioning Reminder:
+
+- **Group 1**: North (Nidhogg)
+- **Group 2**: South (Hraesvelgr)
+
+> This is the **final HP check**—after this, HP balance no longer matters until the end of the phase.
+
+## Hallowed Wings 2
+{/* todo: Images */}
+After **Akh Afah 2**, the dragons combine multiple AoEs in a coordinated attack:
+
+- **Hraesvelgr** casts **Hallowed Wings** (one side of the arena becomes lethal)
+- **Hraesvelgr** also casts **Hallowed Plume** (two-player tankbuster based on proximity)
+- **Nidhogg** casts either **Hot Wing** or **Hot Tail**:
+  - **Hot Wing**: Cleaves North & South → Safe zone is **center strip**
+  - **Hot Tail**: Cleaves center → Safe zones are **North or South**
+
+All of these resolve simultaneously, leaving **one safe quadrant**, based on:
+
+1. Which **Hraesvelgr wing glows**
+2. Whether his **head is raised or lowered**
+3. Nidhogg’s **cast bar** (Hot Wing or Hot Tail)
+
+### Resolution Flow
+{/* todo: Images */}
+1. **Check Hraesvelgr’s glowing wing** → move to **non-glowing side**
+2. **Check his head position**:
+   - **Head up** = Tankbusters target **furthest** players → **Tanks far, party close**
+   - **Head down** = Tankbusters target **closest** players → **Tanks close, party far**
+3. **Check Nidhogg’s cast**:
+   - **Hot Wing** → Move into **center line** → In
+   - **Hot Tail** → Move toward **side lines** → Out
+
+### Tank Positioning 
+{/* todo: Images */}
+Both tanks must bait **Hallowed Plume** from within the **one remaining safe quadrant**, while adjusting to **head position** and **Hot Wing/Tail** restrictions:
+
+- **Head Up (furthest)** → Tanks space out along the outer edges of the safe quadrant
+- **Head Down (closest)** → Tanks stack closer to Hraesvelgr inside the safe zone
+
+Avoid overlapping busters or party AoEs. The party should position **relative to the tanks** to maintain safe distance.
+
+> There is no pre-defined “wall vs. center” rule—just adjust within the safe quadrant based on bait logic and avoid clipping anyone.
+
+### Mortal Vow – 3rd Pass
+
+Once the quadrant-cleave resolves, it's time for the **third Mortal Vow pass**.
+
+- The **current holder** (G2 Tank) moves to the **center**
+- The **next recipient** (G1 Melee or G2 Melee, depending on order) steps in
+- As always, all other players should stay clear of center to prevent Suppuration
+
+> This pass occurs quickly after Hallowed Wings 2, so coordinate positions beforehand to avoid hesitation or overlap.
+
+## Wyrmsbreath 2
+
+Immediately after the pass, **Wyrmsbreath 2** begins—but unlike the first, players are **not** meant to cancel their debuffs.
+
+- Each non-tank will be tethered to **either Nidhogg (fire)** or **Hraesvelgr (ice)**
+- These tethers still require **stretching** to prevent lethal damage
+- However, players **should only be hit by one element**
+  - Getting hit by both elements will **cancel your debuff**
+  - This is **not desired** for the next mechanic
+
+> This version is often called **Static WB2** in Party Finder
+
+### Positioning Overview (Static WB2)
+
+- Each player has a **preset position**, usually based on a visual layout (see below)
+- Players spread around the arena to safely stretch their tethers and only be hit by **one breath**
+- Tanks handle their busters as before:
+  - **Both mouths glowing** → stack mid
+  - **One mouth glowing** → tanks move to respective corners to avoid center cleave
+
+![Wyrmsbreath 2 Positioning](/images/ultimates/dsr/static-wb2.png)
+
+> Players must retain their **Fire or Ice debuff** for the next mechanic, so do not stack with an opposite element.
+
+## Cauterize & Touchdown
+
+
+After **Wyrmsbreath 2** resolves, each player will retain either a **Fire** or **Ice** debuff:
+
+- **Boiling** → becomes **Pyretic** (any movement = damage)
+- **Freezing** → becomes **Deep Freeze** (immobilized)
+
+To remove these:
+- Players must be hit by the **opposite dragon’s dive** (Cauterize)
+
+### 🐉 Dive Resolution
+
+Both dragons will dive across the arena:
+
+- **Nidhogg** and **Hraesvelgr** appear at the **North wall**
+- Each charges through the arena with **Cauterize**, dealing **heavy damage**
+- Being hit by the **correct element**:
+  - **Cleanses your debuff**
+  - Prevents DoT application (Burns/Frostbite)
+- Being hit by the **same element** applies a **DoT** and can be lethal
+
+> Players must go to the dragon of the **opposite element** from their tether earlier
+
+### Tank Role
+
+Each dragon targets the **first player in line** with a **heavy tankbuster** on impact. This must be handled via:
+
+- **Tank invulns** 
+- **Heavy mitigation** + shields
+
+> Healers must be alert: this buster applies a **strong DoT** on top of the dive damage. Losing a tank here will likely trigger **Hraesvelgr’s enrage** due to Solemn Vow.
+
+### Touchdown
+
+Immediately after, both dragons land:
+
+- **Nidhogg** → lands at **center**, dealing **proximity-based AoE**
+- **Hraesvelgr** → lands from the **South wall**, also dealing AoE
+
+Players should:
+- **Group near the North wall** to minimize damage from both impacts
+- Be fully healed and shielded before the landings
+
+### Mortal Vow – Final Pass
+
+Immediately after Touchdown, the **fourth and final pass** of **Mortal Vow** occurs.
+
+- The current **melee** moves to the wall to drop the explosion
+- The final recipient (usually **caster**) steps in to receive it
+
+> After this pass, the Vow mechanic is complete. No further passing is required.
+
+## Revenge of the Horde
+
+As a final check, both dragons begin casting **Revenge of the Horde**—a synchronized enrage cast.
+
+- Both **Nidhogg** and **Hraesvelgr** must be defeated **before** the cast finishes
+- Focus remaining DPS and potions to push damage
+- Apply raid-wide mitigation and healing if necessary
+
+> If Thordan was spared in Phase 5, you will proceed to **Phase 7**.  
+> If he was killed, you loop back to Phase 4 but will not have the tools require to kill the Eyes.{/* todo: Explain better if we want idk, lore nerd */}
+
+## Transition: Alternative End
+
+Before Phase 7 begins, **Dragon-king Thordan** initiates a cinematic sequence with multiple heavy-hitting raidwides.
+
+- Two large AoEs hit the party and apply **unavoidable Bleeds**.
+- These Bleeds cannot be mitigated and require spot healing—**do not** use strong party mitigation like **TBN** or **Panhaima** here.
+
+After the second Bleed resolves, Thordan casts **Alternative End**, a massive raid-wide that **must** be mitigated.
+
+> Apply mitigation **immediately after** the second Bleed expires.
+> Using mitigation too early will leave the party vulnerable during **Alternative End**.
+
+When this sequence is survived, the arena will shift, and the final encounter with **Dragon-king Thordan** will begin.

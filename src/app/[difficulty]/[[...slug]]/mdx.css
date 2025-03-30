@@ -113,3 +113,50 @@ h6:hover span.icon-link::before {
   scrollbar-color: #b9bfc7 #0000;
   overflow-y: auto;
 }
+
+/* callout */
+.callout p{
+  margin: 0;
+}
+
+/* details */
+summary {
+  background: linear-gradient(to bottom, #28506E, #061A33);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+summary::after {
+  content: '';
+  border-top: 6px solid #fff;
+  border-inline: 6px solid transparent;
+  transform: rotate(-90deg);
+  transition: 0.2s;
+}
+
+details[open] > summary::after {
+  transform: rotate(0);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] {
+  background-color: #28506e;
+  border-radius: 5px;
+}
+
+details[open] :first-child {
+  margin-top: 0;
+}
+
+details[open] :last-child {
+  margin-bottom: 0;
+}
