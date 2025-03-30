@@ -145,6 +145,10 @@ details[open] {
   border-radius: 5px;
 }
 
+details[open] :first-child {
+  margin-top: 0;
+}
+
 details[open] :last-child {
   margin-bottom: 0;
 }
