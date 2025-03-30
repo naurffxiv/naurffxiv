@@ -1,47 +1,44 @@
 {
     "fru": {
-        "index": "fru.mdx",
-        "groups": [
-            "ultimate",
-            "Dawntrail Ultimates"
-        ]
+        "index": "fru.mdx"
     },
     "top": {
-        "index": "top.mdx",
-        "groups": [
-            "ultimate",
-            "Endwalker Ultimates"
-        ]
+        "index": "top.mdx"
     },
     "dsr": {
         "index": "dsr.mdx",
-        "groups": [
-            "ultimate",
-            "Endwalker Ultimates"
-        ],
         "guide": {
-            "index": "guides/dsr_guide.mdx"
+            "index": "guide/dsr_index.mdx",
+            "p1": {
+                "index": "guide/dsr/p1_guide.mdx"
+            },
+            "p2": {
+                "index": "guide/dsr/p2_guide.mdx"
+            },
+            "p3": {
+                "index": "guide/dsr/p3_guide.mdx"
+            },
+            "p4": {
+                "index": "guide/dsr/p4_guide.mdx"
+            },
+            "p5": {
+                "index": "guide/dsr/p5_guide.mdx"
+            },
+            "p6": {
+                "index": "guide/dsr/p6_guide.mdx"
+            },
+            "p7": {
+                "index": "guide/dsr/p7_guide.mdx"
+            }
         }
     },
     "tea": {
-        "index": "tea.mdx",
-        "groups": [
-            "ultimate",
-            "Shadowbringers Ultimates"
-        ]
+        "index": "tea.mdx"
     },
     "uwu": {
-        "index": "uwu.mdx",
-        "groups": [
-            "ultimate",
-            "Stormblood Ultimates"
-        ]
+        "index": "uwu.mdx"
     },
     "ucob": {
-        "index": "ucob.mdx",
-        "groups": [
-            "ultimate",
-            "Stormblood Ultimates"
-        ]
+        "index": "ucob.mdx"
     }
 }
