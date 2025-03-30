@@ -5,7 +5,7 @@ import "./buffs.scss";
 
 import MdxLayout from "@/components/Mdx/Layout/MdxLayout";
 import MobileDrawer from "@/components/Mdx/Layout/MobileDrawer";
-import QuickLinks from "@/components/Mdx/Elements/QuickLinks";
+import QuickLinks from "@/components/Mdx/Layout/QuickLinks";
 import TableOfContents from "@/components/Mdx/Utils/TableOfContents";
 
 function MDXPage({ children, toc, siblingData, slug, frontmatter }) {
