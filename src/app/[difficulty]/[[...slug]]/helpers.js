@@ -49,21 +49,28 @@ export const processMdx = cache(async (filepath) => {
         ]
     })
 
+    /*
+        {
+            toc,
+            frontmatter,
+            default
+        }
+    */
     return processedMdx
 })
 
-// resolves mdx filepath from slug and returns the processed file
+// resolves mdx filepath from slug and returns the processed file and relevant information
 export async function getProcessedMdxFromParams({difficulty, slug}) {
     const mdxDir = path.join(getMdxDir(), difficulty) 
-
-    const { index, title, order } = await findMdxEntry({difficulty, slug})
+    // stringify dictionary since objects are compared by pointer instead of value
+    const cacheKey = JSON.stringify({difficulty, slug})  
+    const {index, ...mdxEntry} = await findMdxEntry(cacheKey)
     if (!index) return {error: `file at ${index} not found`}
+    mdxEntry.filepath = path.join(mdxDir, index)
 
     return {
-        filepath: path.join(mdxDir, index),
-        title,
-        order,
-        ...(await processMdx(path.join(mdxDir, index)))
+        ...mdxEntry,
+        ...(await processMdx(mdxEntry.filepath))
     }
 }
 
@@ -120,10 +127,13 @@ export const readAndDeserializeJson = cache(async (filepath) => {
     return JSON.parse(file, {encoding: 'utf-8'})
 })
 
-// gets the filepath of a specific mdx file
-export async function findMdxEntry(params) {
-    return findMdxShared(params, findMdxEntryHelper)
-}
+// gets the relevant information of a specific mdx file
+// takes a *stringified* dict {difficulty, slug} as an 
+// argument due to how object comparison works in js 
+const findMdxEntry = cache (async (params) => {
+    params = JSON.parse(params)
+    return await findMdxShared(params, findMdxEntryHelper)
+})
 
 function findMdxEntryHelper(meta, pathArray, dirname) {
     const result = getNestedValue(meta, pathArray)
@@ -152,9 +162,11 @@ function findSiblingHelper(meta, pathArray, dirname) {
         groups = page.groups
     }
 
+    // collect sibling information
     let ret = Object.keys(parent)
         .filter(key => !reservedSlugs.includes(key))
         .filter(key => {
+            // true if both original slug and sibling slug share groups
             let siblingGroups = getNestedValue(parent, [key, "groups"])
             if (
                 groups &&
@@ -162,6 +174,7 @@ function findSiblingHelper(meta, pathArray, dirname) {
                 siblingGroups.filter(group => groups.includes(group)).length
             ) return true
 
+            // true if both original/siblings don't have any groups
             if (!groups.length && !siblingGroups) return true
             return false
         })
@@ -187,6 +200,7 @@ function findSiblingHelper(meta, pathArray, dirname) {
     return ret
 }
 
+// process manually added quick link entries
 export async function findManuallyAddedQuickLinks(params) {
     return findMdxShared(params, findManuallyAddedQuickLinksHelper)
 }
@@ -197,33 +211,32 @@ async function findManuallyAddedQuickLinksHelper(meta, pathArray, dirname) {
     if (!manualAdditions || manualAdditions.length === 0) return []
 
     return await Promise.all(manualAdditions.map(async entry => {
-        let metadata = {}
-        metadata.title = entry.title
-        metadata.order = entry.order || 0
-        
-        let groups = entry.groups || []
+        let finalGroups = entry.groups
+        let finalMetadata = {}
+        finalMetadata.title = entry.title
+        finalMetadata.order = entry.order
 
         if (entry.type === "mdx") {
             const splitSlug = entry.slug.split("/")
             const difficulty = splitSlug[0]
             const slug = splitSlug.slice(1)
             
-            const { title, order, frontmatter } = await getProcessedMdxFromParams({difficulty, slug})
-            metadata.title = entry.title || title || frontmatter.title || "No title set"
-            groups = entry.groups || await findMdxShared({difficulty, slug}, getSlugGroups)
-            metadata.order = entry.order || order || metadata.order || 0
+            // override priority: sidebar > _meta.json entry > frontmatter
+            const { title: metaTitle, order: metaOrder, frontmatter, groups: metaGroups } = await getProcessedMdxFromParams({difficulty, slug})
+            finalGroups = finalGroups ?? metaGroups
+            finalMetadata.title = finalMetadata.title || metaTitle || frontmatter?.title
+            finalMetadata.order = finalMetadata.order ?? metaOrder ?? frontmatter?.order
         }
 
+        // final check for missing entries
+        finalGroups = finalGroups ?? []
+        finalMetadata.title = finalMetadata.title || "No title set"
+        finalMetadata.order = finalMetadata.order ?? 0
+
         return {
-            groups,
-            metadata,
+            groups: finalGroups,
+            metadata: finalMetadata,
             slug: entry.slug,
         }
     }))
-}
-
-async function getSlugGroups(meta, pathArray, dirname) {
-    const page = getNestedValue(meta, pathArray)
-    const groups = page["groups"]
-    return groups ? groups : []
 }
