@@ -51,11 +51,10 @@ export const processMdx = cache(async (filepath) => {
 })
 
 // resolves mdx filepath from slug and returns the processed file
-export async function getProcessedMdxFromParams(params) {
-    const {difficulty} = params
+export async function getProcessedMdxFromParams({difficulty, slug}) {
     const mdxDir = path.join(getMdxDir(), difficulty) 
 
-    const filepath = await findMdxFilepath(params)
+    const filepath = await findMdxFilepath({difficulty, slug})
     if (!filepath) return {error: `file at ${filepath} not found`}
 
     return {
@@ -89,8 +88,7 @@ function findMatchingMeta(mdxDir, goalPath){
 
 // goes through relevant _meta.json and gets the filepath of
 // relevant mdx files based on the subfunc passed into the function
-async function findMdxShared(params, subfunc) {
-    const {difficulty, slug} = params
+async function findMdxShared({difficulty, slug}, subfunc) {
     const mdxDir = path.join(getMdxDir(), difficulty) 
     const goalPath = slug ? path.join(...slug) : '.'
 
@@ -106,7 +104,7 @@ async function findMdxShared(params, subfunc) {
         if (diff.length == 0) diff = "."
         const pathArray = diff === "." ? [] : diff.split(path.sep)
         const meta = await readAndDeserializeJson(path.join(mdxDir, metaFile), {encoding: 'utf-8'})
-        const ret = subfunc(meta, pathArray, dirname)
+        const ret = await subfunc(meta, pathArray, dirname)
         if (ret) return ret
     }
     return 
@@ -148,7 +146,7 @@ function findSiblingHelper(meta, pathArray, dirname) {
     }
 
     let ret = Object.keys(parent)
-        .filter(key => key !== "index")
+        .filter(key => key !== "index" && key !== "sidebar")
         .filter(key => {
             let siblingGroups = getNestedValue(parent, [key, "groups"])
             if (
@@ -176,4 +174,44 @@ function findSiblingHelper(meta, pathArray, dirname) {
         page.filepath = path.join(dirname, page.filepath)
     })
     return ret
+}
+
+export async function findManuallyAddedQuickLinks(params) {
+    return findMdxShared(params, findManuallyAddedQuickLinksHelper)
+}
+
+async function findManuallyAddedQuickLinksHelper(meta, pathArray, dirname) {
+    const page = getNestedValue(meta, pathArray)
+    const manualAdditions = page["sidebar"]
+    if (!manualAdditions || manualAdditions.length === 0) return []
+
+    return await Promise.all(manualAdditions.map(async entry => {
+        let metadata = {}
+        metadata.title = entry.title
+        metadata.order = entry.order || 0
+        
+        let groups = entry.groups || []
+
+        if (entry.type === "mdx") {
+            const splitSlug = entry.slug.split("/")
+            const difficulty = splitSlug[0]
+            const slug = splitSlug.slice(1)
+            
+            const { frontmatter } = await getProcessedMdxFromParams({difficulty, slug})
+            metadata.title = entry.title || frontmatter.title || "No title set"
+            groups = entry.groups || await findMdxShared({difficulty, slug}, getSlugGroups)
+        }
+
+        return {
+            groups,
+            metadata,
+            slug: entry.slug,
+        }
+    }))
+}
+
+async function getSlugGroups(meta, pathArray, dirname) {
+    const page = getNestedValue(meta, pathArray)
+    const groups = page["groups"]
+    return groups ? groups : []
 }

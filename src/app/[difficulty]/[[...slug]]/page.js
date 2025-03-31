@@ -1,7 +1,7 @@
 import { readdirSync } from 'fs';
 import path from 'path';
-import { processMdx, getProcessedMdxFromParams, readAndDeserializeJson, getMdxDir, findSiblingMdxFilepath } from './helpers';
-import { markdownFolders } from '@/app/constants';
+import { processMdx, getProcessedMdxFromParams, readAndDeserializeJson, getMdxDir, findSiblingMdxFilepath, findManuallyAddedQuickLinks } from './helpers';
+import { markdownFolders, reservedSlugs } from '@/app/constants';
 import MDXPage from '.';
 import { notFound } from 'next/navigation';
 
@@ -29,7 +29,7 @@ export async function getPages(params) {
     const mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
-    return await Promise.all(mdxFiles.map(async ({groups, filepath, slug}) => {
+    let ret = await Promise.all(mdxFiles.map(async ({groups, filepath, slug}) => {
         const { frontmatter } = await processMdx(path.join(mdxDir, filepath))
         
         const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
@@ -41,6 +41,8 @@ export async function getPages(params) {
             slug: formedSlug,
         }
     }))
+    ret = ret.concat(...await findManuallyAddedQuickLinks(params))
+    return ret
 }
 
 // set the title for each page based on title set on frontmatter
@@ -86,7 +88,7 @@ export async function generateStaticParams() {
         if (!tree) return [];
 
         const ret =  Object.keys(tree)
-            .filter(keyString => keyString !== "index" && keyString !== "groups")
+            .filter(keyString => reservedSlugs.includes(keyString) === false)
             .flatMap(keyString => {
                 const key = tree[keyString];
                 const currentSlugs = key["index"] ? [keyString] : null;
