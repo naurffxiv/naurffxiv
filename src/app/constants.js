@@ -19,67 +19,108 @@ export const pages = [
 
 export const ultimateList = [
   {
-    "name": "Futures Rewritten",
-    "link": "/ultimate/fru",
+    title: "Futures Rewritten",
+    url: "/ultimate/fru",
+    img: images.Pandora, 
+    alt: 'Pandora', 
   },
   {
-    "name": "The Omega Protocol",
-    "link": "/ultimate/top",
+    title: "The Omega Protocol",
+    url: "/ultimate/top",
+    img: images.Omega,
+    alt: 'Omega',
   },
   {
-    "name": "Dragonsong's Reprise",
-    "link": "/ultimate/dsr",
+    title: "Dragonsong's Reprise",
+    url: "/ultimate/dsr",
+    img: images.Thordan, 
+    alt: 'Thordan', 
   },
   {
-    "name": "The Epic of Alexander",
-    "link": "/ultimate/tea",
+    title: "The Epic of Alexander",
+    url: "/ultimate/tea",
+    img: images.Alexander,
+    alt: 'Alexander'
   },
   {
-    "name": "The Weapon's Refrain",
-    "link": "/ultimate/uwu",
+    title: "The Weapon's Refrain",
+    url: "/ultimate/uwu",
+    img: images.Ultima, 
+    alt: 'Ultima',
   },
   {
-    "name": "The Unending Coil of Bahamut",
-    "link": "/ultimate/ucob",
+    title: "The Unending Coil of Bahamut",
+    url: "/ultimate/ucob",
+    img: images.Bahamut,
+    alt: 'Bahamut', 
   },
 ];
 
 export const savageList = [
   {
-    "name": "M5S - Dancing Green",
-    "link": "/savage/m5s",
+    title: "M5S - Dancing Green",
+    url: "/savage/m5s",
   },
   {
-    "name": "M6S - Sugar Riot",
-    "link": "/savage/m6s",
+    title: "M6S - Sugar Riot",
+    url: "/savage/m6s",
   },
   {
-    "name": "M7S - Brute Abombinator",
-    "link": "/savage/m7s",
+    title: "M7S - Brute Abombinator",
+    url: "/savage/m7s",
   },
   {
-    "name": "M8S - Howling Blade",
-    "link": "/savage/m8s",
+    title: "M8S - Howling Blade",
+    url: "/savage/m8s",
   },
 ];
 
 export const extremeList = [
   {
-    "name": "Recollection",
-    "link": "/extreme/recollection",
+    title: "Recollection",
+    url: "/extreme/recollection",
   },
   {
-    "name": "Sphene's Burden",
-    "link": "/extreme/sphenes-burden",
+    title: "Sphene's Burden",
+    url: "/extreme/sphenes-burden",
   },
   {
-    "name": "Everkeep",
-    "link": "/extreme/everkeep",
+    title: "Everkeep",
+    url: "/extreme/everkeep",
   },
   {
-    "name": "Worqor Lar Dor",
-    "link": "/extreme/worqor-lar-dor",
+    title: "Worqor Lar Dor",
+    url: "/extreme/worqor-lar-dor",
   },
+];
+
+export const otherList = [
+  {
+    title: "Join our Discord",
+    url: "https://discord.gg/naurffxiv"
+  },
+  {
+    title: "Support us on Patreon",
+    url: "https://patreon.com/naurffxiv"
+  },
+  {
+    title: "GitHub Repository",
+    url: "https://github.com/naurffxiv/naurffxiv"
+  },
+  {
+    title: "Findingway.io",
+    url: "https://findingway.io"
+  },
+  /* Commented out for now, as these pages are not yet implemented
+  {
+    title: "Events",
+    url: "/"
+  },
+  {
+    title: "Staff",
+    url: "/"
+  },
+  */
 ];
 
 // Menu props based on mobile/desktop mode
@@ -118,46 +159,3 @@ export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
     },
   }),
 });
-
-export const ultimateImages = [
-  {id: 6, url: '/ultimate/fru', src: images.Pandora, alt: 'Pandora', title: 'Futures Rewritten' },
-  {id: 5, url: '/ultimate/top', src: images.Omega, alt: 'Omega', title: 'The Omega Protocol' },
-  {id: 4, url: '/ultimate/dsr', src: images.Thordan, alt: 'Thordan', title: 'Dragonsong\'s Reprise' },
-  {id: 3, url: '/ultimate/tea', src: images.Alexander, alt: 'Alexander', title: 'The Epic of Alexander' },
-  {id: 2, url: '/ultimate/uwu', src: images.Ultima, alt: 'Ultima', title: 'The Weapon\'s Refrain' },
-  {id: 1, url: '/ultimate/ucob', src: images.Bahamut, alt: 'Bahamut', title: 'The Unending Coil of Bahamut' },
-];
-
-export const linksUltimate = [
-  {id: 1, name: "Futures Rewritten", url: "/ultimate/fru"},
-  {id: 2, name: "The Omega Protocol", url: "/ultimate/top"},
-  {id: 3, name: "Dragonsong's Reprise", url: "/ultimate/dsr"},
-  {id: 4, name: "The Epic of Alexander", url: "/ultimate/tea"},
-  {id: 5, name: "The Weapon's Refrain", url: "/ultimate/uwu"},
-  {id: 6, name: "The Unending Coil of Bahamut", url: "/ultimate/ucob"},
-];
-
-export const linksSavage = [
-  {id: 1, name: "M5S - Dancing Green", url: "/savage/m5s"},
-  {id: 2, name: "M6S - Sugar Riot", url: "/savage/m6s"},
-  {id: 3, name: "M7S - Brute Abombinator", url: "/savage/m7s"},
-  {id: 4, name: "M8S - Howling Blade", url: "/savage/m8s"},
-];
-
-export const linksExtreme = [
-  {id: 1, name: "Recollection", url: "/extreme/recollection"},
-  {id: 2, name: "Sphene's Burden", url: "/extreme/sphenes-burden"},
-  {id: 3, name: "Everkeep", url: "/extreme/everkeep"},
-  {id: 4, name: "Worqor Lar Dor", url: "/extreme/worqor-lar-dor"},
-];
-
-export const linksOther = [
-  {id: 1, name: "Join our Discord", url: "https://discord.gg/naurffxiv"},
-  {id: 2, name: "Support us on Patreon", url: "https://patreon.com/naurffxiv"},
-  {id: 3, name: "GitHub Repository", url: "https://github.com/naurffxiv/naurffxiv"},
-  {id: 4, name: "Findingway.io", url: "https://findingway.io"},
-  /* Commented out for now, as these pages are not yet implemented
-  {id: 2, name: "Events", url: "/"},
-  {id: 3, name: "Staff", url: "/"},
-  */
-];
