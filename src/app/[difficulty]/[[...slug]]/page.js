@@ -29,7 +29,7 @@ export async function getPages(params) {
     const mdxDir = getMdxDir([params.difficulty])
     const mdxFiles = await findSiblingMdxFilepath(params)
 
-    let ret = await Promise.all(mdxFiles.map(async ({groups, filepath, slug}) => {
+    let ret = await Promise.all(mdxFiles.map(async ({groups, filepath, slug, order, title}) => {
         const { frontmatter } = await processMdx(path.join(mdxDir, filepath))
         
         const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
@@ -39,6 +39,8 @@ export async function getPages(params) {
             groups,
             metadata: frontmatter,
             slug: formedSlug,
+            order,
+            title,
         }
     }))
     ret = ret.concat(...await findManuallyAddedQuickLinks(params))
@@ -47,10 +49,10 @@ export async function getPages(params) {
 
 // set the title for each page based on title set on frontmatter
 export async function generateMetadata({params}) {
-    const {frontmatter, error} = await getProcessedMdxFromParams(params)
+    const {title, frontmatter, error} = await getProcessedMdxFromParams(params)
     if (error) return notFound()
-
-    return {title: frontmatter.title ? frontmatter.title + " | NAUR" : "NAUR" }
+    const effectiveTitle = title ? title : (frontmatter.title ? frontmatter.title : undefined)
+    return {title: effectiveTitle ? effectiveTitle + " | NAUR" : "NAUR" }
 }
 
 // generate valid slugs based on _meta.json files in markdown folder

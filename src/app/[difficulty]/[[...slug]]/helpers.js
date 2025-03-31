@@ -14,6 +14,8 @@ import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
 import rehypeHeaderSections from '@/rehype/rehypeHeaderSections';
 
+import { reservedSlugs } from '@/app/constants';
+
 // process each mdx file and cache it
 export const processMdx = cache(async (filepath) => {
     const rawmdx = await fs.readFile(filepath, 'utf-8')
@@ -54,12 +56,14 @@ export const processMdx = cache(async (filepath) => {
 export async function getProcessedMdxFromParams({difficulty, slug}) {
     const mdxDir = path.join(getMdxDir(), difficulty) 
 
-    const filepath = await findMdxFilepath({difficulty, slug})
-    if (!filepath) return {error: `file at ${filepath} not found`}
+    const { index, title, order } = await findMdxEntry({difficulty, slug})
+    if (!index) return {error: `file at ${index} not found`}
 
     return {
-        filepath: path.join(mdxDir, filepath),
-        ...(await processMdx(path.join(mdxDir, filepath)))
+        filepath: path.join(mdxDir, index),
+        title,
+        order,
+        ...(await processMdx(path.join(mdxDir, index)))
     }
 }
 
@@ -117,13 +121,16 @@ export const readAndDeserializeJson = cache(async (filepath) => {
 })
 
 // gets the filepath of a specific mdx file
-export async function findMdxFilepath(params) {
-    return findMdxShared(params, findMdxFilepathHelper)
+export async function findMdxEntry(params) {
+    return findMdxShared(params, findMdxEntryHelper)
 }
 
-function findMdxFilepathHelper(meta, pathArray, dirname) {
+function findMdxEntryHelper(meta, pathArray, dirname) {
     const result = getNestedValue(meta, pathArray)
-    if (result && result.index) return path.join(dirname, path.normalize(result.index))
+    if (result) {
+        result.index = path.join(dirname, path.normalize(result.index))
+        return result
+    }
     return
 }
 
@@ -146,7 +153,7 @@ function findSiblingHelper(meta, pathArray, dirname) {
     }
 
     let ret = Object.keys(parent)
-        .filter(key => key !== "index" && key !== "sidebar")
+        .filter(key => !reservedSlugs.includes(key))
         .filter(key => {
             let siblingGroups = getNestedValue(parent, [key, "groups"])
             if (
@@ -160,10 +167,14 @@ function findSiblingHelper(meta, pathArray, dirname) {
         })
         .map(key => {
             let siblingGroups = getNestedValue(parent, [key, "groups"])
+            let title = getNestedValue(parent, [key, "title"])
+            let order = getNestedValue(parent, [key, "order"])
             return {
                 filepath: parent[key]["index"] ? parent[key]["index"] : null,
                 groups: siblingGroups,
-                slug: [...pathArray.slice(0, -1), key]
+                slug: [...pathArray.slice(0, -1), key],
+                title,
+                order,
             }
         }
     )
@@ -197,9 +208,10 @@ async function findManuallyAddedQuickLinksHelper(meta, pathArray, dirname) {
             const difficulty = splitSlug[0]
             const slug = splitSlug.slice(1)
             
-            const { frontmatter } = await getProcessedMdxFromParams({difficulty, slug})
-            metadata.title = entry.title || frontmatter.title || "No title set"
+            const { title, order, frontmatter } = await getProcessedMdxFromParams({difficulty, slug})
+            metadata.title = entry.title || title || frontmatter.title || "No title set"
             groups = entry.groups || await findMdxShared({difficulty, slug}, getSlugGroups)
+            metadata.order = entry.order || order || metadata.order || 0
         }
 
         return {
