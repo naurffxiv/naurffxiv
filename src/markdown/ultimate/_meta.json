@@ -10,25 +10,25 @@
         "guide": {
             "index": "guide/dsr_index.mdx",
             "p1": {
-                "index": "guide/dsr/p1_guide.mdx"
+                "index": "guide/pages/p1_guide.mdx"
             },
             "p2": {
-                "index": "guide/dsr/p2_guide.mdx"
+                "index": "guide/pages/p2_guide.mdx"
             },
             "p3": {
-                "index": "guide/dsr/p3_guide.mdx"
+                "index": "guide/pages/p3_guide.mdx"
             },
             "p4": {
-                "index": "guide/dsr/p4_guide.mdx"
+                "index": "guide/pages/p4_guide.mdx"
             },
             "p5": {
-                "index": "guide/dsr/p5_guide.mdx"
+                "index": "guide/pages/p5_guide.mdx"
             },
             "p6": {
-                "index": "guide/dsr/p6_guide.mdx"
+                "index": "guide/pages/p6_guide.mdx"
             },
             "p7": {
-                "index": "guide/dsr/p7_guide.mdx"
+                "index": "guide/pages/p7_guide.mdx"
             }
         }
     },
