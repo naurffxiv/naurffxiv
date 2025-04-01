@@ -67,7 +67,7 @@ export default function ContentDropdown(props) {
               >
                 <Box
                   component="a"
-                  href={fight.link}
+                  href={fight.url}
                   sx={{ 
                     py: 0.5, 
                     px: 1,
@@ -81,7 +81,7 @@ export default function ContentDropdown(props) {
                   }}
                 >
                   <Typography sx={{ fontSize: '0.9rem' }}>
-                    {fight.name}
+                    {fight.title}
                   </Typography>
                 </Box>
               </ListItem>
@@ -104,9 +104,9 @@ export default function ContentDropdown(props) {
         <Menu {...menuProps}>
           {data.map((fight, i) => (
             <li key={i}>
-              <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
+              <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.url}>
                 <Typography sx={{ textAlign: 'left' }}>
-                  {fight.name}
+                  {fight.title}
                 </Typography>
               </MenuItem>
             </li>
@@ -137,9 +137,9 @@ export default function ContentDropdown(props) {
       <Menu {...menuProps}>
         {data.map((fight, i) => (
           <li key={i}>
-            <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.link}>
+            <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.url}>
               <Typography sx={{ textAlign: 'left' }}>
-                {fight.name}
+                {fight.title}
               </Typography>
             </MenuItem>
           </li>

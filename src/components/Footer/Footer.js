@@ -1,19 +1,19 @@
 import FooterLinks from './FooterLinks';
-import { linksOther, linksUltimate, linksSavage, linksExtreme } from "@/app/constants";
+import { ultimateList, savageList, extremeList, otherList } from "@/app/constants";
 
 export default function Footer() {
     return (
         <footer>
             <div className="bg-gradient-to-b from-[#28506E] to-[#061A33] pt-10 pb-10 px-20 md:px-40">
-                <div className="max-w-screen-2xl mx-auto">
+                <div className="mx-auto max-w-screen-2xl">
                     <div className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5">
-                        <FooterLinks title="Ultimate" links={linksUltimate} className="mt-5 xl:mt-0" />
-                        <FooterLinks title="Savage" links={linksSavage} className="mt-5 xl:mt-0" />
-                        <FooterLinks title="Extreme" links={linksExtreme} className="mt-5 xl:mt-0" />
-                        <FooterLinks title="Other Links" links={linksOther} className="mt-5 xl:mt-0" />
+                        <FooterLinks title="Ultimate" links={ultimateList} className="mt-5 xl:mt-0" />
+                        <FooterLinks title="Savage" links={savageList} className="mt-5 xl:mt-0" />
+                        <FooterLinks title="Extreme" links={extremeList} className="mt-5 xl:mt-0" />
+                        <FooterLinks title="Other Links" links={otherList} className="mt-5 xl:mt-0" />
                     </div>
-                    <div className="mt-14 grid justify-items-center xl:justify-items-start">
-                        <div className="prose prose-slate prose-invert prose-sm">
+                    <div className="grid mt-14 justify-items-center xl:justify-items-start">
+                        <div className="prose-sm prose prose-slate prose-invert">
                             <p>
                                 NAUR FFXIV is a non-profit community-owned website.
                             </p>

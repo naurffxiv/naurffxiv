@@ -8,13 +8,13 @@ export default function FooterLinks ({title, links, className}) {
                 {links.map((item) => {
                     const isExternal = item.url && item.url.startsWith('http');
                     return (
-                        <li key={item.id} className="">
+                        <li key={item.url} className="">
                             <a 
                                 href={item.url} 
                                 className="hover:underline text-nowrap xl:px-0"
                                 {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                             >
-                                {item.name}
+                                {item.title}
                             </a>
                         </li>
                     );
