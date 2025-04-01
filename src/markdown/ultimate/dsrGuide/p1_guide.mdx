@@ -7,6 +7,8 @@ collapseToc: true
 # [P1: Adelphel, Grinnaux and Charibert](https://ff14.toolboxgaming.space/?id=802461081524561&preview=1#1)
 {/* todo: Images */}
 
+## Pre-Pull Notes
+
 Phase 1 features **Ser Adelphel** (Paladin), **Ser Grinnaux** (Warrior), and **Ser Charibert** (Black Mage).
 Only **Ser Adelphel** and **Ser Grinnaux** are initially targetable.
 
@@ -16,9 +18,13 @@ Notes before pulling:
 2. Plan tank mitigation for the bosses' auto attacks. Note that Grinnaux's autos hit harder than Adelphel's.
 3. Be sure to interrupt Adelphel's "**Holiest Hallowing**" cast (occurs three times).
 
-   > This cast must be interrupted or the bosses will be healed, making the phase impossible.
+<Callout type="warning"> 
+This cast must be interrupted or the bosses will be healed, making the phase impossible.
+</Callout>
 
 Order of interrupts is: Adelphel Tank > Phys. Ranged > Adelphel Tank.
+
+## Start of Phase 1
 
 Pull both bosses center and focus DPS on Adelphel. The phase begins with "**Holiest of Holy**",
 a heavy-hitting raidwide. Afterward, **Ser Adelphel** spawns a tether on a random player,
@@ -45,9 +51,11 @@ The markers signify party members that are being targeted for a "**Hyperdimensio
 These slashes fire a line AoE in the direction of the marked party members.
 The line AoE will also drop a "**Portal**" at the end of the line AoE.
 
-> If these "**Portals**" are too close to one another or if a party member gets too close to them,
-> they will explode and deal damage to the party. This will also apply a "**Damage Down**" debuff
-> to the players hit by the explosion.
+<Callout type="warning"> 
+If these "**Portals**" are too close to one another or if a party member gets too close to them,
+they will explode and deal damage to the party. This will also apply a <Buff b="damage-down" type="json" />
+to the players hit by the explosion.
+</Callout>
 
 The four marked party members will need to spread in a way to avoid clipping other party members
 and place the "**Portals**" far enough away from each other. To avoid clipping the unmarked players,
@@ -55,7 +63,9 @@ the first set of slashes will be taken on the north side of the arena. If the pa
 from the DSR resource page, they are placed precisely so you can stand in the middle of them to avoid
 the other marked players.
 
-> There is no priority for spread positions. Try to preposition to where you want to go to avoid confusion.
+<Callout type="tip"> 
+There is no priority for spread positions. Try to preposition to where you want to go to avoid confusion.
+</Callout>
 
 The party members who are not targeted for slashes will need to stack south on the tip of the middle
 diamond to bait a conal, shared AoE from **Ser Grinnaux**. One party member who is not marked is randomly
@@ -66,8 +76,10 @@ the unmarked party members will now be marked and the marked players will no lon
 The new marked players will need to spread on the south side of the arena just as the other players
 did on the north side while the north side stacks to share the conal AoE.
 
-> To make the south spreads a bit easier, you can slightly preposition to the marker you want to go to
-> when sharing the previous stack.
+<Callout type="tip"> 
+To make the south spreads a bit easier, you can slightly preposition to the marker you want to go to
+when sharing the previous stack.
+</Callout>
 
 ## Ser Adelphel Dashes
 {/* todo: Images */}
@@ -86,8 +98,10 @@ To avoid the exploding orbs and his dashes, the party will need to move in the d
 initially dashes to. While moving in that direction, the party should be aiming for the green,
 triangle-shaped marking on the floor at one of the intercardinal directions.
 
-> Be sure not to be too far out or too far in while moving. The "**Portals**" can still explode if
-> someone is too close, or you can get hit by the dash and orbs from **Ser Adelphel**.
+<Callout type="warning">
+Be sure not to be too far out or too far in while moving. The "**Portals**" can still explode if
+someone is too close, or you can get hit by the dash and orbs from **Ser Adelphel**.
+</Callout>
 
 Once **Ser Adelphel** finishes his dashes, he will follow up with a tank buster on whoever has
 aggro of him. This tank buster knocks anyone back into the wall of death who is near the tank
@@ -110,8 +124,10 @@ a party member with the same marker.
 - **Healers**: Can receive a Blue "X" or Green Triangle.
 - **DPS**: Can receive a Red Circle, Purple Square, or Green Triangle.
 
-> The chains need to be broken before they expire or they will one-shot the players.
-> Tanks can survive but receive damage down.
+<Callout type="warning">
+The chains need to be broken before they expire or they will one-shot the players.
+Tanks can survive but receive a <Buff b="damage-down" type="json" />.
+</Callout>
 
 Before chains and markers are applied, the party should try to be as close to the center of the
 arena as possible. The closer the party is to their partner when the chain is applied, the easier
@@ -122,41 +138,46 @@ knockback. Shortly after the knockback, **Ser Charibert** will cast an AoE on ea
 
 To resolve the mechanic, a couple steps must be followed:
 
-1. Move to the middle of the arena and prepare to be chained and marked.
+### Preposition
 
-2. Move to assigned position once marked and prepare for knockback.
+Move to the middle of the arena and prepare to be chained and marked.
 
-As stated above, only certain roles will get certain markers. Each marker has a predetermined position
-that is role dependent:
-{/* todo: Look at maybe redoing this section with images or markdown */}
-Blue "X" Positions
+As stated above, only certain roles will get certain markers.
+Each marker has a predetermined position that is role dependent:
 
-- Tank - North
-- Healer - South
+#### Blue X Positions
 
-Green Triangle Positions
+- **Tank**: North position
+- **Healer**: South position
 
-- DPS - North West
-- Healer - South East
+#### Green Triangle Positions
 
-Purple Square Positions
+- **DPS**: Northwest position
+- **Healer**: Southeast position
 
-- Tank - North East
-- DPS - South West
+#### Purple Square Positions
 
-Red Circle Positions
+- **Tank**: Northeast position
+- **DPS**: Southwest position
 
-- Red Circle DPS Furthest West - West
-- Red Circle DPS Furthest East - East
+#### Red Circle Positions
 
-These positions ensure that your partner will always be across from you during the knockback to break the chain.
+- **DPS (Furthest Marker West)**: West position
+- **DPS (Furthest Marker East)**: East position
 
-3. Prepare for the knockback from **Ser Grinnaux**.
+![Playstation Markers](/images/dsrGuide/p1/playstation.png)
 
-> If positioned correctly, the knockback will send you to the edge of the arena, breaking the chain.
-> Make sure to not be far out and inline with **Ser Grinnaux**. If not properly positioned with him,
-> you may get knocked back towards another player. It is common for tanks to not have him properly
-> positioned so adjust as needed.
+The diagram above shows the arena with all marker positions.
+Remember: Your position is determined by both your role (Tank, Healer, or DPS) AND your assigned PlayStation marker.
+
+### Breaking Chains
+
+Once in your assigned position, prepare for the knockback from **Ser Grinnaux**.
+
+If positioned correctly, the knockback will send you to the edge of the arena, breaking the chain.
+Make sure to not be far out and inline with **Ser Grinnaux**. If not properly positioned with him,
+you may get knocked back towards another player. It is common for tanks to not have him properly
+positioned so adjust as needed.
 
 Warriors should note that Inner Release knockback prevention will prevent them from being knocked back
 if the buff is active.
