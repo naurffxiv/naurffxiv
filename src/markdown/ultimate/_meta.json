@@ -8,27 +8,27 @@
     "dsr": {
         "index": "dsr.mdx",
         "guide": {
-            "index": "guide/dsr_index.mdx",
+            "index": "dsrGuide/dsr_index.mdx",
             "p1": {
-                "index": "guide/pages/p1_guide.mdx"
+                "index": "dsrGuide/p1_guide.mdx"
             },
             "p2": {
-                "index": "guide/pages/p2_guide.mdx"
+                "index": "dsrGuide/p2_guide.mdx"
             },
             "p3": {
-                "index": "guide/pages/p3_guide.mdx"
+                "index": "dsrGuide/p3_guide.mdx"
             },
             "p4": {
-                "index": "guide/pages/p4_guide.mdx"
+                "index": "dsrGuide/p4_guide.mdx"
             },
             "p5": {
-                "index": "guide/pages/p5_guide.mdx"
+                "index": "dsrGuide/p5_guide.mdx"
             },
             "p6": {
-                "index": "guide/pages/p6_guide.mdx"
+                "index": "dsrGuide/p6_guide.mdx"
             },
             "p7": {
-                "index": "guide/pages/p7_guide.mdx"
+                "index": "dsrGuide/p7_guide.mdx"
             }
         }
     },

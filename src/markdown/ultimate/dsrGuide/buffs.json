@@ -1,0 +1,15 @@
+{
+    "damage-down": {
+        "name": "Damage Down",
+        "icon": 215520,
+        "description": "Damage dealt is reduced.",
+        "explanation": "Reduces damage output by 50% for 3 minutes.",
+        "phases": [1, 2, 3, 4, 6, 7]
+    },
+    "weakness": {
+        "name": "Weakness",
+        "icon": 215010,
+        "description": "Strength, dexterity, intelligence, and mind are reduced by 25%.",
+        "explanation": "Received after being revived from death in combat for 1 minute 40 seconds duration."
+    }
+}
