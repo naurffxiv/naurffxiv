@@ -19,10 +19,21 @@ export const metadata = {
   description: "NA Ultimate Raiding - FFXIV",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover', // Enables full-screen support on devices with notches
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="min-h-screen">
-      <body className={`${roboto.className} min-h-screen flex flex-col`}>
+      <body
+        className={"${roboto.className} min-h-screen flex flex-col"}
+        style={{
+          paddingTop: 'env(safe-area-inset-top)', // Top safe-area for devices like iPhone
+          paddingBottom: 'env(safe-area-inset-bottom)', // Bottom safe-area for devices like iPhone
+        }}>
         <MUITheme>
           <NavBar />
           <main className="flex-grow">
