@@ -21,11 +21,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="en" className="min-h-screen">
+      <body className={`${roboto.className} min-h-screen flex flex-col`}>
         <MUITheme>
           <NavBar />
-          <main>
+          <main className="flex-grow">
             {children}
             <Script id="disable-preview-tracking">
             {/* Only load on production environment.*/}
