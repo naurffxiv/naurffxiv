@@ -94,6 +94,33 @@ npm run build
 npm run start
 ```
 
+# Formatting and Linting
+
+To merge into the repository, the code must pass the pipelines. Here are some commands to run the linter and formatter
+
+## Prettier Formatting
+
+```bash
+# Installation
+npm install --save-dev prettier
+
+# Running the check
+npx prettier --check .
+
+# Automatically fix formatting issues
+npx prettier --write .
+```
+
+## ESLint
+
+```bash
+# Installation
+npm install --save-dev eslint
+
+# Run the linter
+run: npx eslint . --ext .js,.jsx,.ts,.tsx
+```
+
 # Contributing
 
 ## Images on this website
