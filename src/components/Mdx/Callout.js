@@ -25,16 +25,22 @@ export default function Callout({ children, type }) {
   return (
     <Box
       sx={{
-        backgroundColor: types[type] ? types[type].backgroundColor : types.default.backgroundColor,
+        backgroundColor: types[type]
+          ? types[type].backgroundColor
+          : types.default.backgroundColor,
         borderLeft: `4px solid ${types[type] ? types[type].borderColor : types.default.borderColor}`,
         padding: 2,
         margin: 2,
         borderRadius: 1,
       }}
-      className = "callout"
+      className="callout"
     >
-      <span className="font-bold">{types[type] ? `${types[type].icon} ${types[type].text}` : `${types.default.icon} ${types.default.text}`}</span>
-      {children}   
+      <span className="font-bold">
+        {types[type]
+          ? `${types[type].icon} ${types[type].text}`
+          : `${types.default.icon} ${types.default.text}`}
+      </span>
+      {children}
     </Box>
   );
 }
