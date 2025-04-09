@@ -39,7 +39,6 @@
   color: rgb(96 165 250) !important;
 }
 
-
 /* table of contents collapisbles */
 /* hide anything outside the div */
 nav.toc-collapse > div > ul > li div {
@@ -50,7 +49,6 @@ nav.toc-collapse > div > ul > li div {
 nav.toc-collapse li:has(.toc-current) > div > a:not(.toc-current) {
   color: rgb(161, 199, 255);
 }
-
 
 /* show currently active section */
 nav.toc-collapse li div:has(.toc-current) > ul {
@@ -82,10 +80,9 @@ nav.toc-collapse div:has(.toc-current) a.toc-current svg {
   transform: rotate(0) !important;
 }
 
-
 /* hyperlink to sections */
 span.icon-link::before {
-  content: '#';
+  content: "#";
   position: relative;
   opacity: 0;
   transition: opacity 0.1s ease;
@@ -100,7 +97,7 @@ h5:hover span.icon-link::before,
 h6:hover span.icon-link::before {
   opacity: 1;
 }
-  
+
 .image-modal {
   position: absolute;
   top: 50%;
@@ -115,13 +112,13 @@ h6:hover span.icon-link::before {
 }
 
 /* callout */
-.callout p{
+.callout p {
   margin: 0;
 }
 
 /* details */
 summary {
-  background: linear-gradient(to bottom, #28506E, #061A33);
+  background: linear-gradient(to bottom, #28506e, #061a33);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -133,7 +130,7 @@ summary {
 }
 
 summary::after {
-  content: '';
+  content: "";
   border-top: 6px solid #fff;
   border-inline: 6px solid transparent;
   transform: rotate(-90deg);

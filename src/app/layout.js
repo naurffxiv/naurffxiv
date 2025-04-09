@@ -3,15 +3,15 @@ import MUITheme from "./theme";
 import "./globals.css";
 import Script from "next/script";
 
-import NavBar from '@/components/NavBar/NavBar';
-import Footer from '@/components/Footer/Footer';
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
-  weight: ['300','400','500','700'],
-  style: ['normal','italic'],
+  weight: ["300", "400", "500", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  fallback: ['system-ui', 'arial'],
-  display: 'swap',
+  fallback: ["system-ui", "arial"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -28,8 +28,8 @@ export default function RootLayout({ children }) {
           <main>
             {children}
             <Script id="disable-preview-tracking">
-            {/* Only load on production environment.*/}
-            {`
+              {/* Only load on production environment.*/}
+              {`
               if (window.location.host !== 'naurffxiv.com')
                   window.goatcounter = {no_onload: true}
             `}
