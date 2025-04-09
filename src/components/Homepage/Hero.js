@@ -8,7 +8,7 @@ export default function Header() {
         <h1 className="text-4xl xl:text-6xl font-bold">NAUR</h1>
           <h3 className="text-lg/7 xl:text-2xl/9">
               NAUR (NA Ultimate Raiding) is a community of high-end raiders on North American Data Centers for Final Fantasy XIV: Online.
-              Come connect with other high-end raiders, find statics, and share the enjoyment of FFXIV's toughest content.
+              Come connect with other high-end raiders, find statics, and share the enjoyment of FFXIV`&apos`s toughest content.
           </h3>
           <a
           href="https://discord.com/invite/naurffxiv"
