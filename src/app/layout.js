@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="min-h-screen">
       <body
-        className={"${roboto.className} min-h-screen flex flex-col"}
+        className={`${roboto.className} min-h-screen flex flex-col`}
         style={{
           paddingTop: 'env(safe-area-inset-top)', // Top safe-area for devices like iPhone
           paddingBottom: 'env(safe-area-inset-bottom)', // Bottom safe-area for devices like iPhone
