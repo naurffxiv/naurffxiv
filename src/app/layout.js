@@ -20,9 +20,9 @@ export const metadata = {
 };
 
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  viewportFit: 'cover', // Enables full-screen support on devices with notches
+  viewportFit: "cover", // Enables full-screen support on devices with notches
 };
 
 export default function RootLayout({ children }) {
@@ -31,9 +31,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${roboto.className} min-h-screen flex flex-col`}
         style={{
-          paddingTop: 'env(safe-area-inset-top)', // Top safe-area for devices like iPhone
-          paddingBottom: 'env(safe-area-inset-bottom)', // Bottom safe-area for devices like iPhone
-        }}>
+          paddingTop: "env(safe-area-inset-top)", // Top safe-area for devices like iPhone
+          paddingBottom: "env(safe-area-inset-bottom)", // Bottom safe-area for devices like iPhone
+        }}
+      >
         <MUITheme>
           <NavBar />
           <main className="flex-grow">
