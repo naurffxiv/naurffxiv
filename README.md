@@ -118,7 +118,7 @@ npx prettier --write .
 npm install --save-dev eslint
 
 # Run the linter
-run: npx eslint . --ext .js,.jsx,.ts,.tsx
+npx eslint . --ext .js,.jsx,.ts,.tsx
 ```
 
 # Contributing
