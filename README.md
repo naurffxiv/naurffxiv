@@ -123,4 +123,4 @@ npx eslint . --ext .js,.jsx,.ts,.tsx
 
 # Contributing
 
-If you would to contribute, please take a look over at our [Wiki](https://github.com/naurffxiv/naurffxiv/wiki) on ceratin processes.
+If you would to contribute, please take a look over at our [Wiki](https://github.com/naurffxiv/naurffxiv/wiki) on certain processes.
