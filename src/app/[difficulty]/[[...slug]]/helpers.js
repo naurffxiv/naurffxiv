@@ -1,53 +1,49 @@
-import path from 'path';
-import { promises as fs, readdirSync } from 'fs';
+import path from "path";
+import { promises as fs, readdirSync } from "fs";
 import * as runtime from "react/jsx-runtime";
-import { evaluate } from '@mdx-js/mdx'
-import { cache } from 'react';
+import { evaluate } from "@mdx-js/mdx";
+import { cache } from "react";
 
-import remarkFrontmatter from 'remark-frontmatter';
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
-import remarkSectionize from 'remark-sectionize'
-import rehypeImgSize from 'rehype-img-size';
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import remarkSectionize from "remark-sectionize";
+import rehypeImgSize from "rehype-img-size";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
-import rehypeHeaderSections from '@/rehype/rehypeHeaderSections';
+import rehypeHeaderSections from "@/rehype/rehypeHeaderSections";
 
 import { reservedSlugs } from '@/app/constants';
 
 // process each mdx file and cache it
 export const processMdx = cache(async (filepath) => {
-    const rawmdx = await fs.readFile(filepath, 'utf-8')
+  const rawmdx = await fs.readFile(filepath, "utf-8");
 
-    // process mdx
-    const processedMdx = await evaluate(rawmdx, {
-        ...runtime,
-        baseUrl: import.meta.url,
-        remarkPlugins: [
-            remarkFrontmatter,
-            remarkMdxFrontmatter,
-            remarkSectionize
-        ],
-        rehypePlugins: [
-            rehypeSlug,
-            [
-                rehypeAutolinkHeadings,
-                {
-                behavior: 'append',
-                properties: {
-                    ariaHidden: false,
-                    tabIndex: -1,
-                    className: 'hash-link',
-                },
-                },
-            ],
-            [rehypeImgSize, { dir: 'public' }],
-            rehypeExtractToc,
-            [rehypeExtractTocExport, {name: "toc"}],
-            rehypeHeaderSections,
-        ]
-    })
+  // process mdx
+  const processedMdx = await evaluate(rawmdx, {
+    ...runtime,
+    baseUrl: import.meta.url,
+    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkSectionize],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+          properties: {
+            ariaHidden: false,
+            tabIndex: -1,
+            className: "hash-link",
+          },
+        },
+      ],
+      [rehypeImgSize, { dir: "public" }],
+      rehypeExtractToc,
+      [rehypeExtractTocExport, { name: "toc" }],
+      rehypeHeaderSections,
+    ],
+  });
 
     /*
         {
@@ -56,8 +52,8 @@ export const processMdx = cache(async (filepath) => {
             default
         }
     */
-    return processedMdx
-})
+  return processedMdx;
+});
 
 // resolves mdx filepath from slug and returns the processed file and relevant information
 export async function getProcessedMdxFromParams({difficulty, slug}) {
@@ -75,26 +71,29 @@ export async function getProcessedMdxFromParams({difficulty, slug}) {
 }
 
 export function getMdxDir(subfolders = []) {
-    return path.join(process.cwd(), 'src', 'markdown', ...subfolders)
+  return path.join(process.cwd(), "src", "markdown", ...subfolders);
 }
 
 // traverses through a nested dictionary
 // e.g obj = nested dictionary, pathArray = ["a", "b", "c", "d"]
 // getNestedValue() will return obj["a"]["b"]["c"]["d"]
 function getNestedValue(obj, pathArray) {
-    return pathArray.reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+  return pathArray.reduce(
+    (acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined),
+    obj,
+  );
 }
 
-// prioritize _meta.json that are closer to the slug and sort by longest prefix 
-function findMatchingMeta(mdxDir, goalPath){
-    const metaFiles = readdirSync(mdxDir, { recursive: true })
-        .filter((file) => path.basename(file) === "_meta.json")
-        .filter((file) => {
-            const dirname = path.dirname(file)
-            if (dirname === ".") return true  // _meta.json at base folder
-            return goalPath.startsWith(dirname)
-        })
-    return metaFiles.sort((a, b) => b.length - a.length);
+// prioritize _meta.json that are closer to the slug and sort by longest prefix
+function findMatchingMeta(mdxDir, goalPath) {
+  const metaFiles = readdirSync(mdxDir, { recursive: true })
+    .filter((file) => path.basename(file) === "_meta.json")
+    .filter((file) => {
+      const dirname = path.dirname(file);
+      if (dirname === ".") return true; // _meta.json at base folder
+      return goalPath.startsWith(dirname);
+    });
+  return metaFiles.sort((a, b) => b.length - a.length);
 }
 
 // goes through relevant _meta.json and gets the filepath of
@@ -105,10 +104,10 @@ async function findMdxShared({difficulty, slug}, subfunc) {
 
     const metaFiles = findMatchingMeta(mdxDir, goalPath)
 
-    // find file path by traversing through the relevant _meta.json
-    for (let i = 0; i < metaFiles.length; i++) {
-        const metaFile = metaFiles[i]
-        const dirname = path.dirname(metaFile)
+  // find file path by traversing through the relevant _meta.json
+  for (let i = 0; i < metaFiles.length; i++) {
+    const metaFile = metaFiles[i];
+    const dirname = path.dirname(metaFile);
 
         // strip matching path, then prepare to traverse through nested dictionary
         let diff = dirname === "." ? goalPath : goalPath.substring(dirname.length + 1)
@@ -123,9 +122,9 @@ async function findMdxShared({difficulty, slug}, subfunc) {
 
 // read, deserialize, and cache a json file (_meta.json)
 export const readAndDeserializeJson = cache(async (filepath) => {
-    const file = await fs.readFile(filepath)
-    return JSON.parse(file, {encoding: 'utf-8'})
-})
+  const file = await fs.readFile(filepath);
+  return JSON.parse(file, { encoding: "utf-8" });
+});
 
 // gets the relevant information of a specific mdx file
 // takes a *stringified* dict {difficulty, slug} as an 
@@ -146,21 +145,22 @@ function findMdxEntryHelper(meta, pathArray, dirname) {
 
 // gets the filepaths of a mdx file and its siblings in an array
 export async function findSiblingMdxFilepath(params) {
-    return findMdxShared(params, findSiblingHelper)
+  return findMdxShared(params, findSiblingHelper);
 }
 
 function findSiblingHelper(meta, pathArray, dirname) {
-    if (pathArray.length == 0) return [{filepath: path.join(dirname, meta["index"])}]
-    const finalSlug = pathArray[pathArray.length - 1]
-    const parent = getNestedValue(meta, pathArray.slice(0, -1))
-    if (!parent) return
+  if (pathArray.length == 0)
+    return [{ filepath: path.join(dirname, meta["index"]) }];
+  const finalSlug = pathArray[pathArray.length - 1];
+  const parent = getNestedValue(meta, pathArray.slice(0, -1));
+  if (!parent) return;
 
-    // get groups
-    let groups = []
-    const page = parent[finalSlug]
-    if ("groups" in page) {
-        groups = page.groups
-    }
+  // get groups
+  let groups = [];
+  const page = parent[finalSlug];
+  if ("groups" in page) {
+    groups = page.groups;
+  }
 
     // collect sibling information
     let ret = Object.keys(parent)
@@ -192,12 +192,53 @@ function findSiblingHelper(meta, pathArray, dirname) {
         }
     )
 
-    // filter null values then create the full filename
-    ret = ret.filter(page => page.filepath)
-    ret.forEach(page => {
-        page.filepath = path.join(dirname, page.filepath)
-    })
-    return ret
+  // filter null values then create the full filename
+  ret = ret.filter((page) => page.filepath);
+  ret.forEach((page) => {
+    page.filepath = path.join(dirname, page.filepath);
+  });
+  return ret;
+}
+
+// process manually added quick link entries
+export async function findManuallyAddedQuickLinks(params) {
+    return findMdxShared(params, findManuallyAddedQuickLinksHelper)
+}
+
+async function findManuallyAddedQuickLinksHelper(meta, pathArray, dirname) {
+    const page = getNestedValue(meta, pathArray)
+    const manualAdditions = page["sidebar"]
+    if (!manualAdditions || manualAdditions.length === 0) return []
+
+    return await Promise.all(manualAdditions.map(async entry => {
+        let finalGroups = entry.groups
+        let finalMetadata = {}
+        finalMetadata.title = entry.title
+        finalMetadata.order = entry.order
+
+        if (entry.type === "mdx") {
+            const splitSlug = entry.slug.split("/")
+            const difficulty = splitSlug[0]
+            const slug = splitSlug.slice(1)
+            
+            // override priority: sidebar > _meta.json entry > frontmatter
+            const { title: metaTitle, order: metaOrder, frontmatter, groups: metaGroups } = await getProcessedMdxFromParams({difficulty, slug})
+            finalGroups = finalGroups ?? metaGroups
+            finalMetadata.title = finalMetadata.title || metaTitle || frontmatter?.title
+            finalMetadata.order = finalMetadata.order ?? metaOrder ?? frontmatter?.order
+        }
+
+        // final check for missing entries
+        finalGroups = finalGroups ?? []
+        finalMetadata.title = finalMetadata.title || "No title set"
+        finalMetadata.order = finalMetadata.order ?? 0
+
+        return {
+            groups: finalGroups,
+            metadata: finalMetadata,
+            slug: entry.slug,
+        }
+    }))
 }
 
 // process manually added quick link entries

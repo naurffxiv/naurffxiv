@@ -1,15 +1,14 @@
 // builds the tree
 function buildTree(siblingData) {
-    const root = {}
-  
-    for (const page of siblingData) {
-      let node = root
-      
-      if (page.groups) {
-        for (const partOfSlug of page.groups) {
-            if (!node[partOfSlug]) node[partOfSlug] = {}
-            node = node[partOfSlug]
-          }
+  const root = {};
+
+  for (const page of siblingData) {
+    let node = root;
+
+    if (page.groups) {
+      for (const partOfSlug of page.groups) {
+        if (!node[partOfSlug]) node[partOfSlug] = {};
+        node = node[partOfSlug];
       }
       if (!node["pages"]) node["pages"] = []
       node["pages"].push({
@@ -23,27 +22,33 @@ function buildTree(siblingData) {
 // returns a single quick link component
 // highlighted if the page matches the slug
 function quickLinkEntry(entry, currentSlug) {
-    if (entry.slug === currentSlug) {
-        return (
-                <li key={entry.slug} className="ps-0">
-                    <a href={entry.slug} className="block px-4 py-2 text-blue-400 no-underline transition-colors border-r-2 border-blue-400 hover:text-blue-500 rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300">
-                        {entry.title}
-                    </a>
-                </li>
-        )
-    } else {
-        return (
-            <li key={entry.slug} className="ps-0">
-                <a href={entry.slug} className="block px-4 py-2 no-underline transition-colors border-r-2 border-transparent text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white rounded-l-md hover:bg-opacity-10 hover:bg-slate-600">
-                    {entry.title}
-                </a>
-            </li>
-        )
-    }
+  if (entry.slug === currentSlug) {
+    return (
+      <li key={entry.slug} className="ps-0">
+        <a
+          href={entry.slug}
+          className="block px-4 py-2 text-blue-400 no-underline transition-colors border-r-2 border-blue-400 hover:text-blue-500 rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300"
+        >
+          {entry.title}
+        </a>
+      </li>
+    );
+  } else {
+    return (
+      <li key={entry.slug} className="ps-0">
+        <a
+          href={entry.slug}
+          className="block px-4 py-2 no-underline transition-colors border-r-2 border-transparent text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white rounded-l-md hover:bg-opacity-10 hover:bg-slate-600"
+        >
+          {entry.title}
+        </a>
+      </li>
+    );
+  }
 }
 
 function recursiveLinks(tree, currentSlug, isFirst = true) {
-    /*
+  /*
         skip top level groups without any siblings, for example:
         archive ew anabaseios
         archive ew abyssos
@@ -54,18 +59,20 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
         archive dt aac-lhw
         would skip only archive
     */
-   const groups = Object.keys(tree)
-    if (isFirst && groups.length == 1 && groups[0] !== "pages") {
-        const key = groups[0]
-        return <>{recursiveLinks(tree[key], currentSlug)}</>
-    }
+  const groups = Object.keys(tree);
+  if (isFirst && groups.length == 1 && groups[0] !== "pages") {
+    const key = groups[0];
+    return <>{recursiveLinks(tree[key], currentSlug)}</>;
+  }
 
-    const children = []
+  const children = [];
 
-    // populate section with pages first
-    if (tree["pages"]) {
-        children.push(...tree["pages"].map(entry => quickLinkEntry(entry, currentSlug)))
-    }
+  // populate section with pages first
+  if (tree["pages"]) {
+    children.push(
+      ...tree["pages"].map((entry) => quickLinkEntry(entry, currentSlug)),
+    );
+  }
 
     // then populate with subsections
     let sameGroup = 0  // set margin for children vs siblings
