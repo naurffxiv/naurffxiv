@@ -47,30 +47,36 @@ export async function getPages(params) {
   const mdxDir = getMdxDir([params.difficulty]);
   const mdxFiles = await findSiblingMdxFilepath(params);
 
-    let ret = await Promise.all(mdxFiles.map(async ({groups, filepath, slug, order, title}) => {
-        const { frontmatter } = await processMdx(path.join(mdxDir, filepath))
-        
-        const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty]
-        const formedSlug = "/" + slugArr.join('/')
+  let ret = await Promise.all(
+    mdxFiles.map(async ({ groups, filepath, slug, order, title }) => {
+      const { frontmatter } = await processMdx(path.join(mdxDir, filepath));
 
-        return {
-            groups,
-            metadata: frontmatter,
-            slug: formedSlug,
-            order,
-            title,
-        }
-    }))
-    ret = ret.concat(...await findManuallyAddedQuickLinks(params))
-    return ret
+      const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty];
+      const formedSlug = "/" + slugArr.join("/");
+
+      return {
+        groups,
+        metadata: frontmatter,
+        slug: formedSlug,
+        order,
+        title,
+      };
+    }),
+  );
+  ret = ret.concat(...(await findManuallyAddedQuickLinks(params)));
+  return ret;
 }
 
 // set the title for each page based on title set on frontmatter
-export async function generateMetadata({params}) {
-    const {title, frontmatter, error} = await getProcessedMdxFromParams(params)
-    if (error) return notFound()
-    const effectiveTitle = title ? title : (frontmatter.title ? frontmatter.title : undefined)
-    return {title: effectiveTitle ? effectiveTitle + " | NAUR" : "NAUR" }
+export async function generateMetadata({ params }) {
+  const { title, frontmatter, error } = await getProcessedMdxFromParams(params);
+  if (error) return notFound();
+  const effectiveTitle = title
+    ? title
+    : frontmatter.title
+      ? frontmatter.title
+      : undefined;
+  return { title: effectiveTitle ? effectiveTitle + " | NAUR" : "NAUR" };
 }
 
 // generate valid slugs based on _meta.json files in markdown folder
