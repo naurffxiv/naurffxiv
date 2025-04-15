@@ -14,6 +14,8 @@ import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
 import rehypeHeaderSections from "@/rehype/rehypeHeaderSections";
 
+import { reservedSlugs } from "@/app/constants";
+
 // process each mdx file and cache it
 export const processMdx = cache(async (filepath) => {
   const rawmdx = await fs.readFile(filepath, "utf-8");
@@ -43,20 +45,28 @@ export const processMdx = cache(async (filepath) => {
     ],
   });
 
+  /*
+        {
+            toc,
+            frontmatter,
+            default
+        }
+    */
   return processedMdx;
 });
 
-// resolves mdx filepath from slug and returns the processed file
-export async function getProcessedMdxFromParams(params) {
-  const { difficulty } = params;
+// resolves mdx filepath from slug and returns the processed file and relevant information
+export async function getProcessedMdxFromParams({ difficulty, slug }) {
   const mdxDir = path.join(getMdxDir(), difficulty);
-
-  const filepath = await findMdxFilepath(params);
-  if (!filepath) return { error: `file at ${filepath} not found` };
+  // stringify dictionary since objects are compared by pointer instead of value
+  const cacheKey = JSON.stringify({ difficulty, slug });
+  const { index, ...mdxEntry } = await findMdxEntry(cacheKey);
+  if (!index) return { error: `file at ${index} not found` };
+  mdxEntry.filepath = path.join(mdxDir, index);
 
   return {
-    filepath: path.join(mdxDir, filepath),
-    ...(await processMdx(path.join(mdxDir, filepath))),
+    ...mdxEntry,
+    ...(await processMdx(mdxEntry.filepath)),
   };
 }
 
@@ -88,8 +98,7 @@ function findMatchingMeta(mdxDir, goalPath) {
 
 // goes through relevant _meta.json and gets the filepath of
 // relevant mdx files based on the subfunc passed into the function
-async function findMdxShared(params, subfunc) {
-  const { difficulty, slug } = params;
+async function findMdxShared({ difficulty, slug }, subfunc) {
   const mdxDir = path.join(getMdxDir(), difficulty);
   const goalPath = slug ? path.join(...slug) : ".";
 
@@ -108,7 +117,7 @@ async function findMdxShared(params, subfunc) {
     const meta = await readAndDeserializeJson(path.join(mdxDir, metaFile), {
       encoding: "utf-8",
     });
-    const ret = subfunc(meta, pathArray, dirname);
+    const ret = await subfunc(meta, pathArray, dirname);
     if (ret) return ret;
   }
   return;
@@ -120,15 +129,20 @@ export const readAndDeserializeJson = cache(async (filepath) => {
   return JSON.parse(file, { encoding: "utf-8" });
 });
 
-// gets the filepath of a specific mdx file
-export async function findMdxFilepath(params) {
-  return findMdxShared(params, findMdxFilepathHelper);
-}
+// gets the relevant information of a specific mdx file
+// takes a *stringified* dict {difficulty, slug} as an
+// argument due to how object comparison works in js
+const findMdxEntry = cache(async (params) => {
+  params = JSON.parse(params);
+  return await findMdxShared(params, findMdxEntryHelper);
+});
 
-function findMdxFilepathHelper(meta, pathArray, dirname) {
+function findMdxEntryHelper(meta, pathArray, dirname) {
   const result = getNestedValue(meta, pathArray);
-  if (result && result.index)
-    return path.join(dirname, path.normalize(result.index));
+  if (result) {
+    result.index = path.join(dirname, path.normalize(result.index));
+    return result;
+  }
   return;
 }
 
@@ -151,9 +165,11 @@ function findSiblingHelper(meta, pathArray, dirname) {
     groups = page.groups;
   }
 
+  // collect sibling information
   let ret = Object.keys(parent)
-    .filter((key) => key !== "index")
+    .filter((key) => !reservedSlugs.includes(key))
     .filter((key) => {
+      // true if both original slug and sibling slug share groups
       let siblingGroups = getNestedValue(parent, [key, "groups"]);
       if (
         groups &&
@@ -162,15 +178,20 @@ function findSiblingHelper(meta, pathArray, dirname) {
       )
         return true;
 
+      // true if both original/siblings don't have any groups
       if (!groups.length && !siblingGroups) return true;
       return false;
     })
     .map((key) => {
       let siblingGroups = getNestedValue(parent, [key, "groups"]);
+      let title = getNestedValue(parent, [key, "title"]);
+      let order = getNestedValue(parent, [key, "order"]);
       return {
         filepath: parent[key]["index"] ? parent[key]["index"] : null,
         groups: siblingGroups,
         slug: [...pathArray.slice(0, -1), key],
+        title,
+        order,
       };
     });
 
@@ -180,4 +201,54 @@ function findSiblingHelper(meta, pathArray, dirname) {
     page.filepath = path.join(dirname, page.filepath);
   });
   return ret;
+}
+
+// process manually added quick link entries
+export async function findManuallyAddedQuickLinks(params) {
+  return findMdxShared(params, findManuallyAddedQuickLinksHelper);
+}
+
+async function findManuallyAddedQuickLinksHelper(meta, pathArray, dirname) {
+  const page = getNestedValue(meta, pathArray);
+  const manualAdditions = page["sidebar"];
+  if (!manualAdditions || manualAdditions.length === 0) return [];
+
+  return await Promise.all(
+    manualAdditions.map(async (entry) => {
+      let finalGroups = entry.groups;
+      let finalMetadata = {};
+      finalMetadata.title = entry.title;
+      finalMetadata.order = entry.order;
+
+      if (entry.type === "mdx") {
+        const splitSlug = entry.slug.split("/");
+        const difficulty = splitSlug[0];
+        const slug = splitSlug.slice(1);
+
+        // override priority: sidebar > _meta.json entry > frontmatter
+        const {
+          title: metaTitle,
+          order: metaOrder,
+          frontmatter,
+          groups: metaGroups,
+        } = await getProcessedMdxFromParams({ difficulty, slug });
+        finalGroups = finalGroups ?? metaGroups;
+        finalMetadata.title =
+          finalMetadata.title || metaTitle || frontmatter?.title;
+        finalMetadata.order =
+          finalMetadata.order ?? metaOrder ?? frontmatter?.order;
+      }
+
+      // final check for missing entries
+      finalGroups = finalGroups ?? [];
+      finalMetadata.title = finalMetadata.title || "No title set";
+      finalMetadata.order = finalMetadata.order ?? 0;
+
+      return {
+        groups: finalGroups,
+        metadata: finalMetadata,
+        slug: entry.slug,
+      };
+    }),
+  );
 }
