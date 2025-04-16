@@ -65,46 +65,4 @@
   "ucob": {
     "index": "ucob.mdx"
   }
-    "fru": {
-        "index": "fru.mdx"
-    },
-    "top": {
-        "index": "top.mdx"
-    },
-    "dsr": {
-        "index": "dsr.mdx",
-        "guide": {
-            "index": "dsrGuide/dsr_index.mdx",
-            "p1": {
-                "index": "dsrGuide/p1_guide.mdx"
-            },
-            "p2": {
-                "index": "dsrGuide/p2_guide.mdx"
-            },
-            "p3": {
-                "index": "dsrGuide/p3_guide.mdx"
-            },
-            "p4": {
-                "index": "dsrGuide/p4_guide.mdx"
-            },
-            "p5": {
-                "index": "dsrGuide/p5_guide.mdx"
-            },
-            "p6": {
-                "index": "dsrGuide/p6_guide.mdx"
-            },
-            "p7": {
-                "index": "dsrGuide/p7_guide.mdx"
-            }
-        }
-    },
-    "tea": {
-        "index": "tea.mdx"
-    },
-    "uwu": {
-        "index": "uwu.mdx"
-    },
-    "ucob": {
-        "index": "ucob.mdx"
-    }
 }
