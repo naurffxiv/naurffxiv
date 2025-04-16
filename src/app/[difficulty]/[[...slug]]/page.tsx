@@ -1,19 +1,34 @@
 import { readdirSync } from "fs";
 import path from "path";
-import { getProcessedMdxFromParams, readAndDeserializeJson } from "./helpers";
+import {
+  getProcessedMdxFromParams,
+  readAndDeserializeJson,
+  processMdx,
+  getMdxDir,
+  findSiblingMdxFilepath,
+  findManuallyAddedQuickLinks,
+} from "./helpers";
 import { markdownFolders, reservedSlugs } from "@/app/constants";
 import MDXPage from ".";
 import { notFound } from "next/navigation";
-import { getPages } from "./routeUtils";
 import MDXComponents from "@/components/Mdx/MdxComponents";
 
+// if we ever update to next.js 15, this will be a Promise and must be awaited
 type Params = { difficulty: string; slug?: string[] };
+
+type PageInfo = {
+  groups: string[];
+  filepath: string;
+  slug: string[];
+  order: number;
+  title: string;
+};
 
 // --- Page Rendering ---
 // Called when a page is accessed (only once on build with static site generation)
 // Finds mdx file to render based on slug then processes the page accordingly
 export default async function MdxPage({ params }: { params: Params }) {
-  const { slug = [], difficulty } = params;
+  const { difficulty, slug = [] } = params;
 
   const {
     default: Content,
@@ -38,6 +53,34 @@ export default async function MdxPage({ params }: { params: Params }) {
       <Content components={MDXComponents(path.dirname(filepath))} />
     </MDXPage>
   );
+}
+
+// --- Quick Links Data ---
+// get info for the page's Quick Links component
+async function getPages(params: Params) {
+  const mdxDir = getMdxDir([params.difficulty]);
+  const mdxFiles = await findSiblingMdxFilepath(params);
+
+  const siblingPages = await Promise.all(
+    mdxFiles.map(async (file: PageInfo) => {
+      const { frontmatter } = await processMdx(
+        path.join(mdxDir, file.filepath),
+      );
+      const slugArr = file.slug
+        ? [params.difficulty, ...file.slug]
+        : [params.difficulty];
+      return {
+        groups: file.groups,
+        metadata: frontmatter,
+        slug: "/" + slugArr.join("/"),
+        order: file.order,
+        title: file.title,
+      };
+    }),
+  );
+
+  const manualQuickLinks = await findManuallyAddedQuickLinks(params);
+  return [...siblingPages, ...manualQuickLinks];
 }
 
 // --- Page Metadata ---
@@ -90,6 +133,7 @@ export async function generateStaticParams() {
   );
 
   // recursively get slugs from each tree
+  // refactoring to the "any" type to a more specific type will have to be its own PR
   function getSlugsFromTree(
     tree: any,
     subfolder: string,
