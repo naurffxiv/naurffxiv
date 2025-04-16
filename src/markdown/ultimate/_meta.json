@@ -8,7 +8,7 @@
   "dsr": {
     "index": "dsr.mdx",
     "guide": {
-      "index": "guide/dsr_index.mdx",
+      "index": "guide/dsr/dsr_index.mdx",
       "groups": ["ultimate", "guide", "00-Guide Landing Page"],
       "sidebar": [
         { "type": "mdx", "slug": "/ultimate/dsr/guide/p1" },
