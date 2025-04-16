@@ -15,29 +15,23 @@ export function ModNavigation() {
 
       <MenuList sx={sx.menuList}>
         <MenuItem disabled={true}>Main</MenuItem>
-        <MenuItem>
-          <PathSelectedLink text={"Notes"} href={"/mod-view/notes"} />
-        </MenuItem>
-        <MenuItem>
-          <PathSelectedLink text={"Strikes"} href={"/mod-view/strikes"} />
-        </MenuItem>
-        <MenuItem>
-          <PathSelectedLink
-            text={"Active Exiles"}
-            href={"/mod-view/active-exiles"}
-          />
-        </MenuItem>
-        <MenuItem>
-          <PathSelectedLink
-            text={"Unban Appeals"}
-            href={"/mod-view/unban-appeals"}
-          />
-        </MenuItem>
+        <PathSelectedLink href={"/mod-view/notes"}>
+          <MenuItem>Notes</MenuItem>
+        </PathSelectedLink>
+        <PathSelectedLink href={"/mod-view/strikes"}>
+          <MenuItem>Strikes</MenuItem>
+        </PathSelectedLink>
+        <PathSelectedLink href={"/mod-view/active-exiles"}>
+          <MenuItem>Active Exiles</MenuItem>
+        </PathSelectedLink>
+        <PathSelectedLink href={"/mod-view/unban-appeals"}>
+          <MenuItem>Unban Appeals</MenuItem>
+        </PathSelectedLink>
 
         <MenuItem disabled={true}>Account</MenuItem>
-        <MenuItem>
-          <PathSelectedLink text={"Settings"} href={"/mod-view/settings"} />
-        </MenuItem>
+        <PathSelectedLink href={"/mod-view/settings"}>
+          <MenuItem>Settings</MenuItem>
+        </PathSelectedLink>
         <MenuItem>Log Out</MenuItem>
       </MenuList>
     </div>
