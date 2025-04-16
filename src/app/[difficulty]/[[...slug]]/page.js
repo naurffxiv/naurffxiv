@@ -6,8 +6,9 @@ import {
   readAndDeserializeJson,
   getMdxDir,
   findSiblingMdxFilepath,
+  findManuallyAddedQuickLinks,
 } from "./helpers";
-import { markdownFolders } from "@/app/constants";
+import { markdownFolders, reservedSlugs } from "@/app/constants";
 import MDXPage from ".";
 import { notFound } from "next/navigation";
 
@@ -46,8 +47,8 @@ export async function getPages(params) {
   const mdxDir = getMdxDir([params.difficulty]);
   const mdxFiles = await findSiblingMdxFilepath(params);
 
-  return await Promise.all(
-    mdxFiles.map(async ({ groups, filepath, slug }) => {
+  let ret = await Promise.all(
+    mdxFiles.map(async ({ groups, filepath, slug, order, title }) => {
       const { frontmatter } = await processMdx(path.join(mdxDir, filepath));
 
       const slugArr = slug ? [params.difficulty, ...slug] : [params.difficulty];
@@ -57,17 +58,25 @@ export async function getPages(params) {
         groups,
         metadata: frontmatter,
         slug: formedSlug,
+        order,
+        title,
       };
     }),
   );
+  ret = ret.concat(...(await findManuallyAddedQuickLinks(params)));
+  return ret;
 }
 
 // set the title for each page based on title set on frontmatter
 export async function generateMetadata({ params }) {
-  const { frontmatter, error } = await getProcessedMdxFromParams(params);
+  const { title, frontmatter, error } = await getProcessedMdxFromParams(params);
   if (error) return notFound();
-
-  return { title: frontmatter.title ? frontmatter.title + " | NAUR" : "NAUR" };
+  const effectiveTitle = title
+    ? title
+    : frontmatter.title
+      ? frontmatter.title
+      : undefined;
+  return { title: effectiveTitle ? effectiveTitle + " | NAUR" : "NAUR" };
 }
 
 // generate valid slugs based on _meta.json files in markdown folder
@@ -113,7 +122,7 @@ export async function generateStaticParams() {
     if (!tree) return [];
 
     const ret = Object.keys(tree)
-      .filter((keyString) => keyString !== "index" && keyString !== "groups")
+      .filter((keyString) => reservedSlugs.includes(keyString) === false)
       .flatMap((keyString) => {
         const key = tree[keyString];
         const currentSlugs = key["index"] ? [keyString] : null;
