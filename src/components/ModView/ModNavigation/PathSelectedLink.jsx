@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
  * current pathname & href match
  * */
 export function PathSelectedLink({ text, ...linkProps }) {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
-    if(pathname === linkProps.href) {
-        linkProps.className ??= '';
-        linkProps.className = [linkProps.className, 'text-[#007EA7]'].join(' ');
-    }
+  if (pathname === linkProps.href) {
+    linkProps.className ??= "";
+    linkProps.className = [linkProps.className, "text-[#007EA7]"].join(" ");
+  }
 
-    return <Link {...linkProps}>{text}</Link>;
+  return <Link {...linkProps}>{text}</Link>;
 }
