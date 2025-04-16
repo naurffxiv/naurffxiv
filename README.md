@@ -123,4 +123,4 @@ npx eslint . --ext .js,.jsx,.ts,.tsx
 
 # Contributing
 
-If you would to contribute, please take a look over at our [Wiki](https://github.com/naurffxiv/naurffxiv/wiki) on certain processes.
+If you would to contribute, please take a look over at our [Wiki](https://github.com/naurffxiv/naurffxiv.com/wiki) on certain processes.
