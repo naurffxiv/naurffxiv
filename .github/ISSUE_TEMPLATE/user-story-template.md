@@ -1,13 +1,13 @@
 ---
 name: User story template
 about: Template to write user stories
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
 
 ## User Story
+
 As a [type of user],
 I want [goal/desire],
 So that [benefit/value].
