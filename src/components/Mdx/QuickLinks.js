@@ -5,17 +5,20 @@ function buildTree(siblingData) {
   for (const page of siblingData) {
     let node = root;
 
+    // if page has groups, traverse the tree to the correct node
     if (page.groups) {
       for (const partOfSlug of page.groups) {
         if (!node[partOfSlug]) node[partOfSlug] = {};
         node = node[partOfSlug];
       }
-      if (!node["pages"]) node["pages"] = [];
-      node["pages"].push({
-        title: page.title || page.metadata.title || "No title set",
-        slug: page.slug,
-      });
     }
+
+    // add the page to the tree
+    if (!node["pages"]) node["pages"] = [];
+    node["pages"].push({
+      title: page.title || page.metadata.title || "No title set",
+      slug: page.slug,
+    });
   }
 
   return root;
