@@ -25,5 +25,6 @@ module.exports = {
     },
   },
   darkMode: "class",
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("@tailwindcss/typography")],
 };
