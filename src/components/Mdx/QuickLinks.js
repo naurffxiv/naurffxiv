@@ -10,9 +10,12 @@ function buildTree(siblingData) {
         if (!node[partOfSlug]) node[partOfSlug] = {};
         node = node[partOfSlug];
       }
+      if (!node["pages"]) node["pages"] = [];
+      node["pages"].push({
+        title: page.title || page.metadata.title || "No title set",
+        slug: page.slug,
+      });
     }
-    if (!node["pages"]) node["pages"] = [];
-    node["pages"].push({ title: page.metadata.title, slug: page.slug });
   }
 
   return root;
@@ -26,7 +29,7 @@ function quickLinkEntry(entry, currentSlug) {
       <li key={entry.slug} className="ps-0">
         <a
           href={entry.slug}
-          className="block border-r-2 border-blue-400 no-underline text-blue-400 hover:text-blue-500 transition-colors rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300 py-2 px-4"
+          className="block px-4 py-2 text-blue-400 no-underline transition-colors border-r-2 border-blue-400 hover:text-blue-500 rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300"
         >
           {entry.title}
         </a>
@@ -37,7 +40,7 @@ function quickLinkEntry(entry, currentSlug) {
       <li key={entry.slug} className="ps-0">
         <a
           href={entry.slug}
-          className="block border-r-2 border-transparent no-underline text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white transition-colors rounded-l-md hover:bg-opacity-10 hover:bg-slate-600 py-2 px-4"
+          className="block px-4 py-2 no-underline transition-colors border-r-2 border-transparent text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white rounded-l-md hover:bg-opacity-10 hover:bg-slate-600"
         >
           {entry.title}
         </a>
@@ -83,23 +86,76 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
         key={group}
         className={`${sameGroup > 0 ? "mt-4" : "mt-2"} ml-4 p-0 list-none list-inside`}
       >
-        <h2 className="ml-4 mt-4 mb-2">{title}</h2>
+        <h2 className="mt-4 mb-2 ml-4">{title}</h2>
         {recursiveLinks(tree[group], currentSlug, false)}
       </li>,
     );
     sameGroup += 1;
   }
   return (
-    <ul className="list-none quick-links-div m-0 p-0 list-inside">
+    <ul className="p-0 m-0 list-none list-inside quick-links-div">
       {children}
     </ul>
   );
 }
 
+const quickLinksSort = (a, b) => {
+  if (a.groups && b.groups) {
+    const shortestGroup =
+      a.groups.length < b.groups.length ? a.groups.length : b.groups.length;
+    // strcmp each group
+    for (let i = 0; i < shortestGroup; i++) {
+      const cmp = a.groups[i].localeCompare(b.groups[i]);
+      if (cmp !== 0) return cmp;
+    }
+
+    // if one is a subset of the other, the shorter one comes first
+    if (a.groups.length !== b.groups.length) {
+      return a.groups.length - b.groups.length;
+    }
+  } else {
+    // if one has groups and the other doesn't, the one without groups comes first
+    if (a.groups) return 1;
+    if (b.groups) return -1;
+  }
+
+  // sort by order if groups are equal
+  let orderA =
+    a.order !== undefined
+      ? a.order
+      : a.metadata.order !== undefined
+        ? a.metadata.order
+        : 0;
+  let orderB =
+    b.order !== undefined
+      ? b.order
+      : b.metadata.order !== undefined
+        ? b.metadata.order
+        : 0;
+
+  let res = orderA - orderB;
+  if (res !== 0) return res;
+
+  // sort by title if order is equal
+  let titleA =
+    a.title !== undefined
+      ? a.title
+      : a.metadata.title !== undefined
+        ? a.metadata.title
+        : "No title set";
+  let titleB =
+    b.title !== undefined
+      ? b.title
+      : b.metadata.title !== undefined
+        ? b.metadata.title
+        : "No title set";
+  return titleA.localeCompare(titleB);
+};
+
 export default function QuickLinks({ siblingData, slug }) {
   // nb: sorting by order before building the tree ensures
   // the resulting pages array is in the correct order
-  siblingData.sort((a, b) => a.metadata.order - b.metadata.order);
+  siblingData.sort(quickLinksSort);
   const siblingDataTree = buildTree(siblingData);
   return (
     <div className="list-none quick-links-div min-w-[30ch] w-fit prose prose-invert">

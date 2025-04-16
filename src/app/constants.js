@@ -2,6 +2,8 @@ import { images } from "./assets";
 
 export const markdownFolders = ["ultimate", "savage", "extreme"];
 
+export const reservedSlugs = ["index", "groups", "sidebar", "title", "order"];
+
 export const pages = [
   /* Commented out for now, as these pages are not yet implemented
   {
