@@ -29,32 +29,22 @@ export const ultimateList = [
   {
     title: "The Omega Protocol",
     url: "/ultimate/top",
-    img: images.Omega,
-    alt: "Omega",
   },
   {
     title: "Dragonsong's Reprise",
     url: "/ultimate/dsr",
-    img: images.Thordan,
-    alt: "Thordan",
   },
   {
     title: "The Epic of Alexander",
     url: "/ultimate/tea",
-    img: images.Alexander,
-    alt: "Alexander",
   },
   {
     title: "The Weapon's Refrain",
     url: "/ultimate/uwu",
-    img: images.Ultima,
-    alt: "Ultima",
   },
   {
     title: "The Unending Coil of Bahamut",
     url: "/ultimate/ucob",
-    img: images.Bahamut,
-    alt: "Bahamut",
   },
 ];
 
@@ -62,18 +52,26 @@ export const savageList = [
   {
     title: "M5S - Dancing Green",
     url: "/savage/m5s",
+    img: images.m5s,
+    alt: "m5s",
   },
   {
     title: "M6S - Sugar Riot",
     url: "/savage/m6s",
+    img: images.m6s,
+    alt: "m6s",
   },
   {
     title: "M7S - Brute Abombinator",
     url: "/savage/m7s",
+    img: images.m7s,
+    alt: "m7s",
   },
   {
     title: "M8S - Howling Blade",
     url: "/savage/m8s",
+    img: images.m8s,
+    alt: "m8s",
   },
 ];
 
@@ -81,6 +79,8 @@ export const extremeList = [
   {
     title: "Recollection",
     url: "/extreme/recollection",
+    img: images.recollection,
+    alt: "recollection",
   },
   {
     title: "Sphene's Burden",
