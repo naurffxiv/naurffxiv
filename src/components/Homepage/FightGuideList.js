@@ -3,19 +3,19 @@ import { savageList } from "@/app/constants.js";
 import { extremeList } from "@/app/constants.js";
 import FightGuideComponent from "./FightGuideComponent";
 
-export default function CurrentUltimate({ selectedUltimate, selectedExtreme }) {
-  const ultimateItems = ultimateList.slice(0, 1);
-  const savageItems = savageList.slice(0, 4);
-  const extremeItems = extremeList.slice(0, 1);
+export default function EncounterEntry({ selectedUltimate, selectedExtreme }) {
+  const ultimateEntries = ultimateList.slice(0, 1);
+  const savageEntries = savageList.slice(0, 4);
+  const extremeEntries = extremeList.slice(0, 1);
 
   return (
     <div>
-      {ultimateItems.length > 0 && (
-        <FightGuideComponent items={ultimateItems} title="Current Ultimate" />
+      {ultimateEntries.length > 0 && (
+        <FightGuideComponent entries={ultimateEntries} title="Current Ultimate" />
       )}
-      <FightGuideComponent items={savageItems} title="Current Savage Tier" />
-      {extremeItems.length > 0 && (
-        <FightGuideComponent items={extremeItems} title="Current Extreme Trial" />
+      <FightGuideComponent entries={savageEntries} title="Current Savage Tier" />
+      {extremeEntries.length > 0 && (
+        <FightGuideComponent entries={extremeEntries} title="Current Extreme Trial" />
       )}
     </div>
   );
