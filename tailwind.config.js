@@ -1,3 +1,4 @@
+import typography from "@tailwindcss/typography";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -25,6 +26,5 @@ module.exports = {
     },
   },
   darkMode: "class",
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };
