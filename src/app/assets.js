@@ -26,7 +26,7 @@ import m7s from "@/assets/Images/m7s.avif";
 import m8s from "@/assets/Images/m8s.avif";
 import recollection from "@/assets/Images/recollection.avif";
 
-export const images = { Pandora, m5s,m6s, m7s, m8s, recollection };
+export const images = { Pandora, m5s, m6s, m7s, m8s, recollection };
 
 // MUI icons
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";

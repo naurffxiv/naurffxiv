@@ -11,11 +11,20 @@ export default function EncounterEntry({ selectedUltimate, selectedExtreme }) {
   return (
     <div>
       {ultimateEntries.length > 0 && (
-        <FightGuideComponent entries={ultimateEntries} title="Current Ultimate" />
+        <FightGuideComponent
+          entries={ultimateEntries}
+          title="Current Ultimate"
+        />
       )}
-      <FightGuideComponent entries={savageEntries} title="Current Savage Tier" />
+      <FightGuideComponent
+        entries={savageEntries}
+        title="Current Savage Tier"
+      />
       {extremeEntries.length > 0 && (
-        <FightGuideComponent entries={extremeEntries} title="Current Extreme Trial" />
+        <FightGuideComponent
+          entries={extremeEntries}
+          title="Current Extreme Trial"
+        />
       )}
     </div>
   );
