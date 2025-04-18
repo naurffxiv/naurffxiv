@@ -1,7 +1,7 @@
 "use client";
 
-import { ModViewDataGrid } from "@/components/ModView/ModViewDataGrid/ModViewDataGrid";
-import { makeData } from "@/components/ModView/makeData";
+import { ModPortalDataGrid } from "@/components/ModPortal/ModPortalDataGrid/ModPortalDataGrid";
+import { makeData } from "@/components/ModPortal/makeData";
 
 const testData = makeData(100, [
   "userId",
@@ -20,12 +20,12 @@ const columns = [
 ];
 
 /**
- * Mod View page for Strikes
+ * Mod Portal page for Strikes
  * */
-export default function ModViewStrikes(props) {
+export default function ModPortalStrikes(props) {
   return (
     <div>
-      <ModViewDataGrid columns={columns} rows={testData} />
+      <ModPortalDataGrid columns={columns} rows={testData} />
     </div>
   );
 }

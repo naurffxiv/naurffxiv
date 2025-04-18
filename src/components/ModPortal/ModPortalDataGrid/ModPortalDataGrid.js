@@ -4,9 +4,9 @@ const pageSizeOptions = [10, 25, 50, 100];
 const initialState = { pagination: { paginationModel: { pageSize: 10 } } };
 
 /**
- * Standard customized DataGrid for Mod View tables
+ * Standard customized DataGrid for Mod Portal tables
  * */
-export function ModViewDataGrid({ columns, rows }) {
+export function ModPortalDataGrid({ columns, rows }) {
   return (
     <DataGrid
       columns={columns}

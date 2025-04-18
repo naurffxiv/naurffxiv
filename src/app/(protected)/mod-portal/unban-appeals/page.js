@@ -1,7 +1,7 @@
 "use client";
 
-import { ModViewDataGrid } from "@/components/ModView/ModViewDataGrid/ModViewDataGrid";
-import { makeData } from "@/components/ModView/makeData";
+import { ModPortalDataGrid } from "@/components/ModPortal/ModPortalDataGrid/ModPortalDataGrid";
+import { makeData } from "@/components/ModPortal/makeData";
 
 const testData = makeData(100, ["userId", "created", "status", "banReason"]);
 
@@ -13,12 +13,12 @@ const columns = [
 ];
 
 /**
- * Mod View page for Unban Appeals
+ * Mod Portal page for Unban Appeals
  * */
-export default function ModViewUnbanAppeals(props) {
+export default function ModPortalUnbanAppeals(props) {
   return (
     <div>
-      <ModViewDataGrid columns={columns} rows={testData} />
+      <ModPortalDataGrid columns={columns} rows={testData} />
     </div>
   );
 }
