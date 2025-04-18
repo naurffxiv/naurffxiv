@@ -5,7 +5,7 @@ export default function Banner({ src, alt, left = false, ...props }) {
   return (
     <div className="relative h-48 not-prose">
       <Image
-        className={clsx({ "object-cover": true, "object-left": left })}
+        className={clsx("object-cover", { "object-left": left })}
         src={src}
         alt={alt}
         {...props}
