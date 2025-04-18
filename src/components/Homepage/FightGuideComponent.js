@@ -6,11 +6,12 @@ export default function FightGuideComponent({ entries, title, left }) {
     <div>
       <h3 className="mt-12 text-2xl text-center">{title}</h3>
       <div
-        className={`mt-8 grid gap-x-10 gap-y-4 ${
+        className={clsx(
+          "mt-8 grid gap-x-10 gap-y-4 mx-auto",
           entries.length === 1
             ? "grid-cols-1 justify-center"
-            : "grid-cols-1 sm:grid-cols-2"
-        } mx-auto`}
+            : "grid-cols-1 sm:grid-cols-2",
+        )}
       >
         {entries.map((entry) => (
           <div
@@ -23,8 +24,7 @@ export default function FightGuideComponent({ entries, title, left }) {
                   src={entry.img}
                   fill
                   alt={entry.alt}
-                  className={clsx({
-                    "object-cover": true,
+                  className={clsx("object-cover", {
                     "object-left": left,
                     "object-center": !left,
                   })}
