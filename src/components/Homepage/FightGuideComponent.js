@@ -16,7 +16,7 @@ export default function FightGuideComponent({ entries, title, left }) {
         {entries.map((entry) => (
           <div
             key={entry.url}
-            className="bg-[#10242b] overflow-hidden rounded-lg group"
+            className="bg-[#162835] overflow-hidden rounded-lg group"
           >
             <a href={entry.url}>
               <div className="relative h-48 group-hover:brightness-75">
