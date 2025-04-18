@@ -121,7 +121,7 @@ export default function ChangelogContent() {
           <ReleaseCard
             key={release.id}
             release={{
-              version: release.tag_name.replace(/^v/, ""),
+              version: release.tag_name,
               date: release.published_at,
               body: release.body,
             }}
