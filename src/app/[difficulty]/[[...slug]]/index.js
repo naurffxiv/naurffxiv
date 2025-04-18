@@ -1,10 +1,12 @@
 "use client";
-import MdxLayout from "@/components/Mdx/MdxLayout";
-import TableOfContents from "@/components/Mdx/TableOfContents";
-import QuickLinks from "@/components/Mdx/QuickLinks";
-import MobileDrawer from "@/components/Mdx/Layout/MobileDrawer";
+
 import "./mdx.css";
 import "./buffs.scss";
+
+import MdxLayout from "@/components/Mdx/Layout/MdxLayout";
+import MobileDrawer from "@/components/Mdx/Layout/MobileDrawer";
+import QuickLinks from "@/components/Mdx/Elements/QuickLinks";
+import TableOfContents from "@/components/Mdx/Utils/TableOfContents";
 
 function MDXPage({ children, toc, siblingData, slug, frontmatter }) {
   const quickLinks = <QuickLinks siblingData={siblingData} slug={slug} />;

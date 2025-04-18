@@ -1,19 +1,20 @@
-import { readdirSync } from "fs";
-import path from "path";
 import {
-  getProcessedMdxFromParams,
-  readAndDeserializeJson,
-  processMdx,
-  getMdxDir,
-  findSiblingMdxFilepath,
   findManuallyAddedQuickLinks,
+  findSiblingMdxFilepath,
+  getMdxDir,
+  getProcessedMdxFromParams,
+  processMdx,
+  readAndDeserializeJson,
 } from "./helpers";
-import { markdownFolders, reservedSlugs } from "@/app/constants";
-import MDXPage from ".";
-import { notFound } from "next/navigation";
-import MDXComponents from "@/components/Mdx/MdxComponents";
+import { markdownFolders, reservedSlugs } from "@/config/constants";
+
 import { JSX } from "react";
+import MDXComponents from "@/components/Mdx/Layout/MdxComponents";
+import MDXPage from "./index";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import path from "path";
+import { readdirSync } from "fs";
 
 type QuickLinksEntry = {
   groups?: string[];
