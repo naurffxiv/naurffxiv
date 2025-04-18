@@ -1,9 +1,10 @@
 import Image from "next/image";
+import clsx from "clsx";
 
-export default function FightGuideComponent({ entries, title }) {
+export default function FightGuideComponent({ entries, title, left }) {
   return (
     <div>
-      <h3 className="text-2xl text-center mt-12">{title}</h3>
+      <h3 className="mt-12 text-2xl text-center">{title}</h3>
       <div
         className={`mt-8 grid gap-x-10 gap-y-4 ${
           entries.length === 1
@@ -22,7 +23,11 @@ export default function FightGuideComponent({ entries, title }) {
                   src={entry.img}
                   fill
                   alt={entry.alt}
-                  className="object-cover object-center"
+                  className={clsx({
+                    "object-cover": true,
+                    "object-left": left,
+                    "object-center": !left,
+                  })}
                 />
               </div>
               <p className="px-3 py-2 text-lg font-medium text-center group-hover:underline">

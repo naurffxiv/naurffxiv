@@ -14,6 +14,7 @@ export default function EncounterEntry({ selectedUltimate, selectedExtreme }) {
         <FightGuideComponent
           entries={ultimateEntries}
           title="Current Ultimate"
+          left
         />
       )}
       <FightGuideComponent
