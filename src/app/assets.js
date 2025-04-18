@@ -18,15 +18,15 @@ export const icons = {
   Patreon,
 };
 
-// images
-import Bahamut from "@/assets/Images/Bahamut.avif";
-import Ultima from "@/assets/Images/Ultima.avif";
-import Alexander from "@/assets/Images/Alexander.avif";
-import Thordan from "@/assets/Images/Thordan.avif";
-import Omega from "@/assets/Images/Omega.avif";
+// homepage card images
 import Pandora from "@/assets/Images/Pandora.avif";
+import m5s from "@/assets/Images/m5s.avif";
+import m6s from "@/assets/Images/m6s.avif";
+import m7s from "@/assets/Images/m7s.avif";
+import m8s from "@/assets/Images/m8s.avif";
+import recollection from "@/assets/Images/recollection.avif";
 
-export const images = { Bahamut, Ultima, Alexander, Thordan, Omega, Pandora };
+export const images = { Pandora, m5s, m6s, m7s, m8s, recollection };
 
 // MUI icons
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
