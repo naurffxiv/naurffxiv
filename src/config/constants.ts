@@ -1,4 +1,4 @@
-import { images } from "./assets";
+import { images } from "../lib/assets";
 
 export const markdownFolders = ["ultimate", "savage", "extreme"];
 

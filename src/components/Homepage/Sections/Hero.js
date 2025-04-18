@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { icons } from "@/app/assets";
+import { icons } from "@/lib/assets";
 
 export default function Header() {
   function Text() {

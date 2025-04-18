@@ -1,9 +1,9 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import { Box, IconButton, Menu, MenuItem, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { extremeList, savageList, ultimateList } from "@/config/constants";
 
-import { MobileContentAccordion } from "@/components/NavBar/MobileContentAccordion";
-import { extremeList, savageList, ultimateList } from "@/app/constants";
+import MenuIcon from "@mui/icons-material/Menu";
+import { MobileContentAccordion } from "@/components/Layout/NavBar/MobileContentAccordion";
+import { useState } from "react";
 
 /**
  * Mobile (thin screen) variant of the header navbar menu

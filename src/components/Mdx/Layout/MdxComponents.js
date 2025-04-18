@@ -1,14 +1,14 @@
-import ImageModal from "./ImageModal";
-import YouTube from "../Video/YouTube";
-import TwitchClip from "../Video/TwitchClip";
-import { CopyToClipboard } from "@/components/Mdx/CopyToClipboard";
-import TwitchVoD from "../Video/TwitchVoD";
-import Streamable from "../Video/Streamable";
-import Buff from "./Buff";
-import UnderConstruction from "./UnderConstruction.js";
-import Callout from "./Callout";
-import Details from "./Details";
-import Banner from "./Components/Banner";
+import Banner from "../Elements/Banner";
+import Buff from "../Elements/Buff";
+import Callout from "../Elements/Callout";
+import { CopyToClipboard } from "@/components/Mdx/Utils/CopyToClipboard";
+import Details from "../Elements/Details";
+import ImageModal from "../Utils/ImageModal";
+import Streamable from "../../Video/Streamable";
+import TwitchClip from "../../Video/TwitchClip";
+import TwitchVoD from "../../Video/TwitchVoD";
+import UnderConstruction from "../Elements/UnderConstruction.js";
+import YouTube from "../../Video/YouTube";
 
 export default function MDXComponents(mdxDir) {
   return {

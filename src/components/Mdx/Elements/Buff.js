@@ -1,8 +1,8 @@
+import Image from "next/image";
+import { Tooltip } from "@mui/material";
+import fs from "fs";
 import { parse } from "smol-toml";
 import path from "path";
-import fs from "fs";
-import { Tooltip } from "@mui/material";
-import Image from "next/image";
 
 // buff component, ported from spectria's original shortcode implementation
 // https://github.com/spectria-limina/dynamis-gg/blob/main/templates/shortcodes/buff.html

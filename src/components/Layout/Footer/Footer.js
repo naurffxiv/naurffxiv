@@ -1,11 +1,13 @@
-import FooterLinks from "./FooterLinks";
 import {
-  ultimateList,
-  savageList,
   extremeList,
   otherList,
-} from "@/app/constants";
+  savageList,
+  ultimateList,
+} from "@/config/constants";
 
+import FooterLinks from "./FooterLinks";
+
+// coul
 export default function Footer() {
   return (
     <footer>

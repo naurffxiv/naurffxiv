@@ -1,10 +1,10 @@
-import { Roboto } from "next/font/google";
-import MUITheme from "./theme";
 import "./globals.css";
-import Script from "next/script";
 
-import NavBar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/Layout/Footer/Footer";
+import MUITheme from "@/components/Providers/MUITheme";
+import NavBar from "@/components/Layout/NavBar/NavBar";
+import { Roboto } from "next/font/google";
+import Script from "next/script";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],

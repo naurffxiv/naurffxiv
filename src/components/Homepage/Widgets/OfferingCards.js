@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { icons } from "@/app/assets";
+import { icons } from "@/lib/assets";
 
 const divs = [
   {
@@ -36,9 +36,9 @@ const divs = [
 
 export default function Offerings() {
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div className="flex flex-col items-center justify-center">
       <h3 className="text-2xl">What NAUR has to offer</h3>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-3 sm:gap-x-10 gap-y-3 justify-center text-center mx-auto">
+      <div className="grid justify-center grid-cols-1 mx-auto text-center lg:grid-cols-3 gap-x-3 sm:gap-x-10 gap-y-3">
         {divs.map((div) => {
           return (
             <div
@@ -56,7 +56,7 @@ export default function Offerings() {
                 <h4 className="text-lg font-semibold text-center sm:mt-2">
                   {div.title}
                 </h4>
-                <p className="max-w-prose prose prose-invert">{div.desc}</p>
+                <p className="prose max-w-prose prose-invert">{div.desc}</p>
               </div>
             </div>
           );

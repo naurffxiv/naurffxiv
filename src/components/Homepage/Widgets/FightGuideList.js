@@ -1,6 +1,5 @@
-import { ultimateList } from "@/app/constants.js";
-import { savageList } from "@/app/constants.js";
-import { extremeList } from "@/app/constants.js";
+import { extremeList, savageList, ultimateList } from "@/config/constants";
+
 import FightGuideComponent from "./FightGuideComponent";
 
 export default function EncounterEntry() {

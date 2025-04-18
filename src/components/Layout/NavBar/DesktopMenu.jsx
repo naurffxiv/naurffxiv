@@ -1,7 +1,5 @@
 import { MenuItem, MenuList, Typography } from "@mui/material";
-import React from "react";
-
-import { extremeList, savageList, ultimateList } from "@/app/constants";
+import { extremeList, savageList, ultimateList } from "@/config/constants";
 
 import { ContentDropdown } from "./ContentDropdown";
 

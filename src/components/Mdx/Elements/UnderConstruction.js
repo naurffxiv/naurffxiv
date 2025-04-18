@@ -11,7 +11,7 @@ const UnderConstruction = ({
     <div className="flex flex-col items-center justify-center p-6 my-8 border border-yellow-300 rounded-lg bg-yellow-50">
       <div className="flex items-center gap-2 mb-2">
         <h2 className="text-xl font-bold text-yellow-800">
-          <ReportProblem className="mx-1 w-6 h-6 text-yellow-600" />
+          <ReportProblem className="w-6 h-6 mx-1 text-yellow-600" />
           {title}
         </h2>
       </div>

@@ -1,6 +1,7 @@
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Menu, MenuItem, Typography } from "@mui/material";
 import React, { useState } from "react";
+
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 /**
  * Mobile (thin screen) version of content dropdown menu

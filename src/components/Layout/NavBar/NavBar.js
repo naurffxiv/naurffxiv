@@ -1,13 +1,12 @@
 "use client";
-import { AppBar, Box, Toolbar, Typography, IconButton } from "@mui/material";
-import Link from "next/link";
-import Image from "next/image";
-import React from "react";
 
-import { icons } from "@/app/assets.js";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 
 import { DesktopMenu } from "./DesktopMenu";
+import Image from "next/image";
+import Link from "next/link";
 import { MobileMenu } from "./MobileMenu";
+import { icons } from "@/lib/assets";
 
 export default function NavBar() {
   return (

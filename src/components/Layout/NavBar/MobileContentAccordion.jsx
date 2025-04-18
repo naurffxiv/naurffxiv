@@ -1,7 +1,8 @@
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box, Collapse, List, ListItem, Typography } from "@mui/material";
 import React, { useState } from "react";
+
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 /**
  * Mobile (thin screen) version of content accordion

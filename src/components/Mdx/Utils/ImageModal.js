@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
-import Modal from "@mui/material/Modal";
+
 import Image from "next/image";
+import Modal from "@mui/material/Modal";
+import { useState } from "react";
 
 // we can disable warnings for no alt-text as it will be provided by props
 export default function ImageModal({ src, compressedExt = "avif", ...props }) {
