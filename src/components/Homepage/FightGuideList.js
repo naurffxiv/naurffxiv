@@ -3,7 +3,7 @@ import { savageList } from "@/app/constants.js";
 import { extremeList } from "@/app/constants.js";
 import FightGuideComponent from "./FightGuideComponent";
 
-export default function EncounterEntry({ selectedUltimate, selectedExtreme }) {
+export default function EncounterEntry() {
   const ultimateEntries = ultimateList.slice(0, 1);
   const savageEntries = savageList.slice(0, 4);
   const extremeEntries = extremeList.slice(0, 1);
