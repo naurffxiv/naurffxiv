@@ -20,7 +20,7 @@ export default function ImageModal({ src, compressedExt = "avif", ...props }) {
         aria-labelledby={props.alt}
         className="not-prose"
       >
-        <div className="image-modal">
+        <div className="absolute top-1/2 left-[8%] -translate-x-[4%] xl:left-1/2 xl:-translate-x-1/2 -translate-y-1/2 shadow-[24] p-1">
           <Image src={src} {...props} />
         </div>
       </Modal>
