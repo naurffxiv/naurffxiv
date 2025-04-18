@@ -1,3 +1,4 @@
+import clsx from "clsx";
 // builds the tree
 function buildTree(siblingData) {
   const root = {};
@@ -26,13 +27,16 @@ function buildTree(siblingData) {
 
 // returns a single quick link component
 // highlighted if the page matches the slug
-function quickLinkEntry(entry, currentSlug) {
+function quickLinkEntry(entry, currentSlug, isFirst) {
   if (entry.slug === currentSlug) {
     return (
       <li key={entry.slug} className="ps-0">
         <a
           href={entry.slug}
-          className="block px-4 py-2 text-blue-400 no-underline transition-colors border-r-2 border-blue-400 hover:text-blue-500 rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300"
+          className={clsx({
+            "block px-4 py-2 text-blue-400 no-underline transition-colors border-r-2 border-blue-400 hover:text-blue-500 rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300": true,
+            "ml-4": isFirst,
+          })}
         >
           {entry.title}
         </a>
@@ -43,7 +47,10 @@ function quickLinkEntry(entry, currentSlug) {
       <li key={entry.slug} className="ps-0">
         <a
           href={entry.slug}
-          className="block px-4 py-2 no-underline transition-colors border-r-2 border-transparent text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white rounded-l-md hover:bg-opacity-10 hover:bg-slate-600"
+          className={clsx({
+            "block px-4 py-2 no-underline transition-colors border-r-2 border-transparent text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white rounded-l-md hover:bg-opacity-10 hover:bg-slate-600": true,
+            "ml-4": isFirst,
+          })}
         >
           {entry.title}
         </a>
@@ -65,6 +72,7 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
         would skip only archive
     */
   const groups = Object.keys(tree);
+  if (groups.length === 0) return;
   if (isFirst && groups.length == 1 && groups[0] !== "pages") {
     const key = groups[0];
     return <>{recursiveLinks(tree[key], currentSlug)}</>;
@@ -75,7 +83,9 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
   // populate section with pages first
   if (tree["pages"]) {
     children.push(
-      ...tree["pages"].map((entry) => quickLinkEntry(entry, currentSlug)),
+      ...tree["pages"].map((entry) =>
+        quickLinkEntry(entry, currentSlug, isFirst),
+      ),
     );
   }
 
@@ -84,13 +94,15 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
   for (const group of groups) {
     if (group === "pages") continue;
     const title = group[2] === "-" ? group.substring(3) : group;
+    const child = recursiveLinks(tree[group], currentSlug, false);
+
     children.push(
       <li
         key={group}
         className={`${sameGroup > 0 ? "mt-4" : "mt-2"} ml-4 p-0 list-none list-inside`}
       >
         <h2 className="mt-4 mb-2 ml-4">{title}</h2>
-        {recursiveLinks(tree[group], currentSlug, false)}
+        {child}
       </li>,
     );
     sameGroup += 1;
@@ -161,7 +173,7 @@ export default function QuickLinks({ siblingData, slug }) {
   siblingData.sort(quickLinksSort);
   const siblingDataTree = buildTree(siblingData);
   return (
-    <div className="list-none quick-links-div min-w-[30ch] w-fit prose prose-invert">
+    <div className="list-none quick-links-div min-w-[30ch] w-[22rem] prose prose-invert">
       {recursiveLinks(siblingDataTree, slug)}
     </div>
   );
