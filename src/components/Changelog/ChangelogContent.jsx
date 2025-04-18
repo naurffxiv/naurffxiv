@@ -3,39 +3,14 @@
 import { useEffect, useState } from "react";
 import ReleaseCard from "@/components/Changelog/ReleaseCard";
 import { fetchGithubReleases, compareVersions } from "@/utils";
-import Image from "next/image";
-import Fade from "@mui/material/Fade";
+import Image from "next/image"; // Re-add this for static image
 
-import {
-  AlexanderAvif,
-  AlexanderPng,
-  BahamutAvif,
-  BahamutPng,
-  OmegaAvif,
-  OmegaPng,
-  PandoraAvif,
-  PandoraPng,
-  ThordanAvif,
-  ThordanPng,
-  UltimaAvif,
-  UltimaPng,
-} from "@/assets/Images";
-
-const images = [
-  { avif: AlexanderAvif, png: AlexanderPng },
-  { avif: BahamutAvif, png: BahamutPng },
-  { avif: OmegaAvif, png: OmegaPng },
-  { avif: PandoraAvif, png: PandoraPng },
-  { avif: ThordanAvif, png: ThordanPng },
-  { avif: UltimaAvif, png: UltimaPng },
-];
+import SimpleBanner from "@/components/Changelog/simple_banner.png";
 
 export default function ChangelogContent() {
   const [releases, setReleases] = useState([]);
   const [expanded, setExpanded] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [bannerImage, setBannerImage] = useState(null);
-  const [bannerVisible, setBannerVisible] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -57,15 +32,6 @@ export default function ChangelogContent() {
 
     load();
     window.scrollTo(0, 0);
-
-    // Random banner at page load
-    const randomBanner = images[Math.floor(Math.random() * images.length)];
-    setBannerImage(randomBanner);
-
-    // Trigger fade-in after slight delay
-    setTimeout(() => {
-      setBannerVisible(true);
-    }, 100); // 100ms delay
   }, []);
 
   const toggleRelease = (version) => {
@@ -91,24 +57,16 @@ export default function ChangelogContent() {
 
   return (
     <div className="max-w-5xl px-4 py-8 mx-auto">
-      {/* Top Banner Image PNG first then AVIF */}
-      {bannerImage && (
-        <Fade in={bannerVisible} timeout={800}>
-          <div className="relative w-full h-40 mb-12 overflow-hidden rounded-lg shadow-lg sm:h-48 md:h-52 lg:h-64">
-            <picture>
-              <source srcSet={bannerImage.png.src} type="image/png" />
-              <source srcSet={bannerImage.avif.src} type="image/avif" />
-              <Image
-                src={bannerImage.png}
-                alt="Changelog Banner"
-                fill
-                className="object-cover object-center rounded-lg"
-                priority
-              />
-            </picture>
-          </div>
-        </Fade>
-      )}
+      {/* Top Banner Static Image */}
+      <div className="relative w-full h-40 mb-12 overflow-hidden rounded-lg shadow-lg sm:h-48 md:h-52 lg:h-64">
+        <Image
+          src={SimpleBanner}
+          alt="Changelog Banner"
+          fill
+          className="object-cover object-center rounded-lg"
+          priority
+        />
+      </div>
 
       {/* Changelog Title */}
       <h1 className="mb-12 text-4xl font-bold text-center text-white">
