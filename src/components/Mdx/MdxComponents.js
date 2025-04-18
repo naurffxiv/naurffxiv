@@ -8,6 +8,7 @@ import Buff from "./Buff";
 import UnderConstruction from "./UnderConstruction.js";
 import Callout from "./Callout";
 import Details from "./Details";
+import Banner from "./Components/Banner";
 
 export default function MDXComponents(mdxDir) {
   return {
@@ -23,6 +24,7 @@ export default function MDXComponents(mdxDir) {
         <pre {...props}></pre>
       </CopyToClipboard>
     ),
+    Banner,
     ImageModal,
     YouTube,
     TwitchClip,

@@ -29,32 +29,22 @@ export const ultimateList = [
   {
     title: "The Omega Protocol",
     url: "/ultimate/top",
-    img: images.Omega,
-    alt: "Omega",
   },
   {
     title: "Dragonsong's Reprise",
     url: "/ultimate/dsr",
-    img: images.Thordan,
-    alt: "Thordan",
   },
   {
     title: "The Epic of Alexander",
     url: "/ultimate/tea",
-    img: images.Alexander,
-    alt: "Alexander",
   },
   {
     title: "The Weapon's Refrain",
     url: "/ultimate/uwu",
-    img: images.Ultima,
-    alt: "Ultima",
   },
   {
     title: "The Unending Coil of Bahamut",
     url: "/ultimate/ucob",
-    img: images.Bahamut,
-    alt: "Bahamut",
   },
 ];
 
@@ -62,18 +52,26 @@ export const savageList = [
   {
     title: "M5S - Dancing Green",
     url: "/savage/m5s",
+    img: images.m5s,
+    alt: "m5s",
   },
   {
     title: "M6S - Sugar Riot",
     url: "/savage/m6s",
+    img: images.m6s,
+    alt: "m6s",
   },
   {
     title: "M7S - Brute Abombinator",
     url: "/savage/m7s",
+    img: images.m7s,
+    alt: "m7s",
   },
   {
     title: "M8S - Howling Blade",
     url: "/savage/m8s",
+    img: images.m8s,
+    alt: "m8s",
   },
 ];
 
@@ -81,6 +79,8 @@ export const extremeList = [
   {
     title: "Recollection",
     url: "/extreme/recollection",
+    img: images.recollection,
+    alt: "recollection",
   },
   {
     title: "Sphene's Burden",
@@ -124,40 +124,3 @@ export const otherList = [
   },
   */
 ];
-
-// Menu props based on mobile/desktop mode
-export const getMenuProps = (anchorEl, open, handleClose, isMobile) => ({
-  id: "basic-menu",
-  anchorEl: anchorEl,
-  open: open,
-  onClose: handleClose,
-  MenuListProps: { "aria-labelledby": "basic-button" },
-  ...(isMobile && {
-    anchorOrigin: {
-      vertical: "bottom",
-      horizontal: "right",
-    },
-    transformOrigin: {
-      vertical: "top",
-      horizontal: "right",
-    },
-    sx: {
-      "& .MuiMenu-paper": {
-        width: 200,
-      },
-      "& .MuiMenuItem-root": {
-        justifyContent: "flex-end",
-        padding: "8px 16px",
-        "& a": {
-          width: "100%",
-          textAlign: "right",
-          whiteSpace: "normal",
-          wordBreak: "break-word",
-          lineHeight: "1.4",
-          display: "block",
-          paddingLeft: "8px",
-        },
-      },
-    },
-  }),
-});
