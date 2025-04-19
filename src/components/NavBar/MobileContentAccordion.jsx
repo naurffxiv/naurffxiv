@@ -1,6 +1,6 @@
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Box, Collapse, List, ListItem, Typography } from "@mui/material";
+import { Box, Collapse, Typography, MenuList, MenuItem } from "@mui/material";
 import React, { useState } from "react";
 
 /**
@@ -12,20 +12,28 @@ export function MobileContentAccordion({ data, name }) {
 
   return (
     <Box sx={sx.root}>
-      <Box onClick={handleClick} sx={sx.nameContainer}>
-        <Typography>{name}</Typography>
-        {mobileOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-      </Box>
+      <MenuItem onClick={handleClick}>
+        <Box sx={sx.nameContainer}>
+          <Typography>{name}</Typography>
+          {mobileOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        </Box>
+      </MenuItem>
       <Collapse in={mobileOpen} timeout="auto">
-        <List sx={sx.dropdownList}>
+        <MenuList>
           {data.map((fight, i) => (
-            <ListItem key={i} disablePadding sx={sx.dropdownItemContainer}>
-              <Box component="a" href={fight.url} sx={sx.dropdownItem}>
-                <Typography sx={sx.dropdownItemText}>{fight.title}</Typography>
+            <MenuItem
+              component="a"
+              href={fight.url}
+              key={i}
+              disablePadding
+              sx={sx.dropdownItemContainer}
+            >
+              <Box sx={sx.dropdownItem}>
+                <Typography>{fight.title}</Typography>
               </Box>
-            </ListItem>
+            </MenuItem>
           ))}
-        </List>
+        </MenuList>
       </Collapse>
     </Box>
   );
@@ -46,14 +54,10 @@ const sx = {
     width: "100%",
     cursor: "pointer",
   },
-  dropdownList: {
-    pl: 2,
-    my: 0,
-  },
   dropdownItemContainer: {
     display: "block",
     "&:hover": {
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(0, 0, 0, 0.04)",
     },
   },
   dropdownItem: {
@@ -62,10 +66,6 @@ const sx = {
     display: "block",
     textDecoration: "none",
     color: "inherit",
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 0.04)",
-    },
-    borderRadius: "4px",
   },
   dropdownItemText: {
     fontSize: "0.9rem",
