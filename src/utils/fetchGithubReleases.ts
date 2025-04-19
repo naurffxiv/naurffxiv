@@ -1,10 +1,15 @@
-export const GH_REPO = "/naurffxiv/naurffxiv";
+export const GH_REPO = "/Luna-Salamanca/Random-personal-projects";
 // TODO: will need to update to naurffxiv.com when repo changes
 // TODO: replace with actual repo when review is done and delete comments
 // /naurffxiv/naurffxiv
 // /Luna-Salamanca/Random-personal-projects
 
-export async function fetchGithubReleases() {
+interface GitHubRelease {
+  tag_name: string;
+  [key: string]: unknown;
+}
+
+export async function fetchGithubReleases(): Promise<GitHubRelease[]> {
   const url = `https://api.github.com/repos${GH_REPO}/releases`;
 
   try {
@@ -21,7 +26,7 @@ export async function fetchGithubReleases() {
       );
     }
 
-    const releases = await response.json();
+    const releases: GitHubRelease[] = await response.json();
 
     // Filter out any weird entries that don't have a tag name
     const validReleases = releases.filter((rel) => rel?.tag_name);
@@ -29,6 +34,6 @@ export async function fetchGithubReleases() {
     return validReleases;
   } catch (err) {
     console.error("Error fetching GitHub releases:", err);
-    throw err; // Bubble it up
+    throw err;
   }
 }
