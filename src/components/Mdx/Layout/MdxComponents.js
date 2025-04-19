@@ -4,11 +4,11 @@ import Callout from "../Elements/Callout";
 import { CopyToClipboard } from "@/components/Mdx/Utils/CopyToClipboard";
 import Details from "../Elements/Details";
 import ImageModal from "../Utils/ImageModal";
-import Streamable from "../../Video/Streamable";
-import TwitchClip from "../../Video/TwitchClip";
-import TwitchVoD from "../../Video/TwitchVoD";
+import Streamable from "../Elements/Video/Streamable";
+import TwitchClip from "../Elements/Video/TwitchClip";
+import TwitchVoD from "../Elements/Video/TwitchVoD";
 import UnderConstruction from "../Elements/UnderConstruction.js";
-import YouTube from "../../Video/YouTube";
+import YouTube from "../Elements/Video/YouTube";
 
 export default function MDXComponents(mdxDir) {
   return {
