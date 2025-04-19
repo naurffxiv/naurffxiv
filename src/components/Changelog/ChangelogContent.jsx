@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import ReleaseCard from "@/components/Changelog/ReleaseCard";
 import { fetchGithubReleases, compareVersions } from "@/utils";
-import Image from "next/image"; 
+import Image from "next/image";
 
 import SimpleBanner from "@/components/Changelog/simple_banner.png";
 
