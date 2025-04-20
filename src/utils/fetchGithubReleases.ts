@@ -1,8 +1,5 @@
-export const GH_REPO = "/Luna-Salamanca/Random-personal-projects";
+export const GH_REPO = "/naurffxiv/naurffxiv";
 // TODO: will need to update to naurffxiv.com when repo changes
-// TODO: replace with actual repo when review is done and delete comments
-// /naurffxiv/naurffxiv
-// /Luna-Salamanca/Random-personal-projects
 
 interface GitHubRelease {
   tag_name: string;

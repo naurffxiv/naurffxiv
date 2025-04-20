@@ -5,8 +5,6 @@ import ReleaseCard from "@/components/Changelog/ReleaseCard";
 import { fetchGithubReleases, compareVersions } from "@/utils";
 import Image from "next/image";
 
-import SimpleBanner from "@/components/Changelog/simple_banner.png";
-
 export default function ChangelogContent() {
   const [releases, setReleases] = useState([]);
   const [expanded, setExpanded] = useState(null);
@@ -58,13 +56,12 @@ export default function ChangelogContent() {
   return (
     <div className="max-w-5xl px-4 py-8 mx-auto">
       {/* Top Banner Static Image */}
-      <div className="relative w-full h-40 mb-12 overflow-hidden rounded-lg shadow-lg sm:h-48 md:h-52 lg:h-64">
+      <div className="relative w-full aspect-[2.5/1] mb-12 overflow-hidden rounded-lg shadow-lg">
         <Image
-          src={SimpleBanner}
+          src="/images/changelog.avif"
           alt="Changelog Banner"
           fill
           className="object-cover object-center rounded-lg"
-          priority
         />
       </div>
 
