@@ -46,21 +46,15 @@ export function MobileMenu() {
             <Typography sx={sx.text}>Home</Typography>
           </MenuItem>
         </li>
-        <MenuItem>
-          <Box sx={sx.text}>
-            <MobileContentAccordion name="Ultimate" data={ultimateList} />
-          </Box>
-        </MenuItem>
-        <MenuItem>
-          <Box sx={sx.text}>
-            <MobileContentAccordion name="Savage" data={savageList} />
-          </Box>
-        </MenuItem>
-        <MenuItem>
-          <Box sx={sx.text}>
-            <MobileContentAccordion name="Extreme" data={extremeList} />
-          </Box>
-        </MenuItem>
+        <Box sx={sx.text}>
+          <MobileContentAccordion name="Ultimate" data={ultimateList} />
+        </Box>
+        <Box sx={sx.text}>
+          <MobileContentAccordion name="Savage" data={savageList} />
+        </Box>
+        <Box sx={sx.text}>
+          <MobileContentAccordion name="Extreme" data={extremeList} />
+        </Box>
         {/*To add when internal pages are created*/}
         {/*{pages.map((page) => (*/}
         {/*    <li key={page.name}>*/}
