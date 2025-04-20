@@ -22,7 +22,7 @@ const columns = [
 /**
  * Mod Portal page for Active Exiles
  * */
-export default function ModPortalActiveExiles(props) {
+export default function ModPortalActiveExiles() {
   return (
     <div>
       <ModPortalDataGrid columns={columns} rows={testData} />

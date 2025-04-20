@@ -22,7 +22,7 @@ const columns = [
 /**
  * Mod Portal page for Strikes
  * */
-export default function ModPortalStrikes(props) {
+export default function ModPortalStrikes() {
   return (
     <div>
       <ModPortalDataGrid columns={columns} rows={testData} />

@@ -15,7 +15,7 @@ const columns = [
 /**
  * Mod Portal page for Unban Appeals
  * */
-export default function ModPortalUnbanAppeals(props) {
+export default function ModPortalUnbanAppeals() {
   return (
     <div>
       <ModPortalDataGrid columns={columns} rows={testData} />

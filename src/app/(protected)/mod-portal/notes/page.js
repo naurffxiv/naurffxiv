@@ -15,7 +15,7 @@ const columns = [
 /**
  * Mod Portal page for Notes
  * */
-export default function ModPortalNotes(props) {
+export default function ModPortalNotes() {
   return (
     <div>
       <ModPortalDataGrid columns={columns} rows={testData} />

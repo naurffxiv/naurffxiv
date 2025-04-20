@@ -7,7 +7,6 @@ import {
 
 import FooterLinks from "./FooterLinks";
 
-// coul
 export default function Footer() {
   return (
     <footer>
