@@ -23,7 +23,8 @@ function MobileDrawer({ children }) {
         sx={{
           background: "#28506E",
           ":hover": { background: "#1A3549" },
-          marginBottom: "4rem",
+          marginRight: "0.75rem",
+          marginBottom: "5.75rem",
         }}
         onClick={() => setOpen(true)}
         size="large"
