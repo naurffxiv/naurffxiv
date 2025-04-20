@@ -107,7 +107,7 @@ export const otherList = [
   },
   {
     title: "GitHub Repository",
-    url: "https://github.com/naurffxiv/naurffxiv.com",
+    url: "https://github.com/naurffxiv/naurffxiv-site",
   },
   {
     title: "Findingway.io",

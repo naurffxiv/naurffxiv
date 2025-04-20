@@ -49,7 +49,7 @@ function tooltip({ name, description, dur, explanation, short, stacks }) {
 }
 
 /*
-    https://github.com/naurffxiv/naurffxiv.com/issues/103
+    https://github.com/naurffxiv/naurffxiv-site/issues/103
     b: string. The key into a (fight-specific) TOML file with buff data in it. This is where the name, icon, game text, and explanation come from, as well as whether the buff has the cleansable bar or not. More on the data file in another issue.
     dur: string. The buff duration text to render under the buff icon. (Allowing an integer instead of a string is a helpful shorthand, but not necessary.)
     short: boolean (default false). If true, the name is not displayed.
