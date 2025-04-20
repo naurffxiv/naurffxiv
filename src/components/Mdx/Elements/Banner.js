@@ -10,6 +10,7 @@ export default function Banner({ src, alt, left = false, ...props }) {
         alt={alt}
         {...props}
         fill
+        unoptimized
       />
     </div>
   );
