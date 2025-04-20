@@ -55,15 +55,11 @@ function tooltip({ name, description, dur, explanation, short, stacks }) {
     short: boolean (default false). If true, the name is not displayed.
     datapath: path. Alternate path to the data file (never used, I think).
     stacks: optional integer. Number of stacks for the buff. If present, the buff icon ID is offset by stacks - 1, because that's the way icon IDs work (see this page, for example).
-    description: optional string. Override the buff description text in the tooltip (never used, I think).
-    explanation: optional string. Override the buff explanation text in the tooltip (never used, I think).
 */
 export default async function Buff({
   b,
   datapath,
-  description,
   dur,
-  explanation,
   mdxDir,
   short,
   stacks,
@@ -91,8 +87,6 @@ export default async function Buff({
   icon = "0".repeat(fill) + icon;
   let iconseries = icon.substring(0, 3) + "0".repeat(3);
 
-  description = description || buff.description;
-  explanation = explanation || buff.explanation;
   dur = dur || buff.duration;
 
   // check duration
@@ -106,9 +100,9 @@ export default async function Buff({
       <Tooltip
         title={tooltip({
           name: buff.name,
-          description,
+          description: buff.description,
           dur,
-          explanation,
+          explanation: buff.explanation,
           short,
           stacks,
         })}
@@ -119,7 +113,7 @@ export default async function Buff({
             height={24}
             width={18}
             src={`https://xivapi.com/i/${iconseries}/${icon}.png`}
-            alt={description}
+            alt={buff.description ?? "placeholder status effect"}
             loading="lazy"
           />
           {(buff.duration || dur) && (
