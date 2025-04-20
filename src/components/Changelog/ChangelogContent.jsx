@@ -65,11 +65,6 @@ export default function ChangelogContent() {
         />
       </div>
 
-      {/* Changelog Title */}
-      <h1 className="mb-12 text-4xl font-bold text-center text-white">
-        Changelog
-      </h1>
-
       {/* Changelog Release List */}
       <div className="space-y-8">
         {releases.map((release, idx) => (
