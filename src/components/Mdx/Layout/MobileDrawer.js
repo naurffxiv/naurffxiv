@@ -41,9 +41,6 @@ const sx = {
     justifyContent: "flex-start",
     padding: "0.5rem",
   },
-  closeDrawer: {
-    ":hover": { background: "#00171fa3" },
-  },
 };
 
 export default MobileDrawer;
