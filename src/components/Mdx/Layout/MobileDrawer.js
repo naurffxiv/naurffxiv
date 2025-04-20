@@ -1,7 +1,7 @@
 import { Drawer, IconButton, Box } from "@mui/material";
 import { MenuOpen } from "@mui/icons-material";
-import ClearIcon from "@mui/icons-material/Clear";
 import React from "react";
+import ExitButton from "@/components/Common/ExitButton";
 
 function MobileDrawer({ children }) {
   const [mobileOpen, setOpen] = React.useState(false);
@@ -18,13 +18,7 @@ function MobileDrawer({ children }) {
         slotProps={{ paper: { sx: { backgroundColor: "#1A3549" } } }}
       >
         <Box sx={sx.closeDrawerContainer}>
-          <IconButton
-            sx={sx.closeDrawer}
-            size="large"
-            onClick={toggleDrawer(false)}
-          >
-            <ClearIcon sx={{ color: "white" }} />
-          </IconButton>
+          <ExitButton onClick={toggleDrawer(false)} />
         </Box>
         {children}
       </Drawer>
