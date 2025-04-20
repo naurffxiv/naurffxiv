@@ -109,7 +109,7 @@ h6:hover span.icon-link::before {
 }
 
 /* details */
-summary {
+details > summary {
   background: linear-gradient(to bottom, #28506e, #061a33);
   color: #fff;
   display: flex;
@@ -121,7 +121,7 @@ summary {
   border-radius: 5px;
 }
 
-summary::after {
+details > summary::after {
   content: "";
   border-top: 6px solid #fff;
   border-inline: 6px solid transparent;
@@ -133,7 +133,7 @@ details[open] > summary::after {
   transform: rotate(0);
 }
 
-summary::-webkit-details-marker {
+details > summary::-webkit-details-marker {
   display: none;
 }
 
