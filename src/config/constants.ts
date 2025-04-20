@@ -113,6 +113,10 @@ export const otherList = [
     title: "Findingway.io",
     url: "https://findingway.io",
   },
+  {
+    title: "Changelog",
+    url: "/changelog",
+  },
   /* Commented out for now, as these pages are not yet implemented
   {
     title: "Events",
