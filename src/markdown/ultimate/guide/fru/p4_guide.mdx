@@ -52,24 +52,24 @@ These are **Spell-in-Waiting** stacks and do not resolve immediately.
 
 The cast itself is a very heavy raidwide originating from the Usurper of Frost, so mitigation targeted on the Oracle of Darkness will have no effect.
 As it resolves:
-1. The two players with stack markers receive 19s **Spell-in-Waiting: Dark Water III**.
-2. Everyone receives 12s **Lightsteeped**.
-3. Four players, exactly one of whom has **Dark Water III**, are tethered together in with **Refulgent Chain**.
+1. The two players with stack markers receive <Buff b="siw-dark-water" dur="19" />.
+2. Everyone receives <Buff b="lightsteeped-3" dur="12" />.
+3. Four players, exactly one of whom has <Buff b="siw-dark-water" short />, are tethered together in with <Buff b="refulgent-chain" dur="7" />.
 The players tethered are always one <mark class="hl-tank">tank</mark>, one <mark class="hl-healer">healer</mark>, and two <mark class="hl-dps">DPS</mark>, and the tethers can connect them in any order, unlike in phase 2.
 4. Two towers appear, north and south of center.
 
-About 4 seconds before the towers go off, the **Refulgent Chain** expire and become 14s **Refulgent Fate**.
+About 4 seconds before the towers go off, the <Buff b="refulgent-chain" /> expire and become <Buff b="refulgent-fate" dur="14" />.
 Unlike in phase 2, but like in E8S, these tethers will explode if the tethered players get either too close or too far apart.
 The towers are the perfect distance to be safely soaked by tethered players.
 
 Shiva casts <mark class="hl-cast">The Path of Light</mark>, resolving at the same time as towers, hitting the four closest players with cones.
-As in phase 2, both the towers and cones inflict **Lightsteeped**, so one player can’t be hit by both.
+As in phase 2, both the towers and cones inflict <Buff b="lightsteeped" />, so one player can’t be hit by both.
 
 As the towers and cones resolve, Gaia begins casting <mark class="hl-cast">Spirit Taker</mark>.
 This is the same as in P3: when it resolves, she leaps and hits a random player with a small circular AoE.
 Anyone else within the circle is knocked back and probably dies.
 Shiva follows this up with <mark class="hl-cast">Hallowed Wings</mark>, a half-room cleave of either the east or west side, telegraphed by a glowing wing.
-The **Dark Water III** resolve just before this cleave goes off.
+The <Buff b="siw-dark-water" short /> resolve just before this cleave goes off.
 
 Finally, Gaia uses <mark class="hl-cast">Somber Dance</mark>, only a few seconds after the <mark class="hl-cast">Hallowed Wings</mark>.
 As before, this is a leaping one-two tankbuster on the farthest and then nearest players.
@@ -81,7 +81,7 @@ Right before, there’s another <mark class="hl-cast">Edge of Oblivion</mark>, f
 They cast <mark class="hl-cast">Akh Morn</mark> simultaneously.
 
 <mark class="hl-cast">Akh Morn</mark> is a four-hit LP stack, with Shiva hitting her main target with columns of <mark class="hl-light">light</mark>, and Gaia hitting hers with columns of <mark class="hl-dark">dark</mark>.
-These inflict 4s **Light's Design** and 4s **Darkness's Design**, respectively, forcing players to remain in the same stack for the entire mechanic.
+These inflict <Buff b="lights-design" dur="4" /> and <Buff b="darknesss-design" dur="4" />, respectively, forcing players to remain in the same stack for the entire mechanic.
 It will be a bad day if both bosses are targeting the same player when the attack goes off.
 
 Notably, the damage from <mark class="hl-cast">Akh Morn</mark> pierces invulnerability but is still subject to mitigation.
@@ -116,20 +116,20 @@ Debuffs are entirely random except as noted.
 From left to right, they are as follows:
 
 1. Everyone receives a primary Spell-in-Waiting:
-    1. One player receives 12s **Spell-in-Waiting: Dark Water III**.
-    2. One player receives 14s **Spell-in-Waiting: Dark Eruption**.
-    3. Two players receive 14s **Spell-in-Waiting: Dark Aero III**.
-    4. Three players receive 14s **Spell-in-Waiting: Dark Blizzard III**.
-    5. One player receives 17s **Spell-in-Waiting: Unholy Darkness**.
-2. Everyone receives a **Wyrmclaw** or **Wyrmfang** debuff.
-    1. Two of the three players with **Dark Blizzard III** receive 17s **Wyrmclaw**.
-    2. The two players with **Dark Aero III** receive 40s **Wyrmclaw**.
-    3. The remaining players receive 40s **Wyrmfang**.
-3. Everyone receives 33s **Spell-in-Waiting: Return**.
-4. Three players receive 31s **Spell-in-Waiting: Quietus**.
+    1. One player receives <Buff b="siw-dark-water" dur="12" />.
+    2. One player receives <Buff b="siw-dark-eruption" dur="14" />.
+    3. Two players receive <Buff b="siw-dark-aero" dur="14" />.
+    4. Three players receive <Buff b="siw-dark-blizzard" dur="14" />.
+    5. One player receives <Buff b="siw-unholy-darkness" dur="17" />.
+2. Everyone receives a <Buff b="wyrmclaw" short/> or <Buff b="wyrmfang" short/> debuff.
+    1. Two of the three players with <Buff b="siw-dark-blizzard" short /> receive <Buff b="wyrmclaw" dur="17" />.
+    2. The two players with <Buff b="siw-dark-aero" short /> receive <Buff b="wyrmclaw" dur="40" />.
+    3. The remaining players receive <Buff b="wyrmfang" dur="40" />.
+3. Everyone receives <Buff b="siw-return" dur="33" />.
+4. Three players receive <Buff b="siw-quietus" dur="31" />.
 Since all they do is cause raidwides, it is entirely irrelevant who receives them.
 
-Or in summary, leaving out the 31s **Quietus**:
+Or in summary, leaving out the <Buff b="siw-quietus" dur="31" short />:
 
 <table class="small-table">
     <thead>
@@ -145,34 +145,34 @@ Or in summary, leaving out the 31s **Quietus**:
     <tbody>
         <tr>
             <td>
-                <div>14s **Dark Blizzard III**</div>
-                <div>17s **Wyrmclaw**</div>
-                <div>33s **Return**</div>
+                <Buff b="siw-dark-blizzard" dur="14" short />
+                <Buff b="wyrmclaw" dur="17" short />
+                <Buff b="siw-return" dur="33" short />
             </td>
             <td>
-                <div>14s **Dark Aero III**</div>
-                <div>40s **Wyrmclaw**</div>
-                <div>33s **Return**</div>
+                <Buff b="siw-dark-aero" dur="14" short />
+                <Buff b="wyrmclaw" dur="40" short />
+                <Buff b="siw-return" dur="33" short />
             </td>
             <td>
-                <div>14s **Dark Blizzard III**</div>
-                <div>40s **Wyrmfang**</div>
-                <div>33s **Return**</div>
+                <Buff b="siw-dark-blizzard" dur="14" short />
+                <Buff b="wyrmfang" dur="40" short />
+                <Buff b="siw-return" dur="33" short />
             </td>
             <td>
-                <div>12s **Dark Water III**</div>
-                <div>40s **Wyrmfang**</div>
-                <div>33s **Return**</div>
+                <Buff b="siw-dark-water" dur="12" short />
+                <Buff b="wyrmfang" dur="40" short />
+                <Buff b="siw-return" dur="33" short />
             </td>
             <td>
-                <div>14s **Dark Eruption**</div>
-                <div>40s **Wyrmfang**</div>
-                <div>33s **Return**</div>
+                <Buff b="siw-dark-eruption" dur="14" short />
+                <Buff b="wyrmfang" dur="40" short />
+                <Buff b="siw-return" dur="33" short />
             </td>
             <td>
-                <div>17s **Unholy Darkness**</div>
-                <div>40s **Wyrmfang**</div>
-                <div>33s **Return**</div>
+                <Buff b="siw-unholy-darkness" dur="17" short />
+                <Buff b="wyrmfang" dur="40" short />
+                <Buff b="siw-return" dur="33" short />
             </td>
         </tr>
     </tbody>
@@ -194,18 +194,18 @@ The hourglasses are completely inert after they explode.
 Two Drachen Wanderers—large, ghostly wyrm heads—also appear just north of the northernmost Hourglass.
 The Wanderers begin a slow journey around the arena, one clockwise, one counterclockwise.
 
-If a player with **Wyrmclaw** makes contact with a Wanderer, it will cleanse the **Wyrmclaw** and explode in a circular AoE called <mark class="hl-cast">Longing of the Lost</mark>.
+If a player with <Buff b="wyrmclaw" short /> makes contact with a Wanderer, it will cleanse the <Buff b="wyrmclaw" short /> and explode in a circular AoE called <mark class="hl-cast">Longing of the Lost</mark>.
 The size is similar to <mark class="hl-cast">Maelstrom</mark>.
 This can break the Fragment of Fate.
 
-The first time a **Wyrmclaw** is cleansed on a given Wanderer, it shrinks.
+The first time a <Buff b="wyrmclaw" short /> is cleansed on a given Wanderer, it shrinks.
 The second time, it disappears entirely.
 If either Wanderer survives to make a complete lap of the arena, it will fly off to the sky and wipe the party.
 
-Additionally, cleansing **Wyrmclaw** leaves behind a small blue beacon.
-The beacon can be used once to cleanse a **Wyrmfang**.
+Additionally, cleansing <Buff b="wyrmclaw" short /> leaves behind a small blue beacon.
+The beacon can be used once to cleanse a <Buff b="wyrmfang" short />.
 
-In order to resolve this part of the mechanic completely, therefore, both Wanderers must be touched twice each by players with **Wyrmclaw**, and the resulting beacons must each be touched by a player with **Wyrmfang**.
+In order to resolve this part of the mechanic completely, therefore, both Wanderers must be touched twice each by players with <Buff b="wyrmclaw" short />, and the resulting beacons must each be touched by a player with <Buff b="wyrmfang" short />.
 
 ### Exalines and Knockbacks
 Around the time of the second <mark class="hl-cast">Maelstrom</mark> explosions, Shiva will teleport to either the east or west edge of the arena and cast <mark class="hl-cast">Tidal Light</mark>.
@@ -214,19 +214,19 @@ This attack begins a large exaline that covers the entire width of the arena, an
 The exaline travels across the arena away from Shiva.
 It is slow enough to dodge by stepping into the previous explosion before the next.
 
-If you look closely, Shiva has a blue circle under her during this attack—the same blue circle, in fact, as players get from **Spell-in-Waiting: Return**.
+If you look closely, Shiva has a blue circle under her during this attack—the same blue circle, in fact, as players get from <Buff b="siw-return" />.
 This is a visual hint that Shiva, too, will have her position rewound later in the mechanic.
 Remember which cardinal she appeared at.
 
 Towards the end of the first set of exalines, Shiva teleports to either the north or south edge of the arena, and repeats <mark class="hl-cast">Tidal Light</mark>, producing a second exaline identical as the first.
 
 As the second exaline travels across the arena, the final debuffs expire.
-First, the three **Spell-in-Waiting: Quietus** explode in three relatively small raidwides that don’t even add up to a big one.
-Then, the **Spell-in-Waiting: Return** expire, snapshotting everyone’s positions and granting 7s **Return** to everyone.
+First, the three <Buff b="siw-quietus" short /> explode in three relatively small raidwides that don’t even add up to a big one.
+Then, the <Buff b="siw-return" short /> expire, snapshotting everyone’s positions and granting <Buff b="return" dur="7" /> to everyone.
 
 Gaia begins another <mark class="hl-cast">Spirit Taker</mark>, so the party must spread.
 And finally, Shiva teleports back to the center and casts <mark class="hl-cast">Hallowed Wings</mark>.
-Before her cast completes, however, the **Return** debuffs expire, inflicting 9s **Stun** and teleporting everyone back to their snapshotted positions.
+Before her cast completes, however, the <Buff b="return" short /> debuffs expire, inflicting <Buff b="stun" dur="9" /> and teleporting everyone back to their snapshotted positions.
 Shiva, too, is teleported—back to where she first cast <mark class="hl-cast">Tidal Light</mark>.
 This will always, therefore, be the east or west cardinal.
 The snapshot positions must solve the upcoming attack.
@@ -237,13 +237,13 @@ All players are hit, regardless of position, and are knocked away from Shiva’s
 The damage dealt by the attack is based on proximity to Shiva’s cardinal, with the closest player receiving the most damage, the second-closest receiving the second-most, etc.
 The person furthest away receives teh lowest amount of damage.
 Note, however, that this attack deals fixed damage based on position even if a player is dead; it is not a shared-damage attack.
-The four players in front receive a 6s **Magic Vulnerability Up**.
+The four players in front receive a <Buff b="magic-vuln" dur="6" />.
 
 Then, while everyone is still stunned, Shiva is teleported to the cardinal where she cast the second exaline, and repeats the attack.
-Knockback immunity (besides <mark class="hl-cast">Inner Release</mark>) will not last long enough to protect against the second knockback, because it cannot be used during the **Stun**.
+Knockback immunity (besides <mark class="hl-cast">Inner Release</mark>) will not last long enough to protect against the second knockback, because it cannot be used during the <Buff b="stun" short />.
 
-The damage on the second hit will be quadrupled for the players with **Magic Vulnerability Up**.
-If the player fifth in line has a **Magic Vulnerability Up**, the damage is equal to being first in line without **Magic Vulnerability Up**.
+The damage on the second hit will be quadrupled for the players with <Buff b="magic-vuln" short />.
+If the player fifth in line has a <Buff b="magic-vuln" short />, the damage is equal to being first in line without <Buff b="magic-vuln" short />.
 It’s not quite tankbuster levels of damage, but it’s still enough to give a non-tank a bad time.
 I’ll put the exact numbers in an appendix sometime.
 
@@ -277,13 +277,13 @@ The players are released from stun during the second knockback, and both bosses 
         </tr>
         <tr>
             <td>t + 12 s</td>
-            <td>**Dark Water III** stack and yellow-tethered <mark class="hl-cast">Maelstroms</mark> go off</td>
+            <td><Buff b="siw-dark-water" short /> stack and yellow-tethered <mark class="hl-cast">Maelstroms</mark> go off</td>
         </tr>
         <tr>
             <td>t + 14 s</td>
             <td>
-                <div>**Dark Eruption** circle, **Dark Ice III** donut, and **Dark Aero III** knockback go off</div>
-                <div>Safe to cleanse **Wyrmclaw** without breaking Fragment</div>
+                <div><Buff b="siw-dark-eruption" short /> circle, <Buff b="siw-dark-blizzard" short /> donut, and <Buff b="siw-dark-aero" short /> knockback go off</div>
+                <div>Safe to cleanse <Buff b="wyrmclaw" short /> without breaking Fragment</div>
             </td>
         </tr>
         <tr>
@@ -297,9 +297,9 @@ The players are released from stun during the second knockback, and both bosses 
         <tr>
             <td>t + 17 s</td>
             <td>
-                <div>**Unholy Darkness** stack and non-tethered <mark class="hl-cast">Maelstroms</mark> go off</div>
+                <div><Buff b="siw-unholy-darkness" short /> stack and non-tethered <mark class="hl-cast">Maelstroms</mark> go off</div>
                 <div>East/west exaline omen appears</div>
-                <div>17s **Wyrmclaw** kills if not cleansed by now</div>
+                <div><Buff b="wyrmclaw" dur="17" short /> kills if not cleansed by now</div>
             </td>
         </tr>
         <tr>
@@ -329,12 +329,12 @@ The players are released from stun during the second knockback, and both bosses 
         </tr>
         <tr>
             <td>t + 31 s</td>
-            <td>**Quietus** raidwides go off</td>
+            <td><Buff b="siw-quietus" short /> raidwides go off</td>
         </tr>
         <tr>
             <td>t + 33 s</td>
             <td>
-                <div>**Return** snapshots player positions</div>
+                <div><Buff b="siw-return" short /> snapshots player positions</div>
                 <div>North/south exalines end</div>
             </td>
         </tr>
@@ -346,7 +346,7 @@ The players are released from stun during the second knockback, and both bosses 
             <td>t + 40 s</td>
             <td>
                 <div>Players stunned and returned to snapshot positions</div>
-                <div>40s **Wyrmclaw** and 40s **Wyrmfang** kill if not cleansed by now</div>
+                <div><Buff b="wyrmclaw" dur="40" short /> and <Buff b="wyrmfang" dur="40" short /> kill if not cleansed by now</div>
                 <div>Drachen Wanderers wipe party if not destroyed by now</div>
             </td>
         </tr>

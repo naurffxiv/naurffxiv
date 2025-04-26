@@ -30,30 +30,30 @@ The arena floor changes from dark blue to a bright teal colour for the duration 
 What’s actually in chaos is everyone’s debuff bars, as everyone receives three spells-in-waiting.
 From left to right on the debuff bar, they are as follows:
 
-1. Every player receives a 10-, 20-, or 30-second **Spell-in-Waiting: Dark Fire III** or **Spell-in-Waiting: Dark Blizzard III**:
-    1. Two <mark class="hl-support">supports</mark> and one <mark class="hl-dps">DPS</mark> each receive a 30s **Spell-in-Waiting: Dark Fire III**.
-    2. One <mark class="hl-support">support</mark> and one <mark class="hl-dps">DPS</mark> each receive a 20s **Spell-in-Waiting: Dark Fire III**.
-    3. Two <mark class="hl-dps">DPS</mark> and one <mark class="hl-support">support</mark> each receive a 10s **Spell-in-Waiting: Dark Fire III**.
+1. Every player receives a 10-, 20-, or 30-second <Buff b="siw-dark-fire" short /> or <Buff b="siw-dark-blizzard" short />:
+    1. Two <mark class="hl-support">supports</mark> and one <mark class="hl-dps">DPS</mark> each receive <Buff b="siw-dark-fire" dur="30" />.
+    2. One <mark class="hl-support">support</mark> and one <mark class="hl-dps">DPS</mark> each receive <Buff b="siw-dark-fire" dur="20" />.
+    3. Two <mark class="hl-dps">DPS</mark> and one <mark class="hl-support">support</mark> each receive <Buff b="siw-dark-fire" dur="10" />.
     4. I lied a little bit.
-    Either the <mark class="hl-support">support</mark> with the 10s or the <mark class="hl-dps">DPS</mark> with the 30s *actually* receives a 20s **Spell-in-Waiting: Dark Blizzard III** instead.
+    Either the <mark class="hl-support">support</mark> with <Buff b="siw-dark-fire" dur="10" short /> or the <mark class="hl-dps">DPS</mark> with <Buff b="siw-dark-fire" dur="30" short /> *actually* receives <Buff b="siw-dark-blizzard" dur="20" /> instead.
 
-    However, for the rest of the debuff breakdown, I’m going to pretend the **Spell-in-Waiting: Dark Blizzard III** doesn’t exist, and all players receive **Spell-in-Waiting: Dark Fire III**.
+    However, for the rest of the debuff breakdown, I’m going to pretend the <Buff b="siw-dark-blizzard" short /> doesn’t exist, and all players receive <Buff b="siw-dark-fire" short />.
 It simplifies the explanations.
 
-2. Three players receive **Spell-in-Waiting: Unholy Darkness**: one for 10 seconds, one for 20, and one for 30.
-The duration will not match their **Spell-in-Waiting: Dark Fire III** or **Spell-in-Waiting: Dark Blizzard III**, but the recipients seem otherwise random.
+2. Three players receive <Buff b="siw-unholy-darkness" />: one for 10 seconds, one for 20, and one for 30.
+The duration will not match their <Buff b="siw-dark-fire" short /> or <Buff b="siw-dark-blizzard" short />, but the recipients seem otherwise random.
 
-3. Every player receives a 16- or 26-second **Spell-in-Waiting: Return**.
-    1. The three players with 30s **Spell-in-Waiting: Dark Fire III** receive a 26s **Spell-in-Waiting: Return**
-    2. The other five players receive 16s **Spell-in-Waiting: Return**.
+3. Every player receives a 16- or 26-second <Buff b="siw-return" short />.
+    1. The three players with <Buff b="siw-dark-fire" dur="30" /> receive <Buff b="siw-return" dur="26" />
+    2. The other five players receive <Buff b="siw-return" dur="16" />.
 
-4. Every player receives a 43-second **Spell-in-Waiting: Shadoweye**, **Spell-in-Waiting: Dark Water III**, or **Spell-in-Waiting: Dark Eruption**:
-    1. The three players with 30s **Spell-in-Waiting: Dark Fire III** receive a 43s **Spell-in-Waiting: Shadoweye**.
-    2. The <mark class="hl-dps">DPS</mark> with 20s **Spell-in-Waiting: Dark Fire III** receives a 43s **Spell-in-Waiting: Dark Water III**.
-    3. The remaining four players all receive a 43s **Spell-in-Waiting: Dark Eruption**.
+4. Every player receives a 43-second <Buff b="siw-shadoweye" short />, <Buff b="siw-dark-water" short />, or <Buff b="siw-dark-eruption" short />:
+    1. The three players with <Buff b="siw-dark-fire" dur="30" /> receive <Buff b="siw-shadoweye" dur="43" />.
+    2. The <mark class="hl-dps">DPS</mark> with <Buff b="siw-dark-fire" dur="20" /> receives <Buff b="siw-dark-water" dur="43" />.
+    3. The remaining four players all receive <Buff b="siw-dark-eruption" dur="43" />.
 
 It perhaps comes as a bit of a surprise how tightly role-based the assignments are, given that this is an ultimate.
-Thankfully, though, it means that everything apart from the three **Spell-in-Waiting: Unholy Darkness** can be summarized in a single small table:
+Thankfully, though, it means that everything apart from the three <Buff b="siw-unholy-darkness" short /> can be summarized in a single small table:
 
 <table class="small-table">
     <thead>
@@ -68,48 +68,48 @@ Thankfully, though, it means that everything apart from the three **Spell-in-Wai
         <tr>
             <td><mark class="hl-support">Support</mark></td>
             <td>
-                <div>30s **Dark Fire III**</div>
-                <div>26s **Return**</div>
-                <div>43s **Shadoweye**</div>
+                <Buff b="siw-dark-fire" dur="30" short />
+                <Buff b="siw-return" dur="26" short />
+                <Buff b="siw-shadoweye" dur="43" short />
             </td>
             <td>
-                <div>20s **Dark Fire III**</div>
-                <div>16s **Return**</div>
-                <div>43s **Dark Eruption**</div>
+                <Buff b="siw-dark-fire" dur="20" short />
+                <Buff b="siw-return" dur="16" short />
+                <Buff b="siw-dark-eruption" dur="43" short />
             </td>
             <td>
-                <div>10s **Dark Fire III** or 20s **Dark Blizzard III**</div>
-                <div>16s **Return**</div>
-                <div>43s **Dark Eruption**</div>
+                {'('}<Buff b="siw-dark-fire" dur="10" short />{'/'}<Buff b="siw-dark-blizzard" dur="20" short />{')'}
+                <Buff b="siw-return" dur="16" short />
+                <Buff b="siw-dark-eruption" dur="43" short />
             </td>
         </tr>
         <tr>
             <td><mark class="hl-dps">DPS</mark></td>
             <td>
-                <div>10s **Dark Fire III**</div>
-                <div>16s **Return**</div>
-                <div>43s **Shadoweye**</div>
+                <Buff b="siw-dark-fire" dur="10" short />
+                <Buff b="siw-return" dur="16" short />
+                <Buff b="siw-shadoweye" dur="43" short />
             </td>
             <td>
-                <div>20s **Dark Fire III**</div>
-                <div>16s **Return**</div>
-                <div>43s **Dark Water III**</div>
+                <Buff b="siw-dark-fire" dur="20" short />
+                <Buff b="siw-return" dur="16" short />
+                <Buff b="siw-dark-water" dur="43" short />
             </td>
             <td>
-                <div>20s **Dark Blizzard III** or 30s **Dark Fire III**</div>
-                <div>26s **Return**</div>
-                <div>43s **Shadoweye**</div>
+                {'('}<Buff b="siw-dark-blizzard" dur="20" short />{'/'}<Buff b="siw-dark-fire" dur="30" short />{')'}
+                <Buff b="siw-return" dur="26" short />
+                <Buff b="siw-shadoweye" dur="43" short />
             </td>
         </tr>
     </tbody>
 </table>
 
-When **Spell-in-Waiting: Return** expires, the position of its bearer will be recorded with a blue marker, and the bearer will receive **Return**.
-The duration of the **Return** debuff will be either 24 or 14 seconds, so that the **Return** expires 40 seconds after the start of the mechanic.
+When <Buff b="siw-return" /> expires, the position of its bearer will be recorded with a blue marker, and the bearer will receive <Buff b="return" />.
+The duration of the <Buff b="return" short /> debuff will be either 24 or 14 seconds, so that the <Buff b="return" short /> expires 40 seconds after the start of the mechanic.
 A ticking clock marker also appears above all players’ heads until the rewind occurs.
 
-At the expiry of **Return**, all players receive a 4s **Stun** and are teleported back to their recorded positions.
-The **Dark Eruption**, **Shadoweye**, and **Dark Water III** resolve before the **Stun** expires, so the recorded positions must solve these debuffs.
+At the expiry of <Buff b="return" short />, all players receive <Buff b="stun" dur="4" /> and are teleported back to their recorded positions.
+The <Buff b="siw-dark-eruption" short />, <Buff b="siw-shadoweye" short />, and <Buff b="siw-dark-water" short /> resolve before the <Buff b="stun" short /> expires, so the recorded positions must solve these debuffs.
 Furthermore, due to the stun, the direction of facing can’t be changed, so players must be facing the correct direction to avoid the gaze attacks immediately before the rewind begins.
 
 ### Hourglasses
@@ -124,7 +124,7 @@ Note that Gaia herself does not change facing during this cast.
 
 The effect of <mark class="hl-cast">Speed</mark> is to set up the order in which the Hourglasses use their one attack, <mark class="hl-cast">Sinbound Meltdown</mark>.
 The <mark class="hl-light">yellow</mark>-marked Hourglasses make up the <mark class="hl-light">first wave</mark>, the unmarked ones the **second wave**, and the <mark class="hl-dark">purple</mark> ones the <mark class="hl-dark">third wave</mark>.
-The three waves happen approximately 16, 26, and 36 seconds after the start of the mechanic, with the first two corresponding to the expiry of the **Spell-in-Waiting: Return** debuffs.
+The three waves happen approximately 16, 26, and 36 seconds after the start of the mechanic, with the first two corresponding to the expiry of the <Buff b="siw-return" /> debuffs.
 
 As the Hourglasses cast <mark class="hl-cast">Sinbound Meltdown</mark>, there is an advance warning with either a clockwise <mark class="hl-light">yellow</mark> indicator, or a counterclockwise <mark class="hl-cast">blue</mark> indicator, randomly selected for each Hourglass.
 This indicates the direction the attack will rotate.
@@ -162,7 +162,7 @@ She subsequently casts <mark class="hl-cast">Shockwave Pulsar</mark>, a heavy ra
         </tr>
         <tr>
             <td>t + 10 s</td>
-            <td>10s **Dark Fire III** and **Unholy Darkness** detonate</td>
+            <td><Buff b="siw-dark-fire" dur="10" short /> and <Buff b="siw-unholy-darkness" dur="10" short /> detonate</td>
         </tr>
         <tr>
             <td>t + 11 s</td>
@@ -174,13 +174,13 @@ She subsequently casts <mark class="hl-cast">Shockwave Pulsar</mark>, a heavy ra
         <tr>
             <td>t + 16 s</td>
             <td>
-                <div>16s **Return** snapshot positions</div>
+                <div><Buff b="siw-return" dur="16" short /> snapshot positions</div>
                 <div>First <mark class="hl-cast">Sinbound Meltdown</mark> lasers begin</div>
             </td>
         </tr>
         <tr>
             <td>t + 20 s</td>
-            <td>20s **Dark Fire III**, **Dark Blizzard III**, and **Unholy Darkness** detonate</td>
+            <td><Buff b="siw-dark-fire" dur="20" short />, <Buff b="siw-dark-blizzard" dur="20" short />, and <Buff b="siw-unholy-darkness" dur="20" short /> detonate</td>
         </tr>
         <tr>
             <td>t + 21 s</td>
@@ -192,13 +192,13 @@ She subsequently casts <mark class="hl-cast">Shockwave Pulsar</mark>, a heavy ra
         <tr>
             <td>t + 26 s</td>
             <td>
-                <div>26s **Return** snapshot positions</div>
+                <div><Buff b="siw-return" dur="26" short /> snapshot positions</div>
                 <div>Second <mark class="hl-cast">Sinbound Meltdown</mark> lasers begin</div>
             </td>
         </tr>
         <tr>
             <td>t + 30 s</td>
-            <td>30s **Dark Fire III** and **Unholy Darkness** detonate</td>
+            <td><Buff b="siw-dark-fire" dur="30" short /> and <Buff b="siw-unholy-darkness" dur="30" short /> detonate</td>
         </tr>
         <tr>
             <td>t + 31 s</td>
@@ -218,7 +218,7 @@ She subsequently casts <mark class="hl-cast">Shockwave Pulsar</mark>, a heavy ra
         <tr>
             <td>t + 43 s</td>
             <td>
-                <div>43s **Dark Eruption**, **Shadoweye**, and **Dark Water III** detonate</div>
+                <div><Buff b="siw-dark-eruption" dur="43" short />, <Buff b="siw-shadoweye" dur="43" short />, and <Buff b="siw-dark-water" dur="43" short /> detonate</div>
                 <div>Sequence complete</div>
                 <div>Gaia begins casting <mark class="hl-cast">Shell Crusher</mark></div>
             </td>
@@ -228,12 +228,12 @@ She subsequently casts <mark class="hl-cast">Shockwave Pulsar</mark>, a heavy ra
 
 ## Sequence 2: Sextuple Apocalypse
 Gaia’s second and final mechanic sequence begins with a cast of <mark class="hl-cast">Spell-in-Waiting Refrain</mark>.
-This cast gives her the **Spell-in-Waiting Refrain** buff, but is purely cosmetic.
+This cast gives her the <Buff b="siw-refrain" /> buff, but is purely cosmetic.
 As she casts a follow-up <mark class="hl-cast">Dark Water III</mark>, stack markers will appear over the heads of six random party members.
 These markers are fake-outs, and will not resolve until later.
 So there’s no need to stack for them now.
 
-When the cast resolves, six random players receive **Spell-in-Waiting: Dark Water III**: two for 9 seconds, two for 28 seconds, and two for 37 seconds.
+When the cast resolves, six random players receive <Buff b="siw-dark-water" />: two for 9 seconds, two for 28 seconds, and two for 37 seconds.
 These timings determine which players must be in separate LP stacks when they go off.
 The remaining two players will not have any debuffs.
 The delayed spells remain visible over players’ heads as spell-in-waiting markers until they fire.
@@ -270,17 +270,17 @@ The remaining AoEs match the timing of the lights, with two seconds between each
 Gaia casts <mark class="hl-cast">Spirit Taker</mark>, starting just before the first circles appear.
 When this completes, she jumps at a random player and hits them with a small circular AoE.
 Anyone else hit by the AoE is knocked back from the targeted player, likely into the death wall.
-Immediately after the circles appear, the pair of 10s **Dark Water III** go off.
+Immediately after the circles appear, the pair of <Buff b="siw-dark-water" dur="10" /> go off.
 
 Just after the fourth wave of circles, Gaia begins to cast <mark class="hl-cast">Dark Eruption</mark>, causing spread markers to appear above everyone’s heads.
 These spreads are not spells-in-waiting and go off immediately after the cast bar, right after the second wave of circle AoEs.
 
 After the third wave of AoEs, Gaia starts a cast of <mark class="hl-cast">Darkest Dance</mark>, finishing immediately after the final AoEs.
-The pair of 29s **Dark Water III** goes off right before those AoEs, near the end of the castbar, so there is very little time between the stack and <mark class="hl-cast">Darkest Dance</mark>.
+The pair of <Buff b="siw-dark-water" dur="29" /> goes off right before those AoEs, near the end of the castbar, so there is very little time between the stack and <mark class="hl-cast">Darkest Dance</mark>.
 Gaia jumps at the player farthest away from her, hitting them with an AoE tankbuster, followed in a few seconds after by a spin attack, hitting the entire party with a strong, non-resistable knockback from Gaia’s position along with a small amount of damage.
 
 The arena changes back to normal just after she jumps.
-Shortly after the knockback, the last pair of 38s **Dark Water III** go off, marking the end of the mechanic.
+Shortly after the knockback, the last pair of <Buff b="siw-dark-water" dur="38" /> go off, marking the end of the mechanic.
 
 ### Apocalypse Timeline
 <table class="small-table">
@@ -305,7 +305,7 @@ Shortly after the knockback, the last pair of 38s **Dark Water III** go off, mar
             <td>t + 10 s</td>
             <td>
                 <div>First light circles appear</div>
-                <div>10s **Dark Water III** go off</div>
+                <div><Buff b="siw-dark-water" dur="10" short /> go off</div>
             </td>
         </tr>
         <tr>
@@ -362,7 +362,7 @@ Shortly after the knockback, the last pair of 38s **Dark Water III** go off, mar
             <td>t + 29 s</td>
             <td>
                 <div>Fifth AoEs go off</div>
-                <div>29s **Dark Water III** go off</div>
+                <div><Buff b="siw-dark-water" dur="29" short /> go off</div>
             </td>
         </tr>
         <tr>
@@ -380,7 +380,7 @@ Shortly after the knockback, the last pair of 38s **Dark Water III** go off, mar
         <tr>
             <td>t + 38 s</td>
             <td>
-                <div>29s **Dark Water III** go off</div>
+                <div><Buff b="siw-dark-water" dur="38" short /> go off</div>
                 <div>Sequence complete</div>
                 <div>Gaia begins casting <mark class="hl-cast">Shockwave Pulsar</mark></div>
             </td>

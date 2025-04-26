@@ -15,12 +15,12 @@ Unlike a traditional trio phase, however, there is a little bit of uptime mechan
 To complete the phase, she must be brought down below 20% health before the end of the enrage.
 Also, unlike in the original fight, the edge of the arena is not a cliff but stays as the traditional Ultimate deathwall.
 
-As before, unless otherwise noted, any attack other than a spread, stack, raidwide, or tankbuster inflicts **Damage Down**, and all spreads and stacks inflict **Magic Vulnerability Up** to prevent players from taking multiple hits.
+As before, unless otherwise noted, any attack other than a spread, stack, raidwide, or tankbuster inflicts <Buff b="damage-down" dur="2m" />, and all spreads and stacks inflict <Buff b="magic-vuln" dur="2s" /> to prevent players from taking multiple hits.
 
 ## Intro
 Shiva kicks things off with <mark class="hl-cast">Quadruple Slap</mark>, a tankbuster that only actually has two hits.
 It’s a typical one-two buster with room for a tank swap.
-It inflicts a cleansable **Physical Vulnerability Up**, forcing a swap, cleanse, or invuln.
+It inflicts a cleansable <Buff b="phys-vuln" dur="25s" cleansable />, forcing a swap, cleanse, or invuln.
 
 After one follow-up auto—which can also be lethal, thanks to the vuln—Shiva teleports to south of center, faces north, and begins casting <mark class="hl-cast">Mirror Image</mark>.
 This cast has no associated attack, but summons a <mark class="hl-light">light-form</mark> clone, the Oracle's Reflection, directly in the center of the arena.
@@ -77,15 +77,15 @@ After all of this, it isn’t even over.
 
 ### Thin Ice
 Right after the lines go off, <mark class="hl-light">Sinbound Holy</mark> targets both <mark class="hl-healer">healers</mark> with four LP stacks each, in quick succession.
-Each hit leaves behind a puddle that inflicts **Bleeding**, forcing the party to keep moving.
+Each hit leaves behind a puddle that inflicts <Buff b="bleeding-2" />, forcing the party to keep moving.
 
 As players run away from <mark class="hl-cast">Sinbound Holy</mark>, the Usurper of Frost moves to the edge of the arena, in a random principal direction.
 
 About 4 seconds after the last puddle drops, without any other warning, she uses <mark class="hl-ice">Shining Armor</mark>.
-This is a gaze attack that inflicts **Damage Down** and **Stun**.
+This is a gaze attack that inflicts <Buff b="damage-down" dur="2m" /> and <Buff b="stun" dur="8s" />.
 The stun will make impossible to pass the next part of the mechanic, so you can’t look at Shiva no matter how hot she is.
 
-Additionally, the arena will become icy.
+Additionally, the arena will become <Buff b="thin-ice" /> icy.
 Moving will now send a player sliding most of the way across the arena.
 Two bosses will also swap appearances.
 The Usurper of Frost changes to <mark class="hl-light">light form</mark>, and will remain so for the rest of the phase, at the same time as the Oracle's Reflection changes to <mark class="hl-ice">ice form</mark>.
@@ -141,7 +141,7 @@ The infamous mechanic from E8S is back, although it’s arguably not even as bad
 Naturally enough, it kicks off with a teleport to center and the <mark class="hl-light">Light Rampant</mark> castbar.
 There’s a raidwide on this one, so make sure mits and shields are up.
 
-This mechanic makes use of the **Lightsteeped** debuff, given out by various attacks through the mechanic:
+This mechanic makes use of the <Buff b="lightsteeped" /> debuff, given out by various attacks through the mechanic:
 
 <table class="small-table">
     <thead>
@@ -174,8 +174,8 @@ This mechanic makes use of the **Lightsteeped** debuff, given out by various att
     </tbody>
 </table>
 
-This is a total of 32 stacks, which is exactly enough to give 4 to every player.
-This is very convenient, because 5 causes a wipe.
+This is a total of 32 stacks, which is exactly enough to give 4 <Buff b="lightsteeped" short /> to every player.
+This is very convenient, because 5 <Buff b="lightsteeped" short /> causes a wipe.
 Everyone must get exactly four stacks.
 
 The initial raidwide doles out several markers and debuffs.
@@ -183,12 +183,12 @@ It is believed that these are given out completely at random, with no role-based
 
 * Two players receive a pink marker with a circular AoE omen.
 
-* The remaining six players each receive **Chains of Everlasting Light**, visibly displaying as tethers connecting them to two other players.
+* The remaining six players each receive <Buff b="chains-of-everlasting-light" dur="10s" />, visibly displaying as tethers connecting them to two other players.
 These tethers are not yet active.
 
-  * Two of these players receive **The Weight of Light**, indicated by large golden orbs above their heads.
+  * Two of these players receive <Buff b="the-weight-of-light" dur="16s" />, indicated by large golden orbs above their heads.
 
-* Six stacks of **Lightsteeped** are distributed.
+* Six stacks of <Buff b="lightsteeped" dur="36" /> are distributed.
 The players with markers each receive one stack, and the remaining four are distributed randomly amongst all eight players.
 
     So a player with a marker can receive 1 or 2 stacks, while a player with a tether can receive 0 or 1.
@@ -202,14 +202,14 @@ A moment after the cast, Shiva disappears and six towers appear.
 The orientation is always the same: a perfect hexagon with points to the north and south.
 
 The markers begin going off first with a series of four <mark class="hl-light">Luminous Hammer</mark> attacks each.
-These inflict **Magic Vulnerability Up**, but more importantly they drop lethal puddles on the ground like <mark class="hl-light">Sinbound Holy</mark>.
+These inflict <Buff b="magic-vuln" dur="1s" />, but more importantly they drop lethal puddles on the ground like <mark class="hl-light">Sinbound Holy</mark>.
 Don’t stand in bad.
 
-The towers go off simultaneously with the third set of puddles, inflicting **Lightsteeped**.
-A missed tower is a heavy raidwide with a **Damage Down**.
-Although the towers do not inflict a **Magic Vulnerability Up** themselves, they are magic damage, so players taking a tower cannot also be hit by a <mark class="hl-light">Luminous Hammer</mark>.
+The towers go off simultaneously with the third set of puddles, inflicting <Buff b="lightsteeped" dur="36s" />.
+A missed tower is a heavy raidwide with a <Buff b="damage-down" dur="2m" />.
+Although the towers do not inflict a <Buff b="magic-vuln" short /> themselves, they are magic damage, so players taking a tower cannot also be hit by a <mark class="hl-light">Luminous Hammer</mark>.
 
-At the same time as the towers go off, the **Chains of Everlasting Light** expire, becoming **Curse of Everlasting Light**.
+At the same time as the towers go off, the <Buff b="chains-of-everlasting-light" short /> expire, becoming <Buff b="curse-of-everlasting-light" dur="9s" />.
 This is indicated by the orbs in the middle of the tethers growing more brightly.
 Unlike in the original Light Rampant, for these tethers there is no maximum distance, but if any two tethered players get too close together before the debuffs expire, they will explode and cause a wipe.
 
@@ -220,9 +220,9 @@ Three of them, in an equilateral triangle, begin casting <mark class="hl-cast">B
 The other three follow suit shortly after.
 This is very similar to the fists during the phase 4 transition of TOP, if you are familiar with that fight.
 
-As the second wave of omens appears, the **The Weight of Light** detonate in a small circular AoE.
-This is <mark class="hl-light">Powerful Light</mark>, a LP stack that inflicts **Lightsteeped**.
-If fewer than 4 players are in the stack, it additionally inflicts **Mark of Mortality**.
+As the second wave of omens appears, the <Buff b="the-weight-of-light" short /> detonate in a small circular AoE.
+This is <mark class="hl-light">Powerful Light</mark>, a LP stack that inflicts <Buff b="lightsteeped" short dur="36s" />.
+If fewer than 4 players are in the stack, it additionally inflicts <Buff b="mark-of-mortality" dur="2m" />.
 A 4-stack tower also appears in the center of the arena at the same time.
 
 After the <mark class="hl-light">Powerful Light</mark>—but not right after, so don’t move too soon!—the first wave of orbs explodes.
@@ -231,13 +231,13 @@ She remains untargetable as she begins casting <mark class="hl-cast">Banish III<
 The telegraph and effects are identical to the first time she used it.
 
 ### Second Wave Tower
-4 players must soak the tower to prevent the **Damage Down** raidwide and receive a stack of **Lightsteeped**.
+4 players must soak the tower to prevent the <Buff b="damage-down" dur="2m" /> raidwide and receive a stack of <Buff b="lightsteeped" dur="36s" short />.
 Care must be taken that nobody takes on too many stacks.
-**Banish III** resolves a few seconds later.
+<mark class="hl-cast">Banish III</mark> resolves a few seconds later.
 
 Shiva wraps the mechanic up by casting <mark class="hl-light">House of Light</mark>, becoming targetable at the start of the cast.
 <mark class="hl-light">House of Light</mark> is an 8-way cone spread.
-This inflicts a final stack of **Lightsteeped** on every player.
+This inflicts a final stack of <Buff b="lightsteeped" dur="36s" short /> on every player.
 If executed correctly, everyone should now have 4 stacks.
 They will fall off harmlessly during the transition to the intermission.
 

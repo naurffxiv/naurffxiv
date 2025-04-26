@@ -63,22 +63,8 @@ export default async function Buff({
   mdxDir,
   short,
   stacks,
-  type = "toml",
 }) {
-  let filename = "";
-  let buffsData = {};
-  switch (type) {
-    case "json":
-      datapath = datapath || `buffs.json`;
-      filename = String(fs.readFileSync(path.join(mdxDir, datapath)));
-      buffsData = JSON.parse(filename);
-      break;
-    default:
-      datapath = datapath || "buffs.toml";
-      filename = String(fs.readFileSync(path.join(mdxDir, datapath)));
-      buffsData = parse(filename);
-      break;
-  }
+  const buffsData = getBuffsData();
 
   let buff = buffsData[b];
 
@@ -124,4 +110,15 @@ export default async function Buff({
       {!short && <span className="buff-name">{buff.name || safe}</span>}
     </span>
   );
+
+  function getBuffsData() {
+    if(!datapath) {
+      if(fs.existsSync(path.join(mdxDir, "buffs.json"))) datapath = "buffs.json";
+      else if(fs.existsSync(path.join(mdxDir, "buffs.toml"))) datapath = "buffs.toml";
+    }
+
+    const fileAsString = String(fs.readFileSync(path.join(mdxDir, datapath)));
+
+    return datapath.endsWith('.json') ? JSON.parse(fileAsString) : parse(fileAsString);
+  }
 }

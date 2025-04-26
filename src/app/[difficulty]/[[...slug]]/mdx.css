@@ -163,3 +163,8 @@ details[open] :last-child {
 .small-table thead tr, .small-table tbody tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.33);
 }
+
+/* Give extra space to buffs immediately following other buffs */
+.small-table .buff + .buff {
+  padding-left: 5px;
+}
