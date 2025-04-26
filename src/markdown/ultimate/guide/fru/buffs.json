@@ -115,19 +115,22 @@
     "name": "Deep Freeze",
     "icon": 15637,
     "description": "Your body is encased in ice, preventing action and dealing damage over time.",
-    "explanation": "Unable to move or take actions"
+    "explanation": "Unable to move or take actions",
+    "phases": ["intermission"]
   },
   "invincibility": {
     "name": "Invincibility",
     "icon": 15024,
     "description": "Invulnerable to all damage.",
-    "explanation": "The Ice Veil is immune to all damage while any crystals are tethered to it."
+    "explanation": "The Ice Veil is immune to all damage while any crystals are tethered to it.",
+    "phases": ["intermission"]
   },
   "vulnerability-down": {
     "name": "Vulnerability Down",
     "icon": 15021,
     "description": "Damage taken is reduced.",
-    "explanation": "The crystals receive this buff if they are hit by one of the cleaves. The Ice Veil recives it in place of Invincibility if all the light crystals are killed and all dark crystals are left alive."
+    "explanation": "The crystals receive this buff if they are hit by one of the cleaves. The Ice Veil recives it in place of Invincibility if all the light crystals are killed and all dark crystals are left alive.",
+    "phases": ["intermission"]
   },
   "siw-dark-fire": {
     "name": "Spell-in-Waiting: Dark Fire III",

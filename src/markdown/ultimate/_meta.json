@@ -41,6 +41,11 @@
         "index": "guide/fru/p5_guide.mdx",
         "groups": ["ultimate", "guide", "01-Phase Guides"],
         "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "buff-appendix": {
+        "index": "guide/fru/buff_appendix.mdx",
+        "groups": ["ultimate", "guide", "02-Appendix"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
       }
     }
   },
