@@ -149,3 +149,17 @@ details[open] :first-child {
 details[open] :last-child {
   margin-bottom: 0;
 }
+
+/* Small, condensed, MDX table */
+.small-table {
+  width: fit-content !important;
+}
+
+.small-table th, .small-table td {
+  padding: 2px 10px;
+  vertical-align: middle;
+}
+
+.small-table thead tr, .small-table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.33);
+}
