@@ -10,7 +10,8 @@
         { "type": "mdx", "slug": "/ultimate/fru/guide/intermission" },
         { "type": "mdx", "slug": "/ultimate/fru/guide/p3" },
         { "type": "mdx", "slug": "/ultimate/fru/guide/p4" },
-        { "type": "mdx", "slug": "/ultimate/fru/guide/p5" }
+        { "type": "mdx", "slug": "/ultimate/fru/guide/p5" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/buff-appendix" }
       ],
       "p1": {
         "index": "guide/fru/p1_guide.mdx",
