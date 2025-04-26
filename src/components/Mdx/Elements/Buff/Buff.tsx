@@ -1,9 +1,9 @@
-import { Tooltip } from '@mui/material';
+import { Tooltip } from "@mui/material";
 import Image from "next/image";
 
-import { BuffTooltip } from './BuffTooltip';
-import { getBuffSrc } from './getBuffSrc';
-import { loadBuffsData } from './loadBuffsData';
+import { BuffTooltip } from "./BuffTooltip";
+import { getBuffSrc } from "./getBuffSrc";
+import { loadBuffsData } from "./loadBuffsData";
 
 // buff component, ported from spectria's original shortcode implementation
 // https://github.com/spectria-limina/dynamis-gg/blob/main/templates/shortcodes/buff.html
@@ -11,12 +11,12 @@ import { loadBuffsData } from './loadBuffsData';
 const PLACEHOLDER = "placeholder";
 
 type BuffProps = {
-    b: string;
-    datapath?: string;
-    dur?: number | string;
-    mdxDir: string;
-    short?: boolean;
-    stacks?: number;
+  b: string;
+  datapath?: string;
+  dur?: number | string;
+  mdxDir: string;
+  short?: boolean;
+  stacks?: number;
 };
 
 /*
