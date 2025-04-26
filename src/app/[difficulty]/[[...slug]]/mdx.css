@@ -155,12 +155,14 @@ details[open] :last-child {
   width: fit-content !important;
 }
 
-.small-table th, .small-table td {
+.small-table th,
+.small-table td {
   padding: 2px 10px;
   vertical-align: middle;
 }
 
-.small-table thead tr, .small-table tbody tr:nth-child(odd) {
+.small-table thead tr,
+.small-table tbody tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.33);
 }
 

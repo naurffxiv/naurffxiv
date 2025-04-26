@@ -112,13 +112,17 @@ export default async function Buff({
   );
 
   function getBuffsData() {
-    if(!datapath) {
-      if(fs.existsSync(path.join(mdxDir, "buffs.json"))) datapath = "buffs.json";
-      else if(fs.existsSync(path.join(mdxDir, "buffs.toml"))) datapath = "buffs.toml";
+    if (!datapath) {
+      if (fs.existsSync(path.join(mdxDir, "buffs.json")))
+        datapath = "buffs.json";
+      else if (fs.existsSync(path.join(mdxDir, "buffs.toml")))
+        datapath = "buffs.toml";
     }
 
     const fileAsString = String(fs.readFileSync(path.join(mdxDir, datapath)));
 
-    return datapath.endsWith('.json') ? JSON.parse(fileAsString) : parse(fileAsString);
+    return datapath.endsWith(".json")
+      ? JSON.parse(fileAsString)
+      : parse(fileAsString);
   }
 }
