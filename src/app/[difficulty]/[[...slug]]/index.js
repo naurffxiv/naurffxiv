@@ -20,7 +20,7 @@ function MDXPage({ children, toc, siblingData, slug, frontmatter }) {
         <main className="max-w-[90ch] min-h-screen prose prose-invert m-auto mx-6 pt-8">
           {children}
         </main>
-        <aside className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky">
+        <aside className="prose prose-invert top-[5.5rem] self-start hidden lg:block sticky h-[calc(100vh-100px)] scrollbar">
           {quickLinks}
         </aside>
         <MobileDrawer>{quickLinks}</MobileDrawer>
