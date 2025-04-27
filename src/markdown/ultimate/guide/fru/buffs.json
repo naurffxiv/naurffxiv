@@ -4,7 +4,7 @@
     "icon": 15520,
     "description": "Damage dealt is reduced",
     "explanation": "This is a 90% damage reduction",
-    "phases": [1, 2]
+    "phases": [1, 2, 5]
   },
   "magic-vuln": {
     "name": "Magic Vulnerability Up",
@@ -18,7 +18,7 @@
     "icon": 15053,
     "description": "Physical damage taken is increased",
     "explanation": "Physical damage is lethal",
-    "phases": [1, 2]
+    "phases": [1, 2, 5]
   },
   "powder-mark-trail": {
     "name": "Powder Mark Trail",
@@ -53,7 +53,7 @@
     "icon": 219421,
     "description": "Branded with a mark of mortality. Damage dealt is reduced. Too many stacks will result in KO.",
     "explanation": "This is a 90% damage down, which stacks with regular Damage Down to produce a 99% damage down. Two or more stacks are instantly lethal.",
-    "phases": [1]
+    "phases": [1, 2]
   },
   "bleeding": {
     "name": "Bleeding",
@@ -74,7 +74,7 @@
     "icon": 215004,
     "description": "Unable to execute actions.",
     "explanation": "Can't move or take actions.",
-    "phases": [2, 4]
+    "phases": [2, 3, 4]
   },
   "thin-ice": {
     "name": "Thin Ice",

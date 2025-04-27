@@ -10,10 +10,10 @@
 @include hl-variant("cast");
 
 /* Role */
-@include hl-variant("tank", #2d3a80);
-@include hl-variant("healer", #346624);
-@include hl-variant("support", #30505c);
-@include hl-variant("dps", #732828);
+@include hl-variant("tank", #5462bd);
+@include hl-variant("healer", #70b04f);
+@include hl-variant("support", #628986);
+@include hl-variant("dps", #b64f4b);
 
 /* Elemental */
 @include hl-variant("light", #ded28a);
