@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 /**
  * Mod Portal page for Settings
