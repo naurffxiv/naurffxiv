@@ -9,6 +9,10 @@ type BuffTooltipProps = {
 
 const PLACEHOLDER = "placeholder";
 
+/**
+ * The custom tooltip shown when hovering Buff components
+ * - Show name only in short mode, or if `stacks` or `dur` are defined
+ * */
 export function BuffTooltip({
   name,
   description,

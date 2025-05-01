@@ -1,3 +1,6 @@
+/**
+ * The object type for buffs contained in the .json/.toml files
+ * */
 export type Buff = {
   name: string;
   icon: number;
@@ -8,4 +11,8 @@ export type Buff = {
   phases: (number | string)[];
 };
 
+/**
+ * Object key/value map of buffs where key is typically a keyable
+ * string of the buff name
+ * */
 export type BuffMap = Record<string, Buff>;

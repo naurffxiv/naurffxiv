@@ -11,6 +11,9 @@ type BuffAppendixProps = {
   datapath?: string;
 };
 
+/**
+ * Component that returns a table with a title for all buffs in a given phase
+ * */
 export async function BuffAppendix({
   phase,
   header,
@@ -57,6 +60,7 @@ export async function BuffAppendix({
   );
 }
 
+// "Filter" the buff map for buffs within the passed phase
 function getBuffsForPhase(phase: number | string, buffsData: BuffMap): Buff[] {
   const buffsForPhase: Buff[] = [];
 
@@ -71,6 +75,7 @@ function getBuffsForPhase(phase: number | string, buffsData: BuffMap): Buff[] {
   return buffsForPhase;
 }
 
+// Allows numbered phase keys to get a "Phase X" title without explicit prop passed
 function getPhaseName(phase: number | string): string {
   if (typeof phase === "number") {
     return `Phase ${phase}`;
