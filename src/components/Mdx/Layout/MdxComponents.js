@@ -1,5 +1,6 @@
 import Banner from "../Elements/Banner";
-import Buff from "../Elements/Buff";
+import { Buff } from "../Elements/Buff/Buff";
+import { BuffAppendix } from "../Elements/Buff/BuffAppendix";
 import Callout from "../Elements/Callout";
 import { CopyToClipboard } from "@/components/Mdx/Utils/CopyToClipboard";
 import Details from "../Elements/Details";
@@ -31,6 +32,7 @@ export default function MDXComponents(mdxDir) {
     TwitchVoD,
     Streamable,
     Buff: (props) => <Buff mdxDir={mdxDir} {...props} />,
+    BuffAppendix: (props) => <BuffAppendix mdxDir={mdxDir} {...props} />,
     UnderConstruction,
     Callout,
     Details,
