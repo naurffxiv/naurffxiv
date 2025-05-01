@@ -2,6 +2,7 @@
 
 import "./mdx.css";
 import "./buffs.scss";
+import "./highlights.scss";
 
 import MdxLayout from "@/components/Mdx/Layout/MdxLayout";
 import MobileDrawer from "@/components/Mdx/Layout/MobileDrawer";
