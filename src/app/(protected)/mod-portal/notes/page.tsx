@@ -1,5 +1,7 @@
 "use client";
 
+import { ReactNode } from "react";
+
 import { ModPortalDataGrid } from "@/components/ModPortal/ModPortalDataGrid/ModPortalDataGrid";
 import { makeData } from "@/components/ModPortal/makeData";
 
@@ -15,7 +17,7 @@ const columns = [
 /**
  * Mod Portal page for Notes
  * */
-export default function ModPortalNotes() {
+export default function ModPortalNotes(): ReactNode {
   return (
     <div>
       <ModPortalDataGrid columns={columns} rows={testData} />

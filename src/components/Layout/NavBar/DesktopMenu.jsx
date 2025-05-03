@@ -9,14 +9,6 @@ import { ContentDropdown } from "./ContentDropdown";
 export function DesktopMenu() {
   return (
     <MenuList sx={sx.root}>
-      <li>
-        <MenuItem component="a" href="/" sx={sx.menuItem}>
-          <Typography variant="h7" component="div" sx={sx.menuItemText}>
-            Home
-          </Typography>
-        </MenuItem>
-      </li>
-
       <ContentDropdown name="Ultimate" data={ultimateList} />
       <ContentDropdown name="Savage" data={savageList} />
       <ContentDropdown name="Extreme" data={extremeList} />

@@ -1,0 +1,282 @@
+{
+  "damage-down": {
+    "name": "Damage Down",
+    "icon": 15520,
+    "description": "Damage dealt is reduced",
+    "explanation": "This is a 90% damage reduction",
+    "phases": [1, 2, 5]
+  },
+  "magic-vuln": {
+    "name": "Magic Vulnerability Up",
+    "icon": 15057,
+    "description": "Magic damage taken is increased",
+    "explanation": "Magic damage is lethal",
+    "phases": [1, 2, 4, 5]
+  },
+  "phys-vuln": {
+    "name": "Physical Vulnerability Up",
+    "icon": 15053,
+    "description": "Physical damage taken is increased",
+    "explanation": "Physical damage is lethal",
+    "phases": [1, 2, 5]
+  },
+  "powder-mark-trail": {
+    "name": "Powder Mark Trail",
+    "icon": 214234,
+    "description": "Emblazoned with a gunpowder mark that will cause you and the nearest ally to explode when this effect expires",
+    "explanation": "Both players are hit by large AoE tankbusters. The explosions will go off immediately if the bearer dies",
+    "phases": [1]
+  },
+  "prey": {
+    "name": "Prey",
+    "icon": 15026,
+    "description": "Marked as prey.",
+    "explanation": "You are tethered and will be hit by a mechanic from the tethered boss/clone.",
+    "phases": [1]
+  },
+  "fated-burn-mark": {
+    "name": "Fated Burn Mark",
+    "icon": 214233,
+    "description": "Emblazoned with a fateful burn mark that will cause you to explode with a vengeance when you are KO'd.",
+    "explanation": "If you die before the debuff falls off, it's a heavy raidwide with a Damage Down, but not an automatic wipe.",
+    "phases": [1]
+  },
+  "floating-fetters": {
+    "name": "Floating Fetters",
+    "icon": 15301,
+    "description": "Bound in midair and unable to move.",
+    "explanation": "You can still take actions.",
+    "phases": [1]
+  },
+  "mark-of-mortality": {
+    "name": "Mark of Mortaility",
+    "icon": 219421,
+    "description": "Branded with a mark of mortality. Damage dealt is reduced. Too many stacks will result in KO.",
+    "explanation": "This is a 90% damage down, which stacks with regular Damage Down to produce a 99% damage down. Two or more stacks are instantly lethal.",
+    "phases": [1, 2]
+  },
+  "bleeding": {
+    "name": "Bleeding",
+    "icon": 15530,
+    "description": "Sustaining damage over time.",
+    "explanation": "This is a very strong bleed from the raidwide.",
+    "phases": [1]
+  },
+  "bleeding-2": {
+    "name": "Bleeding",
+    "icon": 15530,
+    "description": "Sustaining damage over time.",
+    "explanation": "This is a massive dot as a penalty for standing in a Sinbound Holy puddle. It is so strong that it typically one-shots. Technically, it is two separate debuffs. The first one has indefinite duration, but when it ticks it replaces itself with a 30-second version.",
+    "phases": [2]
+  },
+  "stun": {
+    "name": "Stun",
+    "icon": 215004,
+    "description": "Unable to execute actions.",
+    "explanation": "Can't move or take actions.",
+    "phases": [2, 3, 4]
+  },
+  "thin-ice": {
+    "name": "Thin Ice",
+    "icon": 15615,
+    "description": "Having trouble maintaining a solid foothold upon ice-covered ground.",
+    "explanation": "You will slide quite a long distance in whatever direction you try to move. Almost the entire width of the arena.",
+    "phases": [2]
+  },
+  "lightsteeped": {
+    "name": "Lightsteeped",
+    "icon": 17091,
+    "description": "Overflowing with astral energy. Upon accumulating 5 stacks, you will deal unaspected damage to those nearby.",
+    "explanation": "At 5 stacks, explodes in a raidwide that inflicts an additional stack on everyone. The ensuing chain reaction will almost invariably wipe the party.",
+    "phases": [2, 4]
+  },
+  "chains-of-everlasting-light": {
+    "name": "Chains of Everlasting Light",
+    "icon": 214227,
+    "description": "Bound with chains of everlasting light. Will be subject to a Curse of Everlasting Light when this effect expires.",
+    "explanation": "You are tethered to two other players, but have no restrictions yet.",
+    "phases": [2]
+  },
+  "curse-of-everlasting-light": {
+    "name": "Curse of Everlasting Light",
+    "icon": 214228,
+    "description": "Cursed by everlasting light. Close proximity to the player to whom you are bound will result in unaspected damage to those nearby.",
+    "explanation": "You are tethered to two other players.",
+    "phases": [2]
+  },
+  "the-weight-of-light": {
+    "name": "The Weight of Light",
+    "icon": 214229,
+    "description": "Will unleash Powerful Light when this effect expires.",
+    "explanation": "A gold orb appears above your head. Powerful Light is light party stack AoE that inflicts one stack of Lightsteeped on anyone hit.",
+    "phases": [2]
+  },
+  "deep-freeze": {
+    "name": "Deep Freeze",
+    "icon": 15637,
+    "description": "Your body is encased in ice, preventing action and dealing damage over time.",
+    "explanation": "Unable to move or take actions",
+    "phases": ["intermission"]
+  },
+  "invincibility": {
+    "name": "Invincibility",
+    "icon": 15024,
+    "description": "Invulnerable to all damage.",
+    "explanation": "The Ice Veil is immune to all damage while any crystals are tethered to it.",
+    "phases": ["intermission"]
+  },
+  "vulnerability-down": {
+    "name": "Vulnerability Down",
+    "icon": 15021,
+    "description": "Damage taken is reduced.",
+    "explanation": "The crystals receive this buff if they are hit by one of the cleaves. The Ice Veil recives it in place of Invincibility if all the light crystals are killed and all dark crystals are left alive.",
+    "phases": ["intermission"]
+  },
+  "siw-dark-fire": {
+    "name": "Spell-in-Waiting: Dark Fire III",
+    "icon": 15984,
+    "description": "Designated target of Dark Fire III, which will activate when this effect expires.",
+    "explanation": "Dark Fire III is a large circle AoE.",
+    "phases": [3]
+  },
+  "siw-dark-blizzard": {
+    "name": "Spell-in-Waiting: Dark Blizzard III",
+    "icon": 15307,
+    "description": "Designated target of Dark Blizzard III, which will activate when this effect expires.",
+    "explanation": "Dark Blizzard III is a donut AoE.",
+    "phases": [3, 4]
+  },
+  "siw-unholy-darkness": {
+    "name": "Spell-in-Waiting: Unholy Darkness",
+    "icon": 15983,
+    "description": "Designated target of Unholy Darkness, which will activate when this effect expires.",
+    "explanation": "Unholy Darkness is a large party stack. Will inflict Mark of Mortality if not soaked by 5+ players.",
+    "phases": [3, 4]
+  },
+  "siw-return": {
+    "name": "Spell-in-Waiting: Return",
+    "icon": 215313,
+    "description": "Designated target of Return, which will activate when this effect expires.",
+    "explanation": "When this expires, your position will be snapshotted and a blue marker appears to indicate where it was snapshot. When the Return buff expires, you will be returned to the snapshotted position.",
+    "phases": [3, 4]
+  },
+  "siw-shadoweye": {
+    "name": "Spell-in-Waiting: Shadoweye",
+    "icon": 15986,
+    "description": "Designated target of Shadoweye, which will activate when this effect expires.",
+    "explanation": "Shadoweye will inflict Doom, which is guaranteed death, on any player who isn't looking away.",
+    "phases": [3]
+  },
+  "siw-dark-water": {
+    "name": "Spell-in-Waiting: Dark Water III",
+    "icon": 15306,
+    "description": "Designated target of Dark Water III, which will activate when this effect expires.",
+    "explanation": "Dark Water III is a light party stack AoE. Will inflict a stack of Mark of Mortality if not soaked by 4+ players.",
+    "phases": [3, 4]
+  },
+  "siw-dark-eruption": {
+    "name": "Spell-in-Waiting: Dark Eruption",
+    "icon": 15305,
+    "description": "Designated target of Dark Eruption, which will activate when this effect expires.",
+    "explanation": "Dark Eruption is a circle AoE.",
+    "phases": [3, 4]
+  },
+  "return": {
+    "name": "Return",
+    "icon": 15304,
+    "description": "Aetherially entwined with the temporal manifold. You will be stunned and drawn back to your aetherial trace when this effect expires.",
+    "explanation": "When this expires, you will be returned to the snapshotted position and stunned for a few seconds.",
+    "phases": [3, 4]
+  },
+  "siw-refrain": {
+    "name": "Spell-in-Waiting: Refrain",
+    "icon": 214189,
+    "description": "The next spell cast will activate in stages after a delay.",
+    "explanation": "This buff is purely an indicator that the Oracle's Dark Water III during Apocalypse will be broken into stages. There's no other effect.",
+    "phases": [3]
+  },
+  "lightsteeped-3": {
+    "name": "Lightsteeped",
+    "icon": 17093,
+    "description": "Overflowing with astral energy. Upon accumulating 5 stacks, you will deal unaspected damage to those nearby.",
+    "explanation": "At 5 stacks, explodes in a raidwide that inflicts an additional stack on everyone. The ensuing chain reaction will almost invariably wipe the party.",
+    "phases": [4]
+  },
+  "refulgent-chain": {
+    "name": "Refulgent Chain",
+    "icon": 15239,
+    "description": "Bound with chains of light. Your Refulgent Fate will be sealed when this effect expires.",
+    "explanation": "You are tethered to two other players, but have no restrictions yet.",
+    "phases": [4]
+  },
+  "refulgent-fate": {
+    "name": "Refulgent Fate",
+    "icon": 15240,
+    "description": "Cursed by binding light. If the distance between you and the player to whom you are bound becomes too great or too small, you will deal unaspected damage to those nearby.",
+    "explanation": "You are tethered to two other players. You must stay at roughly the distance between the two towers.",
+    "phases": [4]
+  },
+  "lights-design": {
+    "name": "Light's Design",
+    "icon": 214230,
+    "description": "Subject to the Oracle of Light's design. Damage taken from certain targets is increased.",
+    "explanation": "Damage from the Oracle of Darkness is lethal.",
+    "phases": [4]
+  },
+  "darknesss-design": {
+    "name": "Darkness's Design",
+    "icon": 214231,
+    "description": "Subject to the Oracle of Darkness's design. Damage taken from certain targets is increased.",
+    "explanation": "Damage from the Usurper of Frost is lethal.",
+    "phases": [4]
+  },
+  "siw-dark-aero": {
+    "name": "Spell-in-Waiting: Dark Aero III",
+    "icon": 15308,
+    "description": "Designated target of Dark Aero III, which will activate when this effect expires.",
+    "explanation": "Dark Aero III is a large circle AoE. Any other player hit by the AoE is knocked back a long way.",
+    "phases": [4]
+  },
+  "siw-quietus": {
+    "name": "Spell-in-Waiting: Quietus",
+    "icon": 215341,
+    "description": "Designated target of Quietus, which will activate when this effect expires.",
+    "explanation": "Quietus is a raidwide with no additional effects.",
+    "phases": [4]
+  },
+  "wyrmclaw": {
+    "name": "Wyrmclaw",
+    "icon": 215241,
+    "description": "Shredded by draconic talons. KO will occur when countdown reaches 0.",
+    "explanation": "Must be cleansed by touching a dragon head. This will cause an AoE and leave a blue puddle on the ground.",
+    "phases": [4]
+  },
+  "wyrmfang": {
+    "name": "Wyrmfang",
+    "icon": 215242,
+    "description": "Torn by draconic teeth. KO will occur when countdown reaches 0.",
+    "explanation": "Must be cleansed by touching a blue puddle left behind by someone cleansing Wyrmclaw.",
+    "phases": [4]
+  },
+  "down-for-the-count": {
+    "name": "Down for the Count",
+    "icon": 15044,
+    "description": "Unable to move or execute actions.",
+    "explanation": "Given during the transition to phase 5.",
+    "phases": [5]
+  },
+  "light-resistance-down": {
+    "name": "Light Resistance Down II",
+    "icon": 214232,
+    "description": "Light resistance is significantly reduced.",
+    "explanation": "Light damage is lethal.",
+    "phases": [5]
+  },
+  "dark-resistance-down": {
+    "name": "Dark Resistance Down II",
+    "icon": 15485,
+    "description": "Dark resistance is significantly reduced.",
+    "explanation": "Dark damage is lethal.",
+    "phases": [5]
+  }
+}

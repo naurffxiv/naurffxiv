@@ -1,6 +1,54 @@
 {
   "fru": {
-    "index": "fru.mdx"
+    "index": "fru.mdx",
+    "guide": {
+      "index": "guide/fru/index.mdx",
+      "groups": ["ultimate", "guide", "00-Guide Landing Page"],
+      "sidebar": [
+        { "type": "mdx", "slug": "/ultimate/fru/guide/p1" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/p2" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/intermission" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/p3" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/p4" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/p5" },
+        { "type": "mdx", "slug": "/ultimate/fru/guide/buff-appendix" }
+      ],
+      "p1": {
+        "index": "guide/fru/p1_guide.mdx",
+        "groups": ["ultimate", "guide", "01-Phase Guides"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "p2": {
+        "index": "guide/fru/p2_guide.mdx",
+        "groups": ["ultimate", "guide", "01-Phase Guides"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "intermission": {
+        "index": "guide/fru/intermission_guide.mdx",
+        "groups": ["ultimate", "guide", "01-Phase Guides"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "p3": {
+        "index": "guide/fru/p3_guide.mdx",
+        "groups": ["ultimate", "guide", "01-Phase Guides"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "p4": {
+        "index": "guide/fru/p4_guide.mdx",
+        "groups": ["ultimate", "guide", "01-Phase Guides"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "p5": {
+        "index": "guide/fru/p5_guide.mdx",
+        "groups": ["ultimate", "guide", "01-Phase Guides"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      },
+      "buff-appendix": {
+        "index": "guide/fru/buff_appendix.mdx",
+        "groups": ["ultimate", "guide", "02-Appendix"],
+        "sidebar": [{ "type": "mdx", "slug": "/ultimate/fru/guide" }]
+      }
+    }
   },
   "top": {
     "index": "top.mdx"
@@ -8,7 +56,7 @@
   "dsr": {
     "index": "dsr.mdx",
     "guide": {
-      "index": "guide/dsr_index.mdx",
+      "index": "guide/dsr/index.mdx",
       "groups": ["ultimate", "guide", "00-Guide Landing Page"],
       "sidebar": [
         { "type": "mdx", "slug": "/ultimate/dsr/guide/p1" },
