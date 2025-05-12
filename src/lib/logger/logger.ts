@@ -67,7 +67,14 @@ function log(
 ): void {
   const now = new Date().toISOString();
   const logFn = console[level] ?? console.log;
-  logFn(`[${tag}]`, { ...data, timestamp: now });
+  const payload = { ...data, timestamp: now };
+
+  try {
+    const output = JSON.stringify(payload, null, 2);
+    logFn(`[${tag}]`, output);
+  } catch {
+    logFn(`[${tag}]`, payload);
+  }
 }
 
 function parseError(error: unknown): ErrorPayload {
@@ -123,6 +130,6 @@ async function sendLogToWebhook(
       console.warn(`webhook sad (${res.status}):`, await res.text());
     }
   } catch (err) {
-    console.warn(`webhook very sad:`, err);
+    console.warn(`webhook very sad:`, JSON.stringify(err, null, 2));
   }
 }
