@@ -64,12 +64,13 @@ export default function SessionCountdownDebug(): ReactElement | null {
       <div className="space-y-1 text-sm text-muted" aria-live="polite">
         {sessionTTL !== null && (
           <div>
-            <strong>Session TTL:</strong> {sessionTTL}s
+            <strong>Session TTL:</strong> {Math.floor(sessionTTL / 60)}m{" "}
+            {sessionTTL % 60}s
           </div>
         )}
         {cacheTTL !== null && (
           <div>
-            <strong>Discord Cache TTL:</strong> {cacheTTL}s
+            <strong>Discord Cache TTL:</strong> {Math.floor(cacheTTL / 60)} min
           </div>
         )}
       </div>

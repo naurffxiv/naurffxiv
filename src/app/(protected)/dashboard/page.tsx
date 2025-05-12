@@ -139,22 +139,17 @@ export default function DashboardPage(): ReactElement {
         )}
       </section>
 
-      {/* Status Section */}
-      <section
-        className="mt-8 p-4 bg-gray-800/30 rounded-lg"
-        aria-label="System Status"
-      >
-        <RoleContent
-          roles={[Roles.ADMIN, Roles.DEV]}
-          fallback={
-            <p className="text-sm text-muted">
-              Session information is only visible to admins and developers.
-            </p>
-          }
-        >
-          <SessionRoleDebug />
+      {/* Session Role Debug Section */}
+      {process.env.NODE_ENV === "development" && (
+        <RoleContent roles={[Roles.ADMIN, Roles.DEV]}>
+          <section
+            className="mt-8 p-4 bg-gray-800/30 rounded-lg"
+            aria-label="System Status"
+          >
+            <SessionRoleDebug />
+          </section>
         </RoleContent>
-      </section>
+      )}
     </main>
   );
 }
