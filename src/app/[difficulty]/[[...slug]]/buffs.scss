@@ -1,122 +1,117 @@
 .buff {
-  display: inline-flex;
-  align-items: baseline;
-  vertical-align: baseline;
-  padding: 0 0.05em;
+    display: inline-flex;
+    align-items: baseline;
+    vertical-align: baseline;
+    padding: 0 0.05em;
 
-  img {
-    display: inline-block;
-    height: 1lh;
-    margin-top: -100%;
-    padding-top: 1mm;
-  }
+    img {
+        display: inline-block;
+        height: 1lh;
+        margin-top: -100%;
+        padding-top: 1mm;
+    }
 }
 
 .buff-table {
-  margin: 0 2.5%;
-  display: table;
+    margin: 0 2.5%;
+    display: table;
 
-  th {
-    text-align: center;
-  }
+    th {
+        text-align: center;
+    }
 
-  td > .buff-icon img {
-    min-width: 3mm;
-    max-width: 6mm;
-  }
+    td>.buff-icon img {
+        min-width: 3mm;
+        max-width: 6mm;
+    }
 }
 
 .buff-icon {
-  position: relative;
-  flex-direction: column;
+    position: relative;
+    flex-direction: column;
 }
 
 span.buff-icon {
-  display: inline-flex;
+    display: inline-flex;
 }
 
 div.buff-icon {
-  display: flex;
+    display: flex;
 }
 
 $cleanse-color: rgb(177, 239, 239);
 
 .buff-cleansable {
-  display: inline !important;
-  position: absolute;
-  height: 0.05em;
-  width: 80%;
-  background-color: $cleanse-color;
-  margin-left: auto;
-  margin-right: auto;
-  top: -0.45lh;
-  left: 0;
-  right: 0;
-  box-shadow:
-    1px 1px 1px $cleanse-color,
-    1px -1px 1px $cleanse-color,
-    -1px -1px 1px $cleanse-color,
-    -1px 1px 1px $cleanse-color,
-    -1px 0px 1px $cleanse-color,
-    1px 0px 1px $cleanse-color;
+    display: inline !important;
+    position: absolute;
+    height: 0.05em;
+    width: 80%;
+    background-color: $cleanse-color;
+    margin-left: auto;
+    margin-right: auto;
+    top: -0.45lh;
+    left: 0;
+    right: 0;
+    box-shadow: 1px 1px 1px $cleanse-color,
+        1px -1px 1px $cleanse-color,
+        -1px -1px 1px $cleanse-color,
+        -1px 1px 1px $cleanse-color,
+        -1px 0px 1px $cleanse-color,
+        1px 0px 1px $cleanse-color;
 
-  .buff-table & {
-    top: 0;
-  }
+    .buff-table & {
+        top: 0
+    }
 }
 
 .buff-duration {
-  position: absolute;
-  display: inline;
-  font-size: 0.9em;
-  left: 0;
-  right: 0;
-  margin: 0 -100%;
-  text-align: center;
-  text-shadow:
-    1px 1px var(--c2),
-    1px -1px var(--c2),
-    -1px -1px var(--c2),
-    -1px 1px var(--c2);
+    position: absolute;
+    display: inline;
+    font-size: 0.9em;
+    left: 0;
+    right: 0;
+    margin: 0 -100%;
+    text-align: center;
+    text-shadow: 1px 1px var(--c2), 1px -1px var(--c2), -1px -1px var(--c2), -1px 1px var(--c2);
 }
 
 .buff-name {
-  font-weight: bold;
-  color: var(--f2);
+    font-weight: bold;
+    color: var(--f2);
 
-  .buff & {
-    padding-left: 0.15em;
-  }
+    .buff & {
+        padding-left: 0.15em;
+    }
 
-  .tooltip & {
-    font-size: 1rem;
-    text-align: center;
-  }
+    .tooltip & {
+        font-size: 1rem;
+        text-align: center;
+    }
 }
 
 .buff-params {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .buff-explanation {
-  font-size: 1rem;
+    font-size: 1rem;
 
-  p {
-    font-size: inherit;
-    margin: 0.5em 0.1em 0.3em 0.1em;
-  }
+    p {
+        font-size: inherit;
+        margin: 0.5em 0.1em 0.3em 0.1em;
+    }
 }
 
 .buff-description {
-  font-size: 0.9rem;
-  font-style: italic;
-  margin: 0 0.2em;
-  text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0 0.2em;
+    text-align: center;
 }
 
 .tooltip {
-  hr {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
+    hr {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
 }
