@@ -39,6 +39,7 @@
   color: rgb(96 165 250) !important;
 }
 
+
 /* table of contents collapisbles */
 /* hide anything outside the div */
 nav.toc-collapse > div > ul > li div {
@@ -49,6 +50,7 @@ nav.toc-collapse > div > ul > li div {
 nav.toc-collapse li:has(.toc-current) > div > a:not(.toc-current) {
   color: rgb(161, 199, 255);
 }
+
 
 /* show currently active section */
 nav.toc-collapse li div:has(.toc-current) > ul {
@@ -80,9 +82,10 @@ nav.toc-collapse div:has(.toc-current) a.toc-current svg {
   transform: rotate(0) !important;
 }
 
+
 /* hyperlink to sections */
 span.icon-link::before {
-  content: "#";
+  content: '#';
   position: relative;
   opacity: 0;
   transition: opacity 0.1s ease;
@@ -97,20 +100,28 @@ h5:hover span.icon-link::before,
 h6:hover span.icon-link::before {
   opacity: 1;
 }
-
+  
+.image-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 24;
+  padding: 4;
+}
 .scrollbar {
   scrollbar-color: #b9bfc7 #0000;
   overflow-y: auto;
 }
 
 /* callout */
-.callout p {
+.callout p{
   margin: 0;
 }
 
 /* details */
-details > summary {
-  background: linear-gradient(to bottom, #28506e, #061a33);
+summary {
+  background: linear-gradient(to bottom, #28506E, #061A33);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -121,8 +132,8 @@ details > summary {
   border-radius: 5px;
 }
 
-details > summary::after {
-  content: "";
+summary::after {
+  content: '';
   border-top: 6px solid #fff;
   border-inline: 6px solid transparent;
   transform: rotate(-90deg);
@@ -133,7 +144,7 @@ details[open] > summary::after {
   transform: rotate(0);
 }
 
-details > summary::-webkit-details-marker {
+summary::-webkit-details-marker {
   display: none;
 }
 
@@ -148,25 +159,4 @@ details[open] :first-child {
 
 details[open] :last-child {
   margin-bottom: 0;
-}
-
-/* Small, condensed, MDX table */
-.small-table {
-  width: fit-content !important;
-}
-
-.small-table th,
-.small-table td {
-  padding: 2px 10px;
-  vertical-align: middle;
-}
-
-.small-table thead tr,
-.small-table tbody tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.33);
-}
-
-/* Give extra space to buffs immediately following other buffs */
-.small-table .buff + .buff {
-  padding-left: 5px;
 }
