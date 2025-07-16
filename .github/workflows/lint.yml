@@ -1,0 +1,39 @@
+name: Lint Check
+
+on:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  lint-formatting:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment using Prettier
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "23"
+
+      # Install dependencies (ESLint and markdownlint)
+      - name: Install Dependencies
+        run: npm install --save-dev eslint markdownlint-cli
+
+      # Lint JS files using ESLint
+      - name: Run ESLint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+
+      # TODO: exclude all md/mdx files from node_modules
+      # # Lint Markdown file susing markdownlint
+      # - name: Run markdownlint
+      #   run: npx markdownlint '**/*.mdx'
