@@ -17,6 +17,7 @@ import { pages, ultimateList, savageList, extremeList } from '@/app/constants.js
 import MenuIcon from '@mui/icons-material/Menu';
 import { icons } from '@/app/assets.js';
 import ContentDropdown from './ContentDropdown.js';
+import SharedNavLinks from './SharedNavLinks';
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -47,41 +48,8 @@ export default function NavBar() {
 
           {/* Desktop menu */}
           <Box sx={{display: { xs: 'none', md: 'flex' } }}>
-            <MenuList sx={{display: 'flex'}}>
-              <li>
-                <MenuItem component="a" href="/" style={{borderRadius: "4px"}} 
-                  sx={{':hover': {bgcolor: 'rgba(25, 118, 210, 0.04)'}}}
-                >
-                  <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-                      Home
-                  </Typography>
-                </MenuItem>
-              </li>
-                <ContentDropdown name="Ultimate" data={ultimateList} />
-                <ContentDropdown name="Savage" data={savageList} />
-                <ContentDropdown name="Extreme" data={extremeList} />
-              {/* To add when internal pages are created
-                {pages.map((page) => (
-                    <li key={page.name}>
-                      <MenuItem component="a" href={page.link} style={{borderRadius: "4px"}} 
-                        sx={{':hover': {bgcolor: 'rgba(25, 118, 210, 0.04)'}}}
-                      >
-                        <Typography sx={{ textAlign: 'center' }}>
-                          {page.name}
-                        </Typography>
-                      </MenuItem>
-                    </li>
-                ))}
-                */}
-              <li>
-              <MenuItem component="a" href="https://findingway.io" target="_blank" rel="noopener noreferrer" style={{borderRadius: "4px"}} 
-                sx={{':hover': {bgcolor: 'rgba(25, 118, 210, 0.04)'}}}
-              >
-                <Typography variant="h7" component="div" sx={{ textAlign: 'center' }}>
-                    Findingway
-                </Typography>
-              </MenuItem>
-            </li>
+            <MenuList sx={{ display: 'flex' }}>
+              <SharedNavLinks isMobile={false} />
             </MenuList>
           </Box>
           <Box sx={{ px: 1 }}>
@@ -111,67 +79,22 @@ export default function NavBar() {
           </Box>
           {/* Mobile menu */}
           <Menu
-              disableScrollLock
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ 
-                display: { xs: 'block', md: 'none' },
-                '& .MuiMenuItem-root': {
-                  justifyContent: 'flex-end', // Right aligns the menu items
-                }
-              }}
-            >
-              <li>
-                <MenuItem onClick={handleCloseNavMenu} component="a" href="/">
-                  <Typography sx={{ width: '100%', textAlign: 'left'  }}>
-                    Home
-                  </Typography>
-                </MenuItem>
-              </li>
-              <MenuItem>
-                <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <ContentDropdown name="Ultimate" data={ultimateList} isMobile={true} insideMobileMenu={true} />
-                </Box>
-              </MenuItem>
-              <MenuItem>
-                <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <ContentDropdown name="Savage" data={savageList} isMobile={true} insideMobileMenu={true} />
-                </Box>
-              </MenuItem>
-              <MenuItem>
-                <Box sx={{ width: '100%', textAlign: 'left' }}>
-                  <ContentDropdown name="Extreme" data={extremeList} isMobile={true} insideMobileMenu={true} />
-                </Box>
-              </MenuItem>
-              {/* To add when internal pages are created
-              {pages.map((page) => (
-                <li key={page.name}>
-                  <MenuItem onClick={handleCloseNavMenu} component="a" href={page.link}>
-                    <Typography sx={{ width: '100%', textAlign: 'left' }}>
-                      {page.name}
-                    </Typography>
-                  </MenuItem>
-                </li>
-                ))}
-              */}
-              <li>
-                <MenuItem onClick={handleCloseNavMenu} component="a" href="https://findingway.io" target="_blank" rel="noopener noreferrer">
-                  <Typography sx={{ width: '100%', textAlign: 'left'  }}>
-                    Findingway
-                  </Typography>
-                </MenuItem>
-              </li>
+            disableScrollLock
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            keepMounted
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              '& .MuiMenuItem-root': {
+                justifyContent: 'flex-end',
+              }
+            }}
+          >
+            <SharedNavLinks isMobile={true} onClick={handleCloseNavMenu} />
           </Menu>
         </Toolbar>
       </AppBar>
