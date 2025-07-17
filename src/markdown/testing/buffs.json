@@ -1,16 +1,16 @@
 {
-  "neurolink": {
-    "name": "Neurolink",
-    "icon": 215545,
-    "description": "Movement is slowed, damage dealt and HP recovery via actions is reduced.",
-    "explanation": "0 damage but hatch no boom.",
-    "phases": [1, 3, 4]
-  },
-  "phoenix-blessing": {
-    "name": "Phoenix's Blessing",
-    "icon": 215819,
-    "description": "Damage dealt is increased.",
-    "explanation": "big damage hours",
-    "phases": [5]
-  }
+    "neurolink": {
+        "name": "Neurolink",
+        "icon": 215545,
+        "description": "Movement is slowed, damage dealt and HP recovery via actions is reduced.",
+        "explanation": "0 damage but hatch no boom.",
+        "phases": [1, 3, 4]
+    },
+    "phoenix-blessing": {
+        "name": "Phoenix's Blessing",
+        "icon": 215819,
+        "description": "Damage dealt is increased.",
+        "explanation": "big damage hours",
+        "phases": [5]
+    }
 }
