@@ -23,20 +23,6 @@ export function DesktopMenu() {
       {/*        </MenuItem>*/}
       {/*    </li>*/}
       {/*))}*/}
-
-      <li>
-        <MenuItem
-          component="a"
-          href="https://findingway.io"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={sx.menuItem}
-        >
-          <Typography variant="h7" component="div" sx={sx.menuItemText}>
-            Findingway
-          </Typography>
-        </MenuItem>
-      </li>
     </MenuList>
   );
 }
