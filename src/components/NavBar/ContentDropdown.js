@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Typography,
   Button,
@@ -7,12 +7,12 @@ import {
   Box,
   Collapse,
   List,
-  ListItem
+  ListItem,
 } from "@mui/material";
-import { getMenuProps } from '@/app/constants.js';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { getMenuProps } from "@/app/constants.js";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function ContentDropdown(props) {
   const { name, isMobile, insideMobileMenu, data } = props;
@@ -38,15 +38,15 @@ export default function ContentDropdown(props) {
   // For mobile menu inside hamburger menu
   if (isMobile && insideMobileMenu) {
     return (
-      <Box sx={{ width: '100%' }}>
-        <Box 
+      <Box sx={{ width: "100%" }}>
+        <Box
           onClick={handleClick}
-          sx={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            width: '100%',
-            cursor: 'pointer'
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "100%",
+            cursor: "pointer",
           }}
         >
           <Typography>{name}</Typography>
@@ -55,32 +55,32 @@ export default function ContentDropdown(props) {
         <Collapse in={mobileOpen} timeout="auto">
           <List sx={{ pl: 2, my: 0 }}>
             {data.map((fight, i) => (
-              <ListItem 
-                key={i} 
+              <ListItem
+                key={i}
                 disablePadding
-                sx={{ 
-                  display: 'block',
-                  '&:hover': {
-                    backgroundColor: 'transparent'
-                  }
+                sx={{
+                  display: "block",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                  },
                 }}
               >
                 <Box
                   component="a"
                   href={fight.url}
-                  sx={{ 
-                    py: 0.5, 
+                  sx={{
+                    py: 0.5,
                     px: 1,
-                    display: 'block',
-                    textDecoration: 'none',
-                    color: 'inherit',
-                    '&:hover': {
-                      backgroundColor: 'rgba(0, 0, 0, 0.04)'
+                    display: "block",
+                    textDecoration: "none",
+                    color: "inherit",
+                    "&:hover": {
+                      backgroundColor: "rgba(0, 0, 0, 0.04)",
                     },
-                    borderRadius: '4px'
+                    borderRadius: "4px",
                   }}
                 >
-                  <Typography sx={{ fontSize: '0.9rem' }}>
+                  <Typography sx={{ fontSize: "0.9rem" }}>
                     {fight.title}
                   </Typography>
                 </Box>
@@ -92,20 +92,27 @@ export default function ContentDropdown(props) {
     );
   }
 
-
   // For mobile dropdown outside hamburger menu
   if (isMobile) {
     return (
       <>
-        <Typography onClick={handleClick} sx={{ width: '100%', textAlign: 'right' }}>
+        <Typography
+          onClick={handleClick}
+          sx={{ width: "100%", textAlign: "right" }}
+        >
           {name}
           <ArrowDropDownIcon />
         </Typography>
         <Menu {...menuProps}>
           {data.map((fight, i) => (
             <li key={i}>
-              <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.url}>
-                <Typography sx={{ textAlign: 'left' }}>
+              <MenuItem
+                onClick={handleClose}
+                sx={{ justifyContent: "flex-start" }}
+                component="a"
+                href={fight.url}
+              >
+                <Typography sx={{ textAlign: "left" }}>
                   {fight.title}
                 </Typography>
               </MenuItem>
@@ -120,27 +127,34 @@ export default function ContentDropdown(props) {
   return (
     <>
       <Button
-        style={{ color: 'white', textTransform: 'none' }}
+        style={{ color: "white", textTransform: "none" }}
         id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
+        aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <Typography variant="h6" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
-          <Typography sx={{ textAlign: 'center' }}>
-            {name}
-          </Typography>
-          <ArrowDropDownIcon viewBox='2 4 15 15' sx={{marginY: 'auto', fontSize: "15px"}}/>
+        <Typography
+          variant="h6"
+          sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}
+        >
+          <Typography sx={{ textAlign: "center" }}>{name}</Typography>
+          <ArrowDropDownIcon
+            viewBox="2 4 15 15"
+            sx={{ marginY: "auto", fontSize: "15px" }}
+          />
         </Typography>
       </Button>
       <Menu {...menuProps}>
         {data.map((fight, i) => (
           <li key={i}>
-            <MenuItem onClick={handleClose} sx={{ justifyContent: 'flex-start' }} component="a" href={fight.url}>
-              <Typography sx={{ textAlign: 'left' }}>
-                {fight.title}
-              </Typography>
+            <MenuItem
+              onClick={handleClose}
+              sx={{ justifyContent: "flex-start" }}
+              component="a"
+              href={fight.url}
+            >
+              <Typography sx={{ textAlign: "left" }}>{fight.title}</Typography>
             </MenuItem>
           </li>
         ))}

@@ -1,22 +1,24 @@
-'use client';
-import React from 'react';
-import { MenuItem, Typography, Box } from '@mui/material';
-import ContentDropdown from './ContentDropdown';
-import { ultimateList, savageList, extremeList } from '@/app/constants';
+"use client";
+import React from "react";
+import { MenuItem, Typography, Box } from "@mui/material";
+import ContentDropdown from "./ContentDropdown";
+import { ultimateList, savageList, extremeList } from "@/app/constants";
 
 export default function SharedNavLinks({ isMobile, onClick }) {
   return (
     <>
       {/* Home Link */}
       <MenuItem component="a" href="/" onClick={onClick}>
-        <Typography sx={{ width: '100%', textAlign: isMobile ? 'left' : 'center' }}>
+        <Typography
+          sx={{ width: "100%", textAlign: isMobile ? "left" : "center" }}
+        >
           Home
         </Typography>
       </MenuItem>
 
       {/* Dropdowns */}
       <MenuItem disableRipple>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: "100%" }}>
           <ContentDropdown
             name="Ultimate"
             data={ultimateList}
@@ -27,7 +29,7 @@ export default function SharedNavLinks({ isMobile, onClick }) {
       </MenuItem>
 
       <MenuItem disableRipple>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: "100%" }}>
           <ContentDropdown
             name="Savage"
             data={savageList}
@@ -38,7 +40,7 @@ export default function SharedNavLinks({ isMobile, onClick }) {
       </MenuItem>
 
       <MenuItem disableRipple>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: "100%" }}>
           <ContentDropdown
             name="Extreme"
             data={extremeList}
@@ -56,7 +58,9 @@ export default function SharedNavLinks({ isMobile, onClick }) {
         rel="noopener noreferrer"
         onClick={onClick}
       >
-        <Typography sx={{ width: '100%', textAlign: isMobile ? 'left' : 'center' }}>
+        <Typography
+          sx={{ width: "100%", textAlign: isMobile ? "left" : "center" }}
+        >
           Findingway
         </Typography>
       </MenuItem>
