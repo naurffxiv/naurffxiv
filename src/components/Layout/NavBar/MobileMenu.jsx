@@ -65,17 +65,6 @@ export function MobileMenu() {
         {/*        </MenuItem>*/}
         {/*    </li>*/}
         {/*))}*/}
-        <li>
-          <MenuItem
-            onClick={handleClose}
-            component="a"
-            href="https://findingway.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Typography sx={sx.text}>Findingway</Typography>
-          </MenuItem>
-        </li>
       </Menu>
     </>
   );

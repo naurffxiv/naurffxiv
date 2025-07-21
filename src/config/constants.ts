@@ -110,10 +110,6 @@ export const otherList = [
     url: "https://github.com/naurffxiv/naurffxiv",
   },
   {
-    title: "Findingway.io",
-    url: "https://findingway.io",
-  },
-  {
     title: "Changelog",
     url: "/changelog",
   },
