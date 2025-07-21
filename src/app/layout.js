@@ -6,6 +6,9 @@ import NavBar from "@/components/Layout/NavBar/NavBar";
 import { Roboto } from "next/font/google";
 import Script from "next/script";
 
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
+
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
   style: ["normal", "italic"],

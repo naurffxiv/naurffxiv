@@ -1,9 +1,9 @@
 "use client";
-
-import { Box } from "@mui/material";
-import Hero from "@/components/Homepage/Sections/Hero";
-import HomepageContent from "@/components/Homepage/Sections/HomepageContent";
 import React from "react";
+import { Box } from "@mui/material";
+
+import HomepageContent from "@/components/Homepage/HomepageContent";
+import Hero from "@/components/Homepage/Hero";
 
 export default function Home() {
   return (

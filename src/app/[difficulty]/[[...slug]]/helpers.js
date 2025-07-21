@@ -1,10 +1,14 @@
-import * as runtime from "react/jsx-runtime";
-
-import { promises as fs, readdirSync } from "fs";
-
-import { cache } from "react";
-import { evaluate } from "@mdx-js/mdx";
 import path from "path";
+import { promises as fs, readdirSync } from "fs";
+import * as runtime from "react/jsx-runtime";
+import { evaluate } from "@mdx-js/mdx";
+import { cache } from "react";
+
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import remarkSectionize from "remark-sectionize";
+import rehypeImgSize from "rehype-img-size";
+import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeExtractTocExport from "@stefanprobst/rehype-extract-toc/mdx";
@@ -18,6 +22,7 @@ import { reservedSlugs } from "@/config/constants";
 
 // process each mdx file and cache it
 export const processMdx = cache(async (filepath) => {
+  const rawmdx = await fs.readFile(filepath, "utf-8");
   const rawmdx = await fs.readFile(filepath, "utf-8");
 
   // process mdx
@@ -45,13 +50,6 @@ export const processMdx = cache(async (filepath) => {
     ],
   });
 
-  /*
-        {
-            toc,
-            frontmatter,
-            default
-        }
-    */
   return processedMdx;
 });
 
