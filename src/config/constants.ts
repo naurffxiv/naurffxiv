@@ -101,10 +101,16 @@ export const otherList = [
     title: "Join our Discord",
     url: "https://discord.gg/naurffxiv",
   },
+  /**
+   * Comment out as Patreon is not needed anymore.
+   * Can be reactivated later if needed.
+   */
+  /*
   {
     title: "Support us on Patreon",
     url: "https://patreon.com/naurffxiv",
   },
+  */
   {
     title: "GitHub Repository",
     url: "https://github.com/naurffxiv/naurffxiv",
