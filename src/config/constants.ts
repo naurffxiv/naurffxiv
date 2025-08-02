@@ -102,10 +102,6 @@ export const otherList = [
     url: "https://discord.gg/naurffxiv",
   },
   {
-    title: "Support us on Patreon",
-    url: "https://patreon.com/naurffxiv",
-  },
-  {
     title: "GitHub Repository",
     url: "https://github.com/naurffxiv/naurffxiv",
   },
