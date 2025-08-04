@@ -1,7 +1,7 @@
 "use client";
 
 import { MenuItem, Typography, Box } from "@mui/material";
-import ContentDropdown from "./ContentDropdown";
+import { ContentDropdown } from "./ContentDropdown";
 import { MobileContentAccordion } from "./MobileContentAccordion";
 import { ultimateList, savageList, extremeList } from "@/config/constants";
 
