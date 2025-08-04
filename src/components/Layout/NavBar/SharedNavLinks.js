@@ -3,7 +3,7 @@
 import { MenuItem, Typography, Box } from "@mui/material";
 import ContentDropdown from "./ContentDropdown";
 import { MobileContentAccordion } from "./MobileContentAccordion";
-import { ultimateList, savageList, extremeList } from "@/app/constants";
+import { ultimateList, savageList, extremeList } from "@/config/constants";
 
 export default function SharedNavLinks({ isMobile, onClick }) {
   const navItems = [
