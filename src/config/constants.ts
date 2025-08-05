@@ -94,6 +94,10 @@ export const extremeList = [
     title: "Worqor Lar Dor",
     url: "/extreme/worqor-lar-dor",
   },
+  {
+    title: "EX-5",
+    url: "/extreme/EX-5",
+  }, //Move to top of list when Guide comes out
 ];
 
 export const otherList = [
