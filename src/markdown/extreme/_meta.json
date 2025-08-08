@@ -1,4 +1,8 @@
 {
+  "EX-5": {
+    "index": "ex-5.mdx",
+    "groups": ["ultimate", "Dawntrail Extremes"]
+  },
   "recollection": {
     "index": "recollection.mdx",
     "groups": ["ultimate", "Dawntrail Extremes"]
