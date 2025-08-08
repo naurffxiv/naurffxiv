@@ -77,10 +77,14 @@ export const savageList = [
 
 export const extremeList = [
   {
+    title: "EX-5",
+    url: "/extreme/EX-5",
+    img: "/images/thumbnails/Hidden.avif",
+    alt: "EX-5",
+  },
+  {
     title: "Recollection",
     url: "/extreme/recollection",
-    img: images.recollection,
-    alt: "recollection",
   },
   {
     title: "Sphene's Burden",
