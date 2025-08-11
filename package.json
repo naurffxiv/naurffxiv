@@ -9,7 +9,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "prettier:check": "npx prettier --check .",
-    "prettier:write": "npx prettier --write ."
+    "prettier:write": "npx prettier --write .",
+    "compress": "node scripts/compress-images.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -58,6 +59,7 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-react": "^7.37.5",
+    "glob": "^11.0.1",
     "globals": "^16.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
