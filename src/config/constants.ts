@@ -77,7 +77,7 @@ export const savageList = [
 
 export const extremeList = [
   {
-    title: "EX-5",
+    title: "Ageless Necropolis",
     url: "/extreme/ageless-necropolis",
     img: "/images/thumbnails/Hidden.avif",
     alt: "EX-5",
