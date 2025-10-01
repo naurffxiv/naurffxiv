@@ -11,7 +11,6 @@ export default function SharedNavLinks({ isMobile, onClick }) {
     { type: "dropdown", label: "Ultimate", data: ultimateList },
     { type: "dropdown", label: "Savage", data: savageList },
     { type: "dropdown", label: "Extreme", data: extremeList },
-    //{ type: "link", label: "", href: "", external: true }, --previously findingway.io
   ];
 
   return (
