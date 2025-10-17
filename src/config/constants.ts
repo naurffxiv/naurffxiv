@@ -77,10 +77,14 @@ export const savageList = [
 
 export const extremeList = [
   {
+    title: "The Windward Wilds",
+    url: "/extreme/the-windward-wilds",
+    img: "/images/thumbnails/extreme/dt-ex6.avif",
+    alt: "The Windward Wilds",
+  },
+  {
     title: "Ageless Necropolis",
     url: "/extreme/ageless-necropolis",
-    img: "/images/thumbnails/Hidden.avif",
-    alt: "EX-5",
   },
   {
     title: "Recollection",
