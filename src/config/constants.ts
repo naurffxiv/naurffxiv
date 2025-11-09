@@ -77,10 +77,18 @@ export const savageList = [
 
 export const extremeList = [
   {
+    title: "The Windward Wilds",
+    url: "/extreme/the-windward-wilds",
+    img: "/images/thumbnails/extreme/dt-ex6.avif",
+    alt: "The Windward Wilds",
+  },
+  {
+    title: "Ageless Necropolis",
+    url: "/extreme/ageless-necropolis",
+  },
+  {
     title: "Recollection",
     url: "/extreme/recollection",
-    img: images.recollection,
-    alt: "recollection",
   },
   {
     title: "Sphene's Burden",
@@ -102,16 +110,8 @@ export const otherList = [
     url: "https://discord.gg/naurffxiv",
   },
   {
-    title: "Support us on Patreon",
-    url: "https://patreon.com/naurffxiv",
-  },
-  {
     title: "GitHub Repository",
     url: "https://github.com/naurffxiv/naurffxiv",
-  },
-  {
-    title: "Findingway.io",
-    url: "https://findingway.io",
   },
   {
     title: "Changelog",
