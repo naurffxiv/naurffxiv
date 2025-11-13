@@ -47,6 +47,6 @@ export function useLoadBanReason(demoFlag: number): BanReasonState {
   return {
     isReasonLoading,
     isReasonFailed,
-    banReason: banReason || (isReasonLoading ? "" : "none"),
+    banReason,
   };
 }

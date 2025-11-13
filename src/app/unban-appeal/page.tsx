@@ -24,8 +24,8 @@ export default function UnbanAppeal(): ReactNode {
   const { isReasonLoading, isReasonFailed, banReason } =
     useLoadBanReason(demoFlag);
 
-  const showAppealForm =
-    !isReasonLoading && !isReasonFailed && !isAppealSubmitted;
+  const notBanned = !isReasonLoading && !!banReason;
+  const showAppealForm = notBanned && !isReasonFailed && !isAppealSubmitted;
 
   return (
     <div className="w-full max-w-5xl ml-auto mr-auto px-4 py-8">
@@ -44,6 +44,8 @@ export default function UnbanAppeal(): ReactNode {
         {isReasonFailed && (
           <div>An error occurred loading details, please try again later</div>
         )}
+
+        {notBanned && <div>You are not banned in the server</div>}
 
         {showAppealForm && (
           <>
