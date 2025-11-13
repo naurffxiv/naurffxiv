@@ -9,7 +9,7 @@ type BanReasonState = {
 };
 
 /**
- * Handling for loading and returning relevant flags for a user's ban reason
+ * Handling for loading and returning relevant flags and value of a user's ban reason
  * TODO: remove demoFlag when api is integrated
  *  (effect dependency should be empty squares)
  * */
