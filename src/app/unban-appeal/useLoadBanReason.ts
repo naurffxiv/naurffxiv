@@ -22,19 +22,22 @@ export function useLoadBanReason(demoFlag: number): BanReasonState {
     // pull from api
     // set two state flags and banReason based on result
 
-    if(demoFlag === 0) { // loading
+    if (demoFlag === 0) {
+      // loading
       setIsReasonLoading(true);
       setIsReasonFailed(false);
       setBanReason("");
     }
 
-    if(demoFlag === 1) { // load fail
+    if (demoFlag === 1) {
+      // load fail
       setIsReasonLoading(false);
       setIsReasonFailed(true);
       setBanReason("");
     }
 
-    if(demoFlag === 2) { // load success
+    if (demoFlag === 2) {
+      // load success
       setIsReasonLoading(false);
       setIsReasonFailed(false);
       setBanReason("Greeding Stillness");
@@ -44,6 +47,6 @@ export function useLoadBanReason(demoFlag: number): BanReasonState {
   return {
     isReasonLoading,
     isReasonFailed,
-    banReason: banReason || (isReasonLoading ? "" : "none")
+    banReason: banReason || (isReasonLoading ? "" : "none"),
   };
 }
