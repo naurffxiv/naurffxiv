@@ -9,8 +9,17 @@ function extractRoutes(): string[] {
   const content = fs.readFileSync(ROUTES_FILE, "utf8");
 
   const regexes = [
-    /export\s+const\s+protectedRoutes\s*:\s*readonly\s*string\[\]\s*=\s*\[((?:.|\n)*?)\]/m,
-    /export\s+const\s+protectedRoutes\s*=\s*\[((?:.|\n)*?)\]\s*as\s+const/m,
+    // Matches: export const protectedRoutes: readonly string[] = [ ... ]
+    // Captures everything between the opening and closing brackets
+    // \s+ = one or more whitespace characters
+    // \s* = zero or more whitespace characters
+    // [\s\S]*? = any character (including newlines), non-greedy match
+    // ([\s\S]*?) = capture group for array contents
+    /export\s+const\s+protectedRoutes\s*:\s*readonly\s*string\[\]\s*=\s*\[([\s\S]*?)\]/,
+
+    // Matches: export const protectedRoutes = [ ... ] as const
+    // Alternative syntax for the same protectedRoutes array
+    /export\s+const\s+protectedRoutes\s*=\s*\[([\s\S]*?)\]\s*as\s+const/,
   ];
 
   let match: RegExpExecArray | null = null;
@@ -25,10 +34,12 @@ function extractRoutes(): string[] {
     throw new Error("Could not parse protectedRoutes array");
   }
 
+  // Extract array contents and clean up
   return match[1]
-    .split(",")
-    .map((s) => s.trim().replace(/^['"`]|['"`]$/g, ""))
-    .filter(Boolean);
+    .split(",") // Split by comma to get individual routes
+    .map((s) => s.trim()) // Remove leading/trailing whitespace
+    .map((s) => s.replace(/^['"`]|['"`]$/g, "")) // Remove quotes from start/end
+    .filter((s) => s.length > 0 && !s.startsWith("//")); // Remove empty strings and comments
 }
 
 function generateUpdatedMatchers(
@@ -36,6 +47,7 @@ function generateUpdatedMatchers(
   fromRoutes: string[],
 ): string[] {
   const seen = new Set(existing);
+  // Add /:path* suffix to each route (Next.js middleware matcher syntax)
   for (const route of fromRoutes.map((r) => `${r}/:path*`)) {
     if (!seen.has(route)) {
       existing.push(route);
@@ -49,7 +61,11 @@ function syncMatchers(): void {
   const routes = extractRoutes();
 
   const middlewareContent = fs.readFileSync(MIDDLEWARE_FILE, "utf8");
-  const matcherRegex = /matcher:\s*\[((?:.|\n)*?)\]/m;
+
+  // Matches: matcher: [ ... ]
+  // Captures everything between the opening and closing brackets of the matcher array
+  // [\s\S]*? = any character (including newlines), non-greedy match to find the shortest match
+  const matcherRegex = /matcher:\s*\[([\s\S]*?)\]/;
   const match = matcherRegex.exec(middlewareContent);
 
   if (!match) {
@@ -57,20 +73,22 @@ function syncMatchers(): void {
     process.exit(1);
   }
 
+  // Extract existing matchers and clean up
   const existingMatchers = match[1]
-    .split(",")
-    .map((s) => s.trim().replace(/^['"`]|['"`]$/g, ""))
-    .filter(Boolean);
+    .split(",") // Split by comma to get individual matchers
+    .map((s) => s.trim()) // Remove leading/trailing whitespace
+    .map((s) => s.replace(/^['"`]|['"`]$/g, "")) // Remove quotes from start/end
+    .filter((s) => s.length > 0 && !s.startsWith("//")); // Remove empty strings and comments
 
-  const combinedMatchers = generateUpdatedMatchers(
-    existingMatchers,
-    routes, //raw route strings
-  );
+  // Merge existing matchers with new routes (avoiding duplicates)
+  const combinedMatchers = generateUpdatedMatchers(existingMatchers, routes);
 
+  // Reconstruct the matcher array with proper formatting
   const newBlock = `matcher: [\n${combinedMatchers
     .map((r) => `    "${r}",`)
     .join("\n")}\n  ]`;
 
+  // Replace the old matcher array with the new one in middleware.ts
   const updatedMiddleware = middlewareContent.replace(matcherRegex, newBlock);
 
   fs.writeFileSync(MIDDLEWARE_FILE, updatedMiddleware, "utf8");

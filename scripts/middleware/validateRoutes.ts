@@ -18,12 +18,21 @@ function readFileOrExit(filePath: string, label: string): string {
   return fs.readFileSync(filePath, "utf8");
 }
 
+/**
+ * Extracts protected routes from routes.config.ts
+ * Tries two regex patterns to handle different syntax styles
+ */
 function getProtectedRoutes(): string[] {
   const content = readFileOrExit(ROUTES_FILE, "Routes");
 
   const regexes = [
-    /export\s+const\s+protectedRoutes\s*:\s*readonly\s*string\[\]\s*=\s*\[((?:.|\n)*?)\]/m,
-    /export\s+const\s+protectedRoutes\s*=\s*\[((?:.|\n)*?)\]\s*as\s+const/m,
+    // Pattern 1: export const protectedRoutes: readonly string[] = [ ... ]
+    // Captures array contents between brackets, handles multiline with [\s\S]*?
+    /export\s+const\s+protectedRoutes\s*:\s*readonly\s*string\[\]\s*=\s*\[([\s\S]*?)\]/m,
+
+    // Pattern 2: export const protectedRoutes = [ ... ] as const
+    // Alternative syntax without explicit type annotation
+    /export\s+const\s+protectedRoutes\s*=\s*\[([\s\S]*?)\]\s*as\s+const/m,
   ];
 
   for (const regex of regexes) {
@@ -39,9 +48,16 @@ function getProtectedRoutes(): string[] {
   throw new Error("Couldn't find protectedRoutes array");
 }
 
+/**
+ * Extracts matchers from middleware.ts
+ * Searches for the matcher array configuration
+ */
 function getMiddlewareMatchers(): string[] {
   const content = readFileOrExit(MIDDLEWARE_FILE, "Middleware");
 
+  // Matches: matcher: [ ... ]
+  // Captures everything between the brackets of the matcher array
+  // ((?:.|\n)*?) = non-greedy capture of any character including newlines
   const match = /matcher:\s*\[((?:.|\n)*?)\]/m.exec(content);
 
   if (!match) return [];
@@ -52,9 +68,16 @@ function getMiddlewareMatchers(): string[] {
     .filter(Boolean);
 }
 
+/**
+ * Extracts route role keys from routeRoles.ts
+ * Parses the routeRoleAccessMap object to find all defined routes
+ */
 function getRouteRoleKeys(): string[] {
   const fileContent = readFileOrExit(ROUTE_ROLES_FILE, "routeRoles");
 
+  // Matches: export const routeRoleAccessMap = { ... } as const
+  // Looks for the object definition, handling optional type annotation and 'as const'
+  // ([\s\S]*?) = captures everything inside the object braces
   const ROLE_MAP_REGEX =
     /export\s+const\s+routeRoleAccessMap\s*(?::[^=]+)?=\s*{([\s\S]*?)}\s*(?:as\s+const)?/m;
   const match = ROLE_MAP_REGEX.exec(fileContent);
@@ -66,6 +89,8 @@ function getRouteRoleKeys(): string[] {
     process.exit(1);
   }
 
+  // Uses matchAll to find all route keys in the format: '/route/path': ...
+  // \/[a-zA-Z0-9\-_/]+ matches paths like /admin, /dashboard/settings, etc.
   return Array.from(
     match[1].matchAll(/\s*['"`]?(\/[a-zA-Z0-9\-_/]+)['"`]?:/g),
     (m) => m[1],
@@ -112,6 +137,7 @@ async function validate(): Promise<void> {
 
   const expectedMatchers = protectedRoutes.map((r) => `${r}/:path*`);
 
+  // Find discrepancies between all three configuration sources
   const missingInMiddleware = expectedMatchers.filter(
     (r) => !matchers.includes(r),
   );
@@ -125,6 +151,7 @@ async function validate(): Promise<void> {
     (r) => !protectedRoutes.includes(r),
   );
 
+  // Find any duplicated entries
   const duplicateProtectedRoutes = findDuplicates(protectedRoutes);
   const duplicateMatchers = findDuplicates(matchers);
   const duplicateRoleMappings = findDuplicates(routeRoles);
