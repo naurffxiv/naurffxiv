@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write .",
-    "check:routes": "tsx scripts/middleware/validateRoutes.ts"
+    "check:routes": "tsx scripts/middleware/validateRoutes.ts",
     "compress": "node scripts/compress-images.js"
   },
   "dependencies": {
