@@ -1,0 +1,153 @@
+---
+title: Phase 1 - Fatebreaker
+order: 1
+collapseToc: true
+---
+
+# P1: Fatebreaker
+
+The fight begins with Fatebreaker, the boss from E11S.
+The mechanics will be quite familiar if you’ve done E11S, although there are no light attacks.
+To clear the phase, Fatebreaker must be defeated completely.
+
+This phase is largely uptime, with a single downtime mechanic.
+
+Unless otherwise noted, any attack other than a spread, stack, raidwide, or tankbuster inflicts a
+
+<Buff b="damage-down" dur="2m" />, and all spreads and stacks inflict a
+<Buff b="magic-vuln" dur="2s" />.
+
+## Sequence 1: Cyclonic Break
+
+Fatebreaker immediately jumps into a mechanic sequence with a <mark class="hl-cast">Cyclonic Break</mark> cast.
+During this cast, he will be surrounded by either <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark>.
+This will determine whether you need to <mark class="hl-fire">stack</mark> in pairs or <mark class="hl-electric">spread</mark> during the mechanic.
+There are different audio cues for the two elements: <mark class="hl-fire">fire</mark> is accompanied by a whooshing sound and <mark class="hl-electric">lightning</mark> by crackling.
+
+The attack executes a narrow (22.5°) conal spread targeting each player, without an <u title="A puddle telegraphing an upcoming AoE">omen</u>.
+These inflict <Buff b="phys-vuln" dur="2s" />, so any player hit by two or more will die.
+The location of these cones is saved and will be used for the rest of the mechanic.
+
+2 seconds after the first cones, a second set of cones go out on the same location.
+These must be dodged.
+At the same time, players will be hit by a <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark> attack:
+
+- If it is <mark class="hl-fire">fire</mark>, then each <mark class="hl-dps">DPS</mark> will be hit by <mark class="hl-fire">Sinsmoke</mark>, a pair stack AoE.
+  For each dead <mark class="hl-dps">DPS</mark>, the attack will hit a random <mark class="hl-support">support</mark> instead, _doubling up if fewer than four players are alive_.
+
+- If it is <mark class="hl-electric">lightning</mark>, then all players will be hit by <mark class="hl-electric">Sinsmite</mark>, a spread AoE.
+
+After the second set of cones and stack/spread, two more sets of cones go out, one after the other. Each is rotated clockwise from the previous by 1/16th of a circle (22.5°, i.e. one cone’s width). Like the second set, these must be dodged.
+
+### Powder Mark Trail
+
+As <mark class="hl-cast">Cyclonic Break</mark> resolves, Fatebreaker casts <mark class="hl-cast">Power Mark Trail</mark>, a single-target tankbuster that inflicts both <Buff b="powder-mark-trail" dur="16s" /> and <Buff b="phys-vuln" dur="14s" />.
+The <Buff b="powder-mark-trail" short /> will explode if the tank dies or at the start of the next mechanic, while the <Buff b="phys-vuln" short /> will cause subsequent auto-attacks to be lethal.
+
+## Sequence 2: Utopian Sky
+
+Fatebreaker recenters, faces north, and begins casting <mark class="hl-cast">Utopian Sky</mark>, once again is surrounded by <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark>.
+As before, this signals the upcoming <mark class="hl-fire">spread</mark> or <mark class="hl-electric">stack</mark>, and you can also tell them apart by the audio cue.
+
+Once the cast completes, Fatebreaker goes untargetable and disappears, and the arena is be covered in a deep fog.
+If you’ve played E11S, you will recognize this from <mark class="hl-cast">Prismatic Deception</mark>.
+Eight Fatebreaker clones—Fatebreaker's Image—will appear just outside the arena, one in each principal direction.
+Due to the fog, they can only be seen if you are nearby.
+Right after they appear, the <Buff b="powder-mark-trail" short /> from earlier will expire, causing large AoE tankbusters to hit both the player originally hit by <mark class="hl-cast">Powder Mark Trail</mark> and the player nearest to them.
+
+Three of the clones will raise their gunblades to point straight up and begin casting <mark class="hl-cast">Blasting Zone</mark>, while the rest will keep theirs facing downwards and at an angle before disappearing.
+Fatebreaker reappears just before the casts complete, and begins charging a new <mark class="hl-cast">Cyclonic Break</mark>.
+The <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark> element need not be the same as before.
+
+When the <mark class="hl-cast">Blasting Zone</mark> completes, the three clones will cleave in front of them in a line.
+At the same time, players will be hit by an attack depending on the element charged during the <mark class="hl-cast">Utopian Sky</mark> cast:
+
+- <mark class="hl-fire">Sinbound Fire III</mark>, an LP stack AoE.
+- <mark class="hl-electric">Sinbound Thunder III</mark>, a spread AoE.
+
+When Fatebreaker finishes casting, the second <mark class="hl-cast">Cyclonic Break</mark> is exactly the same as the first, except that the element is random and may be different from before.
+
+### Turn of the Heavens
+
+During the execution of <mark class="hl-cast">Cyclonic Break</mark>, two more clones will appear: one just north of Fatebreaker, and one at the west side of the arena.
+The one next to Fatebreaker casts <mark class="hl-cast">Turn of the Heavens</mark> with either <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark>, while the one on the edge will cast <mark class="hl-electric">Burnt Strike</mark>.
+The audio cue indicates Fatebreaker’s element.
+
+As the cast completes:
+
+- Four <mark class="hl-fire">Halo of Flame</mark> and four <mark class="hl-electric">Halo of Levin</mark> appear near the outside of the arena at cardinals and intercardinals.
+  They are always positioned with <mark class="hl-fire">Flame</mark> halos on the west or east side, and <mark class="hl-electric">Levin</mark> halos on the other.
+  The halos begin casting <mark class="hl-cast">Brightfire</mark>.
+
+- Two clones appear at random intercardinals, tethered to two random players, and begin casting <mark class="hl-fire">Bound of Faith</mark>.
+  The tethered players also receive: <Buff b="prey" /> and <Buff b="fated-burn-mark" dur="15s" />
+
+- One more clone appears at the north end of the arena, casting <mark class="hl-fire">Burnt Strike</mark>.
+
+After the new adds begin casting, the first <mark class="hl-cast">Burnt Strike</mark> goes off, cleaving in a line from west to east.
+The cleave repeats immediately, but is substantially wider the second time.
+A few seconds later, the second <mark class="hl-cast">Burnt Strike</mark> goes off, cleaving from north to south.
+The follow-up strike will hit all players with a knockback east or west, away from the center.
+These knockbacks cannot be resisted.
+
+Shortly afterwards, all the halos explode, dealing lethal damage in a circle.
+The halos that do not match the element of the <mark class="hl-cast">Turn of the Heavens</mark> cast only explode directly underneath themselves.
+The halos that do match will explode inside the larger circle denoted on the floor.
+
+At the same time, the two tethered players are lifted into the air with <Buff b="floating-fetters" dur="3s" />, then charged by the adds and hit with <mark class="hl-fire">Sinsmoke</mark>.
+Unlike earlier, this <mark class="hl-fire">Sinsmoke</mark> is an LP stack that inflicts <Buff b="mark-of-mortality" dur="2m" /> if it hits fewer than 4 players.
+If the tethered player died, a random player will be targeted instead.
+
+### Burnished Glory
+
+Fatebreaker reappears shortly after <mark class="hl-fire">Sinsmoke</mark>, and is immediately targetable.
+The sequence wraps up with <mark class="hl-cast">Burnished Glory</mark>, a raidwide that inflicts a heavy <Buff b="bleeding" dur="15s" />.
+
+## Sequence 3: Fall of Faith
+
+The third sequence begins with a <mark class="hl-cast">Fall of Faith</mark> cast.
+Fatebreaker will glow with <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark> energy, and mark a player with a tether and <Buff b="prey" />.
+The tether will glow <mark class="hl-fire">red</mark> or <mark class="hl-electric">blue</mark> depending on the element being charged.
+
+Over the course of the cast, three clones will appear at the NW, N, and NE edges of the arena, in that order.
+Each will begin casting its own <mark class="hl-cast">Fall of Faith</mark> with its own tether and <Buff b="prey" short />, for a total of four on four different targets.
+
+When the casts complete, similar to the end of the previous sequence, the boss or clone will lift their target into the air with <Buff b="floating-fetters" dur="3s" /> and charge at them.
+The attack is either <mark class="hl-fire">Sinblaze</mark> or <mark class="hl-electric">Sinsmite</mark>, depending on the element, but with completely new mechanics:
+
+- <mark class="hl-fire">Sinblaze</mark> hits the targeted player as well as
+  producing a 90° cone originating from the target, aimed towards the nearest
+  player. The entire attack is an LP stack so to satisfy the stack, there must
+  be at least three players inside the cone, plus the main target. If there are
+  fewer than four players total hit by the attack, it will inflict
+  <Buff b="mark-of-mortality" dur="2m" />.
+
+- <mark class="hl-electric">Sinsmite</mark> hits the targeted player and
+  produces three 120° cones originating from them, aimed towards the three
+  nearest players. Because these are so wide, positioning is critical.
+
+Both <mark class="hl-fire">Sinblaze</mark> and <mark class="hl-electric">Sinsmite</mark> inflict <Buff b="magic-vuln" dur="4s" />, which lasts until after the next attack in the sequence.
+Thus, a player hit by two consecutive attacks will die.
+
+Fatebreaker completes the sequence with another <mark class="hl-cast">Burnished Glory</mark> and another <mark class="hl-cast">Powder Mark Trail</mark>.
+Note that the DoT from the <mark class="hl-cast">Burnished Glory</mark> will make the tankbuster require more mitigation/healing than the first time.
+
+## Sequence 4: Burnt Strike
+
+Fatebreaker casts <mark class="hl-cast">Burnt Strike</mark>, glowing with <mark class="hl-fire">fire</mark> or <mark class="hl-electric">lightning</mark>.
+As he does so, three towers appear along the east or west edge of the arena.
+The total number of players required for the towers is always 6, but the distribution is random: it could be 1/1/4, 1/2/3, or 2/2/2 in any order.
+
+The <mark class="hl-cast">Burnt Strike</mark> is a north-south line cleave, followed by:
+
+- For <mark class="hl-fire">fire</mark>, all players are knocked back east or west away from the center.
+- For <mark class="hl-electric">lightning</mark>, a second, wider line cleave.
+
+Right after the follow-up attack, the towers will go off and, at the same time, the <Buff b="powder-mark-trail" /> detonates on its target and the newest player.
+If a tower is missed, it explodes in a heavy raidwide with <Buff b="damage-down" dur="2m" short />.
+
+## Enrage
+
+Fatebreaker now casts <mark class="hl-cast">Burnished Glory</mark> for a third and final time, with a long castbar.
+If the cast succeeds, the party wipes.
+To proceed to the next phase, Fatebreaker must be killed before the cast completes.
