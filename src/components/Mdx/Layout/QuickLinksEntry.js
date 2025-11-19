@@ -20,7 +20,7 @@ function QuickLinkEntry(entry, currentSlug, isFirst) {
           className={clsx(
             baseClasses,
             isActive ? activeClasses : inactiveClasses,
-            { "ml-4": isFirst }
+            { "ml-4": isFirst },
           )}
         >
           {entry.title}
