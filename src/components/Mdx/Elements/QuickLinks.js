@@ -1,5 +1,4 @@
-import QuickLinkEntry from "./QuickLinksEntry";
-import QuickLinksCollapsible from "./QuickLinksCollapsible";
+import clsx from "clsx";
 // builds the tree
 function buildTree(siblingData) {
   const root = {};
@@ -26,6 +25,40 @@ function buildTree(siblingData) {
   return root;
 }
 
+// returns a single quick link component
+// highlighted if the page matches the slug
+function quickLinkEntry(entry, currentSlug, isFirst) {
+  if (entry.slug === currentSlug) {
+    return (
+      <li key={entry.slug} className="ps-0">
+        <a
+          href={entry.slug}
+          className={clsx({
+            "block px-4 py-2 text-blue-400 no-underline transition-colors border-r-2 border-blue-400 hover:text-blue-500 rounded-l-md bg-opacity-10 bg-slate-400 hover:bg-opacity-10 hover:bg-slate-300": true,
+            "ml-4": isFirst,
+          })}
+        >
+          {entry.title}
+        </a>
+      </li>
+    );
+  } else {
+    return (
+      <li key={entry.slug} className="ps-0">
+        <a
+          href={entry.slug}
+          className={clsx({
+            "block px-4 py-2 no-underline transition-colors border-r-2 border-transparent text-slate-200 hover:border-r-2 hover:border-slate-200 hover:text-white rounded-l-md hover:bg-opacity-10 hover:bg-slate-600": true,
+            "ml-4": isFirst,
+          })}
+        >
+          {entry.title}
+        </a>
+      </li>
+    );
+  }
+}
+
 function recursiveLinks(tree, currentSlug, isFirst = true) {
   /*
         skip top level groups without any siblings, for example:
@@ -42,23 +75,17 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
   if (groups.length === 0) return;
   if (isFirst && groups.length == 1 && groups[0] !== "pages") {
     const key = groups[0];
-    return {
-      child: recursiveLinks(tree[key], currentSlug).child,
-      activeChildren: false,
-    };
+    return <>{recursiveLinks(tree[key], currentSlug)}</>;
   }
 
-  let activeChildren = false; // let parents know if any of their children are active
   const children = [];
 
   // populate section with pages first
   if (tree["pages"]) {
     children.push(
-      ...tree["pages"].map((entry) => {
-        const { element, active } = QuickLinkEntry(entry, currentSlug, isFirst);
-        if (!activeChildren) activeChildren = active;
-        return element;
-      }),
+      ...tree["pages"].map((entry) =>
+        quickLinkEntry(entry, currentSlug, isFirst),
+      ),
     );
   }
 
@@ -67,33 +94,24 @@ function recursiveLinks(tree, currentSlug, isFirst = true) {
   for (const group of groups) {
     if (group === "pages") continue;
     const title = group[2] === "-" ? group.substring(3) : group;
-    const { child, activeChildren: childHasActive } = recursiveLinks(
-      tree[group],
-      currentSlug,
-      false,
-    );
-    activeChildren = activeChildren || childHasActive;
+    const child = recursiveLinks(tree[group], currentSlug, false);
 
     children.push(
       <li
         key={group}
         className={`${sameGroup > 0 ? "mt-4" : "mt-2"} ml-4 p-0 list-none list-inside`}
       >
-        <QuickLinksCollapsible defaultState={childHasActive} title={title}>
-          {child}
-        </QuickLinksCollapsible>
+        <h2 className="mt-4 mb-2 ml-4">{title}</h2>
+        {child}
       </li>,
     );
     sameGroup += 1;
   }
-  return {
-    child: (
-      <ul className="p-0 m-0 list-none list-inside quick-links-div">
-        {children}
-      </ul>
-    ),
-    activeChildren,
-  };
+  return (
+    <ul className="p-0 m-0 list-none list-inside quick-links-div">
+      {children}
+    </ul>
+  );
 }
 
 const quickLinksSort = (a, b) => {
@@ -156,7 +174,7 @@ export default function QuickLinks({ siblingData, slug }) {
   const siblingDataTree = buildTree(siblingData);
   return (
     <div className="list-none quick-links-div min-w-[30ch] w-[22rem] prose prose-invert">
-      {recursiveLinks(siblingDataTree, slug).child}
+      {recursiveLinks(siblingDataTree, slug)}
     </div>
   );
 }
