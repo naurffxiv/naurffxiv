@@ -39,8 +39,8 @@ function getProtectedRoutes(): string[] {
     const match = regex.exec(content);
     if (match) {
       return match[1]
-        .split(",")
-        .map((s) => s.trim().replace(/^['"`]|['"`]$/g, ""))
+        .split(",") // Split by comma to get individual routes
+        .map((s) => s.trim().replace(/^['"`]|['"`]$/g, "")) // Trim whitespace and remove quotes from start/end
         .filter(Boolean);
     }
   }
@@ -56,7 +56,6 @@ function getMiddlewareMatchers(): string[] {
   const content = readFileOrExit(MIDDLEWARE_FILE, "Middleware");
 
   // Matches: matcher: [ ... ]
-  // Captures everything between the brackets of the matcher array
   // ((?:.|\n)*?) = non-greedy capture of any character including newlines
   const match = /matcher:\s*\[((?:.|\n)*?)\]/m.exec(content);
 
@@ -64,7 +63,7 @@ function getMiddlewareMatchers(): string[] {
 
   return match[1]
     .split(",")
-    .map((s) => s.trim().replace(/^['"`]|['"`]$/g, ""))
+    .map((s) => s.trim().replace(/^['"`]|['"`]$/g, "")) // Trim whitespace and remove quotes from start/end
     .filter(Boolean);
 }
 
@@ -76,8 +75,9 @@ function getRouteRoleKeys(): string[] {
   const fileContent = readFileOrExit(ROUTE_ROLES_FILE, "routeRoles");
 
   // Matches: export const routeRoleAccessMap = { ... } as const
-  // Looks for the object definition, handling optional type annotation and 'as const'
   // ([\s\S]*?) = captures everything inside the object braces
+  // (?::[^=]+)? = optional type annotation
+  // (?:as\s+const)? = optional 'as const' modifier
   const ROLE_MAP_REGEX =
     /export\s+const\s+routeRoleAccessMap\s*(?::[^=]+)?=\s*{([\s\S]*?)}\s*(?:as\s+const)?/m;
   const match = ROLE_MAP_REGEX.exec(fileContent);
@@ -89,8 +89,9 @@ function getRouteRoleKeys(): string[] {
     process.exit(1);
   }
 
-  // Uses matchAll to find all route keys in the format: '/route/path': ...
-  // \/[a-zA-Z0-9\-_/]+ matches paths like /admin, /dashboard/settings, etc.
+  // Matches route keys in format: '/route/path': ...
+  // \/[a-zA-Z0-9\-_/]+ = matches paths like /admin, /dashboard/settings, etc.
+  // ['"`]? = optional quotes around the key
   return Array.from(
     match[1].matchAll(/\s*['"`]?(\/[a-zA-Z0-9\-_/]+)['"`]?:/g),
     (m) => m[1],
@@ -112,17 +113,17 @@ const formatPathWithSource = (path: string, sourceFile: string): string =>
 
 function askUserYesNo(question: string): Promise<boolean> {
   return new Promise((resolve) => {
-    const rl = readline.createInterface({
+    const readlineInterface = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
     });
 
-    rl.question(
+    readlineInterface.question(
       chalk.yellowBright.bold(
         `\n  ${question}\nPress ${chalk.green("Y")} to confirm or ${chalk.gray("N")} to skip: `,
       ),
       (answer) => {
-        rl.close();
+        readlineInterface.close();
         const normalized = answer.trim().toLowerCase();
         resolve(normalized === "" || normalized === "y");
       },
@@ -159,7 +160,7 @@ async function validate(): Promise<void> {
   let hasProblems = false;
 
   if (duplicateProtectedRoutes.length) {
-    console.log(chalk.red("\n Duplicate entries in protectedRoutes:"));
+    console.log(chalk.red("Duplicate entries in protectedRoutes:\n "));
     duplicateProtectedRoutes.forEach((r) =>
       console.log("  -", formatPathWithSource(r, ROUTES_FILE)),
     );
