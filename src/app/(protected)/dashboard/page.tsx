@@ -15,25 +15,26 @@ import { useEffect } from "react";
 import { useRoleBasedContent } from "@auth/hooks/useRoles";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import type { DiscordRole } from "@/types/discord";
 
 const CARD_DEFINITIONS = [
   {
     href: "/admin",
     title: "Admin Tools",
     desc: "Admin-only configuration",
-    roles: [[Roles.ADMIN, Roles.DEV]],
+    roles: [[Roles.ADMIN]],
   },
   {
     href: "/mod-portal",
     title: "Mod Portal",
     desc: "Moderator access to strikes, notes, and exiles",
-    roles: [[Roles.ADMIN, Roles.MOD, Roles.DEV]],
+    roles: [[Roles.ADMIN, Roles.MOD]],
   },
   {
     href: "/event",
     title: "Event Tools",
     desc: "Coordinate and schedule raid events",
-    roles: [[Roles.ADMIN, Roles.MOD, Roles.DEV, Roles.EVENT]],
+    roles: [[Roles.ADMIN, Roles.MOD, Roles.EVENT]],
   },
   {
     href: "/dev",
@@ -61,7 +62,7 @@ export default function DashboardPage(): ReactElement {
     if (status === "authenticated" && user?.id) {
       logInfo("Dashboard:Access", {
         userId: user.id,
-        roles: user.roles?.map((r) => (typeof r === "string" ? r : r.id)),
+        roles: user.roles?.map((role: string | DiscordRole) => (typeof role === "string" ? role : role.id)),
         timestamp: new Date().toISOString(),
       });
     }
@@ -143,7 +144,7 @@ export default function DashboardPage(): ReactElement {
       {process.env.NODE_ENV === "development" && (
         <RoleContent roles={[Roles.ADMIN, Roles.DEV]}>
           <section
-            className="mt-8 p-4 bg-gray-800/30 rounded-lg"
+            className="p-4 mt-8 rounded-lg bg-gray-800/30"
             aria-label="System Status"
           >
             <SessionRoleDebug />

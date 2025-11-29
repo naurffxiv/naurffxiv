@@ -10,11 +10,11 @@ import { Roles } from "@auth/core/roleConstants";
 // NOTE: This uses **prefix matching**, so all nested routes are also protected.
 //
 export const routeRoleAccessMap: Record<string, string[]> = {
-  "/admin": [Roles.ADMIN, Roles.DEV],
+  "/admin": [Roles.ADMIN],
   "/dev": [Roles.ADMIN, Roles.DEV],
-  "/mod-portal": [Roles.ADMIN, Roles.MOD, Roles.DEV],
+  "/mod-portal": [Roles.ADMIN, Roles.MOD],
   "/dashboard": [Roles.ADMIN, Roles.MOD, Roles.DEV, Roles.EVENT],
-  "/event": [Roles.ADMIN, Roles.MOD, Roles.DEV, Roles.EVENT],
+  "/event": [Roles.ADMIN, Roles.MOD, Roles.EVENT],
 };
 
 // Get the list of allowed roles for a route
