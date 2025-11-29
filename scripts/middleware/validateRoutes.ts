@@ -60,7 +60,7 @@ function getMiddlewareMatchers(): string[] {
   const match = /matcher:\s*\[((?:.|\n)*?)\]/m.exec(content);
 
   if (!match) return [];
-
+  // TODO(TECH-DEBT): centralize this regex parsing logic in a shared helper
   return match[1]
     .split(",")
     .map((s) => s.trim().replace(/^['"`]|['"`]$/g, "")) // Trim whitespace and remove quotes from start/end
@@ -160,7 +160,7 @@ async function validate(): Promise<void> {
   let hasProblems = false;
 
   if (duplicateProtectedRoutes.length) {
-    console.log(chalk.red("Duplicate entries in protectedRoutes:\n "));
+    console.log(chalk.red("Duplicate entries in protectedRoutes:\n"));
     duplicateProtectedRoutes.forEach((r) =>
       console.log("  -", formatPathWithSource(r, ROUTES_FILE)),
     );
@@ -168,7 +168,7 @@ async function validate(): Promise<void> {
   }
 
   if (duplicateMatchers.length) {
-    console.log(chalk.red("\n Duplicate matchers in middleware config:"));
+    console.log(chalk.red("Duplicate matchers in middleware config:\n"));
     duplicateMatchers.forEach((r) =>
       console.log("  -", formatPathWithSource(r, MIDDLEWARE_FILE)),
     );
@@ -176,7 +176,7 @@ async function validate(): Promise<void> {
   }
 
   if (duplicateRoleMappings.length) {
-    console.log(chalk.red("\n Duplicate route keys in routeRoleAccessMap:"));
+    console.log(chalk.red("Duplicate route keys in routeRoleAccessMap:\n"));
     duplicateRoleMappings.forEach((r) =>
       console.log("  -", formatPathWithSource(r, ROUTE_ROLES_FILE)),
     );
@@ -184,24 +184,24 @@ async function validate(): Promise<void> {
   }
 
   if (missingInMiddleware.length) {
-    console.log(chalk.red("\n Missing matchers in middleware.ts:"));
+    console.log(chalk.red("Missing matchers in middleware.ts:\n"));
     missingInMiddleware.forEach((r) =>
       console.log("  -", formatPathWithSource(r, ROUTES_FILE)),
     );
     hasProblems = true;
 
-    console.log(chalk.cyan("\n The following matchers will be added:"));
+    console.log(chalk.cyan("The following matchers will be added:\n"));
     missingInMiddleware.forEach((m) => console.log(`  • ${m}`));
 
     const shouldFix = await askUserYesNo(
       "Would you like to auto-fix matchers now?",
     );
     if (shouldFix) {
-      console.log(chalk.yellow("\n Running matcher sync script..."));
+      console.log(chalk.yellow("Running matcher sync script...\n"));
       execSync("npx tsx scripts/middleware/syncMatchers.ts", {
         stdio: "inherit",
       });
-      console.log(chalk.green("\n Matchers fixed. Please re-run the check.\n"));
+      console.log(chalk.green("Matchers fixed. Please re-run the check.\n"));
       process.exit(0);
     } else {
       console.log(chalk.gray(" Fix skipped by user."));
@@ -209,7 +209,7 @@ async function validate(): Promise<void> {
   }
 
   if (extraInMiddleware.length) {
-    console.log(chalk.yellow("\n Extra matchers not in protectedRoutes:"));
+    console.log(chalk.yellow("Extra matchers not in protectedRoutes:\n"));
     extraInMiddleware.forEach((r) =>
       console.log("  -", formatPathWithSource(r, MIDDLEWARE_FILE)),
     );
@@ -217,7 +217,7 @@ async function validate(): Promise<void> {
   }
 
   if (missingInRouteRoles.length) {
-    console.log(chalk.red("\n Missing role mappings in routeRoles.ts:"));
+    console.log(chalk.red("Missing role mappings in routeRoles.ts:\n"));
     missingInRouteRoles.forEach((r) => {
       console.log(`  - ${r}`);
       console.log(
@@ -231,7 +231,7 @@ async function validate(): Promise<void> {
   }
 
   if (extraInRouteRoles.length) {
-    console.log(chalk.yellow("\n Orphaned role mappings:"));
+    console.log(chalk.yellow("Orphaned role mappings:\n"));
     extraInRouteRoles.forEach((r) =>
       console.log("  -", formatPathWithSource(r, ROUTE_ROLES_FILE)),
     );
