@@ -8,18 +8,23 @@ interface ErrorPayload {
   [key: string]: unknown;
 }
 
-export function logInfo(tag: string, data: Record<string, unknown> = {}): void {
+function logWithWebhook(
+  tag: string,
+  level: LogLevel,
+  data: Record<string, unknown>,
+): void {
   if (DEBUG_FLAGS.WEBHOOK) {
-    sendLogToWebhook(tag, "info", data);
+    sendLogToWebhook(tag, level, data);
   }
-  log(tag, "info", data);
+  log(tag, level, data);
+}
+
+export function logInfo(tag: string, data: Record<string, unknown> = {}): void {
+  logWithWebhook(tag, "info", data);
 }
 
 export function logWarn(tag: string, data: Record<string, unknown> = {}): void {
-  if (DEBUG_FLAGS.WEBHOOK) {
-    sendLogToWebhook(tag, "warn", data);
-  }
-  log(tag, "warn", data);
+  logWithWebhook(tag, "warn", data);
 }
 
 export function logError(
@@ -32,33 +37,15 @@ export function logError(
     ...extra,
   } as ErrorPayload;
 
-  if (DEBUG_FLAGS.WEBHOOK) {
-    sendLogToWebhook(tag, "error", payload);
-  }
-  log(tag, "error", payload);
+  logWithWebhook(tag, "error", payload);
 }
 
 export function logDebug(
   tag: string,
   data: Record<string, unknown> = {},
 ): void {
-  if (DEBUG_FLAGS.WEBHOOK) {
-    sendLogToWebhook(tag, "debug", data);
-  }
-  log(tag, "debug", data);
+  logWithWebhook(tag, "debug", data);
 }
-
-// not fully functional (?)
-// export function logRateLimit(
-//   provider: string,
-//   retryAfter?: string | null,
-// ): void {
-//   logWarn("OAuth:RateLimited", {
-//     provider,
-//     retryAfter: retryAfter ?? "unknown",
-//     timestamp: new Date().toISOString(),
-//   });
-// }
 
 function log(
   tag: string,
@@ -130,6 +117,8 @@ async function sendLogToWebhook(
       console.warn(`webhook sad (${res.status}):`, await res.text());
     }
   } catch (err) {
-    console.warn(`webhook very sad:`, JSON.stringify(err, null, 2));
+    // Fallback to console if webhook crashes (network error, timeout, etc.)
+    console.warn(`webhook crashed, falling back to console:`, err);
+    console.warn(`[${tag}] [${level.toUpperCase()}]`, payload);
   }
 }
