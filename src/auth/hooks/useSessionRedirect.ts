@@ -15,7 +15,7 @@ export function useSessionRedirect(
   const [redirecting, setRedirecting] = useState(false);
 
   useEffect(() => {
-    if (status === "loading") return;
+    if (status === "loading") return;   // Wait for session to finish loading before deciding on redirect
 
     if (status === "unauthenticated") {
       return;

@@ -53,13 +53,6 @@ export default function LoginContent(): ReactElement {
     }
   }, [status, session, router]);
 
-  // for me: remove this when final commiting
-  useEffect(() => {
-    {
-      console.log(" Session:", session);
-    }
-  }, [session]);
-
   if (status === "loading" || redirecting || autoTriggered) {
     return <LoadingSpinner message="Great Community BTW" />;
   }

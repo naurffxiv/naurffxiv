@@ -14,7 +14,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   OAuthCallback:
     "There was an issue during Discord login." +
     "This could be due to too many login attempts or a temporary session issue. Please try again shortly.",
-  undefined: "How did you get here ?", // /api/auth/error
+  undefined: "How did you get here?", // /api/auth/error
 };
 
 export function useAuthError(): AuthErrorResult {

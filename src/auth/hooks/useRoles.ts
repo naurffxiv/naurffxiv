@@ -12,23 +12,6 @@ import { useMemo } from "react";
 import { useSession } from "next-auth/react";
 
 /**
- * Hook to check if the current user has a specific role.
- *
- * @param roleId - The ID of the role to check against.
- * @returns True if the user has the specified role, otherwise false.
- */
-export function useHasRole(roleId: string): boolean {
-  // old logic
-  const { data: session } = useSession();
-
-  return useMemo(() => {
-    if (!session?.user) return false;
-    const userWithRoles = { ...session.user, roles: session.user?.roles ?? [] };
-    return hasRole(userWithRoles, roleId);
-  }, [session?.user, roleId]);
-}
-
-/**
  * Hook to check if the current user has at least one of the specified roles.
  *
  * @param roleIds - An array of role IDs to check against.

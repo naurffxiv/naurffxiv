@@ -51,13 +51,6 @@ export function extractRoleNames(
 // === Role Check Functions ===
 //
 
-export function hasRole(
-  user: UserWithRoles | null | undefined,
-  roleId: string,
-): boolean {
-  return extractRoleIds(user?.roles ?? []).includes(roleId);
-}
-
 export function hasAnyRole(
   user: UserWithRoles | null | undefined,
   roleIdsToCheck: string[],
