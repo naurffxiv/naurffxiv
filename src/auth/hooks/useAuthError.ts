@@ -48,6 +48,8 @@ export function useAuthError(): AuthErrorResult {
   const heading = useMemo(() => {
     if (errorCode === "AccessDenied") return "Access Denied";
     if (errorCode === "Banned") return "Banned";
+    // NB: "Oops" is intentionally displayed only when a user is logged in (authenticated)
+    // but still reaches an error state. This distinguishes it from unauthenticated errors.
     if (status === "authenticated") return "Oops";
     return "Error";
   }, [errorCode, status]);

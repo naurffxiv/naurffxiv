@@ -34,7 +34,7 @@ function getProtectedRoutes(): string[] {
     // Alternative syntax without explicit type annotation
     /export\s+const\s+protectedRoutes\s*=\s*\[([\s\S]*?)\]\s*as\s+const/m,
   ];
-
+  // TODO: Tech-debt: Helper function
   for (const regex of regexes) {
     const match = regex.exec(content);
     if (match) {

@@ -49,7 +49,7 @@ export async function getDiscordMemberFromAPI(
     return { ...member, enrichedRoles };
   } catch (err) {
     logError("Discord:APIRequestError", err, { userId });
-    // TODO: maybe auto-retry? 5xx or 429
+    // TODO: Tech-debt: maybe auto-retry? 5xx or 429
     return null;
   }
 }

@@ -6,6 +6,8 @@
 // - Conditional rendering in UI
 // - Auth validation in NextAuth callbacks
 //
+
+// TODO: Tech-debt: Put in its own const folder
 export const Roles = {
   ADMIN:
     process.env["NEXT_PUBLIC_ADMIN_ROLE_ID"] ?? "NEXT_PUBLIC_ADMIN_ROLE_ID",

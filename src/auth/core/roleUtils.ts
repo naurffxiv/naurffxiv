@@ -1,3 +1,5 @@
+// TODO: Tech-debt: Put in its own const folder
+
 import type { DiscordRole, UserWithRoles } from "@/types/discord";
 
 import { RolesArray } from "@auth/core/roleConstants";
