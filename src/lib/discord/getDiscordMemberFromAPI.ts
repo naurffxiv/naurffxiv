@@ -12,6 +12,11 @@ export async function getDiscordMemberFromAPI(
     logError(
       "Discord:MissingCredentials",
       new Error("Missing GUILD_ID or BOT_TOKEN"),
+      {
+        missingGuildId: !GUILD_ID,
+        missingBotToken: !BOT_TOKEN,
+        note: "Cannot fetch Discord member without credentials",
+      },
     );
     return null;
   }
