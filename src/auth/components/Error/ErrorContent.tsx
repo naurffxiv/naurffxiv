@@ -15,7 +15,7 @@ export default function ErrorContent(): ReactElement {
   const { open, message, severity, durationMs, showToast, closeToast } =
     useToast();
   const router = useRouter();
-  const [bannedCountdown, setBannedCountdown] = useState(30);
+  const [bannedCountdown, setBannedCountdown] = useState(15);
 
   useAuthErrorLogger();
 

@@ -4,7 +4,6 @@ import {
   extractRoleIds,
   hasAllRoles,
   hasAnyRole,
-  hasRole,
 } from "@auth/core/roleUtils";
 
 import type { UserWithRoles } from "@/types/discord";
