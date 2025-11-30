@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  extractRoleIds,
-  hasAllRoles,
-  hasAnyRole,
-} from "@auth/core/roleUtils";
+import { extractRoleIds, hasAllRoles, hasAnyRole } from "@auth/core/roleUtils";
 
 import type { UserWithRoles } from "@/types/discord";
 import { useMemo } from "react";

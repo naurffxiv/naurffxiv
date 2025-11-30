@@ -62,7 +62,9 @@ export default function DashboardPage(): ReactElement {
     if (status === "authenticated" && user?.id) {
       logInfo("Dashboard:Access", {
         userId: user.id,
-        roles: user.roles?.map((role: string | DiscordRole) => (typeof role === "string" ? role : role.id)),
+        roles: user.roles?.map((role: string | DiscordRole) =>
+          typeof role === "string" ? role : role.id,
+        ),
         timestamp: new Date().toISOString(),
       });
     }

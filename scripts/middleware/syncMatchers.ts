@@ -83,12 +83,12 @@ function syncMatchers(): void {
   // Merge existing matchers with new routes (avoiding duplicates)
   const combinedMatchers = generateUpdatedMatchers(existingMatchers, routes);
 
-// Reconstruct the matcher array with proper formatting
-const newBlock = `matcher: [\n${combinedMatchers
-  // Format each route with indentation, quotes, and trailing comma
-  .map((r) => `    "${r}",`)
-  // Join routes with newlines for readability
-  .join("\n")}\n  ]`;
+  // Reconstruct the matcher array with proper formatting
+  const newBlock = `matcher: [\n${combinedMatchers
+    // Format each route with indentation, quotes, and trailing comma
+    .map((r) => `    "${r}",`)
+    // Join routes with newlines for readability
+    .join("\n")}\n  ]`;
 
   // Replace the old matcher array with the new one in middleware.ts
   const updatedMiddleware = middlewareContent.replace(matcherRegex, newBlock);
