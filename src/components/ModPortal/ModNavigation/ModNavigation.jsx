@@ -33,7 +33,9 @@ export function ModNavigation() {
         <PathSelectedLink href={"/mod-portal/settings"}>
           <MenuItem>Settings</MenuItem>
         </PathSelectedLink>
-        <MenuItem>Log Out</MenuItem>
+        <MenuItem component="a" href="/auth/logout">
+          <Typography>Log Out</Typography>
+        </MenuItem>
       </MenuList>
     </div>
   );
