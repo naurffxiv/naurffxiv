@@ -1,4 +1,4 @@
-// TODO: Tech-debt: Put in its own const folder
+// TODO(#347): Put in its own const folder
 
 import type { DiscordRole, UserWithRoles } from "@/types/discord";
 

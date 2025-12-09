@@ -34,7 +34,7 @@ function getProtectedRoutes(): string[] {
     // Alternative syntax without explicit type annotation
     /export\s+const\s+protectedRoutes\s*=\s*\[([\s\S]*?)\]\s*as\s+const/m,
   ];
-  // TODO: Tech-debt: Helper function
+  // TODO(#346): Centralize regex parsing logic in shared helper
   for (const regex of regexes) {
     const match = regex.exec(content);
     if (match) {
@@ -60,7 +60,7 @@ function getMiddlewareMatchers(): string[] {
   const match = /matcher:\s*\[((?:.|\n)*?)\]/m.exec(content);
 
   if (!match) return [];
-  // TODO(TECH-DEBT): centralize this regex parsing logic in a shared helper
+  // TODO(#346): Centralize regex parsing logic in shared helper
   return match[1]
     .split(",")
     .map((s) => s.trim().replace(/^['"`]|['"`]$/g, "")) // Trim whitespace and remove quotes from start/end
