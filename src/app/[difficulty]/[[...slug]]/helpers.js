@@ -1,6 +1,7 @@
 import * as runtime from "react/jsx-runtime";
 
-import { promises as fs, readdirSync } from "fs";
+import { promises as fs, readdirSync, statSync } from "fs";
+import { spawnSync } from "child_process";
 
 import { cache } from "react";
 import { evaluate } from "@mdx-js/mdx";
@@ -55,6 +56,37 @@ export const processMdx = cache(async (filepath) => {
   return processedMdx;
 });
 
+// gets last updated timestamp, preferring git commit history, falling back to fs mtime
+// Returns ISO string for proper serialization between server and client components
+function getGitLastUpdated(filepath) {
+  // use spawnSync to avoid shell quoting issues
+  const result = spawnSync(
+    "git",
+    ["log", "-1", "--format=%cI", "--", filepath],
+    {
+      encoding: "utf-8",
+    },
+  );
+  if (result.status === 0) {
+    const trimmed = result.stdout.trim();
+    if (trimmed) return trimmed;
+  }
+  return null;
+}
+
+export function getFileLastUpdated(filepath) {
+  const gitTimestamp = getGitLastUpdated(filepath);
+  if (gitTimestamp) return gitTimestamp;
+
+  try {
+    const stats = statSync(filepath);
+    return stats.mtime.toISOString();
+  } catch {
+    // If file doesn't exist or can't be read, return current date as fallback
+    return new Date().toISOString();
+  }
+}
+
 // resolves mdx filepath from slug and returns the processed file and relevant information
 export async function getProcessedMdxFromParams({ difficulty, slug }) {
   const mdxDir = path.join(getMdxDir(), difficulty);
@@ -64,9 +96,12 @@ export async function getProcessedMdxFromParams({ difficulty, slug }) {
   if (!index) return { error: `file at ${index} not found` };
   mdxEntry.filepath = path.join(mdxDir, index);
 
+  const lastUpdated = getFileLastUpdated(mdxEntry.filepath);
+
   return {
     ...mdxEntry,
     ...(await processMdx(mdxEntry.filepath)),
+    lastUpdated,
   };
 }
 
