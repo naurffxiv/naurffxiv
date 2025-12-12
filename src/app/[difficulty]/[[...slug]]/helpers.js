@@ -124,20 +124,13 @@ async function getGitHubLastUpdated(filepath) {
 export async function getFileLastUpdated(filepath) {
   // Try git command first (works in local dev)
   const gitTimestamp = getGitLastUpdated(filepath);
-  if (gitTimestamp) {
-    console.log(`Git found: ${filepath}`);
-    return gitTimestamp;
-  }
+  if (gitTimestamp) return gitTimestamp;
 
   // Try GitHub API (works in Netlify/CI environments)
   const githubTimestamp = await getGitHubLastUpdated(filepath);
-  if (githubTimestamp) {
-    console.log(`GitHub API found: ${filepath}`);
-    return githubTimestamp;
-  }
+  if (githubTimestamp) return githubTimestamp;
 
   // If both methods fail, return null (component will handle hiding the timestamp)
-  console.log(`No timestamp found: ${filepath}`);
   return null;
 }
 
@@ -151,18 +144,12 @@ export async function getProcessedMdxFromParams({ difficulty, slug }) {
   mdxEntry.filepath = path.join(mdxDir, index);
 
   const lastUpdated = await getFileLastUpdated(mdxEntry.filepath);
-  console.log("[getProcessedMdxFromParams] lastUpdated:", lastUpdated);
 
-  const processedData = await processMdx(mdxEntry.filepath);
-  
-  const result = {
+  return {
     ...mdxEntry,
-    ...processedData,
+    ...(await processMdx(mdxEntry.filepath)),
     lastUpdated,
   };
-  
-  console.log("[getProcessedMdxFromParams] Returning lastUpdated:", result.lastUpdated);
-  return result;
 }
 
 export function getMdxDir(subfolders = []) {
