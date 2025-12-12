@@ -12,11 +12,8 @@ import TwitchVoD from "../Elements/Video/TwitchVoD";
 import UnderConstruction from "../Elements/UnderConstruction.js";
 import YouTube from "../Elements/Video/YouTube";
 
-let firstH1Rendered = false; // Starts as false
-
 export default function MDXComponents(mdxDir, lastUpdated) {
-  // Reset the flag for each new page render
-  firstH1Rendered = false;
+  let firstH1Rendered = false; // Starts as false
 
   return {
     a: (props) => {
