@@ -151,12 +151,18 @@ export async function getProcessedMdxFromParams({ difficulty, slug }) {
   mdxEntry.filepath = path.join(mdxDir, index);
 
   const lastUpdated = await getFileLastUpdated(mdxEntry.filepath);
+  console.log("[getProcessedMdxFromParams] lastUpdated:", lastUpdated);
 
-  return {
+  const processedData = await processMdx(mdxEntry.filepath);
+  
+  const result = {
     ...mdxEntry,
-    ...(await processMdx(mdxEntry.filepath)),
+    ...processedData,
     lastUpdated,
   };
+  
+  console.log("[getProcessedMdxFromParams] Returning lastUpdated:", result.lastUpdated);
+  return result;
 }
 
 export function getMdxDir(subfolders = []) {
