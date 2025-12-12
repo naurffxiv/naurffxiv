@@ -108,7 +108,11 @@ async function getGitHubLastUpdated(filepath) {
     if (!response.ok) return null;
 
     const commits = await response.json();
-    if (Array.isArray(commits) && commits.length > 0 && commits[0].commit?.committer?.date) {
+    if (
+      Array.isArray(commits) &&
+      commits.length > 0 &&
+      commits[0].commit?.committer?.date
+    ) {
       return new Date(commits[0].commit.committer.date).toISOString();
     }
   } catch {
@@ -120,13 +124,20 @@ async function getGitHubLastUpdated(filepath) {
 export async function getFileLastUpdated(filepath) {
   // Try git command first (works in local dev)
   const gitTimestamp = getGitLastUpdated(filepath);
-  if (gitTimestamp) return gitTimestamp;
+  if (gitTimestamp) {
+    console.log(`Git found: ${filepath}`);
+    return gitTimestamp;
+  }
 
   // Try GitHub API (works in Netlify/CI environments)
   const githubTimestamp = await getGitHubLastUpdated(filepath);
-  if (githubTimestamp) return githubTimestamp;
+  if (githubTimestamp) {
+    console.log(`GitHub API found: ${filepath}`);
+    return githubTimestamp;
+  }
 
   // If both methods fail, return null (component will handle hiding the timestamp)
+  console.log(`No timestamp found: ${filepath}`);
   return null;
 }
 
