@@ -9,15 +9,23 @@ interface LastUpdatedProps {
  * @param lastUpdated - ISO string of the date when the file was last modified
  */
 export default function LastUpdated({ lastUpdated }: LastUpdatedProps) {
-  if (!lastUpdated) return null;
+  console.log("[LastUpdated] Received lastUpdated:", lastUpdated);
+
+  if (!lastUpdated) {
+    console.log("[LastUpdated] lastUpdated is null/undefined, returning null");
+    return null;
+  }
 
   // Parse ISO string to Date object
   const lastUpdatedDate = new Date(lastUpdated);
 
   // Validate date
   if (isNaN(lastUpdatedDate.getTime())) {
+    console.log("[LastUpdated] Invalid date, returning null");
     return null;
   }
+
+  console.log("[LastUpdated] Parsed date:", lastUpdatedDate);
 
   const formatDate = (date: Date): string => {
     // Format: "December 15, 2024 at 3:45 PM"
@@ -61,6 +69,8 @@ export default function LastUpdated({ lastUpdated }: LastUpdatedProps) {
 
   const fullDate = formatDate(lastUpdatedDate);
   const relativeTime = formatRelativeTime(lastUpdatedDate);
+
+  console.log("[LastUpdated] Rendering with:", { fullDate, relativeTime });
 
   return (
     <div className="mt-2 mb-4 text-sm text-gray-400">
