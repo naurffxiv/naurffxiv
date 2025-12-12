@@ -1,6 +1,6 @@
 import * as runtime from "react/jsx-runtime";
 
-import { promises as fs, readdirSync, statSync } from "fs";
+import { promises as fs, readdirSync } from "fs";
 import { spawnSync } from "child_process";
 
 import { cache } from "react";
@@ -74,17 +74,60 @@ function getGitLastUpdated(filepath) {
   return null;
 }
 
-export function getFileLastUpdated(filepath) {
+// Gets file path relative to repo root for GitHub API
+function getRelativeFilePath(filepath) {
+  const repoRoot = process.cwd();
+  const relativePath = path.relative(repoRoot, filepath);
+  // Convert Windows paths to Unix-style for GitHub API
+  return relativePath.replace(/\\/g, "/");
+}
+
+// Gets last updated timestamp from GitHub API (for build environments without git)
+async function getGitHubLastUpdated(filepath) {
+  // Only try GitHub API if we're likely in a CI/build environment
+  // Check for common CI environment variables
+  const isCI = process.env.NETLIFY || process.env.CI;
+  if (!isCI) return null;
+
+  try {
+    const relativePath = getRelativeFilePath(filepath);
+    const repo = "naurffxiv/naurffxiv";
+    const apiUrl = `https://api.github.com/repos/${repo}/commits?path=${encodeURIComponent(relativePath)}&per_page=1`;
+
+    const response = await fetch(apiUrl, {
+      headers: {
+        Accept: "application/vnd.github.v3+json",
+        // GitHub API allows unauthenticated requests with rate limits
+        // For higher limits, set GITHUB_TOKEN env var
+        ...(process.env.GITHUB_TOKEN && {
+          Authorization: `token ${process.env.GITHUB_TOKEN}`,
+        }),
+      },
+    });
+
+    if (!response.ok) return null;
+
+    const commits = await response.json();
+    if (Array.isArray(commits) && commits.length > 0 && commits[0].commit?.committer?.date) {
+      return new Date(commits[0].commit.committer.date).toISOString();
+    }
+  } catch {
+    // Silently fail and fall back to other methods
+  }
+  return null;
+}
+
+export async function getFileLastUpdated(filepath) {
+  // Try git command first (works in local dev)
   const gitTimestamp = getGitLastUpdated(filepath);
   if (gitTimestamp) return gitTimestamp;
 
-  try {
-    const stats = statSync(filepath);
-    return stats.mtime.toISOString();
-  } catch {
-    // If file doesn't exist or can't be read, return current date as fallback
-    return new Date().toISOString();
-  }
+  // Try GitHub API (works in Netlify/CI environments)
+  const githubTimestamp = await getGitHubLastUpdated(filepath);
+  if (githubTimestamp) return githubTimestamp;
+
+  // If both methods fail, return null (component will handle hiding the timestamp)
+  return null;
 }
 
 // resolves mdx filepath from slug and returns the processed file and relevant information
@@ -96,7 +139,7 @@ export async function getProcessedMdxFromParams({ difficulty, slug }) {
   if (!index) return { error: `file at ${index} not found` };
   mdxEntry.filepath = path.join(mdxDir, index);
 
-  const lastUpdated = getFileLastUpdated(mdxEntry.filepath);
+  const lastUpdated = await getFileLastUpdated(mdxEntry.filepath);
 
   return {
     ...mdxEntry,
