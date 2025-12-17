@@ -1,26 +1,26 @@
 {
   "ageless-necropolis": {
     "index": "ageless-necropolis.mdx",
-    "groups": ["ultimate", "Dawntrail Extremes"]
+    "groups": ["extreme", "Dawntrail Extremes"]
   },
   "recollection": {
     "index": "recollection.mdx",
-    "groups": ["ultimate", "Dawntrail Extremes"]
+    "groups": ["extreme", "Dawntrail Extremes"]
   },
   "sphenes-burden": {
     "index": "sphenes-burden.mdx",
-    "groups": ["ultimate", "Dawntrail Extremes"],
+    "groups": ["extreme", "Dawntrail Extremes"],
     "guide": {
       "index": "guides/sphenes-burden_guide.mdx"
     }
   },
   "everkeep": {
     "index": "everkeep.mdx",
-    "groups": ["ultimate", "Dawntrail Extremes"]
+    "groups": ["extreme", "Dawntrail Extremes"]
   },
   "worqor-lar-dor": {
     "index": "worqor-lar-dor.mdx",
-    "groups": ["ultimate", "Dawntrail Extremes"]
+    "groups": ["extreme", "Dawntrail Extremes"]
   },
   "the-windward-wilds": {
     "index": "the-windward-wilds.mdx",
