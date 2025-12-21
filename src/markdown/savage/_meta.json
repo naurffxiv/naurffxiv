@@ -1,4 +1,20 @@
 {
+  "m9s": {
+    "index": "m9s.mdx",
+    "groups": ["savage", "AAC Heavyweight"]
+  },
+  "m10s": {
+    "index": "m10s.mdx",
+    "groups": ["savage", "AAC Heavyweight"]
+  },
+  "m11s": {
+    "index": "m11s.mdx",
+    "groups": ["savage", "AAC Heavyweight"]
+  },
+  "m12s": {
+    "index": "m12s.mdx",
+    "groups": ["savage", "AAC Heavyweight"]
+  },
   "m5s": {
     "index": "m5s.mdx",
     "groups": ["savage", "AAC Cruiserweight"]
