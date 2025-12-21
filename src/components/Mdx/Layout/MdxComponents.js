@@ -13,7 +13,10 @@ import UnderConstruction from "../Elements/UnderConstruction.js";
 import YouTube from "../Elements/Video/YouTube";
 
 export default function MDXComponents(mdxDir, lastUpdated) {
-  let firstH1Rendered = false; // Starts as false
+  // NB: We track the first H1 to ensure <LastUpdated /> only renders once,
+  // right after the main page title (the first <h1> in the MDX file).
+  // We don't want the "Last Updated" date showing up after every section title.
+  let firstH1Rendered = false;
 
   return {
     a: (props) => {
@@ -22,9 +25,9 @@ export default function MDXComponents(mdxDir, lastUpdated) {
       return <a {...props} />;
     },
     h1: (props) => {
-      const isFirst = !firstH1Rendered; // check if it's the FIRST h1
+      const isFirst = !firstH1Rendered;
       if (isFirst) {
-        firstH1Rendered = true; // mark that we've now rendered the first one
+        firstH1Rendered = true;
       }
       return (
         <>

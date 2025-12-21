@@ -105,7 +105,12 @@ async function getGitHubLastUpdated(filepath) {
       },
     });
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      console.warn(
+        `[getGitHubLastUpdated] GitHub API returned ${response.status} for file: ${filepath}`,
+      );
+      return null;
+    }
 
     const commits = await response.json();
     if (
@@ -115,8 +120,15 @@ async function getGitHubLastUpdated(filepath) {
     ) {
       return new Date(commits[0].commit.committer.date).toISOString();
     }
-  } catch {
-    // Silently fail and fall back to other methods
+  } catch (error) {
+    // Log warning for debugging, then fall back to other methods
+    console.warn(
+      `[getGitHubLastUpdated] Failed to fetch last updated timestamp for file: ${filepath}`,
+      error.message || error,
+    );
+    if (error.stack) {
+      console.warn(`[getGitHubLastUpdated] Stack trace:`, error.stack);
+    }
   }
   return null;
 }
