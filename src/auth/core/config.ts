@@ -24,9 +24,6 @@ export const sessionConfig: SessionOptions = {
   generateSessionToken: () => crypto.randomUUID(),
 };
 
-// Debug for NextAuth
-export const authDebug = process.env.NODE_ENV !== "production";
-
 // Custom auth page routes
 // https://next-auth.js.org/configuration/pages
 export const authPages = {

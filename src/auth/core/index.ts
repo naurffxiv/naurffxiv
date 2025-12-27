@@ -1,5 +1,4 @@
 import {
-  authDebug as debug,
   authPages as pages,
   authSecret as secret,
   sessionConfig as session,
@@ -23,7 +22,7 @@ export const authOptions: AuthOptions = {
   session,
   pages,
   secret,
-  debug,
+  debug: process.env.NODE_ENV !== "production",
   callbacks: {
     signIn: signInCallback,
     jwt: jwtCallback,

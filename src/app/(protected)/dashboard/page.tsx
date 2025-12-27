@@ -109,9 +109,11 @@ export default function DashboardPage(): ReactElement {
         </header>
       </Slide>
 
-      <div className="mb-6 text-sm text-muted">
-        <SessionCountdownDebug />
-      </div>
+      <RoleContent roles={[Roles.DEV]}>
+        <div className="mb-6 text-sm text-muted">
+          <SessionCountdownDebug />
+        </div>
+      </RoleContent>
 
       {/* Main Dashboard Section */}
       <section aria-label="Available Tools">
@@ -144,7 +146,7 @@ export default function DashboardPage(): ReactElement {
 
       {/* Session Role Debug Section */}
       {process.env.NODE_ENV === "development" && (
-        <RoleContent roles={[Roles.ADMIN, Roles.DEV]}>
+        <RoleContent roles={[Roles.DEV]}>
           <section
             className="p-4 mt-8 rounded-lg bg-gray-800/30"
             aria-label="System Status"
