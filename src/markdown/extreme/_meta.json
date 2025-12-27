@@ -25,5 +25,9 @@
   "the-windward-wilds": {
     "index": "the-windward-wilds.mdx",
     "groups": ["extreme", "Dawntrail Extremes"]
+  },
+  "hell-on-rails": {
+    "index": "hell-on-rails.mdx",
+    "groups": ["extreme", "Dawntrail Extremes"]
   }
 }
