@@ -41,6 +41,7 @@ export default async function MdxPage({
     toc,
     frontmatter,
     filepath,
+    lastUpdated,
     error,
   } = await getProcessedMdxFromParams({ difficulty, slug });
 
@@ -56,7 +57,9 @@ export default async function MdxPage({
       slug={formedSlug}
       frontmatter={frontmatter}
     >
-      <Content components={MDXComponents(path.dirname(filepath))} />
+      <Content
+        components={MDXComponents(path.dirname(filepath), lastUpdated)}
+      />
     </MDXPage>
   );
 }
