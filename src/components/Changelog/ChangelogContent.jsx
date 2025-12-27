@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ReleaseCard from "@/components/Changelog/ReleaseCard";
-import { fetchGithubReleases, compareVersions } from "@/utils";
+
 import Image from "next/image";
+import ReleaseCard from "@/components/Changelog/ReleaseCard";
+import { compareVersions } from "@/utils/compareVersions";
+import { fetchGithubReleases } from "@/utils/fetchGithubReleases";
 
 export default function ChangelogContent() {
   const [releases, setReleases] = useState([]);
