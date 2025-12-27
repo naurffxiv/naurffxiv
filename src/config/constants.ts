@@ -77,6 +77,12 @@ export const savageList = [
 
 export const extremeList = [
   {
+    title: "Hell on Rails",
+    url: "/extreme/hell-on-rails",
+    img: "/images/thumbnails/extreme/dt-ex7.avif",
+    alt: "Hell on Rails",
+  },
+  {
     title: "The Windward Wilds",
     url: "/extreme/the-windward-wilds",
     img: "/images/thumbnails/extreme/dt-ex6.avif",
