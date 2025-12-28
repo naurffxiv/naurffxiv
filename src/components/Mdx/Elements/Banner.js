@@ -10,7 +10,10 @@ export default function Banner({ src, alt, left = false, ...props }) {
         alt={alt}
         {...props}
         fill
-        unoptimized
+        // 'unoptimized' removed to generate aspect ratio metadata and prevent CLS.
+        // 'sizes="100vw"' ensures correct responsive sizing with 'fill'.
+        sizes="100vw"
+        priority
       />
     </div>
   );
