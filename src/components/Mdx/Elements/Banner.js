@@ -17,7 +17,7 @@ export default function Banner({ src, alt, left = false, ...props }) {
         fill
         sizes="100vw"
         priority
-        style={{ 
+        style={{
           objectFit: "cover",
           objectPosition: left ? "left center" : "center center",
         }}
