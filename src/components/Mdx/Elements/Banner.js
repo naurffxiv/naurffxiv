@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 export default function Banner({ src, alt, left = false, ...props }) {
   return (
-    <div className="relative h-48 lg:h-56 not-prose">
+    <div className="relative w-full aspect-[3/1] not-prose">
       <Image
         className={clsx("object-cover rounded-sm", { "object-left": left })}
         src={src}
@@ -14,6 +14,7 @@ export default function Banner({ src, alt, left = false, ...props }) {
         // 'sizes="100vw"' ensures correct responsive sizing with 'fill'.
         sizes="100vw"
         priority
+        decoding="sync"
       />
     </div>
   );
