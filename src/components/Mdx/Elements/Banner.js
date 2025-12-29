@@ -5,7 +5,11 @@ export default function Banner({ src, alt, left = false, ...props }) {
   return (
     <div
       className="relative h-48 lg:h-56 not-prose"
-      style={{ minHeight: "12rem" }} // Reserve space to prevent layout shift (matches h-48)
+      style={{
+        minHeight: "12rem",
+        position: "relative", // Ensure relative positioning immediately (prevents FOUC)
+        width: "100%", // Explicit width
+      }}
     >
       <Image
         className={clsx("object-cover rounded-sm", { "object-left": left })}
@@ -15,7 +19,6 @@ export default function Banner({ src, alt, left = false, ...props }) {
         fill
         sizes="100vw"
         priority
-        unoptimized // Bypass Netlify image optimization to prevent layout shift
         decoding="sync" // Prevent visual flicker on cached loads
         style={{ objectFit: "cover", width: "100%", height: "100%" }}
       />
