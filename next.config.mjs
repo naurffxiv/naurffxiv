@@ -32,6 +32,7 @@ const withMDX = createMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
+    unoptimized: true, // Disable optimization to prevent Netlify CDN delays
     remotePatterns: [
       {
         protocol: "https",
