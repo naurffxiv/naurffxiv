@@ -13,7 +13,7 @@ export default function Banner({ src, alt, left = false, ...props }) {
         // 'unoptimized' removed to generate aspect ratio metadata and prevent CLS.
         // 'sizes="100vw"' ensures correct responsive sizing with 'fill'.
         sizes="100vw"
-        priority
+        priority // "priority" is used to ensure the image is loaded as soon as possible.
         decoding="sync"
       />
     </div>
