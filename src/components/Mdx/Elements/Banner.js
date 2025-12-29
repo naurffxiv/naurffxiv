@@ -15,6 +15,7 @@ export default function Banner({ src, alt, left = false, ...props }) {
         fill
         sizes="100vw"
         priority
+        unoptimized // Bypass Netlify image optimization to prevent layout shift
         decoding="sync" // Prevent visual flicker on cached loads
         style={{ objectFit: "cover", width: "100%", height: "100%" }}
       />
