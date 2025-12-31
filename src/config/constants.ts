@@ -50,28 +50,28 @@ export const ultimateList = [
 
 export const savageList = [
   {
-    title: "M5S - Dancing Green",
-    url: "/savage/m5s",
-    img: images.m5s,
-    alt: "m5s",
+    title: "M9S - Vamp Fatale",
+    url: "/savage/m9s",
+    img: images.m9s,
+    alt: "m9s",
   },
   {
-    title: "M6S - Sugar Riot",
-    url: "/savage/m6s",
-    img: images.m6s,
-    alt: "m6s",
+    title: "M10S - Red Hot & Deep Blue",
+    url: "/savage/m10s",
+    img: images.m10s,
+    alt: "m10s",
   },
   {
-    title: "M7S - Brute Abombinator",
-    url: "/savage/m7s",
-    img: images.m7s,
-    alt: "m7s",
+    title: "M11S - The Tyrant",
+    url: "/savage/m11s",
+    img: images.m11s,
+    alt: "m11s",
   },
   {
-    title: "M8S - Howling Blade",
-    url: "/savage/m8s",
-    img: images.m8s,
-    alt: "m8s",
+    title: "M12S - The Lindwurm",
+    url: "/savage/m12s",
+    img: images.m12s,
+    alt: "m12s",
   },
 ];
 
