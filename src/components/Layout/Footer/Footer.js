@@ -38,6 +38,17 @@ export default function Footer() {
             <div className="prose-sm prose prose-slate prose-invert">
               <p>NAUR FFXIV is a non-profit community-owned website.</p>
               <p>
+                <a
+                  href="https://wtfdig.info"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  WTFDIG
+                </a>{" "}
+                Made by Mara Kaminagi @ Adamantoise
+              </p>
+              <p>
                 FINAL FANTASY is a registered trademark of Square Enix Holdings
                 Co., Ltd. © SQUARE ENIX CO., LTD. All Rights Reserved | All
                 content © their respective authors

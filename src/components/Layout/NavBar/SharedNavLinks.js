@@ -8,6 +8,12 @@ import { ultimateList, savageList, extremeList } from "@/config/constants";
 export default function SharedNavLinks({ isMobile, onClick }) {
   const navItems = [
     { type: "link", label: "Home", href: "/" },
+    {
+      type: "link",
+      label: "WTFDIG",
+      href: "https://wtfdig.info",
+      external: true,
+    },
     { type: "dropdown", label: "Ultimate", data: ultimateList },
     { type: "dropdown", label: "Savage", data: savageList },
     { type: "dropdown", label: "Extreme", data: extremeList },
