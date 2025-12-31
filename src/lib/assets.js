@@ -11,10 +11,10 @@ import Patreon from "@/assets/Icons/Patreon.png";
 // MUI icons
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 // homepage card images
-import m5s from "@/assets/Images/m5s.avif";
-import m6s from "@/assets/Images/m6s.avif";
-import m7s from "@/assets/Images/m7s.avif";
-import m8s from "@/assets/Images/m8s.avif";
+import m9s from "@/assets/Images/m9s.avif";
+import m10s from "@/assets/Images/m10s.avif";
+import m11s from "@/assets/Images/m11s.avif";
+import m12s from "@/assets/Images/m12s.avif";
 import recollection from "@/assets/Images/recollection.avif";
 export const icons = {
   Chat,
@@ -27,6 +27,13 @@ export const icons = {
   Patreon,
 };
 
-export const images = { Pandora, m5s, m6s, m7s, m8s, recollection };
+export const images = {
+  Pandora,
+  m9s,
+  m10s,
+  m11s,
+  m12s,
+  recollection,
+};
 
 export const iconsMui = { PersonSearchIcon };
