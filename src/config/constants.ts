@@ -123,6 +123,10 @@ export const otherList = [
     title: "Changelog",
     url: "/changelog",
   },
+  {
+    title: "WTFDIG",
+    url: "https://wtfdig.info",
+  },
   /* Commented out for now, as these pages are not yet implemented
   {
     title: "Events",
