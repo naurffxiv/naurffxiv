@@ -91,7 +91,7 @@ v22.6.0
 
 ### Installation
 
-### Install or Upgrade npm
+#### Install or Upgrade npm
 
 If you need to install or update **npm**, run:
 
@@ -156,7 +156,7 @@ For instructions on running a local HTTPS server to test secure cookies and OAut
 
 ## Running the Development Server
 
-#### Development Server
+### Development Server
 
 ```bash
 npm run dev
