@@ -2,13 +2,77 @@
 
 This repository powers [naurffxiv.com](https://naurffxiv.com/).
 
-## Prerequisites
+## Getting Started
 
-You need **Node.js** and **npm** to run the development server.
+You can run this project using either **Docker** (recommended for consistency) or a **local Node.js setup**.
 
-### Check Installed Versions
+Both approaches will serve the application at `http://localhost:3000`
 
-Run the following commands to verify your installation:
+---
+
+## Option A: Docker Setup (Recommended)
+
+Docker provides a consistent development environment across all machines.
+
+### Prerequisites
+
+You need **Docker** and **Docker Compose** installed.
+
+#### Check Installed Versions
+
+```bash
+docker --version
+docker compose version
+```
+
+#### Installation
+
+If you don't have Docker installed:
+
+- **Linux**: Follow the [official Docker installation guide](https://docs.docker.com/engine/install/)
+- **macOS/Windows**: Download [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### Running with Docker
+
+#### Development Mode (with hot-reloading)
+
+```bash
+docker compose --profile dev up
+```
+
+Changes to code will automatically reload.
+
+#### Production Preview
+
+To test the production build locally:
+
+```bash
+docker compose --profile prod up -d
+```
+
+#### Rebuilding After Changes
+
+If you add new packages (modify `package.json`) or want to ensure a fresh build, append `--build` to your command:
+
+```bash
+# For Development
+docker compose --profile dev up --build
+
+# For Production
+docker compose --profile prod up --build
+```
+
+---
+
+## Option B: Local Node.js Setup
+
+If you prefer to run the project directly on your machine without Docker.
+
+### Prerequisites
+
+You need **Node.js v22+** and **npm v10+**.
+
+#### Check Installed Versions
 
 ```bash
 node -v
@@ -25,11 +89,7 @@ v22.6.0
 10.8.2
 ```
 
-If Node.js and npm are not installed or their versions are lower than the ones above, follow the installation steps below.
-
----
-
-## Installation
+### Installation
 
 ### Install or Upgrade npm
 
@@ -39,7 +99,7 @@ If you need to install or update **npm**, run:
 npm install -g npm
 ```
 
-### Install Node.js Using nvm
+#### Install Node.js Using nvm
 
 If you need to install or update **Node.js**, use [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm):
 
@@ -67,25 +127,21 @@ If you need to install or update **Node.js**, use [nvm (Node Version Manager)](h
    npm install next
    ```
 
----
-
-### Install all necessary libraries
-
-If you don't have all the necessary libraries used in this project, run:
+#### Install Project Dependencies
 
 ```bash
 npm install
 ```
 
-## Running the Development Server
+### Running Locally
 
-To start the development server, run:
+#### Development Server
 
 ```bash
 npm run dev
 ```
 
----
+#### Production Build
 
 To build and test what the website will be like in production, run:
 
@@ -94,7 +150,9 @@ npm run build
 npm run start
 ```
 
-# Formatting and Linting
+---
+
+## Formatting and Linting
 
 To merge into the repository, the code must pass the pipelines. Here are some commands to run the linter and formatter
 
@@ -121,6 +179,6 @@ npm install --save-dev eslint
 npx eslint . --ext .js,.jsx,.ts,.tsx
 ```
 
-# Contributing
+## Contributing
 
-If you would to contribute, please take a look over at our [Wiki](https://github.com/naurffxiv/naurffxiv/wiki) on certain processes.
+If you would like to contribute, please take a look over at our [Wiki](https://github.com/naurffxiv/naurffxiv/wiki) on certain processes.
