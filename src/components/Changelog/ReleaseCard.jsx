@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { GH_REPO } from "@/utils/fetchGithubReleases";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { GH_REPO } from "@/utils";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+import { useState } from "react";
 
 export default function ReleaseCard({
   release,
@@ -27,7 +27,7 @@ export default function ReleaseCard({
         month: "short",
         day: "numeric",
       })
-    : "Unknown date";
+    : "";
 
   const fullDate = date
     ? date.toLocaleString("en-US", {
