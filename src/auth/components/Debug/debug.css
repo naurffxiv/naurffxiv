@@ -1,0 +1,11 @@
+@tailwind utilities;
+
+@layer utilities {
+  .role-pill {
+    @apply px-2 py-0.5 text-xs font-semibold rounded;
+  }
+
+  .debug-box {
+    @apply max-w-xl p-4 mt-8 text-sm text-white bg-gray-900 border border-gray-700 rounded-lg shadow-lg;
+  }
+}
