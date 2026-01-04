@@ -106,7 +106,7 @@ If you need to install or update **Node.js**, use [nvm (Node Version Manager)](h
 1. Install nvm:
 
    ```bash
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+   curl -o- [https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh](https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh) | bash
    ```
 
 2. Restart your terminal or run:
@@ -133,7 +133,28 @@ If you need to install or update **Node.js**, use [nvm (Node Version Manager)](h
 npm install
 ```
 
-### Running Locally
+## Environment Setup
+
+This project uses Discord OAuth via NextAuth.js. Before running the app, you need to configure environment variables.
+
+### Set Up Your Environment File
+
+Copy the `.env.example` template to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+Then fill in the required values in your `.env.local` file. See `.env.example` in the repo for all available options and documentation.
+
+For detailed setup instructions and explanations of each variable, including Discord OAuth and webhook configuration, check our [Environment Setup Guide](https://github.com/naurffxiv/naurffxiv/wiki/Environment-Setup) on the Wiki.
+
+### Developer Setup Notes
+
+For instructions on running a local HTTPS server to test secure cookies and OAuth redirects in production mode, see the wiki guide:
+[Local HTTPS Setup for Production Build](https://github.com/naurffxiv/naurffxiv/wiki/Local-HTTPS-Setup-for-Production-Build)
+
+## Running the Development Server
 
 #### Development Server
 
