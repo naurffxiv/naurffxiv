@@ -26,6 +26,8 @@ const opt = process.argv[2];
   3 - resize to 2560, keep as png 
   4 - resize to 2560, convert to jpeg with 75 quality
 
+  (banner specific - for savage/extreme/ultimate entries)
+  5 - resize to 1200x400 (crop center), convert to avif with 90 quality
 */
 
 const output_path = "./compressed";
@@ -58,6 +60,15 @@ images.forEach(async (image_path) => {
       case "4":
         compressed = compressed.resize(2560).jpeg({ quality: 75 });
         ext = ".jpeg";
+        break;
+      case "5":
+        compressed = compressed
+          .resize(1200, 400, {
+            fit: "cover",
+            position: "center",
+          })
+          .avif({ quality: 90 });
+        ext = ".avif";
         break;
       case "1":
       default:
