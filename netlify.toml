@@ -1,0 +1,3 @@
+[build.environment]
+  # Prevent Netlify from flagging public Role IDs as security leaks
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_ADMIN_ROLE_ID,NEXT_PUBLIC_MOD_ROLE_ID,NEXT_PUBLIC_DEV_ROLE_ID,NEXT_PUBLIC_EVENT_ROLE_ID"
