@@ -1,10 +1,10 @@
 // next.config.mjs
 import createMDX from "@next/mdx";
-import remarkFrontmatter from "remark-frontmatter";
-import rehypeImgSize from "rehype-img-size";
-import remarkToc from "remark-toc";
-import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeImgSize from "rehype-img-size";
+import rehypeSlug from "rehype-slug";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkToc from "remark-toc";
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -30,6 +30,7 @@ const withMDX = createMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
     remotePatterns: [
@@ -40,9 +41,20 @@ const nextConfig = {
         pathname: "/i/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+        port: "",
+        pathname: "/avatars/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+        port: "",
+        pathname: "/embed/avatars/**",
+      },
     ],
   },
-
   async redirects() {
     return [
       {
