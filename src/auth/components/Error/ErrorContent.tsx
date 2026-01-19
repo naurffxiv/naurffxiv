@@ -7,7 +7,7 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { useAuthError } from "@auth/hooks/useAuthError";
 import { useAuthErrorLogger } from "@auth/hooks/useAuthErrorLogger";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useToast } from "@/hooks/ui/useToast";
 
 export default function ErrorContent(): ReactElement {
@@ -15,9 +15,16 @@ export default function ErrorContent(): ReactElement {
   const { open, message, severity, durationMs, showToast, closeToast } =
     useToast();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [bannedCountdown, setBannedCountdown] = useState(15);
 
   useAuthErrorLogger();
+
+  // Preserve the 'from' parameter for deep link redirect after login
+  const fromPage = searchParams.get("from");
+  const loginUrl = fromPage
+    ? `/auth/login?from=${encodeURIComponent(fromPage)}`
+    : "/auth/login";
 
   useEffect(() => {
     let interval: NodeJS.Timeout | undefined;
@@ -129,7 +136,7 @@ export default function ErrorContent(): ReactElement {
             </Link>
           ) : errorCode !== "Banned" ? (
             <Link
-              href="/auth/login"
+              href={loginUrl}
               className="block text-sm text-blue-500 underline"
             >
               Return to Login
