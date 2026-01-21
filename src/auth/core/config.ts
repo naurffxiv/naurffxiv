@@ -34,4 +34,7 @@ export const authPages = {
 // JWT encryption secret
 // https://next-auth.js.org/configuration/options#nextauth_secret
 // can add logic here for generating our own secret later on
-export const authSecret = process.env.NEXTAUTH_SECRET;
+// TODO: Uncomment when running live auth
+// export const authSecret = process.env.NEXTAUTH_SECRET;
+export const authSecret =
+  process.env.NEXTAUTH_SECRET || "development-secret-only";
