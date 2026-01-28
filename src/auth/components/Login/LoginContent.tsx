@@ -58,7 +58,7 @@ export default function LoginContent(): ReactElement {
   }
 
   return (
-    <main className="flex items-start justify-center px-4 pt-24">
+    <main className="flex items-start justify-center px-4 pt-24 pb-24">
       <div className="w-full max-w-md bg-[#0e1a1f]/80 backdrop-blur-md rounded-xl shadow-2xl border border-gray-800 p-8 text-center">
         <h1 className="mb-6 text-4xl font-bold">Login</h1>
 
