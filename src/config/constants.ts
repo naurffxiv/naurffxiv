@@ -116,6 +116,10 @@ export const otherList = [
     url: "https://discord.gg/naurffxiv",
   },
   {
+    title: "Staff Login",
+    url: "/auth/login",
+  },
+  {
     title: "GitHub Repository",
     url: "https://github.com/naurffxiv/naurffxiv",
   },

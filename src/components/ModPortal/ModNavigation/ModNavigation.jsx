@@ -15,7 +15,9 @@ export function ModNavigation() {
       </Typography>
 
       <MenuList sx={sx.menuList}>
-        <MenuItem disabled={true}>Main</MenuItem>
+        <MenuItem disabled={true}>
+          <Typography fontSize={"12pt"}>Main</Typography>
+        </MenuItem>
         <PathSelectedLink href={"/mod-portal/notes"}>
           <MenuItem>Notes</MenuItem>
         </PathSelectedLink>
@@ -29,7 +31,9 @@ export function ModNavigation() {
           <MenuItem>Unban Appeals</MenuItem>
         </PathSelectedLink>
 
-        <MenuItem disabled={true}>Account</MenuItem>
+        <MenuItem disabled={true}>
+          <Typography fontSize={"12pt"}>Account</Typography>
+        </MenuItem>
         <PathSelectedLink href={"/mod-portal/settings"}>
           <MenuItem>Settings</MenuItem>
         </PathSelectedLink>
